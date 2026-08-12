@@ -1,0 +1,16 @@
+schema: ucc.qre.surface-code-profile.v1
+id: surface_code_improved
+description: Improved-physical-error, faster-cycle lattice-surgery scenario.
+physical_error_rate: 1.0e-4
+threshold: 1.0e-2
+logical_error_prefactor: 0.1
+minimum_odd_distance: 3
+maximum_odd_distance: 99
+data_patch_qubits_coefficient: 2.0
+factory_qubits_coefficient: 24.0
+factory_logical_patches: 12
+factory_period_d_cycles: 9.0
+clifford_layer_d_cycles: 1.0
+cycle_time_seconds: 5.0e-7
+distillation_output_coefficient: 35.0
+notes: Sensitivity scenario with disclosed assumptions; not a hardware-vendor forecast.

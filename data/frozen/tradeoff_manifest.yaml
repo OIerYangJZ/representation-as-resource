@@ -1,0 +1,122 @@
+{
+  "schema": "ucc.tradeoff-sweep-plan.v1",
+  "campaign": "w3-tradeoff-20260802-local",
+  "formal_model": {
+    "theorem": "thm:w1-unified-frontier",
+    "input": "r-round round-major dispersed updates over Z_Q, Q=K+1",
+    "semantic_target": "U_x up to global phase",
+    "lower_information_bits": "L_delta=(1-delta)m log2(K)-h2(delta)",
+    "transcript_bound": "A_p+Sigma_p>=L_delta",
+    "cap_envelope": "A_p+(2p-1)S>=L_delta",
+    "epsilon_rule": "epsilon=epsilon_factor*sin(pi/(2Q)), with 0<epsilon_factor<1"
+  },
+  "execution_policy": {
+    "formal_runs_must_be_remote": false,
+    "local_formal_authorization_date": "2026-08-02",
+    "approved_ssh_alias": "school-server",
+    "allowed_remote_hostnames": ["327-cloudhin-3090"],
+    "local_use": "formal measurement explicitly authorized by the user on 2026-08-02",
+    "on_violation": "retain the point with status theorem_model_mismatch; do not delete it"
+  },
+  "defaults": {
+    "delta": 0.0,
+    "schedule": "round_major",
+    "epsilon_factor": 0.5,
+    "seeds": [20260801]
+  },
+  "compilers": [
+    {"name": "echo", "memory_fraction": 0.0},
+    {"name": "full_aggregation", "memory_fraction": 1.0},
+    {"name": "hybrid_25", "memory_fraction": 0.25},
+    {"name": "hybrid_50", "memory_fraction": 0.5},
+    {"name": "hybrid_75", "memory_fraction": 0.75},
+    {"name": "ir_materializing", "memory_fraction": 1.0}
+  ],
+  "segments": [
+    {
+      "name": "core_frontier",
+      "compiler_names": ["echo", "full_aggregation", "hybrid_25", "hybrid_50", "hybrid_75"],
+      "matrix": {
+        "m": [4, 8, 16, 32, 64],
+        "r": [2],
+        "K": [2, 4, 8, 16],
+        "epsilon_factor": [0.5],
+        "passes": [1, 2, 4],
+        "schedule": ["round_major"],
+        "seed": [20260801]
+      }
+    },
+    {
+      "name": "round_extension",
+      "compiler_names": ["echo", "full_aggregation", "hybrid_25", "hybrid_50", "hybrid_75"],
+      "matrix": {
+        "m": [8, 32],
+        "r": [3, 4],
+        "K": [4, 16],
+        "epsilon_factor": [0.5],
+        "passes": [1, 4],
+        "schedule": ["round_major"],
+        "seed": [20260801]
+      }
+    },
+    {
+      "name": "epsilon_margin",
+      "compiler_names": ["echo", "full_aggregation", "hybrid_25", "hybrid_50", "hybrid_75"],
+      "matrix": {
+        "m": [16, 64],
+        "r": [2],
+        "K": [8],
+        "epsilon_factor": [0.25, 0.5, 0.9],
+        "passes": [1, 2, 4],
+        "schedule": ["round_major"],
+        "seed": [20260801]
+      }
+    },
+    {
+      "name": "schedule_seed_robustness",
+      "compiler_names": ["echo", "full_aggregation", "hybrid_25", "hybrid_50", "hybrid_75"],
+      "matrix": {
+        "m": [16, 64],
+        "r": [2, 3],
+        "K": [4, 16],
+        "epsilon_factor": [0.5],
+        "passes": [2],
+        "schedule": ["round_major", "permuted_within_round"],
+        "seed": [20260801, 20260802]
+      }
+    },
+    {
+      "name": "ir_surface",
+      "compiler_names": ["ir_materializing"],
+      "matrix": {
+        "m": [4, 8, 16, 32],
+        "r": [2],
+        "K": [8],
+        "epsilon_factor": [0.5],
+        "passes": [1, 2, 4],
+        "schedule": ["round_major"],
+        "seed": [20260801]
+      }
+    }
+  ],
+  "frozen_outputs": {
+    "status": "complete_local_formal",
+    "campaign": "w3-tradeoff-20260802-local",
+    "verified_runs": 592,
+    "run_failures": 0,
+    "verification_failures": 0,
+    "theorem_model_mismatches": 0,
+    "executed_plan_sha256": "53c5867f5d6b81a571ccf68d1bb3ac874592f7453f49a74faa5fda7929f39030",
+    "receipt": "data/frozen/tradeoff_freeze_manifest.json",
+    "note": "Only this post-run receipt block changed after execution; the campaign matrix is identical to the executed-plan hash.",
+    "required": [
+      "tradeoff_summary.csv",
+      "tradeoff_events.jsonl.gz",
+      "tradeoff_trace_artifacts.tar.gz",
+      "tradeoff_scaling_fits.csv",
+      "tradeoff_anomalies.csv",
+      "tradeoff_freeze_manifest.json",
+      "figures/measured_tradeoff_frontier.pdf"
+    ]
+  }
+}

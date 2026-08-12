@@ -1,0 +1,1107 @@
+{
+  "qft_inverse": {
+    "translation_only": {
+      "method": "translation_only",
+      "family": "qft_inverse",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 40000,
+        "multi_qubit_gates": 80000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 400000,
+        "depth": 142500,
+        "multi_qubit_gates": 170000,
+        "cx_count": 170000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.336
+    },
+    "qiskit_opt0": {
+      "method": "qiskit_opt0",
+      "family": "qft_inverse",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 40000,
+        "multi_qubit_gates": 80000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 400000,
+        "depth": 142500,
+        "multi_qubit_gates": 170000,
+        "cx_count": 170000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.265
+    },
+    "qiskit_opt1": {
+      "method": "qiskit_opt1",
+      "family": "qft_inverse",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 40000,
+        "multi_qubit_gates": 80000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 365002,
+        "depth": 130002,
+        "multi_qubit_gates": 140000,
+        "cx_count": 140000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.711
+    },
+    "qiskit_opt3": {
+      "method": "qiskit_opt3",
+      "family": "qft_inverse",
+      "status": "timeout",
+      "timeout_s": 120
+    },
+    "qiskit_commutative_inverse": {
+      "method": "qiskit_commutative_inverse",
+      "family": "qft_inverse",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 40000,
+        "multi_qubit_gates": 80000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 0,
+        "depth": 0,
+        "multi_qubit_gates": 0,
+        "cx_count": 0,
+        "gate_types": []
+      },
+      "runtime_s": 2.341
+    },
+    "tket_full_peephole": {
+      "method": "tket_full_peephole",
+      "family": "qft_inverse",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 40000,
+        "multi_qubit_gates": 80000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "unavailable",
+      "error": "No module named 'pytket.extensions'"
+    },
+    "baseline_ucc": {
+      "method": "baseline_ucc",
+      "family": "qft_inverse",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 40000,
+        "multi_qubit_gates": 80000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 968784,
+        "depth": 276266,
+        "multi_qubit_gates": 135004,
+        "cx_count": 135004,
+        "gate_types": [
+          "cx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 6.405
+    },
+    "optimized_ucc": {
+      "method": "optimized_ucc",
+      "family": "qft_inverse",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 40000,
+        "multi_qubit_gates": 80000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 0,
+        "depth": 0,
+        "multi_qubit_gates": 0,
+        "cx_count": 0,
+        "gate_types": []
+      },
+      "runtime_s": 2.596
+    }
+  },
+  "qft_control": {
+    "translation_only": {
+      "method": "translation_only",
+      "family": "qft_control",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 40000,
+        "multi_qubit_gates": 80000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 400000,
+        "depth": 140000,
+        "multi_qubit_gates": 170000,
+        "cx_count": 170000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.249
+    },
+    "qiskit_opt0": {
+      "method": "qiskit_opt0",
+      "family": "qft_control",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 40000,
+        "multi_qubit_gates": 80000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 400000,
+        "depth": 140000,
+        "multi_qubit_gates": 170000,
+        "cx_count": 170000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.253
+    },
+    "qiskit_opt1": {
+      "method": "qiskit_opt1",
+      "family": "qft_control",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 40000,
+        "multi_qubit_gates": 80000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 400000,
+        "depth": 140000,
+        "multi_qubit_gates": 170000,
+        "cx_count": 170000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.559
+    },
+    "qiskit_opt3": {
+      "method": "qiskit_opt3",
+      "family": "qft_control",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 40000,
+        "multi_qubit_gates": 80000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 347500,
+        "depth": 125000,
+        "multi_qubit_gates": 170000,
+        "cx_count": 170000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+      "runtime_s": 1.956
+    },
+    "qiskit_commutative_inverse": {
+      "method": "qiskit_commutative_inverse",
+      "family": "qft_control",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 40000,
+        "multi_qubit_gates": 80000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 400000,
+        "depth": 140000,
+        "multi_qubit_gates": 170000,
+        "cx_count": 170000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+      "runtime_s": 2.296
+    },
+    "tket_full_peephole": {
+      "method": "tket_full_peephole",
+      "family": "qft_control",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 40000,
+        "multi_qubit_gates": 80000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "unavailable",
+      "error": "No module named 'pytket.extensions'"
+    },
+    "baseline_ucc": {
+      "method": "baseline_ucc",
+      "family": "qft_control",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 40000,
+        "multi_qubit_gates": 80000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 1207504,
+        "depth": 317501,
+        "multi_qubit_gates": 170000,
+        "cx_count": 170000,
+        "gate_types": [
+          "cx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 7.315
+    },
+    "optimized_ucc": {
+      "method": "optimized_ucc",
+      "family": "qft_control",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 40000,
+        "multi_qubit_gates": 80000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 347500,
+        "depth": 125000,
+        "multi_qubit_gates": 170000,
+        "cx_count": 170000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+      "runtime_s": 4.637
+    }
+  },
+  "qpe_style": {
+    "translation_only": {
+      "method": "translation_only",
+      "family": "qpe_style",
+      "input": {
+        "num_qubits": 5,
+        "total_gates": 100000,
+        "depth": 80000,
+        "multi_qubit_gates": 76000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 5,
+        "total_gates": 396000,
+        "depth": 296001,
+        "multi_qubit_gates": 156000,
+        "cx_count": 156000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.256
+    },
+    "qiskit_opt0": {
+      "method": "qiskit_opt0",
+      "family": "qpe_style",
+      "input": {
+        "num_qubits": 5,
+        "total_gates": 100000,
+        "depth": 80000,
+        "multi_qubit_gates": 76000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 5,
+        "total_gates": 396000,
+        "depth": 296001,
+        "multi_qubit_gates": 156000,
+        "cx_count": 156000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.257
+    },
+    "qiskit_opt1": {
+      "method": "qiskit_opt1",
+      "family": "qpe_style",
+      "input": {
+        "num_qubits": 5,
+        "total_gates": 100000,
+        "depth": 80000,
+        "multi_qubit_gates": 76000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 5,
+        "total_gates": 396000,
+        "depth": 296001,
+        "multi_qubit_gates": 156000,
+        "cx_count": 156000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.539
+    },
+    "qiskit_opt3": {
+      "method": "qiskit_opt3",
+      "family": "qpe_style",
+      "status": "timeout",
+      "timeout_s": 120
+    },
+    "qiskit_commutative_inverse": {
+      "method": "qiskit_commutative_inverse",
+      "family": "qpe_style",
+      "input": {
+        "num_qubits": 5,
+        "total_gates": 100000,
+        "depth": 80000,
+        "multi_qubit_gates": 76000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 5,
+        "total_gates": 396000,
+        "depth": 296001,
+        "multi_qubit_gates": 156000,
+        "cx_count": 156000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+      "runtime_s": 1.948
+    },
+    "tket_full_peephole": {
+      "method": "tket_full_peephole",
+      "family": "qpe_style",
+      "input": {
+        "num_qubits": 5,
+        "total_gates": 100000,
+        "depth": 80000,
+        "multi_qubit_gates": 76000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "unavailable",
+      "error": "No module named 'pytket.extensions'"
+    },
+    "baseline_ucc": {
+      "method": "baseline_ucc",
+      "family": "qpe_style",
+      "input": {
+        "num_qubits": 5,
+        "total_gates": 100000,
+        "depth": 80000,
+        "multi_qubit_gates": 76000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 5,
+        "total_gates": 456013,
+        "depth": 236011,
+        "multi_qubit_gates": 60002,
+        "cx_count": 60002,
+        "gate_types": [
+          "cx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 3.271
+    },
+    "optimized_ucc": {
+      "method": "optimized_ucc",
+      "family": "qpe_style",
+      "input": {
+        "num_qubits": 5,
+        "total_gates": 100000,
+        "depth": 80000,
+        "multi_qubit_gates": 76000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 5,
+        "total_gates": 164400,
+        "depth": 110001,
+        "multi_qubit_gates": 60200,
+        "cx_count": 60200,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 5.285
+    }
+  },
+  "qaoa_ring": {
+    "translation_only": {
+      "method": "translation_only",
+      "family": "qaoa_ring",
+      "input": {
+        "num_qubits": 20,
+        "total_gates": 100000,
+        "depth": 62000,
+        "multi_qubit_gates": 40000,
+        "cx_count": 40000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 20,
+        "total_gates": 100000,
+        "depth": 62000,
+        "multi_qubit_gates": 40000,
+        "cx_count": 40000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.027
+    },
+    "qiskit_opt0": {
+      "method": "qiskit_opt0",
+      "family": "qaoa_ring",
+      "input": {
+        "num_qubits": 20,
+        "total_gates": 100000,
+        "depth": 62000,
+        "multi_qubit_gates": 40000,
+        "cx_count": 40000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 20,
+        "total_gates": 100000,
+        "depth": 62000,
+        "multi_qubit_gates": 40000,
+        "cx_count": 40000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.034
+    },
+    "qiskit_opt1": {
+      "method": "qiskit_opt1",
+      "family": "qaoa_ring",
+      "input": {
+        "num_qubits": 20,
+        "total_gates": 100000,
+        "depth": 62000,
+        "multi_qubit_gates": 40000,
+        "cx_count": 40000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 20,
+        "total_gates": 100000,
+        "depth": 62000,
+        "multi_qubit_gates": 40000,
+        "cx_count": 40000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.08
+    },
+    "qiskit_opt3": {
+      "method": "qiskit_opt3",
+      "family": "qaoa_ring",
+      "input": {
+        "num_qubits": 20,
+        "total_gates": 100000,
+        "depth": 62000,
+        "multi_qubit_gates": 40000,
+        "cx_count": 40000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 20,
+        "total_gates": 100000,
+        "depth": 62000,
+        "multi_qubit_gates": 40000,
+        "cx_count": 40000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.397
+    },
+    "qiskit_commutative_inverse": {
+      "method": "qiskit_commutative_inverse",
+      "family": "qaoa_ring",
+      "input": {
+        "num_qubits": 20,
+        "total_gates": 100000,
+        "depth": 62000,
+        "multi_qubit_gates": 40000,
+        "cx_count": 40000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 20,
+        "total_gates": 100000,
+        "depth": 62000,
+        "multi_qubit_gates": 40000,
+        "cx_count": 40000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.531
+    },
+    "tket_full_peephole": {
+      "method": "tket_full_peephole",
+      "family": "qaoa_ring",
+      "input": {
+        "num_qubits": 20,
+        "total_gates": 100000,
+        "depth": 62000,
+        "multi_qubit_gates": 40000,
+        "cx_count": 40000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "status": "unavailable",
+      "error": "No module named 'pytket.extensions'"
+    },
+    "baseline_ucc": {
+      "method": "baseline_ucc",
+      "family": "qaoa_ring",
+      "input": {
+        "num_qubits": 20,
+        "total_gates": 100000,
+        "depth": 62000,
+        "multi_qubit_gates": 40000,
+        "cx_count": 40000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 20,
+        "total_gates": 300055,
+        "depth": 163055,
+        "multi_qubit_gates": 40000,
+        "cx_count": 40000,
+        "gate_types": [
+          "cx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 1.612
+    },
+    "optimized_ucc": {
+      "method": "optimized_ucc",
+      "family": "qaoa_ring",
+      "input": {
+        "num_qubits": 20,
+        "total_gates": 100000,
+        "depth": 62000,
+        "multi_qubit_gates": 40000,
+        "cx_count": 40000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 20,
+        "total_gates": 100000,
+        "depth": 62000,
+        "multi_qubit_gates": 40000,
+        "cx_count": 40000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.116
+    }
+  },
+  "grover_mirrored": {
+    "translation_only": {
+      "method": "translation_only",
+      "family": "grover_mirrored",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 20001,
+        "multi_qubit_gates": 4000,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "mcx",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 1370000,
+        "depth": 840009,
+        "multi_qubit_gates": 492000,
+        "cx_count": 492000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 2.538
+    },
+    "qiskit_opt0": {
+      "method": "qiskit_opt0",
+      "family": "grover_mirrored",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 20001,
+        "multi_qubit_gates": 4000,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "mcx",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 1370000,
+        "depth": 840009,
+        "multi_qubit_gates": 492000,
+        "cx_count": 492000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 2.616
+    },
+    "qiskit_opt1": {
+      "method": "qiskit_opt1",
+      "family": "grover_mirrored",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 20001,
+        "multi_qubit_gates": 4000,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "mcx",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 1184009,
+        "depth": 772009,
+        "multi_qubit_gates": 468000,
+        "cx_count": 468000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 4.517
+    },
+    "qiskit_opt3": {
+      "method": "qiskit_opt3",
+      "family": "grover_mirrored",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 20001,
+        "multi_qubit_gates": 4000,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "mcx",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 1158011,
+        "depth": 762010,
+        "multi_qubit_gates": 468000,
+        "cx_count": 468000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 10.67
+    },
+    "qiskit_commutative_inverse": {
+      "method": "qiskit_commutative_inverse",
+      "family": "grover_mirrored",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 20001,
+        "multi_qubit_gates": 4000,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "mcx",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 1334004,
+        "depth": 836009,
+        "multi_qubit_gates": 492000,
+        "cx_count": 492000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 3.108
+    },
+    "tket_full_peephole": {
+      "method": "tket_full_peephole",
+      "family": "grover_mirrored",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 20001,
+        "multi_qubit_gates": 4000,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "mcx",
+          "x"
+        ]
+      },
+      "status": "unavailable",
+      "error": "No module named 'pytket.extensions'"
+    },
+    "baseline_ucc": {
+      "method": "baseline_ucc",
+      "family": "grover_mirrored",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 20001,
+        "multi_qubit_gates": 4000,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "mcx",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 4122006,
+        "depth": 2166021,
+        "multi_qubit_gates": 468000,
+        "cx_count": 468000,
+        "gate_types": [
+          "cx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 29.692
+    },
+    "optimized_ucc": {
+      "method": "optimized_ucc",
+      "family": "grover_mirrored",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 20001,
+        "multi_qubit_gates": 4000,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "mcx",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 1158011,
+        "depth": 762010,
+        "multi_qubit_gates": 468000,
+        "cx_count": 468000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 13.191
+    }
+  }
+}

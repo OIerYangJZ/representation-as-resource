@@ -1,0 +1,51 @@
+{
+  "artifact_commit": "local-uncommitted-repaired-manuscript",
+  "bridge_sequence": "structured region IR -> exact optional aggregation -> {cx,rz,rx,h}; optional qiskit opt3",
+  "campaign": "NF25-natural-factorial-20260801",
+  "cells": 1120,
+  "completed": 1120,
+  "config": {
+    "backend_topology": "all-to-all logical; negative_routing contains explicit swaps",
+    "certificate": "exact region phase tables and unchanged boundary sequence; preset uses Qiskit pass contract",
+    "design": "full 2^5 factorial for every workload and seed",
+    "factors": [
+      "semantic_lift",
+      "selector",
+      "cache",
+      "preset",
+      "projected_selection"
+    ],
+    "memory_cap_bytes": 2147483648,
+    "seeds": [
+      20260801,
+      20260802,
+      20260803,
+      20260804,
+      20260805
+    ],
+    "target_basis": [
+      "cx",
+      "rz",
+      "rx",
+      "h"
+    ],
+    "timeout_s": 5.0,
+    "workloads": [
+      "qaoa_ising",
+      "diagonal_hamiltonian",
+      "qft_arithmetic",
+      "qpe_controlled_powers",
+      "ising_trotter",
+      "negative_random_clifford",
+      "negative_routing"
+    ]
+  },
+  "immutable_config_sha256": "b2ceaeb29e4fc9c10f635ffcb74d71ff24c1bd310a8f1b0b7d8d9006de1a6859",
+  "runner": "scripts/run_natural_factorial_ablation.py",
+  "runner_sha256": "0e77bc762969edf579728fb68508a1df76ad51c7e21ebc34502b255c101ee24b",
+  "schema": "ucc.campaign-manifest.v1",
+  "tool_versions": {
+    "python": "3.13.12",
+    "qiskit": "2.4.0"
+  }
+}

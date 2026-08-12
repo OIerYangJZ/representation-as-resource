@@ -1,0 +1,71 @@
+{
+  "bit_rule": "bits = 8 * os.stat(file).st_size; no count-to-bit conversion",
+  "codec": {
+    "schema": "ucc.accounting",
+    "version": 1
+  },
+  "cut_id": "cut-002",
+  "description": {
+    "dictionary_bytes": 0,
+    "dictionary_charged_in_cut": false,
+    "dictionary_sha256": null,
+    "mode": "self_contained",
+    "note": "conditional dictionaries are named public side information; self-contained mode forbids them"
+  },
+  "files": {
+    "committed": {
+      "bits": 504,
+      "bytes": 63,
+      "codec_type": "CommittedOutputPrefix",
+      "path": "committed-prefix.bin",
+      "role": "B_com",
+      "sha256": "0dd78dd9664560ea8ec22285fc758018d17e2ddb6ab9bd5c902f2862d6d19237"
+    },
+    "control": {
+      "bits": 728,
+      "bytes": 91,
+      "codec_type": "ControlState",
+      "path": "control.uccbin",
+      "role": "B_control",
+      "sha256": "b193bba4a5bdd5ef5b8400ec517de997fc20d130660bef966b6750f1b6080c90"
+    },
+    "ir": {
+      "bits": 1712,
+      "bytes": 214,
+      "codec_type": "IRField",
+      "path": "ir.uccbin",
+      "role": "B_ir",
+      "sha256": "f9070775df390b815db10bb2e3a045fb72fcc75957343e28b7923cca125a7209"
+    },
+    "parameter": {
+      "bits": 600,
+      "bytes": 75,
+      "codec_type": "ParameterLedger",
+      "path": "parameter.uccbin",
+      "role": "B_parameter",
+      "sha256": "b4a1f4fddb92f67dc5dcf23ae614680f8a71f00eddc5b94686c4472f8e9758d3"
+    },
+    "store": {
+      "bits": 344,
+      "bytes": 43,
+      "codec_type": "StoreState",
+      "path": "store.uccbin",
+      "role": "B_store",
+      "sha256": "298fb8f454f812ab403a306d79d8650ef6e9fdda5de6a2bc91251d305bc9cedd"
+    },
+    "window": {
+      "bits": 224,
+      "bytes": 28,
+      "codec_type": "LiveWindow",
+      "path": "window.uccbin",
+      "role": "B_window",
+      "sha256": "16a5bfad764a89771d568eddc32e8606b8fca07adcb23e819ef4ff23626da8f1"
+    }
+  },
+  "passes": {
+    "count": 2,
+    "index": 1
+  },
+  "run_id": "example",
+  "schema": "ucc.resource-accounting.v1"
+}

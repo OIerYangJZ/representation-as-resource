@@ -1,0 +1,56 @@
+[
+  {
+    "actual_input_gates": 99998,
+    "block_gate_count": 10,
+    "cx_count": 12,
+    "depth": 24,
+    "experiment_family": "correctness_extension",
+    "gate_count": 42,
+    "gate_types": [
+      "cx",
+      "h",
+      "rz"
+    ],
+    "instance_name": "fourier_phase_sandwich_n4_r9999",
+    "is_equivalent_up_to_global_phase": true,
+    "method_key": "semantic_ucc",
+    "n": 4,
+    "notes": "ucc.compile with Fourier IR enabled; Operator.equiv=True",
+    "num_qubits": 4,
+    "paper_method_name": "semantic UCC (Fourier-layer IR enabled)",
+    "r": 9999,
+    "rz_rotation_count": 22,
+    "size": 99998,
+    "source_command_or_script": "research/round3_protocol_repair/run_round3_protocol_repair.py --worker --experiment-family correctness_extension --method-key semantic_ucc --timeout-s 600 --repeats 9999",
+    "status": "completed",
+    "timeout_s": 600,
+    "wall_time_s": 31.916
+  },
+  {
+    "actual_input_gates": 99998,
+    "block_gate_count": 10,
+    "cx_count": 12,
+    "depth": 24,
+    "experiment_family": "correctness_extension",
+    "gate_count": 42,
+    "gate_types": [
+      "cx",
+      "h",
+      "rz"
+    ],
+    "instance_name": "fourier_phase_sandwich_n4_r9999",
+    "is_equivalent_up_to_global_phase": true,
+    "method_key": "phase_poly_reference",
+    "n": 4,
+    "notes": "aggregated 10 active commuting phase terms before lowering; Operator.equiv=True",
+    "num_qubits": 4,
+    "paper_method_name": "phase-polynomial reference",
+    "r": 9999,
+    "rz_rotation_count": 22,
+    "size": 99998,
+    "source_command_or_script": "research/round3_protocol_repair/run_round3_protocol_repair.py --worker --experiment-family correctness_extension --method-key phase_poly_reference --timeout-s 600 --repeats 9999",
+    "status": "completed",
+    "timeout_s": 600,
+    "wall_time_s": 4.036
+  }
+]

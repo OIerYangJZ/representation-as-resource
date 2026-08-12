@@ -1,0 +1,109 @@
+# ---------------------------------------------------------------------------
+# Python environments and build output
+# ---------------------------------------------------------------------------
+.venv/
+venv/
+env/
+.python-version
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+_build/
+jupyter_execute/
+docs/build/
+
+# ---------------------------------------------------------------------------
+# Test, lint, and type-checker caches
+# ---------------------------------------------------------------------------
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# ---------------------------------------------------------------------------
+# LaTeX intermediates.
+# .bbl is tracked on purpose: arXiv requires it at submission.
+# .pdf builds are tracked on purpose: they are the release deliverable.
+# ---------------------------------------------------------------------------
+*.aux
+*.log
+*.blg
+*.fls
+*.fdb_latexmk
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.bcf
+*.run.xml
+*Notes.bib
+
+# ---------------------------------------------------------------------------
+# Scratch space and raw campaign trees.
+# Raw run trees are provenance, not canonical data: data/manifest.yaml is the
+# canonical registry and data/frozen/ holds the canonical datasets.
+# w7-fixed-total-error is re-included because PaperDraft/appendix/appendix_B.tex
+# cites that path directly.
+# ---------------------------------------------------------------------------
+tmp/
+out/
+data/runs/*
+!data/runs/w7-fixed-total-error-20260803-local/
+
+# ---------------------------------------------------------------------------
+# Vendored third-party tooling.
+# staq and feynman are external projects used by the round-6 validation; their
+# upstream commits are pinned in the README instead of vendored here.
+# ---------------------------------------------------------------------------
+research/round6_major_revision/tools/
+
+# ---------------------------------------------------------------------------
+# Review, packaging, and submission-round artifacts
+# ---------------------------------------------------------------------------
+*_FABLE_BUNDLE/
+*_FABLE_BUNDLE.zip
+*_UPLOAD/
+overleaf_bundle/
+overleaf_bundle.zip
+review_bundles/
+*.zip.sha256
+
+# ---------------------------------------------------------------------------
+# Editor and OS noise
+# ---------------------------------------------------------------------------
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*~
+
+# ---------------------------------------------------------------------------
+# Notebooks and plotting scratch
+# ---------------------------------------------------------------------------
+*.ipynb_checkpoints
+.jupyter_cache/
+
+# ---------------------------------------------------------------------------
+# Secrets and local overrides.
+# Nothing of this kind is currently in the tree; these are guardrails.
+# ---------------------------------------------------------------------------
+.env
+.env.*
+*.pem
+*.key
+credentials*
+.netrc
+.act*
+.tmp.drivedownload/
+.tmp.driveupload/

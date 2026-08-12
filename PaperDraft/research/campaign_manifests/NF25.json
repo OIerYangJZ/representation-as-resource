@@ -1,0 +1,8 @@
+{
+  "campaign": "NF25-natural-factorial-20260801",
+  "inherits": "logical_all_to_all_v1",
+  "manifest_path": "research/natural_factorial/campaign_manifest.json",
+  "manifest_sha256": "58cc6c66192982485c14812cd6ae3142a2cfbbd2f4d3f6ddb7aebc986455f7e7",
+  "reader_label_prefix": "NF25",
+  "schema": "ucc.campaign-link.v1"
+}

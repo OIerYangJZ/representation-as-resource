@@ -1,0 +1,452 @@
+[
+  {
+    "n_qubits": 4,
+    "target_gates": 4000,
+    "seed": 0,
+    "is_equivalent": true,
+    "compile_time_s": 7.805,
+    "equiv_check_time_s": 0.524,
+    "input_gates": 3998,
+    "output_gates": 42
+  },
+  {
+    "n_qubits": 4,
+    "target_gates": 4000,
+    "seed": 1,
+    "is_equivalent": true,
+    "compile_time_s": 8.644,
+    "equiv_check_time_s": 0.486,
+    "input_gates": 3998,
+    "output_gates": 42
+  },
+  {
+    "n_qubits": 4,
+    "target_gates": 4000,
+    "seed": 2,
+    "is_equivalent": true,
+    "compile_time_s": 5.696,
+    "equiv_check_time_s": 0.503,
+    "input_gates": 3998,
+    "output_gates": 42
+  },
+  {
+    "n_qubits": 4,
+    "target_gates": 4000,
+    "seed": 3,
+    "is_equivalent": true,
+    "compile_time_s": 5.944,
+    "equiv_check_time_s": 0.539,
+    "input_gates": 3998,
+    "output_gates": 42
+  },
+  {
+    "n_qubits": 4,
+    "target_gates": 4000,
+    "seed": 4,
+    "is_equivalent": true,
+    "compile_time_s": 7.277,
+    "equiv_check_time_s": 0.499,
+    "input_gates": 3998,
+    "output_gates": 42
+  },
+  {
+    "n_qubits": 4,
+    "target_gates": 10000,
+    "seed": 0,
+    "is_equivalent": true,
+    "compile_time_s": 33.197,
+    "equiv_check_time_s": 1.211,
+    "input_gates": 9998,
+    "output_gates": 42
+  },
+  {
+    "n_qubits": 4,
+    "target_gates": 10000,
+    "seed": 1,
+    "is_equivalent": true,
+    "compile_time_s": 42.906,
+    "equiv_check_time_s": 1.29,
+    "input_gates": 9998,
+    "output_gates": 42
+  },
+  {
+    "n_qubits": 4,
+    "target_gates": 10000,
+    "seed": 2,
+    "is_equivalent": true,
+    "compile_time_s": 24.647,
+    "equiv_check_time_s": 2.346,
+    "input_gates": 9998,
+    "output_gates": 42
+  },
+  {
+    "n_qubits": 4,
+    "target_gates": 10000,
+    "seed": 3,
+    "is_equivalent": true,
+    "compile_time_s": 20.591,
+    "equiv_check_time_s": 1.216,
+    "input_gates": 9998,
+    "output_gates": 42
+  },
+  {
+    "n_qubits": 4,
+    "target_gates": 10000,
+    "seed": 4,
+    "is_equivalent": true,
+    "compile_time_s": 29.517,
+    "equiv_check_time_s": 1.247,
+    "input_gates": 9998,
+    "output_gates": 42
+  },
+  {
+    "n_qubits": 4,
+    "target_gates": 20000,
+    "seed": 0,
+    "is_equivalent": true,
+    "compile_time_s": 126.265,
+    "equiv_check_time_s": 2.546,
+    "input_gates": 19998,
+    "output_gates": 42
+  },
+  {
+    "n_qubits": 4,
+    "target_gates": 20000,
+    "seed": 1,
+    "is_equivalent": true,
+    "compile_time_s": 131.484,
+    "equiv_check_time_s": 2.434,
+    "input_gates": 19998,
+    "output_gates": 42
+  },
+  {
+    "n_qubits": 4,
+    "target_gates": 20000,
+    "seed": 2,
+    "is_equivalent": true,
+    "compile_time_s": 73.81,
+    "equiv_check_time_s": 2.601,
+    "input_gates": 19998,
+    "output_gates": 42
+  },
+  {
+    "n_qubits": 4,
+    "target_gates": 20000,
+    "seed": 3,
+    "is_equivalent": true,
+    "compile_time_s": 72.024,
+    "equiv_check_time_s": 2.475,
+    "input_gates": 19998,
+    "output_gates": 42
+  },
+  {
+    "n_qubits": 4,
+    "target_gates": 20000,
+    "seed": 4,
+    "is_equivalent": true,
+    "compile_time_s": 125.544,
+    "equiv_check_time_s": 2.626,
+    "input_gates": 19998,
+    "output_gates": 42
+  },
+  {
+    "n_qubits": 5,
+    "target_gates": 4000,
+    "seed": 0,
+    "is_equivalent": true,
+    "compile_time_s": 5.908,
+    "equiv_check_time_s": 0.589,
+    "input_gates": 4000,
+    "output_gates": 65
+  },
+  {
+    "n_qubits": 5,
+    "target_gates": 4000,
+    "seed": 1,
+    "is_equivalent": true,
+    "compile_time_s": 5.917,
+    "equiv_check_time_s": 0.579,
+    "input_gates": 4000,
+    "output_gates": 65
+  },
+  {
+    "n_qubits": 5,
+    "target_gates": 4000,
+    "seed": 2,
+    "is_equivalent": true,
+    "compile_time_s": 6.804,
+    "equiv_check_time_s": 0.574,
+    "input_gates": 4000,
+    "output_gates": 65
+  },
+  {
+    "n_qubits": 5,
+    "target_gates": 4000,
+    "seed": 3,
+    "is_equivalent": true,
+    "compile_time_s": 7.626,
+    "equiv_check_time_s": 0.647,
+    "input_gates": 4000,
+    "output_gates": 65
+  },
+  {
+    "n_qubits": 5,
+    "target_gates": 4000,
+    "seed": 4,
+    "is_equivalent": true,
+    "compile_time_s": 7.347,
+    "equiv_check_time_s": 0.603,
+    "input_gates": 4000,
+    "output_gates": 65
+  },
+  {
+    "n_qubits": 5,
+    "target_gates": 10000,
+    "seed": 0,
+    "is_equivalent": true,
+    "compile_time_s": 25.854,
+    "equiv_check_time_s": 1.423,
+    "input_gates": 10000,
+    "output_gates": 65
+  },
+  {
+    "n_qubits": 5,
+    "target_gates": 10000,
+    "seed": 1,
+    "is_equivalent": true,
+    "compile_time_s": 25.595,
+    "equiv_check_time_s": 1.448,
+    "input_gates": 10000,
+    "output_gates": 65
+  },
+  {
+    "n_qubits": 5,
+    "target_gates": 10000,
+    "seed": 2,
+    "is_equivalent": true,
+    "compile_time_s": 27.454,
+    "equiv_check_time_s": 1.425,
+    "input_gates": 10000,
+    "output_gates": 65
+  },
+  {
+    "n_qubits": 5,
+    "target_gates": 10000,
+    "seed": 3,
+    "is_equivalent": true,
+    "compile_time_s": 25.129,
+    "equiv_check_time_s": 1.434,
+    "input_gates": 10000,
+    "output_gates": 65
+  },
+  {
+    "n_qubits": 5,
+    "target_gates": 10000,
+    "seed": 4,
+    "is_equivalent": true,
+    "compile_time_s": 36.903,
+    "equiv_check_time_s": 1.452,
+    "input_gates": 10000,
+    "output_gates": 65
+  },
+  {
+    "n_qubits": 5,
+    "target_gates": 20000,
+    "seed": 0,
+    "is_equivalent": true,
+    "compile_time_s": 67.826,
+    "equiv_check_time_s": 2.798,
+    "input_gates": 19990,
+    "output_gates": 65
+  },
+  {
+    "n_qubits": 5,
+    "target_gates": 20000,
+    "seed": 1,
+    "is_equivalent": true,
+    "compile_time_s": 68.395,
+    "equiv_check_time_s": 2.835,
+    "input_gates": 19990,
+    "output_gates": 65
+  },
+  {
+    "n_qubits": 5,
+    "target_gates": 20000,
+    "seed": 2,
+    "is_equivalent": true,
+    "compile_time_s": 67.008,
+    "equiv_check_time_s": 2.756,
+    "input_gates": 19990,
+    "output_gates": 65
+  },
+  {
+    "n_qubits": 5,
+    "target_gates": 20000,
+    "seed": 3,
+    "is_equivalent": true,
+    "compile_time_s": 72.852,
+    "equiv_check_time_s": 2.817,
+    "input_gates": 19990,
+    "output_gates": 65
+  },
+  {
+    "n_qubits": 5,
+    "target_gates": 20000,
+    "seed": 4,
+    "is_equivalent": true,
+    "compile_time_s": 111.068,
+    "equiv_check_time_s": 2.781,
+    "input_gates": 19990,
+    "output_gates": 65
+  },
+  {
+    "n_qubits": 6,
+    "target_gates": 4000,
+    "seed": 0,
+    "is_equivalent": true,
+    "compile_time_s": 5.637,
+    "equiv_check_time_s": 0.805,
+    "input_gates": 3981,
+    "output_gates": 93
+  },
+  {
+    "n_qubits": 6,
+    "target_gates": 4000,
+    "seed": 1,
+    "is_equivalent": true,
+    "compile_time_s": 5.737,
+    "equiv_check_time_s": 0.791,
+    "input_gates": 3981,
+    "output_gates": 93
+  },
+  {
+    "n_qubits": 6,
+    "target_gates": 4000,
+    "seed": 2,
+    "is_equivalent": true,
+    "compile_time_s": 5.605,
+    "equiv_check_time_s": 0.8,
+    "input_gates": 3981,
+    "output_gates": 93
+  },
+  {
+    "n_qubits": 6,
+    "target_gates": 4000,
+    "seed": 3,
+    "is_equivalent": true,
+    "compile_time_s": 6.921,
+    "equiv_check_time_s": 0.795,
+    "input_gates": 3981,
+    "output_gates": 93
+  },
+  {
+    "n_qubits": 6,
+    "target_gates": 4000,
+    "seed": 4,
+    "is_equivalent": true,
+    "compile_time_s": 6.848,
+    "equiv_check_time_s": 0.795,
+    "input_gates": 3981,
+    "output_gates": 93
+  },
+  {
+    "n_qubits": 6,
+    "target_gates": 10000,
+    "seed": 0,
+    "is_equivalent": true,
+    "compile_time_s": 19.127,
+    "equiv_check_time_s": 1.958,
+    "input_gates": 9987,
+    "output_gates": 93
+  },
+  {
+    "n_qubits": 6,
+    "target_gates": 10000,
+    "seed": 1,
+    "is_equivalent": true,
+    "compile_time_s": 21.421,
+    "equiv_check_time_s": 2.152,
+    "input_gates": 9987,
+    "output_gates": 93
+  },
+  {
+    "n_qubits": 6,
+    "target_gates": 10000,
+    "seed": 2,
+    "is_equivalent": true,
+    "compile_time_s": 20.084,
+    "equiv_check_time_s": 2.017,
+    "input_gates": 9987,
+    "output_gates": 93
+  },
+  {
+    "n_qubits": 6,
+    "target_gates": 10000,
+    "seed": 3,
+    "is_equivalent": true,
+    "compile_time_s": 27.437,
+    "equiv_check_time_s": 2.024,
+    "input_gates": 9987,
+    "output_gates": 93
+  },
+  {
+    "n_qubits": 6,
+    "target_gates": 10000,
+    "seed": 4,
+    "is_equivalent": true,
+    "compile_time_s": 27.368,
+    "equiv_check_time_s": 1.993,
+    "input_gates": 9987,
+    "output_gates": 93
+  },
+  {
+    "n_qubits": 6,
+    "target_gates": 20000,
+    "seed": 0,
+    "is_equivalent": true,
+    "compile_time_s": 64.426,
+    "equiv_check_time_s": 4.062,
+    "input_gates": 19983,
+    "output_gates": 93
+  },
+  {
+    "n_qubits": 6,
+    "target_gates": 20000,
+    "seed": 1,
+    "is_equivalent": true,
+    "compile_time_s": 72.858,
+    "equiv_check_time_s": 3.973,
+    "input_gates": 19983,
+    "output_gates": 93
+  },
+  {
+    "n_qubits": 6,
+    "target_gates": 20000,
+    "seed": 2,
+    "is_equivalent": true,
+    "compile_time_s": 69.295,
+    "equiv_check_time_s": 4.064,
+    "input_gates": 19983,
+    "output_gates": 93
+  },
+  {
+    "n_qubits": 6,
+    "target_gates": 20000,
+    "seed": 3,
+    "is_equivalent": true,
+    "compile_time_s": 104.56,
+    "equiv_check_time_s": 3.946,
+    "input_gates": 19983,
+    "output_gates": 93
+  },
+  {
+    "n_qubits": 6,
+    "target_gates": 20000,
+    "seed": 4,
+    "is_equivalent": true,
+    "compile_time_s": 97.98,
+    "equiv_check_time_s": 3.926,
+    "input_gates": 19983,
+    "output_gates": 93
+  }
+]

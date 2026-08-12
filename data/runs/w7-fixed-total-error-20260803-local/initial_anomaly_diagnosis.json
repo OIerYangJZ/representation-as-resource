@@ -1,0 +1,11 @@
+{
+  "schema": "ucc.qre.preflight-anomaly.v1",
+  "initial_rows": 144,
+  "initial_completed_valid": 96,
+  "initial_synthesis_error": 48,
+  "affected_pipeline": "semantic_first",
+  "affected_requested_gates": 4000,
+  "root_cause": "The staq exact-pi-over-4 branch emits Check flag = 1 and an exact Clifford+T word, but deliberately omits the approximate-branch error and T-count fields. The initial parser treated that documented output shape as a synthesis failure.",
+  "resolution": "Recognize the exact branch, count literal T tokens, assign zero synthesis error, retain checker_passed=true, and rerun the entire matrix.",
+  "points_deleted": false
+}

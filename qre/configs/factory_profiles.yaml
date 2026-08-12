@@ -1,0 +1,12 @@
+schema: ucc.qre.factory-grid.v1
+profiles:
+  - id: serial_1
+    requested_factories: 1
+  - id: modest_4
+    requested_factories: 4
+  - id: parallel_16
+    requested_factories: 16
+  - id: parallel_32
+    requested_factories: 32
+schedule: consume_one_T_state_per_factory_period_per_factory
+selection: all points retained; Pareto status is computed after measurement

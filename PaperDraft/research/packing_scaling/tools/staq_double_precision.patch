@@ -1,0 +1,15 @@
+diff --git a/qasmtools/include/qasmtools/ast/expr.hpp b/qasmtools/include/qasmtools/ast/expr.hpp
+--- a/qasmtools/include/qasmtools/ast/expr.hpp
++++ b/qasmtools/include/qasmtools/ast/expr.hpp
+@@
++#include <limits>
+@@
+-        os << std::setprecision(15) << value() << std::setprecision(ss);
++        os << std::setprecision(std::numeric_limits<double>::max_digits10)
++           << value() << std::setprecision(ss);
+diff --git a/qasmtools/include/qasmtools/parser/lexer.hpp b/qasmtools/include/qasmtools/parser/lexer.hpp
+--- a/qasmtools/include/qasmtools/parser/lexer.hpp
++++ b/qasmtools/include/qasmtools/parser/lexer.hpp
+@@
+-            return Token(tok_start, Token::Kind::real, str, std::stof(str));
++            return Token(tok_start, Token::Kind::real, str, std::stod(str));

@@ -1,0 +1,71 @@
+\documentclass[aps,prl,twocolumn,superscriptaddress,floatfix]{revtex4-2}
+% The body of a Letter should not exceed 3750 words, about 4 pages
+
+%%%%%%%%%%% My packages %%%%%%%%%%%
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage{adjustbox}
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+\usepackage[inkscapearea=page]{svg}
+\usepackage{soul}
+\usepackage[T1]{fontenc}
+\usepackage{amstext}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{appendix}
+\usepackage{multirow}
+\usepackage{physics}
+% \usepackage{xr-hyper} % 用于跨文件引用
+
+% % 关联主文件 main.tex (确保主文件名一致)
+% \externaldocument{supple}
+% --- 交叉引用设置开始 ---
+\usepackage{xr-hyper} % 必须放在 hyperref 之前
+\usepackage[bookmarks,bookmarksnumbered]{hyperref}
+\usepackage{bookmark}
+\hypersetup{colorlinks,allcolors=black}
+\externaldocument{supplement} % 关联补充材料 supplement.tex
+% --- 交叉引用设置结束 ---
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage[text]{esdiff}
+\usepackage{setspace}
+\usepackage[singlelinecheck=off]{subcaption}
+\usepackage{siunitx}
+\usepackage{xspace}
+\usepackage{lipsum}
+
+
+\begin{document}
+\title{}
+\author{}
+\email{}
+\affiliation{}
+\affiliation{}
+
+\begin{abstract}
+....
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+
+\section{...}
+
+
+\begin{acknowledgments}
+....
+\end{acknowledgments}
+
+\bibliography{PaperDraft/references} 
+\bibliographystyle{apsrev4-1}
+
+\end{document}

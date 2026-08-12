@@ -1,0 +1,245 @@
+{
+  "baseline_configs": [
+    {
+      "bridge": "direct Qiskit CNOT-Rz parity/phase table",
+      "category": "authors-reference",
+      "config_path": "baselines/configs/authors_reference.yaml",
+      "config_sha256": "0694641e1d8cd28254e5df3c187ad89d374d3e7c01971f207b071c4bb6f7a74c",
+      "id": "authors_phase_table_native",
+      "mode": "recommended_native",
+      "output_basis": "exact_phase_polynomial_ir",
+      "package": "repository",
+      "pass_sequence": [
+        "extract exact live parity masks",
+        "fold rational-pi coefficients modulo 2",
+        "serialize address-complete phase-polynomial IR",
+        "lower only for common output certificate"
+      ],
+      "semantic_capable": true,
+      "tool": "authors_exact_phase_table",
+      "tool_commit": "229eafdb4127ab98b2ad925a9657fa67510a12e7",
+      "tool_commit_source": "repository_git_revision",
+      "tool_version": "229eafdb4127ab98b2ad925a9657fa67510a12e7"
+    },
+    {
+      "bridge": "direct Qiskit CNOT-Rz parity/phase table",
+      "category": "authors-reference",
+      "config_path": "baselines/configs/authors_reference.yaml",
+      "config_sha256": "0694641e1d8cd28254e5df3c187ad89d374d3e7c01971f207b071c4bb6f7a74c",
+      "id": "authors_phase_table_unified",
+      "mode": "unified_target_basis",
+      "output_basis": [
+        "cx",
+        "rz",
+        "h"
+      ],
+      "package": "repository",
+      "pass_sequence": [
+        "extract exact live parity masks",
+        "fold rational-pi coefficients modulo 2",
+        "lower two-body phase gadgets to CX-Rz-CX"
+      ],
+      "semantic_capable": true,
+      "tool": "authors_exact_phase_table",
+      "tool_commit": "229eafdb4127ab98b2ad925a9657fa67510a12e7",
+      "tool_commit_source": "repository_git_revision",
+      "tool_version": "229eafdb4127ab98b2ad925a9657fa67510a12e7"
+    },
+    {
+      "bridge": "OpenQASM2 -> PyZX basic Circuit/ZX graph -> OpenQASM2 certificate bridge",
+      "category": "semantic-capable",
+      "config_path": "baselines/configs/pyzx_full_reduce.yaml",
+      "config_sha256": "fe42b19276a44abaaed8f24edd78c9e29f70a4bccd1085886178a6ec682bcae3",
+      "id": "pyzx_full_reduce_native",
+      "mode": "recommended_native",
+      "output_basis": "native_pyzx",
+      "package": "pyzx",
+      "pass_sequence": [
+        "Circuit.from_qasm(...).to_basic_gates()",
+        "circuit.to_graph()",
+        "simplify.full_reduce(graph, quiet=True)",
+        "extract_circuit(graph, quiet=True).to_basic_gates()"
+      ],
+      "semantic_capable": true,
+      "tool": "pyzx",
+      "tool_commit": null,
+      "tool_commit_source": "installed_distribution_has_no_vcs_commit_metadata",
+      "tool_version": "0.10.2"
+    },
+    {
+      "bridge": "OpenQASM2 -> PyZX basic Circuit/ZX graph -> OpenQASM2 certificate bridge",
+      "category": "semantic-capable",
+      "config_path": "baselines/configs/pyzx_full_reduce.yaml",
+      "config_sha256": "fe42b19276a44abaaed8f24edd78c9e29f70a4bccd1085886178a6ec682bcae3",
+      "id": "pyzx_full_reduce_unified",
+      "mode": "unified_target_basis",
+      "output_basis": [
+        "cx",
+        "rz",
+        "h"
+      ],
+      "package": "pyzx",
+      "pass_sequence": [
+        "Circuit.from_qasm(...).to_basic_gates()",
+        "circuit.to_graph()",
+        "simplify.full_reduce(graph, quiet=True)",
+        "extract_circuit(graph, quiet=True).to_basic_gates()",
+        "OpenQASM2 -> Qiskit transpile(basis_gates=[cx,rz,h], optimization_level=0)"
+      ],
+      "semantic_capable": true,
+      "tool": "pyzx",
+      "tool_commit": null,
+      "tool_commit_source": "installed_distribution_has_no_vcs_commit_metadata",
+      "tool_version": "0.10.2"
+    },
+    {
+      "bridge": "OpenQASM2 -> Qiskit QuantumCircuit",
+      "category": "local",
+      "config_path": "baselines/configs/qiskit_local.yaml",
+      "config_sha256": "bd17c0b0b7197a70a5d1e06f2f6e5e25a50cb882fecad8635813f3addf676762",
+      "id": "qiskit_opt3_native",
+      "mode": "recommended_native",
+      "output_basis": "native_qiskit",
+      "package": "qiskit",
+      "pass_sequence": [
+        "transpile(optimization_level=3, layout_method=trivial, routing_method=none, seed_transpiler=seed)"
+      ],
+      "semantic_capable": false,
+      "tool": "qiskit",
+      "tool_commit": null,
+      "tool_commit_source": "installed_distribution_has_no_vcs_commit_metadata",
+      "tool_version": "2.4.0"
+    },
+    {
+      "bridge": "OpenQASM2 -> Qiskit QuantumCircuit",
+      "category": "local",
+      "config_path": "baselines/configs/qiskit_local.yaml",
+      "config_sha256": "bd17c0b0b7197a70a5d1e06f2f6e5e25a50cb882fecad8635813f3addf676762",
+      "id": "qiskit_opt3_unified",
+      "mode": "unified_target_basis",
+      "output_basis": [
+        "cx",
+        "rz",
+        "h"
+      ],
+      "package": "qiskit",
+      "pass_sequence": [
+        "transpile(basis_gates=[cx,rz,h], optimization_level=3, layout_method=trivial, routing_method=none, seed_transpiler=seed)"
+      ],
+      "semantic_capable": false,
+      "tool": "qiskit",
+      "tool_commit": null,
+      "tool_commit_source": "installed_distribution_has_no_vcs_commit_metadata",
+      "tool_version": "2.4.0"
+    },
+    {
+      "bridge": "OpenQASM2 -> TKET Circuit -> OpenQASM2 certificate bridge",
+      "category": "semantic-capable",
+      "config_path": "baselines/configs/tket_paulisimp.yaml",
+      "config_sha256": "f3fdef370ac335b7cb05703f6ff3affc9d844e61f3ce9658aa6501b3f418fed3",
+      "id": "tket_paulisimp_native",
+      "mode": "recommended_native",
+      "output_basis": "native_tket",
+      "package": "pytket",
+      "pass_sequence": [
+        "DecomposeBoxes()",
+        "RemoveRedundancies()",
+        "PauliSimp(PauliSynthStrat.Sets, CXConfigType.Snake)",
+        "RemoveRedundancies()"
+      ],
+      "semantic_capable": true,
+      "tool": "pytket",
+      "tool_commit": null,
+      "tool_commit_source": "installed_distribution_has_no_vcs_commit_metadata",
+      "tool_version": "2.16.0"
+    },
+    {
+      "bridge": "OpenQASM2 -> TKET Circuit -> OpenQASM2 certificate bridge",
+      "category": "semantic-capable",
+      "config_path": "baselines/configs/tket_paulisimp.yaml",
+      "config_sha256": "f3fdef370ac335b7cb05703f6ff3affc9d844e61f3ce9658aa6501b3f418fed3",
+      "id": "tket_paulisimp_unified",
+      "mode": "unified_target_basis",
+      "output_basis": [
+        "cx",
+        "rz",
+        "h"
+      ],
+      "package": "pytket",
+      "pass_sequence": [
+        "DecomposeBoxes()",
+        "RemoveRedundancies()",
+        "PauliSimp(PauliSynthStrat.Sets, CXConfigType.Snake)",
+        "RemoveRedundancies()",
+        "AutoRebase({CX,Rz,H}, allow_swaps=False)",
+        "RemoveRedundancies()"
+      ],
+      "semantic_capable": true,
+      "tool": "pytket",
+      "tool_commit": null,
+      "tool_commit_source": "installed_distribution_has_no_vcs_commit_metadata",
+      "tool_version": "2.16.0"
+    }
+  ],
+  "campaign": "w5-external-baselines-20260803",
+  "campaign_config": {
+    "campaign": "w5-external-baselines-20260803",
+    "certificate_global_phase": "ignored",
+    "certificate_kind": "pyzx_rewrite_identity_up_to_global_phase_v1",
+    "formal_run_requires_explicit_flag": true,
+    "hardware": "logical_all_to_all_no_routing",
+    "input_campaign": "data/runs/w4-matched-representation-20260802",
+    "input_index": "data/runs/w4-matched-representation-20260802/representation_index.jsonl",
+    "memory_cap_bytes": 2147483648,
+    "registry": "baselines/BASELINE_REGISTRY.md",
+    "schema": "ucc.external-baseline-campaign-plan.v1",
+    "target_basis": [
+      "cx",
+      "rz",
+      "h"
+    ],
+    "timeout_s": 20.0,
+    "total_error_budget": 0.0
+  },
+  "dimensions": {
+    "baseline_configs": 8,
+    "representations": 216
+  },
+  "finished_unix": 1785735918.6748831,
+  "formal": true,
+  "git_revision": "229eafdb4127ab98b2ad925a9657fa67510a12e7",
+  "hostname": "YangJinseys-MacBook-Pro-8.local",
+  "input_index_sha256": "bcd7f6bc74b9efd0a8008317be4c1ddc934af725e576b682fed0de61433c4e69",
+  "matrix_complete": true,
+  "observed_cells": 1728,
+  "planned_cells": 1728,
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "python": "3.13.12",
+  "registry_sha256": "0002d5255e85c6c4dab1d4cc666f631d6b091b1ba4f4155366a3a1d1b4e24711",
+  "rows_path": "data/runs/w5-external-baselines-20260803/external_baseline_cells.jsonl",
+  "rows_sha256": "3c2e889d5bb4f4d04c78f2dcdeb2727a74f52aa3c9379fe8cddc3855563b19b8",
+  "schema": "ucc.external-baseline-campaign.v1",
+  "source_sha256": {
+    "baselines/BASELINE_REGISTRY.md": "0002d5255e85c6c4dab1d4cc666f631d6b091b1ba4f4155366a3a1d1b4e24711",
+    "baselines/configs/authors_reference.yaml": "0694641e1d8cd28254e5df3c187ad89d374d3e7c01971f207b071c4bb6f7a74c",
+    "baselines/configs/campaign.yaml": "214ec86b37b391fc2bc013ae7c740bec4f0c8ace39a07421af76f0f29565b1ca",
+    "baselines/configs/pyzx_full_reduce.yaml": "fe42b19276a44abaaed8f24edd78c9e29f70a4bccd1085886178a6ec682bcae3",
+    "baselines/configs/qiskit_local.yaml": "bd17c0b0b7197a70a5d1e06f2f6e5e25a50cb882fecad8635813f3addf676762",
+    "baselines/configs/tket_paulisimp.yaml": "f3fdef370ac335b7cb05703f6ff3affc9d844e61f3ce9658aa6501b3f418fed3",
+    "benchmarks/representation_generators.py": "eb9a832ccb52c2c78e34353db7bce44adb3d076d754adbe4485cf206974bc0cb",
+    "encoding/codec.py": "58f0613c0934022911cdb99ceffb9bf0e07aed3dc5953d9ee9366fdbec9194de",
+    "instrumentation/resource_accounting.py": "bcb5870da1a2ba974e899a4323dd7db7e51b62703afd41908ce5d79d584456c1",
+    "scripts/audit_bridge_loss.py": "2e9903ce1021c704cfbed6f74def538691fa158aa3d845fe52fb16873e1627ae",
+    "scripts/run_external_baselines.py": "9a331c9b630f7efc50272b101e535f435139feaa9a9360f0a0f4758be6c6a146",
+    "scripts/run_matched_matrix.py": "96c87137128442e77c99538412c94a66928b7a3e2079a1b6368794a546f402c6"
+  },
+  "started_unix": 1785735202.8516228,
+  "status_counts": {
+    "completed": 1695,
+    "correctness_failure": 0,
+    "memory_error": 0,
+    "predicate_error": 33,
+    "timeout": 0,
+    "unsupported": 0
+  }
+}

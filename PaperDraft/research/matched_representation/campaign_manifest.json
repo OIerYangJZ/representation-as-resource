@@ -1,0 +1,193 @@
+{
+  "artifact_commit": "local-uncommitted-repaired-manuscript",
+  "backend_topology": "all-to-all logical; no routing",
+  "bridge_sequences": {
+    "phase_polynomial_reference": "instrumented global phase table",
+    "pyzx_full_reduce": "external ZX/global-IR semantic",
+    "qiskit_opt3": "configured local/preset diagnostic",
+    "semantic_reference": "instrumented semantic reference",
+    "tket_paulisimp": "external Pauli-network/global semantic"
+  },
+  "campaign": "MR25-matched-representation-20260801",
+  "cells": 525,
+  "certificate": [
+    "exact CNOT--RZ phase table",
+    "dense unitary diagnostic for n<=8",
+    "PyZX rewrite-identity diagnostic otherwise"
+  ],
+  "completed": 516,
+  "config": {
+    "certificate_policy": [
+      "exact CNOT--RZ phase table",
+      "dense unitary diagnostic for n<=8",
+      "PyZX rewrite-identity diagnostic otherwise"
+    ],
+    "compilers": [
+      "semantic_reference",
+      "phase_polynomial_reference",
+      "qiskit_opt3",
+      "tket_paulisimp",
+      "pyzx_full_reduce"
+    ],
+    "dense_tolerance": {
+      "atol": 1e-09,
+      "rtol": 1e-09
+    },
+    "design": [
+      [
+        4,
+        2,
+        4,
+        0.25,
+        20260801
+      ],
+      [
+        8,
+        4,
+        8,
+        0.5,
+        20260802
+      ],
+      [
+        16,
+        8,
+        16,
+        0.75,
+        20260803
+      ],
+      [
+        32,
+        2,
+        8,
+        1.0,
+        20260804
+      ],
+      [
+        64,
+        4,
+        4,
+        0.5,
+        20260805
+      ],
+      [
+        6,
+        8,
+        16,
+        0.25,
+        20260801
+      ],
+      [
+        12,
+        2,
+        4,
+        0.75,
+        20260802
+      ],
+      [
+        24,
+        4,
+        8,
+        1.0,
+        20260803
+      ],
+      [
+        48,
+        8,
+        16,
+        0.5,
+        20260804
+      ],
+      [
+        5,
+        4,
+        8,
+        0.75,
+        20260805
+      ],
+      [
+        10,
+        8,
+        4,
+        1.0,
+        20260801
+      ],
+      [
+        20,
+        2,
+        16,
+        0.5,
+        20260802
+      ],
+      [
+        40,
+        4,
+        4,
+        0.25,
+        20260803
+      ],
+      [
+        7,
+        8,
+        8,
+        1.0,
+        20260804
+      ],
+      [
+        14,
+        2,
+        16,
+        0.75,
+        20260805
+      ]
+    ],
+    "error_budget": 0,
+    "ir_bytes": "max of framed QASM2 API input and framed QASM2 output; opaque library-private IR is charged indirectly by RSS",
+    "memory_cap_bytes": 2147483648,
+    "output_codec": "uvarint byte length plus UTF-8 OpenQASM 2",
+    "representations": [
+      "semantic_aggregate",
+      "contiguous_flat",
+      "round_robin_flat",
+      "random_commuting_order",
+      "masked_share_flat",
+      "locally_folded",
+      "bridge_qasm2"
+    ],
+    "target_basis": [
+      "cx",
+      "rz",
+      "h"
+    ],
+    "timeout_s": 30.0,
+    "token_codec": "UCCMR1 self-delimiting binary; tag, generator ID, arity, qubit addresses, exact rational-pi numerator/denominator, round, delimiter"
+  },
+  "immutable_config_sha256": "3d0eb3e59921d13ed16a035a68595517f4fc2f096ebde985aa00e24bf81f61f8",
+  "memory_cap_bytes": 2147483648,
+  "native_gate_set": [
+    "cx",
+    "rz",
+    "h"
+  ],
+  "runner": "scripts/run_matched_representation_benchmark.py",
+  "runner_sha256": "17e6a8edca0a8e0eee1a3407c46ff7105dd09c04199829aec40ea6bbda785c37",
+  "schema": "ucc.campaign-manifest.v1",
+  "seeds": [
+    20260801,
+    20260802,
+    20260803,
+    20260804,
+    20260805
+  ],
+  "status_counts": {
+    "certificate_unsupported": 9,
+    "completed": 516
+  },
+  "timeout_s": 30.0,
+  "tool_versions": {
+    "psutil": "7.1.3",
+    "pytket": "2.16.0",
+    "pyzx": "0.10.2",
+    "qiskit": "2.4.0",
+    "ucc": "0.4.12"
+  }
+}

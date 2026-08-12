@@ -1,0 +1,15 @@
+{
+  "artifact": {
+    "bits": 1456,
+    "bytes": 182,
+    "codec_type": "SemanticStream",
+    "path": "semantic.uccbin",
+    "role": "semantic_input",
+    "sha256": "967b97046b294e0b74740e4c0b76713cb5ebdb01ec848f5e40c99a01f04ddf8d"
+  },
+  "codec": {
+    "schema": "ucc.accounting",
+    "version": 1
+  },
+  "schema": "ucc.encoded-artifact.v1"
+}

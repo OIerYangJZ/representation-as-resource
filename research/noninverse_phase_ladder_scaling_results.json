@@ -1,0 +1,3908 @@
+{
+  "qft_forward_repeat": {
+    "4000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 4000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 4000,
+          "depth": 1600,
+          "multi_qubit_gates": 3200,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 13900,
+          "depth": 5000,
+          "multi_qubit_gates": 6800,
+          "cx_count": 6800,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.426
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 4000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 4000,
+          "depth": 1600,
+          "multi_qubit_gates": 3200,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 16000,
+          "depth": 5600,
+          "multi_qubit_gates": 6800,
+          "cx_count": 6800,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.451
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 4000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 4000,
+          "depth": 1600,
+          "multi_qubit_gates": 3200,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 32883,
+          "depth": 11423,
+          "multi_qubit_gates": 5303,
+          "cx_count": 5303,
+          "gate_types": [
+            "cx",
+            "rx",
+            "rz"
+          ]
+        },
+        "runtime_s": 35.231
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 4000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 4000,
+          "depth": 1600,
+          "multi_qubit_gates": 3200,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 16000,
+          "depth": 5600,
+          "multi_qubit_gates": 6800,
+          "cx_count": 6800,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 2.672
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 4000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 4000,
+          "depth": 1600,
+          "multi_qubit_gates": 3200,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 48304,
+          "depth": 12701,
+          "multi_qubit_gates": 6800,
+          "cx_count": 6800,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.475
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 4000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 4000,
+          "depth": 1600,
+          "multi_qubit_gates": 3200,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 13900,
+          "depth": 5000,
+          "multi_qubit_gates": 6800,
+          "cx_count": 6800,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.316
+      }
+    },
+    "10000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 10000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 10000,
+          "depth": 4000,
+          "multi_qubit_gates": 8000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 34750,
+          "depth": 12500,
+          "multi_qubit_gates": 17000,
+          "cx_count": 17000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.429
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 10000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 10000,
+          "depth": 4000,
+          "multi_qubit_gates": 8000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 40000,
+          "depth": 14000,
+          "multi_qubit_gates": 17000,
+          "cx_count": 17000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.453
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 10000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 10000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 10000,
+          "depth": 4000,
+          "multi_qubit_gates": 8000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 40000,
+          "depth": 14000,
+          "multi_qubit_gates": 17000,
+          "cx_count": 17000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 11.641
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 10000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 10000,
+          "depth": 4000,
+          "multi_qubit_gates": 8000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 120754,
+          "depth": 31751,
+          "multi_qubit_gates": 17000,
+          "cx_count": 17000,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.826
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 10000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 10000,
+          "depth": 4000,
+          "multi_qubit_gates": 8000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 34750,
+          "depth": 12500,
+          "multi_qubit_gates": 17000,
+          "cx_count": 17000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.267
+      }
+    },
+    "20000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 20000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 20000,
+          "depth": 8000,
+          "multi_qubit_gates": 16000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 69500,
+          "depth": 25000,
+          "multi_qubit_gates": 34000,
+          "cx_count": 34000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.544
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 20000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 20000,
+          "depth": 8000,
+          "multi_qubit_gates": 16000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 80000,
+          "depth": 28000,
+          "multi_qubit_gates": 34000,
+          "cx_count": 34000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.638
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 20000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 20000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 20000,
+          "depth": 8000,
+          "multi_qubit_gates": 16000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 80000,
+          "depth": 28000,
+          "multi_qubit_gates": 34000,
+          "cx_count": 34000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 41.68
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 20000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 20000,
+          "depth": 8000,
+          "multi_qubit_gates": 16000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 241504,
+          "depth": 63501,
+          "multi_qubit_gates": 34000,
+          "cx_count": 34000,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.478
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 20000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 20000,
+          "depth": 8000,
+          "multi_qubit_gates": 16000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 69500,
+          "depth": 25000,
+          "multi_qubit_gates": 34000,
+          "cx_count": 34000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.455
+      }
+    },
+    "50000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 50000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 50000,
+          "depth": 20000,
+          "multi_qubit_gates": 40000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 173750,
+          "depth": 62500,
+          "multi_qubit_gates": 85000,
+          "cx_count": 85000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.028
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 50000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 50000,
+          "depth": 20000,
+          "multi_qubit_gates": 40000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 200000,
+          "depth": 70000,
+          "multi_qubit_gates": 85000,
+          "cx_count": 85000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.232
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 50000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 50000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 50000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 50000,
+          "depth": 20000,
+          "multi_qubit_gates": 40000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 603754,
+          "depth": 158751,
+          "multi_qubit_gates": 85000,
+          "cx_count": 85000,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 2.965
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 50000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 50000,
+          "depth": 20000,
+          "multi_qubit_gates": 40000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 173750,
+          "depth": 62500,
+          "multi_qubit_gates": 85000,
+          "cx_count": 85000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 2.586
+      }
+    },
+    "100000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 100000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 100000,
+          "depth": 40000,
+          "multi_qubit_gates": 80000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 347500,
+          "depth": 125000,
+          "multi_qubit_gates": 170000,
+          "cx_count": 170000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.655
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 100000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 100000,
+          "depth": 40000,
+          "multi_qubit_gates": 80000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 400000,
+          "depth": 140000,
+          "multi_qubit_gates": 170000,
+          "cx_count": 170000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.96
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 100000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 100000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 100000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 100000,
+          "depth": 40000,
+          "multi_qubit_gates": 80000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 1207504,
+          "depth": 317501,
+          "multi_qubit_gates": 170000,
+          "cx_count": 170000,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 5.639
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "qft_forward_repeat",
+        "requested_target_gates": 100000,
+        "description": "Repeated forward-QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 100000,
+          "depth": 40000,
+          "multi_qubit_gates": 80000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 347500,
+          "depth": 125000,
+          "multi_qubit_gates": 170000,
+          "cx_count": 170000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 3.971
+      }
+    }
+  },
+  "qpe_style": {
+    "4000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "qpe_style",
+        "requested_target_gates": 4000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 4000,
+          "depth": 3200,
+          "multi_qubit_gates": 3040,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 8486,
+          "depth": 5602,
+          "multi_qubit_gates": 2402,
+          "cx_count": 2402,
+          "gate_types": [
+            "cx",
+            "h",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.537
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "qpe_style",
+        "requested_target_gates": 4000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 4000,
+          "depth": 3200,
+          "multi_qubit_gates": 3040,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 15840,
+          "depth": 11841,
+          "multi_qubit_gates": 6240,
+          "cx_count": 6240,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.284
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "qpe_style",
+        "requested_target_gates": 4000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 4000,
+          "depth": 3200,
+          "multi_qubit_gates": 3040,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 12278,
+          "depth": 7308,
+          "multi_qubit_gates": 1843,
+          "cx_count": 1843,
+          "gate_types": [
+            "cx",
+            "rx",
+            "rz"
+          ]
+        },
+        "runtime_s": 24.798
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "qpe_style",
+        "requested_target_gates": 4000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 4000,
+          "depth": 3200,
+          "multi_qubit_gates": 3040,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 15840,
+          "depth": 11841,
+          "multi_qubit_gates": 6240,
+          "cx_count": 6240,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.015
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "qpe_style",
+        "requested_target_gates": 4000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 4000,
+          "depth": 3200,
+          "multi_qubit_gates": 3040,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 18253,
+          "depth": 9451,
+          "multi_qubit_gates": 2402,
+          "cx_count": 2402,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.281
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "qpe_style",
+        "requested_target_gates": 4000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 4000,
+          "depth": 3200,
+          "multi_qubit_gates": 3040,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 6560,
+          "depth": 4401,
+          "multi_qubit_gates": 2560,
+          "cx_count": 2560,
+          "gate_types": [
+            "cx",
+            "h",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 4.465
+      }
+    },
+    "10000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "qpe_style",
+        "requested_target_gates": 10000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 10000,
+          "depth": 8000,
+          "multi_qubit_gates": 7600,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 21206,
+          "depth": 14002,
+          "multi_qubit_gates": 6002,
+          "cx_count": 6002,
+          "gate_types": [
+            "cx",
+            "h",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.867
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "qpe_style",
+        "requested_target_gates": 10000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 10000,
+          "depth": 8000,
+          "multi_qubit_gates": 7600,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 39600,
+          "depth": 29601,
+          "multi_qubit_gates": 15600,
+          "cx_count": 15600,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.398
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "qpe_style",
+        "requested_target_gates": 10000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "qpe_style",
+        "requested_target_gates": 10000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 10000,
+          "depth": 8000,
+          "multi_qubit_gates": 7600,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 39600,
+          "depth": 29601,
+          "multi_qubit_gates": 15600,
+          "cx_count": 15600,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 4.018
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "qpe_style",
+        "requested_target_gates": 10000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 10000,
+          "depth": 8000,
+          "multi_qubit_gates": 7600,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 45613,
+          "depth": 23611,
+          "multi_qubit_gates": 6002,
+          "cx_count": 6002,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.448
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "qpe_style",
+        "requested_target_gates": 10000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 10000,
+          "depth": 8000,
+          "multi_qubit_gates": 7600,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 16440,
+          "depth": 11001,
+          "multi_qubit_gates": 6020,
+          "cx_count": 6020,
+          "gate_types": [
+            "cx",
+            "h",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.015
+      }
+    },
+    "20000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "qpe_style",
+        "requested_target_gates": 20000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 20000,
+          "depth": 16000,
+          "multi_qubit_gates": 15200,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 42406,
+          "depth": 28002,
+          "multi_qubit_gates": 12002,
+          "cx_count": 12002,
+          "gate_types": [
+            "cx",
+            "h",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 6.27
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "qpe_style",
+        "requested_target_gates": 20000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 20000,
+          "depth": 16000,
+          "multi_qubit_gates": 15200,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 79200,
+          "depth": 59201,
+          "multi_qubit_gates": 31200,
+          "cx_count": 31200,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.554
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "qpe_style",
+        "requested_target_gates": 20000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "qpe_style",
+        "requested_target_gates": 20000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 20000,
+          "depth": 16000,
+          "multi_qubit_gates": 15200,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 79200,
+          "depth": 59201,
+          "multi_qubit_gates": 31200,
+          "cx_count": 31200,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 14.255
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "qpe_style",
+        "requested_target_gates": 20000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 20000,
+          "depth": 16000,
+          "multi_qubit_gates": 15200,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 91213,
+          "depth": 47211,
+          "multi_qubit_gates": 12002,
+          "cx_count": 12002,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.704
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "qpe_style",
+        "requested_target_gates": 20000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 20000,
+          "depth": 16000,
+          "multi_qubit_gates": 15200,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 32880,
+          "depth": 22001,
+          "multi_qubit_gates": 12040,
+          "cx_count": 12040,
+          "gate_types": [
+            "cx",
+            "h",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.375
+      }
+    },
+    "50000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "qpe_style",
+        "requested_target_gates": 50000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 50000,
+          "depth": 40000,
+          "multi_qubit_gates": 38000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 106006,
+          "depth": 70002,
+          "multi_qubit_gates": 30002,
+          "cx_count": 30002,
+          "gate_types": [
+            "cx",
+            "h",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 36.272
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "qpe_style",
+        "requested_target_gates": 50000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 50000,
+          "depth": 40000,
+          "multi_qubit_gates": 38000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 198000,
+          "depth": 148001,
+          "multi_qubit_gates": 78000,
+          "cx_count": 78000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.082
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "qpe_style",
+        "requested_target_gates": 50000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "qpe_style",
+        "requested_target_gates": 50000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "qpe_style",
+        "requested_target_gates": 50000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 50000,
+          "depth": 40000,
+          "multi_qubit_gates": 38000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 228013,
+          "depth": 118011,
+          "multi_qubit_gates": 30002,
+          "cx_count": 30002,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.422
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "qpe_style",
+        "requested_target_gates": 50000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 50000,
+          "depth": 40000,
+          "multi_qubit_gates": 38000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 82200,
+          "depth": 55001,
+          "multi_qubit_gates": 30100,
+          "cx_count": 30100,
+          "gate_types": [
+            "cx",
+            "h",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 2.574
+      }
+    },
+    "100000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "qpe_style",
+        "requested_target_gates": 100000,
+        "status": "timeout",
+        "timeout_s": 60
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "qpe_style",
+        "requested_target_gates": 100000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 100000,
+          "depth": 80000,
+          "multi_qubit_gates": 76000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 396000,
+          "depth": 296001,
+          "multi_qubit_gates": 156000,
+          "cx_count": 156000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.952
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "qpe_style",
+        "requested_target_gates": 100000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "qpe_style",
+        "requested_target_gates": 100000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "qpe_style",
+        "requested_target_gates": 100000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 100000,
+          "depth": 80000,
+          "multi_qubit_gates": 76000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 456013,
+          "depth": 236011,
+          "multi_qubit_gates": 60002,
+          "cx_count": 60002,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 2.861
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "qpe_style",
+        "requested_target_gates": 100000,
+        "description": "Existing QPE-style phase-ladder family; nontrivial but not the direct QFT-inverse cancellation family.",
+        "input": {
+          "num_qubits": 5,
+          "total_gates": 100000,
+          "depth": 80000,
+          "multi_qubit_gates": 76000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 5,
+          "total_gates": 164400,
+          "depth": 110001,
+          "multi_qubit_gates": 60200,
+          "cx_count": 60200,
+          "gate_types": [
+            "cx",
+            "h",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 4.993
+      }
+    }
+  },
+  "fourier_phase_sandwich": {
+    "4000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 4000,
+        "description": "Non-inverse Fourier-style H \u00b7 D^r \u00b7 H family with a repeated commuting diagonal phase-polynomial middle layer.",
+        "input": {
+          "num_qubits": 4,
+          "total_gates": 3998,
+          "depth": 1998,
+          "multi_qubit_gates": 2394,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "rz"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 4,
+          "total_gates": 9588,
+          "depth": 5593,
+          "multi_qubit_gates": 4788,
+          "cx_count": 4788,
+          "gate_types": [
+            "cx",
+            "h",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.397
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 4000,
+        "description": "Non-inverse Fourier-style H \u00b7 D^r \u00b7 H family with a repeated commuting diagonal phase-polynomial middle layer.",
+        "input": {
+          "num_qubits": 4,
+          "total_gates": 3998,
+          "depth": 1998,
+          "multi_qubit_gates": 2394,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "rz"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 4,
+          "total_gates": 13574,
+          "depth": 6392,
+          "multi_qubit_gates": 4788,
+          "cx_count": 4788,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 9.526
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 4000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 4000,
+        "description": "Non-inverse Fourier-style H \u00b7 D^r \u00b7 H family with a repeated commuting diagonal phase-polynomial middle layer.",
+        "input": {
+          "num_qubits": 4,
+          "total_gates": 3998,
+          "depth": 1998,
+          "multi_qubit_gates": 2394,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "rz"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 4,
+          "total_gates": 13574,
+          "depth": 6392,
+          "multi_qubit_gates": 4788,
+          "cx_count": 4788,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.95
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 4000,
+        "description": "Non-inverse Fourier-style H \u00b7 D^r \u00b7 H family with a repeated commuting diagonal phase-polynomial middle layer.",
+        "input": {
+          "num_qubits": 4,
+          "total_gates": 3998,
+          "depth": 1998,
+          "multi_qubit_gates": 2394,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "rz"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 4,
+          "total_gates": 35117,
+          "depth": 14374,
+          "multi_qubit_gates": 4788,
+          "cx_count": 4788,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.852
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 4000,
+        "description": "Non-inverse Fourier-style H \u00b7 D^r \u00b7 H family with a repeated commuting diagonal phase-polynomial middle layer.",
+        "input": {
+          "num_qubits": 4,
+          "total_gates": 3998,
+          "depth": 1998,
+          "multi_qubit_gates": 2394,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "rz"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 4,
+          "total_gates": 42,
+          "depth": 24,
+          "multi_qubit_gates": 12,
+          "cx_count": 12,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 2.143
+      }
+    },
+    "10000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 10000,
+        "description": "Non-inverse Fourier-style H \u00b7 D^r \u00b7 H family with a repeated commuting diagonal phase-polynomial middle layer.",
+        "input": {
+          "num_qubits": 4,
+          "total_gates": 9998,
+          "depth": 4998,
+          "multi_qubit_gates": 5994,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "rz"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 4,
+          "total_gates": 23988,
+          "depth": 13993,
+          "multi_qubit_gates": 11988,
+          "cx_count": 11988,
+          "gate_types": [
+            "cx",
+            "h",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 7.45
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 10000,
+        "description": "Non-inverse Fourier-style H \u00b7 D^r \u00b7 H family with a repeated commuting diagonal phase-polynomial middle layer.",
+        "input": {
+          "num_qubits": 4,
+          "total_gates": 9998,
+          "depth": 4998,
+          "multi_qubit_gates": 5994,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "rz"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 4,
+          "total_gates": 33974,
+          "depth": 15992,
+          "multi_qubit_gates": 11988,
+          "cx_count": 11988,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 58.157
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 10000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 10000,
+        "description": "Non-inverse Fourier-style H \u00b7 D^r \u00b7 H family with a repeated commuting diagonal phase-polynomial middle layer.",
+        "input": {
+          "num_qubits": 4,
+          "total_gates": 9998,
+          "depth": 4998,
+          "multi_qubit_gates": 5994,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "rz"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 4,
+          "total_gates": 33974,
+          "depth": 15992,
+          "multi_qubit_gates": 11988,
+          "cx_count": 11988,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 10.176
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 10000,
+        "description": "Non-inverse Fourier-style H \u00b7 D^r \u00b7 H family with a repeated commuting diagonal phase-polynomial middle layer.",
+        "input": {
+          "num_qubits": 4,
+          "total_gates": 9998,
+          "depth": 4998,
+          "multi_qubit_gates": 5994,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "rz"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 4,
+          "total_gates": 87916,
+          "depth": 35973,
+          "multi_qubit_gates": 11988,
+          "cx_count": 11988,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 3.85
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 10000,
+        "description": "Non-inverse Fourier-style H \u00b7 D^r \u00b7 H family with a repeated commuting diagonal phase-polynomial middle layer.",
+        "input": {
+          "num_qubits": 4,
+          "total_gates": 9998,
+          "depth": 4998,
+          "multi_qubit_gates": 5994,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "rz"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 4,
+          "total_gates": 42,
+          "depth": 24,
+          "multi_qubit_gates": 12,
+          "cx_count": 12,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 9.859
+      }
+    },
+    "20000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 20000,
+        "description": "Non-inverse Fourier-style H \u00b7 D^r \u00b7 H family with a repeated commuting diagonal phase-polynomial middle layer.",
+        "input": {
+          "num_qubits": 4,
+          "total_gates": 19998,
+          "depth": 9998,
+          "multi_qubit_gates": 11994,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "rz"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 4,
+          "total_gates": 47988,
+          "depth": 27993,
+          "multi_qubit_gates": 23988,
+          "cx_count": 23988,
+          "gate_types": [
+            "cx",
+            "h",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 29.0
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 20000,
+        "status": "timeout",
+        "timeout_s": 60
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 20000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 20000,
+        "description": "Non-inverse Fourier-style H \u00b7 D^r \u00b7 H family with a repeated commuting diagonal phase-polynomial middle layer.",
+        "input": {
+          "num_qubits": 4,
+          "total_gates": 19998,
+          "depth": 9998,
+          "multi_qubit_gates": 11994,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "rz"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 4,
+          "total_gates": 67974,
+          "depth": 31992,
+          "multi_qubit_gates": 23988,
+          "cx_count": 23988,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 39.756
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 20000,
+        "description": "Non-inverse Fourier-style H \u00b7 D^r \u00b7 H family with a repeated commuting diagonal phase-polynomial middle layer.",
+        "input": {
+          "num_qubits": 4,
+          "total_gates": 19998,
+          "depth": 9998,
+          "multi_qubit_gates": 11994,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "rz"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 4,
+          "total_gates": 175917,
+          "depth": 71974,
+          "multi_qubit_gates": 23988,
+          "cx_count": 23988,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 14.244
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 20000,
+        "description": "Non-inverse Fourier-style H \u00b7 D^r \u00b7 H family with a repeated commuting diagonal phase-polynomial middle layer.",
+        "input": {
+          "num_qubits": 4,
+          "total_gates": 19998,
+          "depth": 9998,
+          "multi_qubit_gates": 11994,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "rz"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 4,
+          "total_gates": 42,
+          "depth": 24,
+          "multi_qubit_gates": 12,
+          "cx_count": 12,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 37.002
+      }
+    },
+    "50000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 50000,
+        "status": "timeout",
+        "timeout_s": 60
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 50000,
+        "status": "timeout",
+        "timeout_s": 90
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 50000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 50000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 50000,
+        "status": "timeout",
+        "timeout_s": 60
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 50000,
+        "description": "Non-inverse Fourier-style H \u00b7 D^r \u00b7 H family with a repeated commuting diagonal phase-polynomial middle layer.",
+        "input": {
+          "num_qubits": 4,
+          "total_gates": 49998,
+          "depth": 24998,
+          "multi_qubit_gates": 29994,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "rz"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 4,
+          "total_gates": 42,
+          "depth": 24,
+          "multi_qubit_gates": 12,
+          "cx_count": 12,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 20.484
+      }
+    },
+    "100000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 100000,
+        "status": "timeout",
+        "timeout_s": 60
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 100000,
+        "status": "timeout",
+        "timeout_s": 90
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 100000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 100000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 100000,
+        "status": "timeout",
+        "timeout_s": 60
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "fourier_phase_sandwich",
+        "requested_target_gates": 100000,
+        "description": "Non-inverse Fourier-style H \u00b7 D^r \u00b7 H family with a repeated commuting diagonal phase-polynomial middle layer.",
+        "input": {
+          "num_qubits": 4,
+          "total_gates": 99998,
+          "depth": 49998,
+          "multi_qubit_gates": 59994,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "rz"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 4,
+          "total_gates": 42,
+          "depth": 24,
+          "multi_qubit_gates": 12,
+          "cx_count": 12,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 27.207
+      }
+    }
+  },
+  "algorithmic_qft": {
+    "4000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 4000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 4000,
+          "depth": 1600,
+          "multi_qubit_gates": 3200,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 13900,
+          "depth": 5200,
+          "multi_qubit_gates": 6800,
+          "cx_count": 6800,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.299
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 4000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 4000,
+          "depth": 1600,
+          "multi_qubit_gates": 3200,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 16000,
+          "depth": 5800,
+          "multi_qubit_gates": 6800,
+          "cx_count": 6800,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.328
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 4000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 4000,
+          "depth": 1600,
+          "multi_qubit_gates": 3200,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 32318,
+          "depth": 11318,
+          "multi_qubit_gates": 5303,
+          "cx_count": 5303,
+          "gate_types": [
+            "cx",
+            "rx",
+            "rz"
+          ]
+        },
+        "runtime_s": 30.227
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 4000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 4000,
+          "depth": 1600,
+          "multi_qubit_gates": 3200,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 16000,
+          "depth": 5800,
+          "multi_qubit_gates": 6800,
+          "cx_count": 6800,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 2.245
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 4000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 4000,
+          "depth": 1600,
+          "multi_qubit_gates": 3200,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 49501,
+          "depth": 13300,
+          "multi_qubit_gates": 6800,
+          "cx_count": 6800,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.391
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 4000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 4000,
+          "depth": 1600,
+          "multi_qubit_gates": 3200,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 13900,
+          "depth": 5200,
+          "multi_qubit_gates": 6800,
+          "cx_count": 6800,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.089
+      }
+    },
+    "10000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 10000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 10000,
+          "depth": 4000,
+          "multi_qubit_gates": 8000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 34750,
+          "depth": 13000,
+          "multi_qubit_gates": 17000,
+          "cx_count": 17000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.359
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 10000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 10000,
+          "depth": 4000,
+          "multi_qubit_gates": 8000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 40000,
+          "depth": 14500,
+          "multi_qubit_gates": 17000,
+          "cx_count": 17000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.408
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 10000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 10000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 10000,
+          "depth": 4000,
+          "multi_qubit_gates": 8000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 40000,
+          "depth": 14500,
+          "multi_qubit_gates": 17000,
+          "cx_count": 17000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 10.301
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 10000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 10000,
+          "depth": 4000,
+          "multi_qubit_gates": 8000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 123751,
+          "depth": 33250,
+          "multi_qubit_gates": 17000,
+          "cx_count": 17000,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.78
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 10000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 10000,
+          "depth": 4000,
+          "multi_qubit_gates": 8000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 34750,
+          "depth": 13000,
+          "multi_qubit_gates": 17000,
+          "cx_count": 17000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.232
+      }
+    },
+    "20000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 20000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 20000,
+          "depth": 8000,
+          "multi_qubit_gates": 16000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 69500,
+          "depth": 26000,
+          "multi_qubit_gates": 34000,
+          "cx_count": 34000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.516
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 20000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 20000,
+          "depth": 8000,
+          "multi_qubit_gates": 16000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 80000,
+          "depth": 29000,
+          "multi_qubit_gates": 34000,
+          "cx_count": 34000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.538
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 20000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 20000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 20000,
+          "depth": 8000,
+          "multi_qubit_gates": 16000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 80000,
+          "depth": 29000,
+          "multi_qubit_gates": 34000,
+          "cx_count": 34000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 40.77
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 20000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 20000,
+          "depth": 8000,
+          "multi_qubit_gates": 16000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 247501,
+          "depth": 66500,
+          "multi_qubit_gates": 34000,
+          "cx_count": 34000,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.379
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 20000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 20000,
+          "depth": 8000,
+          "multi_qubit_gates": 16000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 69500,
+          "depth": 26000,
+          "multi_qubit_gates": 34000,
+          "cx_count": 34000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.459
+      }
+    },
+    "50000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 50000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 50000,
+          "depth": 20000,
+          "multi_qubit_gates": 40000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 173750,
+          "depth": 65000,
+          "multi_qubit_gates": 85000,
+          "cx_count": 85000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.936
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 50000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 50000,
+          "depth": 20000,
+          "multi_qubit_gates": 40000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 200000,
+          "depth": 72500,
+          "multi_qubit_gates": 85000,
+          "cx_count": 85000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.137
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 50000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 50000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 50000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 50000,
+          "depth": 20000,
+          "multi_qubit_gates": 40000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 618751,
+          "depth": 166250,
+          "multi_qubit_gates": 85000,
+          "cx_count": 85000,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 3.099
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 50000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 50000,
+          "depth": 20000,
+          "multi_qubit_gates": 40000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 173750,
+          "depth": 65000,
+          "multi_qubit_gates": 85000,
+          "cx_count": 85000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 2.833
+      }
+    },
+    "100000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 100000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 100000,
+          "depth": 40000,
+          "multi_qubit_gates": 80000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 347500,
+          "depth": 130000,
+          "multi_qubit_gates": 170000,
+          "cx_count": 170000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.68
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 100000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 100000,
+          "depth": 40000,
+          "multi_qubit_gates": 80000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 400000,
+          "depth": 145000,
+          "multi_qubit_gates": 170000,
+          "cx_count": 170000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 2.12
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 100000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 100000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 100000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 100000,
+          "depth": 40000,
+          "multi_qubit_gates": 80000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 1237501,
+          "depth": 332500,
+          "multi_qubit_gates": 170000,
+          "cx_count": 170000,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 5.909
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "algorithmic_qft",
+        "requested_target_gates": 100000,
+        "description": "Repeated Qiskit library QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 100000,
+          "depth": 40000,
+          "multi_qubit_gates": 80000,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 347500,
+          "depth": 130000,
+          "multi_qubit_gates": 170000,
+          "cx_count": 170000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 4.134
+      }
+    }
+  },
+  "algorithmic_aqft": {
+    "4000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 4000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 3996,
+          "depth": 1728,
+          "multi_qubit_gates": 3132,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 13716,
+          "depth": 5616,
+          "multi_qubit_gates": 6696,
+          "cx_count": 6696,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.267
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 4000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 3996,
+          "depth": 1728,
+          "multi_qubit_gates": 3132,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 15660,
+          "depth": 6264,
+          "multi_qubit_gates": 6696,
+          "cx_count": 6696,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.309
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 4000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 3996,
+          "depth": 1728,
+          "multi_qubit_gates": 3132,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 31014,
+          "depth": 12222,
+          "multi_qubit_gates": 5079,
+          "cx_count": 5079,
+          "gate_types": [
+            "cx",
+            "rx",
+            "rz"
+          ]
+        },
+        "runtime_s": 24.852
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 4000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 3996,
+          "depth": 1728,
+          "multi_qubit_gates": 3132,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 15660,
+          "depth": 6264,
+          "multi_qubit_gates": 6696,
+          "cx_count": 6696,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.513
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 4000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 3996,
+          "depth": 1728,
+          "multi_qubit_gates": 3132,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 48924,
+          "depth": 14364,
+          "multi_qubit_gates": 6696,
+          "cx_count": 6696,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.413
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 4000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 3996,
+          "depth": 1728,
+          "multi_qubit_gates": 3132,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 13716,
+          "depth": 5616,
+          "multi_qubit_gates": 6696,
+          "cx_count": 6696,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.089
+      }
+    },
+    "10000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 10000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 9990,
+          "depth": 4320,
+          "multi_qubit_gates": 7830,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 34290,
+          "depth": 14040,
+          "multi_qubit_gates": 16740,
+          "cx_count": 16740,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.399
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 10000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 9990,
+          "depth": 4320,
+          "multi_qubit_gates": 7830,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 39150,
+          "depth": 15660,
+          "multi_qubit_gates": 16740,
+          "cx_count": 16740,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.382
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 10000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 10000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 9990,
+          "depth": 4320,
+          "multi_qubit_gates": 7830,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 39150,
+          "depth": 15660,
+          "multi_qubit_gates": 16740,
+          "cx_count": 16740,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 6.964
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 10000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 9990,
+          "depth": 4320,
+          "multi_qubit_gates": 7830,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 122310,
+          "depth": 35910,
+          "multi_qubit_gates": 16740,
+          "cx_count": 16740,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.8
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 10000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 9990,
+          "depth": 4320,
+          "multi_qubit_gates": 7830,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 34290,
+          "depth": 14040,
+          "multi_qubit_gates": 16740,
+          "cx_count": 16740,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.253
+      }
+    },
+    "20000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 20000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 19980,
+          "depth": 8640,
+          "multi_qubit_gates": 15660,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 68580,
+          "depth": 28080,
+          "multi_qubit_gates": 33480,
+          "cx_count": 33480,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.492
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 20000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 19980,
+          "depth": 8640,
+          "multi_qubit_gates": 15660,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 78300,
+          "depth": 31320,
+          "multi_qubit_gates": 33480,
+          "cx_count": 33480,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.558
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 20000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 20000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 19980,
+          "depth": 8640,
+          "multi_qubit_gates": 15660,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 78300,
+          "depth": 31320,
+          "multi_qubit_gates": 33480,
+          "cx_count": 33480,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 29.338
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 20000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 19980,
+          "depth": 8640,
+          "multi_qubit_gates": 15660,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 244620,
+          "depth": 71820,
+          "multi_qubit_gates": 33480,
+          "cx_count": 33480,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.592
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 20000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 19980,
+          "depth": 8640,
+          "multi_qubit_gates": 15660,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 68580,
+          "depth": 28080,
+          "multi_qubit_gates": 33480,
+          "cx_count": 33480,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.56
+      }
+    },
+    "50000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 50000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 49987,
+          "depth": 21616,
+          "multi_qubit_gates": 39179,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 171577,
+          "depth": 70252,
+          "multi_qubit_gates": 83762,
+          "cx_count": 83762,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.252
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 50000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 49987,
+          "depth": 21616,
+          "multi_qubit_gates": 39179,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 195895,
+          "depth": 78358,
+          "multi_qubit_gates": 83762,
+          "cx_count": 83762,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.236
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 50000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 50000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 50000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 49987,
+          "depth": 21616,
+          "multi_qubit_gates": 39179,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 612003,
+          "depth": 179683,
+          "multi_qubit_gates": 83762,
+          "cx_count": 83762,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 3.376
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 50000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 49987,
+          "depth": 21616,
+          "multi_qubit_gates": 39179,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 171577,
+          "depth": 70252,
+          "multi_qubit_gates": 83762,
+          "cx_count": 83762,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 2.94
+      }
+    },
+    "100000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 100000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 99974,
+          "depth": 43232,
+          "multi_qubit_gates": 78358,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 343154,
+          "depth": 140504,
+          "multi_qubit_gates": 167524,
+          "cx_count": 167524,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.838
+      },
+      "qiskit_commutative_inverse": {
+        "method": "qiskit_commutative_inverse",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 100000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 99974,
+          "depth": 43232,
+          "multi_qubit_gates": 78358,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 391790,
+          "depth": 156716,
+          "multi_qubit_gates": 167524,
+          "cx_count": 167524,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 2.134
+      },
+      "tket_full_peephole": {
+        "method": "tket_full_peephole",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 100000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "pyzx_opt": {
+        "method": "pyzx_opt",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 100000,
+        "status": "timeout",
+        "timeout_s": 45
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 100000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 99974,
+          "depth": 43232,
+          "multi_qubit_gates": 78358,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 1224006,
+          "depth": 359366,
+          "multi_qubit_gates": 167524,
+          "cx_count": 167524,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 5.932
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "family": "algorithmic_aqft",
+        "requested_target_gates": 100000,
+        "description": "Repeated Qiskit library Approximate QFT blocks; no inverse cancellation.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 99974,
+          "depth": 43232,
+          "multi_qubit_gates": 78358,
+          "cx_count": 0,
+          "gate_types": [
+            "cp",
+            "h",
+            "swap"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 343154,
+          "depth": 140504,
+          "multi_qubit_gates": 167524,
+          "cx_count": 167524,
+          "gate_types": [
+            "cx",
+            "h",
+            "rz"
+          ]
+        },
+        "runtime_s": 3.866
+      }
+    }
+  }
+}

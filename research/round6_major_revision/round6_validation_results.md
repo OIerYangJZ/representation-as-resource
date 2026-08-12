@@ -1,0 +1,23 @@
+# Round 6 Validation Results
+
+Status: **passed**
+Rows: `70`
+Status counts: `{'completed': 53, 'correctness_failure': 1, 'predicate_error': 10, 'timeout': 6}`
+
+## Checks
+
+- exact F2 witness rank is 4=m
+- verifier rejects a deliberately dependent support matrix
+- verifier rejects missing exact irrational-angle metadata
+- checked 41 pre-existing JSON hashes
+- validated schema, unique keys, size mapping, budgets, metrics, and completed equivalence
+- validated four derived result JSON subsets
+- scanned main TeX and Appendices A/B/C for bounded semantic families of universal baseline claims
+- required local unrebased qualification for PauliSimp predicate/error language in main TeX and Appendices A/B/C
+- asserted strict section markers, Discussion exception, exact tolerance, independent rational/irrational PyZX clauses, and scoped method lists
+- ran targeted manuscript claim and method-label scans
+- checked generated table tokens against JSON and required figure files
+
+## Errors
+
+- None

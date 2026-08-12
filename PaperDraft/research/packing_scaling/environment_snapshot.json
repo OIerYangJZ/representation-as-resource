@@ -1,0 +1,28 @@
+{
+  "hostname": "YangJinseys-MacBook-Pro-8.local",
+  "packages": {
+    "matplotlib": "3.10.7",
+    "numpy": "2.3.3",
+    "pytket": "2.16.0",
+    "pyzx": "0.10.2",
+    "qiskit": "2.4.0",
+    "ucc": "0.4.12"
+  },
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "python": "3.13.12",
+  "python_executable": "/Users/yangjinsey/Desktop/QFT + inverse-QFT circuits #662(issue)/PaperDraft/ucc_v7_2_prxq_repaired/../../.venv/bin/python",
+  "staq_binary": "/Users/yangjinsey/Desktop/QFT + inverse-QFT circuits #662(issue)/PaperDraft/ucc_v7_2_prxq_repaired/research/packing_scaling/tools/staq_rotation_optimizer_macos_arm64",
+  "staq_binary_sha256": "1ca6e4b3ab20e3ec0ea4195f90c758b4ddcc6c4aeb84c96a336000743829b881",
+  "staq_patch": "generic QASM2 numeric parsing/printing precision patch only; no family labels or fold_rotations changes",
+  "staq_upstream_commit": "a2acd39e60ed0e5f1978fa530df7e1e0c7cedf7a",
+  "started_at_utc": "2026-08-01T10:53:18+00:00",
+  "target_basis": [
+    "cx",
+    "rx",
+    "ry",
+    "rz",
+    "h"
+  ],
+  "timeout_s_per_cell": 600,
+  "ucc_disable_fourier_layer_ir": null
+}

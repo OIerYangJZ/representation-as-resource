@@ -1,0 +1,108 @@
+\subsection{Exact cyclic $K$-ary packing}
+\label{sec:w1-qary-packing}
+
+The no-wrap construction of \cref{def:packing-construction} is convenient
+for output counting, but modular additive shares require a grid whose period
+is also the sharing modulus.  The following formulation records exactly when
+wraparound creates a collision.
+
+\begin{definition}[Wrap margin]
+\label{def:w1-wrap-margin}
+For an alphabet $[K]_0$, step $\Delta>0$, and $K\geq2$, define
+\begin{align}
+ \operatorname{dist}_{2\pi}(a,0)
+ &:=\min_{z\in\mathbb Z}|a-2\pi z|,\\
+ \gamma(K,\Delta)
+ &:=\min_{1\leq d\leq K-1}
+       \operatorname{dist}_{2\pi}(d\Delta,0).
+\end{align}
+Let $P_1,\ldots,P_m$ be independent Pauli-$Z$ characters as in
+\cref{def:packing-construction}, and set
+\begin{equation}
+ U_x^{(K,\Delta)}:=
+ \exp\!\left[-\frac{i}{2}\sum_{j=1}^m x_j\Delta P_j\right],
+ \qquad x\in[K]_0^m.
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Exact worst-pair separation]
+\label{thm:w1-exact-separation}
+For every $m\geq1$,
+\begin{equation}
+ \min_{x\neq y}d_{\mathrm{proj}}
+ \bigl(U_x^{(K,\Delta)},U_y^{(K,\Delta)}\bigr)
+ =2\sin\!\left(\frac{\gamma(K,\Delta)}4\right).
+ \label{eq:w1-exact-separation}
+\end{equation}
+Consequently the family is projectively injective exactly when
+$\gamma(K,\Delta)>0$.  If $(K-1)\Delta\leq\pi$, then
+$\gamma(K,\Delta)=\Delta$.  If $Q\geq K+1$ and
+$\Delta=2\pi/Q$, then again $\gamma(K,\Delta)=\Delta$, even though the
+coefficient interval $[0,(K-1)\Delta]$ may cross the principal-argument
+cut at $\pi$.
+\end{theorem}
+
+\begin{proof}
+Fix $x\neq y$, put $s=x-y$, and choose $j$ with $s_j\neq0$.
+Independence of the characters makes their joint sign map surjective.
+Hence the relative unitary $U_x^{(K,\Delta)}
+(U_y^{(K,\Delta)})^\dagger$ has two eigenvalues obtained from sign patterns
+that agree off $j$ and whose circular angular separation is
+$\operatorname{dist}_{2\pi}(|s_j|\Delta,0)\geq\gamma(K,\Delta)$.
+After any common phase rotation, one of two circle points separated by
+$\eta\in[0,\pi]$ is at chordal distance at least
+$2\sin(\eta/4)$ from $1$.  This proves the lower bound in
+\eqref{eq:w1-exact-separation} after taking the global-phase infimum.
+
+Choose $d\in\{1,\ldots,K-1\}$ attaining $\gamma(K,\Delta)$ and take a pair that
+differs by $d$ in one coordinate only.  Its relative spectrum consists of
+two points with circular separation $\gamma(K,\Delta)$, so centering the
+shorter arc attains $2\sin(\gamma/4)$.  This proves equality.  Under the
+no-wrap hypothesis, every $d\Delta$ lies in $[\Delta,\pi]$, whose minimum
+is $\Delta$.  For $\Delta=2\pi/Q$ and
+$1\leq d\leq K-1\leq Q-2$, every nonzero grid distance is at least
+$2\pi/Q$, with equality at $d=1$.
+\end{proof}
+
+\begin{corollary}[$\epsilon$-tuned cyclic family]
+\label{cor:w1-epsilon-cyclic}
+For $0<\epsilon\leq1/8$, let
+\begin{equation}
+ Q_\epsilon:=\left\lfloor
+ \frac{\pi}{2\arcsin(2\epsilon)}\right\rfloor,
+ \qquad K_\epsilon:=Q_\epsilon-1,
+ \qquad \Delta_\epsilon:=\frac{2\pi}{Q_\epsilon}.
+ \label{eq:w1-epsilon-grid}
+\end{equation}
+Then
+\begin{equation}
+ \frac1{4\epsilon}\leq K_\epsilon\leq\frac{\pi}{4\epsilon},
+ \quad
+ \min_{x\neq y}d_{\mathrm{proj}}(U_x,U_y)
+ =2\sin\!\left(\frac{\pi}{2Q_\epsilon}\right)
+ \geq4\epsilon.
+ \label{eq:w1-epsilon-pack}
+\end{equation}
+Thus, with $\mathcal G_{m,\epsilon}:=
+\{U_x:x\in[K_\epsilon]_0^m\}$,
+\begin{equation}
+ \log_2|\mathcal G_{m,\epsilon}|
+ =m\log_2K_\epsilon
+ =\Theta\!\left(m\log\frac1\epsilon\right).
+ \label{eq:w1-packing-entropy}
+\end{equation}
+The allowed coefficient interval is
+$[0,(Q_\epsilon-2)2\pi/Q_\epsilon]$.  It can extend beyond $\pi$ but
+omits the residue $Q_\epsilon-1$; \cref{eq:w1-exact-separation}, rather
+than a principal-interval argument, controls its wraparound.
+\end{corollary}
+
+\begin{proof}
+The bound $\arcsin(2\epsilon)\leq\pi\epsilon$ and
+$\lfloor a\rfloor\geq a-1$ give
+$K_\epsilon\geq1/(2\epsilon)-2\geq1/(4\epsilon)$; the reverse bound uses
+$\arcsin(2\epsilon)\geq2\epsilon$.  Since
+$Q_\epsilon\leq\pi/[2\arcsin(2\epsilon)]$,
+$\pi/(2Q_\epsilon)\geq\arcsin(2\epsilon)$.  Apply
+\cref{thm:w1-exact-separation}.  The cardinality statement is immediate.
+\end{proof}

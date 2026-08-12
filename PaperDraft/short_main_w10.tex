@@ -1,0 +1,368 @@
+\documentclass[aps,prx,reprint,floatfix,superscriptaddress]{revtex4-2}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{hidelinks}
+
+% revtex4-2 4.2f and array 2.6n compatibility (TeX Live 2026).
+\makeatletter
+\let\switch@array\relax
+\makeatother
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+
+\newcommand{\DataNumber}[2]{#2}
+\newcommand{\Ftwo}{\mathbb F_2}
+\input{generated/paper_numbers}
+
+\begin{document}
+
+\title{Representation-Constrained Recoverability in Quantum Compilation:\\
+A $K$-ary Randomized Multipass Frontier and Certified Measurements}
+
+\author{Jinze Yang}
+\affiliation{School of Physics, Xidian University, Xi'an 710071, China}
+
+\author{Yangyang Li}
+\email{yyli@xidian.edu.cn}
+\affiliation{Key Laboratory of Intelligent Perception and Image Understanding of Ministry of Education of China,
+Joint International Research Laboratory of Intelligent Perception and Computation,
+International Research Center for Intelligent Perception and Computation,
+Collaborative Innovation Center of Quantum Information of Shaanxi Province,
+School of Artificial Intelligence, Xidian University, Xi'an 710071, China}
+
+\author{Xiu-Hao Deng}
+\email{dengxiuhao@iqasz.cn}
+\affiliation{Shenzhen International Quantum Academy, Shenzhen 518048, China}
+\affiliation{Shenzhen Branch, Hefei National Laboratory, Shenzhen 518048, China}
+
+\date{August 3, 2026}
+
+\begin{abstract}
+Equivalent quantum circuits can expose different amounts of recoverable
+structure to a compiler.  We make this representation dependence explicit
+with a cyclic $K$-ary family and a dispersed, round-major additive-update
+stream in which no token reveals the final coefficient.  Exact wraparound
+analysis gives an $\epsilon$-packing of size
+$\exp[\Theta(m\log(1/\epsilon))]$.  For randomized compilers making
+$p=p(m)$ forward passes, failing with probability at most $\delta$, committing
+$A_p$ prefix-output bits, and carrying complete serialized crossing state of
+worst-input expected size $S$, we prove
+\(
+ \overline A_p+(2p-1)S\geq
+ (1-\delta)m\log_2K-h_2(\delta)
+\), together with separate family-relative and self-contained output bounds.
+A memory-capped block compiler reaches the transcript envelope within a
+constant factor, while a semantic aggregate reaches the compact-output
+corner.  We then measure the formal resources directly, compare matched
+representations and semantic-capable external baselines, certify every
+completed output, and propagate a common total error budget through an
+end-to-end fault-tolerant estimator.  The natural-workload campaign contains
+\NaturalCells\ certified cells; \NaturalStableFamilies\ structured families
+satisfy a predeclared all-size/all-seed criterion, while the two negative
+controls show \NaturalNegativeRegressions\ systematic regressions.  The
+result is a recoverability frontier and a reproducible validation package,
+not a claim that one compiler representation dominates every circuit.
+\end{abstract}
+
+\maketitle
+
+\section{Question, scope, and claims}
+\label{sec:introduction}
+
+Compiler pipelines routinely move between circuit syntax, Pauli networks,
+phase polynomials, and ZX-like global intermediate representations.  Such
+choices matter because aggregation that is explicit in one representation
+may have to be inferred from a long stream in another.  Phase-polynomial and
+Pauli-gadget methods exploit this structure before returning to gates
+\cite{amy2014tdepth,nam2018automated,cowtan2020phase}; ZX methods provide a
+global language in which phases can propagate and merge
+\cite{duncan2020graph,kissinger2020reducing,kissinger2020pyzx}.  Full-stack
+resource studies then amplify upstream choices into physical cost
+\cite{fellous2023optimizing,watkins2024surfacecode}.
+
+We ask a narrower, operational question: how much information must a
+compiler either commit early or carry across an input cut in order to recover
+one member of an approximately separated unitary family?  The answer depends
+on the input representation and on what the resource model charges.  Our
+model therefore serializes all control, store, window, parameter, and live-IR
+state.  RAM, caches, random seeds, dynamic pass state, and rereadable
+materialized input cannot be hidden outside the cut budget.
+
+The paper has four claims, each paired with evidence.  First, the packing and
+update representations implement the same target unitary and have exact
+projective separation.  Second, the randomized multipass lower bound follows
+from conditional decoding and Fano's inequality.  Third, explicit semantic
+and block-hybrid compilers achieve the stated upper corners, with no stronger
+self-contained gate-count optimality claim.  Fourth, instrumented,
+certificate-gated experiments occupy the permitted theorem region and expose
+when the constructive advantage persists or disappears.  Legacy witnesses,
+stress tests, and complete provenance tables are separated into the
+Supplemental Material.
+
+\section{Recoverability frontier}
+\label{sec:theory}
+
+\subsection{Distance, family, and charged compiler model}
+
+For equal-dimension unitaries define the projective operator distance
+\begin{equation}
+ d_{\rm proj}(U,V):=\min_{|\omega|=1}\lVert U-\omega V\rVert_{\rm op}.
+ \label{eq:projective-distance}
+\end{equation}
+The output code is fixed before the input is drawn and is prefix-free.  A
+\emph{family-relative} code may use a public dictionary of generators and
+instance dimensions; a \emph{self-contained} code must serialize all
+addresses, parameters, and circuit framing.  We write their output lengths
+as $B_{\rm rel}^{\rm out}$ and $B_{\rm self}^{\rm out}$, respectively.
+
+\begin{definition}[Independent-character packing base]
+\label{def:packing-construction}
+Let $P_1,\ldots,P_m$ be commuting Pauli-$Z$ characters whose joint sign map
+onto $\{\pm1\}^m$ is surjective; $P_j=Z_j$ on $m$ qubits is the canonical
+choice.  The public family dictionary fixes this ordered list and the
+address codec.
+\end{definition}
+
+At a named input cut, the restart state is the self-delimiting concatenation
+\begin{equation}
+ B_{\rm cut}=B_{\rm control}+B_{\rm store}+B_{\rm window}
+             +B_{\rm parameter}+B_{\rm IR}.
+ \label{eq:info-budget}
+\end{equation}
+The fields include all mutable compiler state needed to resume exactly.
+Output bytes become charged commitments when they are irrevocably appended.
+The family-relative hybrid output $E_{\rm rel}$ uses a public mode tag and
+block boundaries; unaggregated coordinates remain addressed update records.
+
+\input{../../theory/qary_packing}
+\input{../../theory/dispersed_update_tradeoff}
+\input{../../theory/randomized_multipass_extension}
+\input{../../theory/matching_upper_bounds}
+
+\subsection{Interpretation of the bound}
+
+The lower bound is an information statement, not a gate-count statement.
+It holds for every valid dispersed representation, including the canonical
+sharing distribution, and permits $p$ to grow with $m$.  The $2p-1$ factor is
+the number of named forward and rewind crossings in the declared scan model.
+A reverse-scanning compiler, random-access oracle, or uncharged input file is
+a different model.  At the compact family-relative corner the block hybrid
+uses $S=O((m/p)\log(K+1))$; the semantic compiler receives $x$ directly and
+needs only logarithmic framing state.  This difference is the precise
+representation dependence studied here.
+
+\section{Constructions and certified measurements}
+\label{sec:experiments}
+
+\subsection{Certificate gate}
+
+Every completed result entering a quality mean is independently certified.
+The exact symbolic domain and soundness proposition are stated below; dense
+projective matrices provide a second checker through six qubits.  Unsupported,
+predicate-error, and numerical-inconclusive outcomes remain status records and
+are never converted into scores.
+
+\input{../../theory/certificate_soundness}
+
+The frozen audit contains \CertificateMutationCases\ adversarial mutations
+and \CertificateCrosscheckCases\ dense/symbolic cross-checks.  It observed
+\CertificateFalseAccepts\ false accepts and no checker disagreements.  This
+is finite executable evidence for the stated domain, not a completeness proof
+outside it.
+
+\subsection{Direct tradeoff tracing}
+
+The reference suite implements echo, full aggregation, three memory-capped
+hybrids, and an IR-materializing control.  Each event records committed output
+bytes and the five cut fields in Eq.~\eqref{eq:info-budget}, separately from
+RSS.  Across \TradeoffRuns\ frozen runs, every measured point satisfies the
+theorem diagnostic; no point was deleted as an outlier.
+
+\begin{figure*}[t]
+ \centering
+ \includegraphics[width=0.93\textwidth]{../../figures/measured_tradeoff_frontier.pdf}
+ \caption{Measured commitment--crossing-state--IR surface from event traces.
+ The theoretical lower envelope is evaluated in the same serialized-bit
+ coordinates.  RSS is recorded but is not substituted for $S$.}
+ \label{fig:tradeoff}
+\end{figure*}
+
+\subsection{Matched representations and strong external baselines}
+
+The factorial benchmark holds target, target basis, hardware model, timeout,
+memory cap, total error budget, and certificate fixed while changing only the
+representation and compiler.  It contains \MatchedCells\ cells across nine
+representations and five reference compilers; \MatchedCompleted\ completed
+and the remaining fifteen are retained predicate errors.  The external
+campaign contains \ExternalCells\ cells covering local Qiskit, semantic-capable
+TKET PauliSimp and PyZX full-reduce, and the authors' minimal phase-table
+reference, each in native and unified-basis configurations.  Of these,
+\ExternalCompleted\ completed; bridge loss is reported separately.
+
+\begin{figure*}[t]
+ \centering
+ \includegraphics[width=0.95\textwidth]{../../figures/representation_compiler_interaction.pdf}
+ \caption{Measured representation--compiler interaction.  Completion status
+ is shown separately from metrics; predicate errors are not numerical wins.}
+ \label{fig:matched}
+\end{figure*}
+
+The external results change the interpretation: a tool that recovers a phase
+polynomial before synthesis belongs on the semantic-capable side, regardless
+of authorship.  The evidence therefore supports a representation-sensitive
+comparison, not an authors-versus-tools ranking.
+
+\subsection{Fixed-total-error fault-tolerant QRE}
+
+All pipelines use the same additive split
+$\epsilon_{\rm total}=\epsilon_{\rm alg}+\epsilon_{\rm synth}
++\epsilon_{\rm logical}$ and allocate the synthesis share across the actual
+rotation multiset.  The \QRECells\-cell campaign crosses
+$\epsilon_{\rm total}\in\{10^{-3},10^{-6},10^{-9}\}$, two surface-code
+profiles, multiple factory-parallelism settings, equal and optimized
+allocation policies, and semantic-first, materialize-first, and external
+semantic-capable pipelines.  It reports rotations, logical $T$ states, data
+and factory qubits, factories, cycles, runtime, and spacetime volume.
+
+\begin{table*}[t]
+\caption{Representative fixed-error slice: diagonal witness,
+$\epsilon_{\rm total}=10^{-6}$, conservative profile, equal allocation, and
+sixteen requested factories.  This is one registered slice, not the entire
+sensitivity campaign.}
+\label{tab:qre}
+\centering
+\begin{tabular}{lrrrrrr}
+\toprule
+Pipeline & Rotations & $T$ states & Physical qubits & Factories & Cycles & Qubit-seconds\\
+\midrule
+\input{generated/qre_main_slice}
+\end{tabular}
+\end{table*}
+
+On this slice, materialize-first uses \QREMaterializeSpacetimeRatio$\times$
+the spacetime of the authors' semantic-first reference.  TKET also recovers a
+compact semantic form and is therefore reported on the semantic-capable side.
+The ordering is stable over the frozen grid where the ratio remains above
+one; exact physical values remain conditional on the two declared QEC models.
+
+\begin{figure*}[t]
+ \centering
+ \includegraphics[width=0.47\textwidth]{../../figures/qre_pareto.pdf}\hfill
+ \includegraphics[width=0.47\textwidth]{../../figures/qre_sensitivity.pdf}
+ \caption{End-to-end QRE Pareto surface (left) and sensitivity across total
+ error, QEC profile, allocation, and factory parallelism (right).}
+ \label{fig:qre}
+\end{figure*}
+
+\subsection{Natural workloads, negative controls, and ablation}
+
+The W8 design crosses seven structured families---QAOA/Ising, diagonal
+Hamiltonians, commuting-block Trotterization, QPE controlled powers, QFT
+arithmetic, controlled-power ladders, and phase-polynomial blocks---plus
+random Clifford+$R_Z$ and routing-dominated negative controls.  Three size
+levels, three seeds, two densities, and all-to-all/line topologies are crossed
+with a complete six-toggle authors-method factorial and the strongest available
+external semantic baseline.
+
+\begin{figure*}[t]
+ \centering
+ \includegraphics[width=0.95\textwidth]{../../figures/natural_workload_summary.pdf}
+ \caption{Matched natural-family comparison and negative controls.  Error bars
+ are paired bootstrap 95\% intervals; all families and controls are retained.}
+ \label{fig:natural}
+\end{figure*}
+
+\begin{table}[b]
+\caption{External-minus-authors gate difference and predeclared strict
+all-cell success.  Positive differences favor the authors reference.}
+\label{tab:natural}
+\centering
+\small
+\begin{tabular}{lcc}
+\toprule
+Family & Mean [95\% interval] & Success\\
+\midrule
+\input{generated/natural_families}
+\end{tabular}
+\end{table}
+
+Five named families meet the strict criterion, but QFT arithmetic and the
+phase-polynomial family do not; both remain visible in
+Fig.~\ref{fig:natural} and Table~\ref{tab:natural}.  The two negative controls
+show \NaturalNegativeRegressions\ systematic quality regressions.  The largest
+isolated gate-count contribution is the preset recognizer: a mean reduction of
+\PresetGateEffect\ gates with bootstrap interval
+[\PresetGateEffectLow, \PresetGateEffectHigh].  Selector, cache/reuse, and
+projected-block selection have zero isolated gate-count effect in this
+reference implementation, although their runtime effects and all pairwise
+interactions are retained.
+
+\begin{figure*}[t]
+ \centering
+ \includegraphics[width=0.93\textwidth]{../../figures/ablation_effects.pdf}
+ \caption{All six factorial main effects and pairwise gate interactions.
+ Zero-effect factors are shown rather than omitted.}
+ \label{fig:ablation}
+\end{figure*}
+
+\section{Interpretation, limitations, and conclusion}
+\label{sec:discussion}
+
+The theorem identifies a recoverability constraint: in the dispersed flat
+representation, aggregate information must appear in committed output or in
+the charged crossing transcript.  It does not say that a gate list is always
+hard, that semantic structure cannot be recovered, or that an authors'
+compiler must beat a global external optimizer.  Indeed, TKET and PyZX are
+explicitly classified as semantic-capable whenever they recover global phase
+structure before synthesis.
+
+The experiments are controlled reference measurements.  Dense certification
+limits the natural factorial to six qubits; increasing scale repeats and
+densifies structure rather than increasing Hilbert-space width.  Runtime and
+RSS are machine-specific.  The QRE is end-to-end under two versioned
+surface-code assumptions, but it is not an architecture-independent forecast.
+The block-hybrid upper bound is constant-factor matching for the declared
+family-relative transcript model; no matching self-contained bit bound or
+universal gate-count optimum is claimed.
+
+Data handling is part of the result.  A normalized index contains
+\UnifiedRows\ rows with unique nine-field primary keys.  It retains
+\UnifiedPredicateErrors\ predicate-error rows outside quality means.  Every
+experimental number printed in this manuscript is generated from a registered
+frozen source, and the one-command rebuild runs data audits, theorem tests,
+benchmark and QRE subsets, full tests, both TeX builds, and reference checks.
+
+In summary, representation is a quantifiable compilation resource when the
+input, output code, passes, and complete state channels are declared.  The
+$K$-ary randomized multipass theorem gives the lower frontier; the semantic
+and memory-capped compilers give attainable corners; and the certified
+measurements show both stable gains and deliberate negative results.  This
+combination supports representation-aware benchmarking while keeping claims
+inside the proved model.
+
+\section*{Data and code availability}
+
+The canonical data registry is \path{data/manifest.yaml}, the normalized
+schema is \path{schema/experiment.schema.json}, and the numeric provenance map
+is \path{data/provenance_map.yaml}.  Full experiment reports, raw logs,
+certificates, QRE configurations, hashes, and clean-room receipts accompany
+the repository.  Supplemental Material contains extended statuses, legacy
+witnesses, stress results, and the claim--evidence matrix.
+
+\bibliography{references}
+
+\end{document}

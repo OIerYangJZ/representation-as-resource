@@ -1,0 +1,69 @@
+schema: ucc.natural-workload-manifest.v1
+campaign_id: w8-natural-20260803-local
+width: 6
+scales: [1, 2, 4]
+seeds: [20260821, 20260822, 20260823]
+densities: [0.5, 1.0]
+hardware_topologies: [all_to_all, line]
+epsilon_total: 1.0e-6
+qre_profile: surface_code_conservative
+qre_factories: 16
+families:
+  - id: qaoa_ising
+    class: natural_positive
+    description: Repeated commuting Ising cost layers separated by RX mixers.
+    semantic_structure: commuting ZZ cost blocks
+  - id: diagonal_hamiltonian
+    class: natural_positive
+    description: Product-formula simulation of sparse diagonal Z and ZZ Hamiltonians.
+    semantic_structure: diagonal Hamiltonian blocks
+  - id: trotter_commuting_blocks
+    class: natural_positive
+    description: Trotter steps with commuting ZZ blocks separated by noncommuting X evolution.
+    semantic_structure: per-step commuting blocks
+  - id: qpe_controlled_powers
+    class: natural_positive
+    description: QPE control register applying repeated diagonal controlled powers.
+    semantic_structure: controlled phase powers
+  - id: qft_arithmetic
+    class: natural_positive
+    description: QFT-style phase additions and arithmetic carry-phase blocks.
+    semantic_structure: staged phase polynomial
+  - id: controlled_power_ladder
+    class: natural_positive
+    description: Repeated controlled powers with exact exponent metadata.
+    semantic_structure: exponentiated diagonal blocks
+  - id: phase_polynomial_blocks
+    class: natural_positive
+    description: Dense nested-parity phase-polynomial blocks.
+    semantic_structure: exact parity table
+  - id: negative_random_clifford_rz
+    class: negative_control
+    description: Random Clifford and RZ sequence without repeated commuting support.
+    semantic_structure: none expected
+  - id: negative_routing_dominated
+    class: negative_control
+    description: Long-range Clifford interactions and swaps with unique phase terms.
+    semantic_structure: routing dominates
+strongest_external_baseline:
+  method_id: external_tket_paulisimp
+  tool: pytket
+  version: runtime_frozen
+  pass_sequence:
+    - DecomposeBoxes
+    - RemoveRedundancies
+    - PauliSimp
+    - RemoveRedundancies
+    - AutoRebase_CX_Rz_H
+    - RemoveRedundancies
+predeclared_success_criteria:
+  positive_family:
+    - completed_valid for authors and external baseline
+    - authors gates and CX no worse at every primary all_to_all density=1 cell
+    - authors runtime strictly lower at every primary scale and seed
+  negative_controls:
+    - all-on authors gates, depth, and CX no worse than all-off in median
+    - paired 95 percent bootstrap interval must not show a positive quality regression
+  factorial:
+    - report all six main effects and all pairwise interactions
+    - retain failures and status-only cells

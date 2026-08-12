@@ -1,0 +1,551 @@
+{
+  "comparisons": [
+    {
+      "inconsistent_table": [
+        "Appendix C Table 16"
+      ],
+      "method_key": "baseline_ucc",
+      "paper_method_name": "upstream UCC v0.4.12 pre-semantic default",
+      "same_cx": false,
+      "same_gate_depth": true,
+      "table11": {
+        "cx_count": 58491,
+        "depth": 328271,
+        "gate_count": 471819,
+        "matches_source_cx": true,
+        "source_json_path": "research/real_instance_results.json"
+      },
+      "table16": {
+        "cx_count": 81906,
+        "depth": 328271,
+        "gate_count": 471819,
+        "matches_source_cx": false,
+        "source_json_path": "Graph Materials/baseline vs optimized vs qiskit opt3/real_instance_results.json"
+      }
+    },
+    {
+      "inconsistent_table": [
+        "Appendix C Table 16"
+      ],
+      "method_key": "optimized_ucc",
+      "paper_method_name": "semantic UCC",
+      "same_cx": false,
+      "same_gate_depth": true,
+      "table11": {
+        "cx_count": 58491,
+        "depth": 119204,
+        "gate_count": 166805,
+        "matches_source_cx": true,
+        "source_json_path": "research/real_instance_results.json"
+      },
+      "table16": {
+        "cx_count": 27303,
+        "depth": 119204,
+        "gate_count": 166805,
+        "matches_source_cx": false,
+        "source_json_path": "Graph Materials/baseline vs optimized vs qiskit opt3/real_instance_results.json"
+      }
+    },
+    {
+      "inconsistent_table": [
+        "Appendix C Table 16"
+      ],
+      "method_key": "qiskit_opt3",
+      "paper_method_name": "qiskit opt3",
+      "same_cx": false,
+      "same_gate_depth": true,
+      "table11": {
+        "cx_count": 58491,
+        "depth": 119204,
+        "gate_count": 166805,
+        "matches_source_cx": true,
+        "source_json_path": "research/real_instance_results.json"
+      },
+      "table16": {
+        "cx_count": 27303,
+        "depth": 119204,
+        "gate_count": 166805,
+        "matches_source_cx": false,
+        "source_json_path": "Graph Materials/baseline vs optimized vs qiskit opt3/real_instance_results.json"
+      }
+    }
+  ],
+  "generated_at": "2026-07-07T08:14:40.947273+00:00",
+  "inconsistent_tables": [
+    "Appendix C Table 16"
+  ],
+  "kappa_formula": "gates + depth + 10 * multi_qubit",
+  "kappa_phase_estimation_real": [
+    {
+      "depth": 121214,
+      "gate_count": 159838,
+      "kappa": 957132,
+      "method_key": "translation_only",
+      "multi_qubit_count": 67608,
+      "paper_method_name": "translation only",
+      "source_json_path": "research/real_instance_results.json"
+    },
+    {
+      "depth": 119204,
+      "gate_count": 166805,
+      "kappa": 870919,
+      "method_key": "qiskit_opt3",
+      "multi_qubit_count": 58491,
+      "paper_method_name": "qiskit opt3",
+      "source_json_path": "research/real_instance_results.json"
+    },
+    {
+      "depth": 328271,
+      "gate_count": 471819,
+      "kappa": 1385000,
+      "method_key": "baseline_ucc",
+      "multi_qubit_count": 58491,
+      "paper_method_name": "upstream UCC v0.4.12 pre-semantic default",
+      "source_json_path": "research/real_instance_results.json"
+    },
+    {
+      "depth": 119204,
+      "gate_count": 166805,
+      "kappa": 870919,
+      "method_key": "optimized_ucc",
+      "multi_qubit_count": 58491,
+      "paper_method_name": "semantic UCC",
+      "source_json_path": "research/real_instance_results.json"
+    }
+  ],
+  "source_files_inspected": [
+    {
+      "exists": true,
+      "kind": "json",
+      "path": "research/real_instance_results.json"
+    },
+    {
+      "exists": true,
+      "kind": "json",
+      "path": "Graph Materials/baseline vs optimized vs qiskit opt3/real_instance_results.json"
+    },
+    {
+      "exists": true,
+      "kind": "md",
+      "path": "research/real_instance_results.md"
+    },
+    {
+      "exists": true,
+      "kind": "md",
+      "path": "research/real_instance_results_summary.md"
+    },
+    {
+      "exists": true,
+      "kind": "md",
+      "path": "Graph Materials/baseline vs optimized vs qiskit opt3/real_instance_results_summary.md"
+    },
+    {
+      "exists": true,
+      "kind": "md",
+      "path": "research/round3_protocol_repair/round3_table_provenance_map.md"
+    },
+    {
+      "exists": true,
+      "kind": "md",
+      "path": "research/round3_protocol_repair/ssh_full_run_20260706_165733/round3_table_provenance_map.md"
+    },
+    {
+      "exists": true,
+      "kind": "tex",
+      "path": "PaperDraft/ucc_paper_draft_latex.tex"
+    },
+    {
+      "exists": true,
+      "kind": "tex",
+      "path": "PaperDraft/appendix/appendix_C.tex"
+    }
+  ],
+  "tables": {
+    "table11_phase_estimation_real": [
+      {
+        "cx_count": 67608,
+        "depth": 121214,
+        "gate_count": 159838,
+        "instance": "phase_estimation_real",
+        "matches_source_cx": true,
+        "method_key": "translation_only",
+        "paper_method_name": "translation only",
+        "row_index_in_phase_block": 1,
+        "runtime_s": 0.08,
+        "selected_candidate": null,
+        "selected_candidate_flag_present": false,
+        "source_field_names_used": [
+          "output.total_gates",
+          "output.depth",
+          "output.cx_count",
+          "output.multi_qubit_gates",
+          "runtime_s"
+        ],
+        "source_json_path": "research/real_instance_results.json",
+        "source_match": {
+          "cx_count": 67608,
+          "depth": 121214,
+          "gate_count": 159838,
+          "match_status": "matched_json_row",
+          "method_key": "translation_only",
+          "paper_method_name": "translation only",
+          "runtime_match": true,
+          "runtime_s": 0.08,
+          "selected_candidate": null,
+          "selected_candidate_flag_present": false,
+          "source_field_names_used": [
+            "output.total_gates",
+            "output.depth",
+            "output.cx_count",
+            "output.multi_qubit_gates",
+            "runtime_s"
+          ],
+          "source_json_path": "research/real_instance_results.json",
+          "status": "ok",
+          "two_qubit_count": 67608
+        },
+        "table": "Table 11",
+        "tex_row": "& translation only & 159,838 & 121,214 & 67,608 & 0.080 s"
+      },
+      {
+        "cx_count": 58491,
+        "depth": 119204,
+        "gate_count": 166805,
+        "instance": "phase_estimation_real",
+        "matches_source_cx": true,
+        "method_key": "qiskit_opt3",
+        "paper_method_name": "qiskit opt3",
+        "row_index_in_phase_block": 2,
+        "runtime_s": 1.298,
+        "selected_candidate": null,
+        "selected_candidate_flag_present": false,
+        "source_field_names_used": [
+          "output.total_gates",
+          "output.depth",
+          "output.cx_count",
+          "output.multi_qubit_gates",
+          "runtime_s"
+        ],
+        "source_json_path": "research/real_instance_results.json",
+        "source_match": {
+          "cx_count": 58491,
+          "depth": 119204,
+          "gate_count": 166805,
+          "match_status": "matched_json_row",
+          "method_key": "qiskit_opt3",
+          "paper_method_name": "qiskit opt3",
+          "runtime_match": true,
+          "runtime_s": 1.298,
+          "selected_candidate": null,
+          "selected_candidate_flag_present": false,
+          "source_field_names_used": [
+            "output.total_gates",
+            "output.depth",
+            "output.cx_count",
+            "output.multi_qubit_gates",
+            "runtime_s"
+          ],
+          "source_json_path": "research/real_instance_results.json",
+          "status": "ok",
+          "two_qubit_count": 58491
+        },
+        "table": "Table 11",
+        "tex_row": "& qiskit opt3 & 166,805 & 119,204 & 58,491 & 1.298 s"
+      },
+      {
+        "cx_count": 58491,
+        "depth": 328271,
+        "gate_count": 471819,
+        "instance": "phase_estimation_real",
+        "matches_source_cx": true,
+        "method_key": "baseline_ucc",
+        "paper_method_name": "upstream UCC v0.4.12 pre-semantic default",
+        "row_index_in_phase_block": 3,
+        "runtime_s": 80.923,
+        "selected_candidate": null,
+        "selected_candidate_flag_present": false,
+        "source_field_names_used": [
+          "output.total_gates",
+          "output.depth",
+          "output.cx_count",
+          "output.multi_qubit_gates",
+          "runtime_s"
+        ],
+        "source_json_path": "research/real_instance_results.json",
+        "source_match": {
+          "cx_count": 58491,
+          "depth": 328271,
+          "gate_count": 471819,
+          "match_status": "matched_json_row",
+          "method_key": "baseline_ucc",
+          "paper_method_name": "upstream UCC v0.4.12 pre-semantic default",
+          "runtime_match": true,
+          "runtime_s": 80.923,
+          "selected_candidate": null,
+          "selected_candidate_flag_present": false,
+          "source_field_names_used": [
+            "output.total_gates",
+            "output.depth",
+            "output.cx_count",
+            "output.multi_qubit_gates",
+            "runtime_s"
+          ],
+          "source_json_path": "research/real_instance_results.json",
+          "status": "ok",
+          "two_qubit_count": 58491
+        },
+        "table": "Table 11",
+        "tex_row": "& upstream UCC v0.4.12 pre-semantic default & 471,819 & 328,271 & 58,491 & 80.923 s"
+      },
+      {
+        "cx_count": 58491,
+        "depth": 119204,
+        "gate_count": 166805,
+        "instance": "phase_estimation_real",
+        "matches_source_cx": true,
+        "method_key": "optimized_ucc",
+        "paper_method_name": "semantic UCC",
+        "row_index_in_phase_block": 4,
+        "runtime_s": 1.364,
+        "selected_candidate": null,
+        "selected_candidate_flag_present": false,
+        "source_field_names_used": [
+          "output.total_gates",
+          "output.depth",
+          "output.cx_count",
+          "output.multi_qubit_gates",
+          "runtime_s"
+        ],
+        "source_json_path": "research/real_instance_results.json",
+        "source_match": {
+          "cx_count": 58491,
+          "depth": 119204,
+          "gate_count": 166805,
+          "match_status": "matched_json_row",
+          "method_key": "optimized_ucc",
+          "paper_method_name": "semantic UCC",
+          "runtime_match": true,
+          "runtime_s": 1.364,
+          "selected_candidate": null,
+          "selected_candidate_flag_present": false,
+          "source_field_names_used": [
+            "output.total_gates",
+            "output.depth",
+            "output.cx_count",
+            "output.multi_qubit_gates",
+            "runtime_s"
+          ],
+          "source_json_path": "research/real_instance_results.json",
+          "status": "ok",
+          "two_qubit_count": 58491
+        },
+        "table": "Table 11",
+        "tex_row": "& semantic UCC & 166,805 & 119,204 & 58,491 & 1.364 s"
+      }
+    ],
+    "table16_phase_estimation_real": [
+      {
+        "cx_count": 81906,
+        "depth": 328271,
+        "gate_count": 471819,
+        "instance": "phase_estimation_real",
+        "matches_source_cx": false,
+        "method_key": "baseline_ucc",
+        "paper_method_name": "baseline UCC",
+        "row_index_in_phase_block": 1,
+        "runtime_s": 75.538,
+        "selected_candidate": null,
+        "selected_candidate_flag_present": false,
+        "source_field_names_used": [
+          "output.total_gates",
+          "output.depth",
+          "output.cx_count",
+          "output.multi_qubit_gates",
+          "runtime_s"
+        ],
+        "source_json_path": "Graph Materials/baseline vs optimized vs qiskit opt3/real_instance_results.json",
+        "source_match": {
+          "cx_count": 58491,
+          "depth": 328271,
+          "gate_count": 471819,
+          "match_status": "matched_json_row",
+          "method_key": "baseline_ucc",
+          "paper_method_name": "upstream UCC v0.4.12 pre-semantic default",
+          "runtime_match": true,
+          "runtime_s": 75.538,
+          "selected_candidate": null,
+          "selected_candidate_flag_present": false,
+          "source_field_names_used": [
+            "output.total_gates",
+            "output.depth",
+            "output.cx_count",
+            "output.multi_qubit_gates",
+            "runtime_s"
+          ],
+          "source_json_path": "Graph Materials/baseline vs optimized vs qiskit opt3/real_instance_results.json",
+          "status": "ok",
+          "two_qubit_count": 58491
+        },
+        "table": "Appendix C Table 16",
+        "tex_row": "& baseline UCC & 471,819 & 328,271 & 81,906 & 75.538 s"
+      },
+      {
+        "cx_count": 82925,
+        "depth": 332924,
+        "gate_count": 485780,
+        "instance": "phase_estimation_real",
+        "matches_source_cx": false,
+        "method_key": "defaults_preinverse_only",
+        "paper_method_name": "defaults_preinverse_only",
+        "row_index_in_phase_block": 2,
+        "runtime_s": 80.045,
+        "selected_candidate": null,
+        "selected_candidate_flag_present": false,
+        "source_field_names_used": [],
+        "source_json_path": null,
+        "source_match": {
+          "match_status": "no_json_source_for_method",
+          "source_field_names_used": [],
+          "source_json_path": null
+        },
+        "table": "Appendix C Table 16",
+        "tex_row": "& defaults_preinverse_only & 485,780 & 332,924 & 82,925 & 80.045 s"
+      },
+      {
+        "cx_count": 82925,
+        "depth": 332924,
+        "gate_count": 485780,
+        "instance": "phase_estimation_real",
+        "matches_source_cx": false,
+        "method_key": "defaults_reordered_only",
+        "paper_method_name": "defaults_reordered_only",
+        "row_index_in_phase_block": 3,
+        "runtime_s": 80.005,
+        "selected_candidate": null,
+        "selected_candidate_flag_present": false,
+        "source_field_names_used": [],
+        "source_json_path": null,
+        "source_match": {
+          "match_status": "no_json_source_for_method",
+          "source_field_names_used": [],
+          "source_json_path": null
+        },
+        "table": "Appendix C Table 16",
+        "tex_row": "& defaults_reordered_only & 485,780 & 332,924 & 82,925 & 80.005 s"
+      },
+      {
+        "cx_count": 82925,
+        "depth": 332924,
+        "gate_count": 485780,
+        "instance": "phase_estimation_real",
+        "matches_source_cx": false,
+        "method_key": "defaults_minimal_bundle",
+        "paper_method_name": "defaults_minimal_bundle",
+        "row_index_in_phase_block": 4,
+        "runtime_s": 80.084,
+        "selected_candidate": null,
+        "selected_candidate_flag_present": false,
+        "source_field_names_used": [],
+        "source_json_path": null,
+        "source_match": {
+          "match_status": "no_json_source_for_method",
+          "source_field_names_used": [],
+          "source_json_path": null
+        },
+        "table": "Appendix C Table 16",
+        "tex_row": "& defaults_minimal_bundle & 485,780 & 332,924 & 82,925 & 80.084 s"
+      },
+      {
+        "cx_count": 27303,
+        "depth": 119204,
+        "gate_count": 166805,
+        "instance": "phase_estimation_real",
+        "matches_source_cx": false,
+        "method_key": "optimized_ucc",
+        "paper_method_name": "semantic UCC",
+        "row_index_in_phase_block": 5,
+        "runtime_s": 1.989,
+        "selected_candidate": null,
+        "selected_candidate_flag_present": false,
+        "source_field_names_used": [
+          "output.total_gates",
+          "output.depth",
+          "output.cx_count",
+          "output.multi_qubit_gates",
+          "runtime_s"
+        ],
+        "source_json_path": "Graph Materials/baseline vs optimized vs qiskit opt3/real_instance_results.json",
+        "source_match": {
+          "cx_count": 58491,
+          "depth": 119204,
+          "gate_count": 166805,
+          "match_status": "matched_json_row",
+          "method_key": "optimized_ucc",
+          "paper_method_name": "semantic UCC",
+          "runtime_match": true,
+          "runtime_s": 1.989,
+          "selected_candidate": null,
+          "selected_candidate_flag_present": false,
+          "source_field_names_used": [
+            "output.total_gates",
+            "output.depth",
+            "output.cx_count",
+            "output.multi_qubit_gates",
+            "runtime_s"
+          ],
+          "source_json_path": "Graph Materials/baseline vs optimized vs qiskit opt3/real_instance_results.json",
+          "status": "ok",
+          "two_qubit_count": 58491
+        },
+        "table": "Appendix C Table 16",
+        "tex_row": "& semantic UCC & 166,805 & 119,204 & 27,303 & 1.989 s"
+      },
+      {
+        "cx_count": 27303,
+        "depth": 119204,
+        "gate_count": 166805,
+        "instance": "phase_estimation_real",
+        "matches_source_cx": false,
+        "method_key": "qiskit_opt3",
+        "paper_method_name": "qiskit opt3",
+        "row_index_in_phase_block": 6,
+        "runtime_s": 1.254,
+        "selected_candidate": null,
+        "selected_candidate_flag_present": false,
+        "source_field_names_used": [
+          "output.total_gates",
+          "output.depth",
+          "output.cx_count",
+          "output.multi_qubit_gates",
+          "runtime_s"
+        ],
+        "source_json_path": "Graph Materials/baseline vs optimized vs qiskit opt3/real_instance_results.json",
+        "source_match": {
+          "cx_count": 58491,
+          "depth": 119204,
+          "gate_count": 166805,
+          "match_status": "matched_json_row",
+          "method_key": "qiskit_opt3",
+          "paper_method_name": "qiskit opt3",
+          "runtime_match": true,
+          "runtime_s": 1.254,
+          "selected_candidate": null,
+          "selected_candidate_flag_present": false,
+          "source_field_names_used": [
+            "output.total_gates",
+            "output.depth",
+            "output.cx_count",
+            "output.multi_qubit_gates",
+            "runtime_s"
+          ],
+          "source_json_path": "Graph Materials/baseline vs optimized vs qiskit opt3/real_instance_results.json",
+          "status": "ok",
+          "two_qubit_count": 58491
+        },
+        "table": "Appendix C Table 16",
+        "tex_row": "& qiskit opt3 & 166,805 & 119,204 & 27,303 & 1.254 s"
+      }
+    ]
+  },
+  "verdict": "Appendix C Table 16 is inconsistent with the frozen real-instance JSON for overlapping phase_estimation_real rows; Table 11 matches the frozen JSON. No JSON source was found for the defaults_* reorder-probe rows."
+}

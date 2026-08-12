@@ -1,0 +1,29 @@
+{
+  "outputs": {
+    "PaperDraft/generated/ablation_gate_effects.tex": {
+      "bytes": 311,
+      "sha256": "7ce71109b8be17306bd9442d457c57c99baeb2d704e5de8188de9ab2ac7ff929"
+    },
+    "PaperDraft/generated/natural_families.tex": {
+      "bytes": 426,
+      "sha256": "2f3aebbef5212ca75a053e411d5cd6062e3eacbc72807773155726bb716d2163"
+    },
+    "PaperDraft/generated/paper_numbers.tex": {
+      "bytes": 1570,
+      "sha256": "e32d194c79b13626da000d0ab89c2a46ad9e7e72a39b8b6242a88871b862dbb4"
+    },
+    "PaperDraft/generated/qre_main_slice.tex": {
+      "bytes": 297,
+      "sha256": "fccbccdac6bbd3d62e52be37f3f8912d22595278a22e50f080f50e282030d1a9"
+    },
+    "PaperDraft/generated/results_overview.tex": {
+      "bytes": 538,
+      "sha256": "76089dfdc4a8597be0225f7e51337b47e9f94276c3b67344102109a1eeef2f76"
+    },
+    "data/frozen/paper_numbers.json": {
+      "bytes": 8204,
+      "sha256": "ac026729a494cea29769677b17572e9910a6cb4a140687b2a72ebd607d6462b2"
+    }
+  },
+  "schema": "ucc.table-build.v1"
+}

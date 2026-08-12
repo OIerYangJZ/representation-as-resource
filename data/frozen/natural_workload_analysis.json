@@ -1,0 +1,45 @@
+{
+  "artifact_commit": "229eafdb4127ab98b2ad925a9657fa67510a12e7",
+  "artifacts_sha256": {
+    "data/frozen/natural_ablation_effects.csv": "89b1860389a8edc68da6016624c76b0390f9eb9bf39a1ac9d15f960516158bb0",
+    "data/frozen/natural_ablation_interactions.csv": "06a0b46adf35a15df537d30a626c9571e6bc1e43ed31ae6480d90c0c275cf4f4",
+    "data/frozen/natural_negative_controls.csv": "b8a81d15a9c106011bcbff72778fa784502fb4acc341fd5443937e57a7b11da5",
+    "data/frozen/natural_workload_summary.csv": "fc6962393e534148dcc5be511fa5568c3228e7fb5b5d746ab7b9bdccca65326a",
+    "data/frozen/natural_workloads.csv": "45ea0d9d9cd6778ddc1b2a436188ef56a6a21a7119560e3119942e9b98cdc2cb",
+    "data/frozen/natural_workloads.parquet": "25cf0f8c107b2e17ad2c7a402de6d9ef72c5d9ac0398f79b19fcdb910aa7b563",
+    "data/runs/w8-natural-20260803-local/factorial_cells.jsonl": "c3d7074c4fd4d32980fd368d545d5bdeddf0cec3ea15b9a2991f274349102d62",
+    "figures/ablation_effects.pdf": "b14e12d8823254f4778ace0a293965cda9843e0e4c7c65798bbaa8bf8ee51983",
+    "figures/natural_workload_summary.pdf": "9eaa1d34efe5a44ed2f4d77585df61a5601448c403cfdf3acd2dff2250e40785"
+  },
+  "bootstrap_replicates": 4000,
+  "bootstrap_seed": 20260830,
+  "elapsed_s": 251.0687230420299,
+  "external_rows": 324,
+  "factorial_rows": 20736,
+  "grid_synth_pairs_in_factorial_run": 176,
+  "host": "YangJinseys-MacBook-Pro-8.local",
+  "negative_systematic_regressions": 0,
+  "qre_status_counts": {
+    "completed_valid": 21060
+  },
+  "rows": 21060,
+  "schema": "ucc.natural-workload-analysis.v1",
+  "source_sha256": {
+    "configs/ablation_matrix.yaml": "b5c04ae5ac842ea35e66089eb9b9f1304360c9132531de174df2d87cb56a98ed",
+    "scripts/run_factorial_ablation.py": "d9305deed4959be69d53cac3d3a5d626718f237571c21118335411f6a84e67af",
+    "scripts/run_natural_workloads.py": "8901c3a49ca847ce8c4f5e820bd470da23a018ceab2dd1163ae8e088d2933139",
+    "workloads/manifest.yaml": "76a79584f372d2bc11a21086ca50ef45c1c91d5bae76e6510220c6ad531029c8",
+    "workloads/natural.py": "6dab41aed78c2d3d3be73bac3a729ac84f8de91aff4574da11db77a526c3a541"
+  },
+  "status_counts": {
+    "completed_valid": 21060
+  },
+  "successful_positive_families": [
+    "controlled_power_ladder",
+    "diagonal_hamiltonian",
+    "qaoa_ising",
+    "qpe_controlled_powers",
+    "trotter_commuting_blocks"
+  ],
+  "unique_primary_keys": 21060
+}

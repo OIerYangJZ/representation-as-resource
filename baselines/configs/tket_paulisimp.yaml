@@ -1,0 +1,26 @@
+schema: ucc.external-baseline-family.v1
+tool: pytket
+package: pytket
+category: semantic-capable
+semantic_capable: true
+bridge: OpenQASM2 -> TKET Circuit -> OpenQASM2 certificate bridge
+configs:
+  - id: tket_paulisimp_native
+    mode: recommended_native
+    output_basis: native_tket
+    pass_sequence:
+      - DecomposeBoxes()
+      - RemoveRedundancies()
+      - PauliSimp(PauliSynthStrat.Sets, CXConfigType.Snake)
+      - RemoveRedundancies()
+  - id: tket_paulisimp_unified
+    mode: unified_target_basis
+    output_basis: [cx, rz, h]
+    pass_sequence:
+      - DecomposeBoxes()
+      - RemoveRedundancies()
+      - PauliSimp(PauliSynthStrat.Sets, CXConfigType.Snake)
+      - RemoveRedundancies()
+      - AutoRebase({CX,Rz,H}, allow_swaps=False)
+      - RemoveRedundancies()
+

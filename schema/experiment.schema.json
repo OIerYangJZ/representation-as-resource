@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ucc.example/schema/experiment.schema.json",
+  "title": "UCC normalized experiment record",
+  "description": "A provenance index over immutable source rows. The nine required fields form the complete primary key.",
+  "type": "object",
+  "required": [
+    "experiment_id",
+    "instance_id",
+    "representation_id",
+    "method_id",
+    "seed",
+    "backend_hash",
+    "tool_version",
+    "artifact_commit",
+    "config_hash",
+    "status",
+    "source_dataset",
+    "source_row",
+    "source_row_sha256"
+  ],
+  "properties": {
+    "experiment_id": {"type": "string", "minLength": 1},
+    "instance_id": {"type": "string", "minLength": 1},
+    "representation_id": {"type": "string", "minLength": 1},
+    "method_id": {"type": "string", "minLength": 1},
+    "seed": {"type": "integer", "minimum": 0},
+    "backend_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "tool_version": {"type": "string", "minLength": 1},
+    "artifact_commit": {"type": "string", "pattern": "^(working-tree|[0-9a-f]{40})$"},
+    "config_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "status": {
+      "enum": [
+        "completed_valid", "completed", "predicate_error", "unsupported",
+        "correctness_failure", "completed_invalid", "timeout", "memory_error",
+        "numerical_inconclusive", "theorem_model_mismatch", "error"
+      ]
+    },
+    "certificate_status": {"type": ["string", "null"]},
+    "source_dataset": {"type": "string", "minLength": 1},
+    "source_row": {"type": "integer", "minimum": 0},
+    "source_row_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true,
+  "x-primary-key": [
+    "experiment_id", "instance_id", "representation_id", "method_id", "seed",
+    "backend_hash", "tool_version", "artifact_commit", "config_hash"
+  ]
+}

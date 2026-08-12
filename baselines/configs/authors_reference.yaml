@@ -1,0 +1,23 @@
+schema: ucc.external-baseline-family.v1
+tool: authors_exact_phase_table
+package: repository
+category: authors-reference
+semantic_capable: true
+bridge: direct Qiskit CNOT-Rz parity/phase table
+configs:
+  - id: authors_phase_table_native
+    mode: recommended_native
+    output_basis: exact_phase_polynomial_ir
+    pass_sequence:
+      - extract exact live parity masks
+      - fold rational-pi coefficients modulo 2
+      - serialize address-complete phase-polynomial IR
+      - lower only for common output certificate
+  - id: authors_phase_table_unified
+    mode: unified_target_basis
+    output_basis: [cx, rz, h]
+    pass_sequence:
+      - extract exact live parity masks
+      - fold rational-pi coefficients modulo 2
+      - lower two-body phase gadgets to CX-Rz-CX
+

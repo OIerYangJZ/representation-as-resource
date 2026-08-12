@@ -1,0 +1,69 @@
+{
+  "artifact_commit": "431049e54d3f916ebec2acb3a566360d0ffed893",
+  "canonical_source_rows": 24748,
+  "conflicting_numeric_cells": 0,
+  "csv_parquet_checks": [
+    {
+      "conflicting_cells": 0,
+      "csv": "data/frozen/matched_representation.csv",
+      "parquet": "data/frozen/matched_representation.parquet",
+      "rows": 1080
+    },
+    {
+      "conflicting_cells": 0,
+      "csv": "data/frozen/external_baselines.csv",
+      "parquet": "data/frozen/external_baselines.parquet",
+      "rows": 1728
+    },
+    {
+      "conflicting_cells": 0,
+      "csv": "data/frozen/qre_results.csv",
+      "parquet": "data/frozen/qre_results.parquet",
+      "rows": 288
+    },
+    {
+      "conflicting_cells": 0,
+      "csv": "data/frozen/natural_workloads.csv",
+      "parquet": "data/frozen/natural_workloads.parquet",
+      "rows": 21060
+    }
+  ],
+  "duplicate_primary_key_rows": 0,
+  "duplicate_tex_labels": [],
+  "hash_drift": [],
+  "known_historical_or_stale": [
+    {
+      "disposition": "historical_raw_provenance",
+      "path": "data/runs/w4-matched-representation-20260802",
+      "reason": "Raw representations and logs are retained; the parquet freeze is canonical."
+    },
+    {
+      "disposition": "historical_raw_provenance",
+      "path": "data/runs/w5-external-baselines-20260803",
+      "reason": "Raw per-cell logs are retained; the parquet freeze is canonical."
+    },
+    {
+      "disposition": "intermediate_noncanonical",
+      "path": "data/runs/w8-natural-20260803-local/natural_baselines.parquet",
+      "reason": "The final factorial parquet includes the matched external rows."
+    }
+  ],
+  "missing_registered_files": [],
+  "row_count_mismatches": [],
+  "schema": "ucc.data-audit.v1",
+  "source_rows": {
+    "data/frozen/external_baselines.parquet": 1728,
+    "data/frozen/matched_representation.parquet": 1080,
+    "data/frozen/natural_workloads.parquet": 21060,
+    "data/frozen/qre_results.parquet": 288,
+    "data/frozen/tradeoff_summary.csv": 592
+  },
+  "status_counts": {
+    "completed_valid": 24700,
+    "predicate_error": 48
+  },
+  "tex_labels": 178,
+  "unified_sha256": "df1c703041234a0882cc521dba1fcdb42882a84a6106dc2fbd6a967f2f3c4e00",
+  "unique_primary_keys": 24748,
+  "unregistered_frozen_artifacts": []
+}

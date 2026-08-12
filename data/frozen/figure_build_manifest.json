@@ -1,0 +1,94 @@
+{
+  "figures": {
+    "ablation_effects.pdf": {
+      "bytes": 20080,
+      "path": "figures/ablation_effects.pdf",
+      "sha256": "43e8992004598a95ff3b59a633e7e803644c4de0f8f201335705ddd26137a9ad",
+      "source_sha256": {
+        "data/frozen/natural_ablation_effects.csv": "89b1860389a8edc68da6016624c76b0390f9eb9bf39a1ac9d15f960516158bb0",
+        "data/frozen/natural_ablation_interactions.csv": "06a0b46adf35a15df537d30a626c9571e6bc1e43ed31ae6480d90c0c275cf4f4"
+      },
+      "sources": [
+        "data/frozen/natural_ablation_effects.csv",
+        "data/frozen/natural_ablation_interactions.csv"
+      ]
+    },
+    "eta_sweep_pareto.pdf": {
+      "bytes": 21999,
+      "path": "figures/eta_sweep_pareto.pdf",
+      "sha256": "0d042cb1befdfaeb09343aa693e7e99dad601eac6732520531dbf26abffeeaaf",
+      "source_sha256": {
+        "data/frozen/eta_sweep_pareto.json": "76ea5f40d19cd284a2c3be32eb4d5ba210781ca732cb1d52d8e9d885575761af"
+      },
+      "sources": [
+        "data/frozen/eta_sweep_pareto.json"
+      ]
+    },
+    "measured_tradeoff_frontier.pdf": {
+      "bytes": 57645,
+      "path": "figures/measured_tradeoff_frontier.pdf",
+      "sha256": "79dc42b85b89bedb473c032d9f17d1fc058ed6d61f7bca085d8dba884afe1825",
+      "source_sha256": {
+        "data/frozen/tradeoff_scaling_fits.csv": "8dcc645ce5f9c293927efa2c9563c832488412c10d1568d4989fe167ffb41083",
+        "data/frozen/tradeoff_summary.csv": "4f0f3e19164f1df3534ded93f594b8052ceabc4a8ee2b2c366a39a8a0f660ffb"
+      },
+      "sources": [
+        "data/frozen/tradeoff_summary.csv",
+        "data/frozen/tradeoff_scaling_fits.csv"
+      ]
+    },
+    "natural_workload_summary.pdf": {
+      "bytes": 18421,
+      "path": "figures/natural_workload_summary.pdf",
+      "sha256": "ca3f63ea206ca111d39e7cc36705fb8e9fea2f508231be5c11c4f7c7d49467d1",
+      "source_sha256": {
+        "data/frozen/natural_negative_controls.csv": "b8a81d15a9c106011bcbff72778fa784502fb4acc341fd5443937e57a7b11da5",
+        "data/frozen/natural_workload_summary.csv": "fc6962393e534148dcc5be511fa5568c3228e7fb5b5d746ab7b9bdccca65326a"
+      },
+      "sources": [
+        "data/frozen/natural_workload_summary.csv",
+        "data/frozen/natural_negative_controls.csv"
+      ]
+    },
+    "qre_pareto.pdf": {
+      "bytes": 29889,
+      "path": "figures/qre_pareto.pdf",
+      "sha256": "ce355bd1283ee4b38f56ebf151734aa48692d2a60e0b485a55a44d2aae7fe6d4",
+      "source_sha256": {
+        "data/frozen/qre_results.parquet": "5d58d4da1939f68a323757955e1e60aa48d57338baef45f1e56aa0746b951118"
+      },
+      "sources": [
+        "data/frozen/qre_results.parquet"
+      ]
+    },
+    "qre_sensitivity.pdf": {
+      "bytes": 33865,
+      "path": "figures/qre_sensitivity.pdf",
+      "sha256": "875b8f27b6ed92d9b6b6f10905467b7564c76df65f198710b0a444207f57b541",
+      "source_sha256": {
+        "data/frozen/qre_results.parquet": "5d58d4da1939f68a323757955e1e60aa48d57338baef45f1e56aa0746b951118"
+      },
+      "sources": [
+        "data/frozen/qre_results.parquet"
+      ]
+    },
+    "representation_compiler_interaction.pdf": {
+      "bytes": 40875,
+      "path": "figures/representation_compiler_interaction.pdf",
+      "sha256": "2a3a306d1c8f0192f05d78072eb39be8003a504733266431437b7bdf84a58e4f",
+      "source_sha256": {
+        "data/frozen/matched_factorial_summary.csv": "8a6f7e4ec347e61a50b6757eb64253d415e418dc6d975b4c495e6e4ccaca37b5",
+        "data/frozen/matched_interaction_residuals.csv": "154f9b25aa8bafe702635ad10714f8b2485d1d17785a78a69717a89549994d8f",
+        "data/frozen/matched_representation.parquet": "129e0ea4854c23773d831c1d000e3357e84840cf9fd1b93e3b9258bf24a695c0",
+        "data/frozen/matched_scaling_fits.csv": "1dc77fc16a5c0230d20864b712d778a0caf88a7650fca71d8c9c235cdb2e7372"
+      },
+      "sources": [
+        "data/frozen/matched_representation.parquet",
+        "data/frozen/matched_factorial_summary.csv",
+        "data/frozen/matched_interaction_residuals.csv",
+        "data/frozen/matched_scaling_fits.csv"
+      ]
+    }
+  },
+  "schema": "ucc.figure-build.v1"
+}

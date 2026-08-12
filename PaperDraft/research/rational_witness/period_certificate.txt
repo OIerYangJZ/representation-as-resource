@@ -1,0 +1,37 @@
+certificate_version=1
+arithmetic=fractions.Fraction
+phase_modulus_over_pi=2
+term_orders:
+  name=rz_q0 angle_p=1 angle_q=7 order=14
+  name=rz_q1 angle_p=1 angle_q=8 order=16
+  name=rz_q2 angle_p=1 angle_q=9 order=18
+  name=rz_q3 angle_p=1 angle_q=10 order=20
+  name=cp_q0_q1 angle_p=1 angle_q=12 order=24
+  name=cp_q0_q2 angle_p=1 angle_q=13 order=26
+  name=cp_q0_q3 angle_p=1 angle_q=14 order=28
+  name=cp_q1_q2 angle_p=1 angle_q=14 order=28
+  name=cp_q1_q3 angle_p=1 angle_q=15 order=30
+  name=cp_q2_q3 angle_p=1 angle_q=16 order=32
+term_order_vector=14,16,18,20,24,26,28,28,30,32
+term_order_lcm=131040
+relative_phase_constraints:
+  state=0000 numerator=0 denominator=1 order=1
+  state=0001 numerator=1 denominator=10 order=20
+  state=0010 numerator=1 denominator=9 order=18
+  state=0011 numerator=197 denominator=720 order=1440
+  state=0100 numerator=1 denominator=8 order=16
+  state=0101 numerator=7 denominator=24 order=48
+  state=0110 numerator=155 denominator=504 order=1008
+  state=0111 numerator=541 denominator=1008 order=2016
+  state=1000 numerator=1 denominator=7 order=14
+  state=1001 numerator=11 denominator=35 order=70
+  state=1010 numerator=271 denominator=819 order=1638
+  state=1011 numerator=37007 denominator=65520 order=131040
+  state=1100 numerator=59 denominator=168 order=336
+  state=1101 numerator=33 denominator=56 order=112
+  state=1110 numerator=4001 denominator=6552 order=13104
+  state=1111 numerator=11941 denominator=13104 order=26208
+relative_order_vector=1,20,18,1440,16,48,1008,2016,14,70,1638,131040,336,112,13104,26208
+relative_order_lcm=131040
+minimality_state_1011_order=131040
+exact_global_phase_period_T=131040

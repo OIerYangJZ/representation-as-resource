@@ -1,0 +1,32 @@
+{
+  "task": "V1 fooling-set enumeration gate",
+  "parameters": {
+    "m": 2,
+    "r": 2,
+    "Q": 5,
+    "target_Q_pow_m": 25
+  },
+  "time_varying_schedule": {
+    "prefix_classes": 25,
+    "reachable_aggregates_min": 25,
+    "reachable_aggregates_max": 25,
+    "reachable_aggregates_all_equal": true,
+    "fooling_pairs_shared_prefix_diff_aggregate": 7500
+  },
+  "constant_schedule_control": {
+    "prefix_classes": 25,
+    "reachable_aggregates_min": 1,
+    "reachable_aggregates_max": 1,
+    "reachable_aggregates_all_equal": true
+  },
+  "signed_rc_schedule": {
+    "prefix_classes": 100,
+    "reachable_aggregates_min": 25,
+    "reachable_aggregates_max": 25,
+    "reachable_aggregates_all_equal": true,
+    "fooling_pairs_shared_prefix_diff_aggregate": 480000
+  },
+  "pass_criterion": "every prefix class of the time-varying and signed streams reaches exactly Q^m aggregates; the constant-schedule control is expected to reach exactly 1 (degenerate, no hiding)",
+  "constant_schedule_degenerates_as_expected": true,
+  "verdict": "PASS"
+}

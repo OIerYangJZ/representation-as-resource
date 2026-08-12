@@ -1,0 +1,777 @@
+{
+  "mqt_grover": {
+    "8": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "suite": "mqt_grover",
+        "size": 8,
+        "family": "mqt_grover_8",
+        "description": "Public MQT Bench Grover benchmark, used as a scaled amplitude-amplification/conjugation positive family.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 25,
+          "depth": 10,
+          "multi_qubit_gates": 9,
+          "cx_count": 0,
+          "gate_types": [
+            "Q",
+            "barrier",
+            "h",
+            "measure",
+            "x"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 5170,
+          "depth": 3788,
+          "multi_qubit_gates": 2193,
+          "cx_count": 2192,
+          "gate_types": [
+            "barrier",
+            "cx",
+            "h",
+            "measure",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.062
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "suite": "mqt_grover",
+        "size": 8,
+        "family": "mqt_grover_8",
+        "description": "Public MQT Bench Grover benchmark, used as a scaled amplitude-amplification/conjugation positive family.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 25,
+          "depth": 10,
+          "multi_qubit_gates": 9,
+          "cx_count": 0,
+          "gate_types": [
+            "Q",
+            "barrier",
+            "h",
+            "measure",
+            "x"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 18992,
+          "depth": 10990,
+          "multi_qubit_gates": 2193,
+          "cx_count": 2192,
+          "gate_types": [
+            "barrier",
+            "cx",
+            "measure",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.149
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "suite": "mqt_grover",
+        "size": 8,
+        "family": "mqt_grover_8",
+        "description": "Public MQT Bench Grover benchmark, used as a scaled amplitude-amplification/conjugation positive family.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 25,
+          "depth": 10,
+          "multi_qubit_gates": 9,
+          "cx_count": 0,
+          "gate_types": [
+            "Q",
+            "barrier",
+            "h",
+            "measure",
+            "x"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 5170,
+          "depth": 3788,
+          "multi_qubit_gates": 2193,
+          "cx_count": 2192,
+          "gate_types": [
+            "barrier",
+            "cx",
+            "h",
+            "measure",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.07
+      }
+    },
+    "12": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "suite": "mqt_grover",
+        "size": 12,
+        "family": "mqt_grover_12",
+        "description": "Public MQT Bench Grover benchmark, used as a scaled amplitude-amplification/conjugation positive family.",
+        "input": {
+          "num_qubits": 12,
+          "total_gates": 60,
+          "depth": 37,
+          "multi_qubit_gates": 36,
+          "cx_count": 0,
+          "gate_types": [
+            "Q",
+            "barrier",
+            "h",
+            "measure",
+            "x"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 12,
+          "total_gates": 71706,
+          "depth": 55801,
+          "multi_qubit_gates": 29191,
+          "cx_count": 29190,
+          "gate_types": [
+            "barrier",
+            "cx",
+            "h",
+            "measure",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.579
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "suite": "mqt_grover",
+        "size": 12,
+        "family": "mqt_grover_12",
+        "description": "Public MQT Bench Grover benchmark, used as a scaled amplitude-amplification/conjugation positive family.",
+        "input": {
+          "num_qubits": 12,
+          "total_gates": 60,
+          "depth": 37,
+          "multi_qubit_gates": 36,
+          "cx_count": 0,
+          "gate_types": [
+            "Q",
+            "barrier",
+            "h",
+            "measure",
+            "x"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 12,
+          "total_gates": 259797,
+          "depth": 150911,
+          "multi_qubit_gates": 29191,
+          "cx_count": 29190,
+          "gate_types": [
+            "barrier",
+            "cx",
+            "measure",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.791
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "suite": "mqt_grover",
+        "size": 12,
+        "family": "mqt_grover_12",
+        "description": "Public MQT Bench Grover benchmark, used as a scaled amplitude-amplification/conjugation positive family.",
+        "input": {
+          "num_qubits": 12,
+          "total_gates": 60,
+          "depth": 37,
+          "multi_qubit_gates": 36,
+          "cx_count": 0,
+          "gate_types": [
+            "Q",
+            "barrier",
+            "h",
+            "measure",
+            "x"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 12,
+          "total_gates": 71706,
+          "depth": 55801,
+          "multi_qubit_gates": 29191,
+          "cx_count": 29190,
+          "gate_types": [
+            "barrier",
+            "cx",
+            "h",
+            "measure",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.754
+      }
+    },
+    "16": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "suite": "mqt_grover",
+        "size": 16,
+        "family": "mqt_grover_16",
+        "description": "Public MQT Bench Grover benchmark, used as a scaled amplitude-amplification/conjugation positive family.",
+        "input": {
+          "num_qubits": 16,
+          "total_gates": 175,
+          "depth": 144,
+          "multi_qubit_gates": 143,
+          "cx_count": 0,
+          "gate_types": [
+            "Q",
+            "barrier",
+            "h",
+            "measure",
+            "x"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 16,
+          "total_gates": 581098,
+          "depth": 476428,
+          "multi_qubit_gates": 234301,
+          "cx_count": 234300,
+          "gate_types": [
+            "barrier",
+            "cx",
+            "h",
+            "measure",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 5.741
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "suite": "mqt_grover",
+        "size": 16,
+        "family": "mqt_grover_16",
+        "description": "Public MQT Bench Grover benchmark, used as a scaled amplitude-amplification/conjugation positive family.",
+        "input": {
+          "num_qubits": 16,
+          "total_gates": 175,
+          "depth": 144,
+          "multi_qubit_gates": 143,
+          "cx_count": 0,
+          "gate_types": [
+            "Q",
+            "barrier",
+            "h",
+            "measure",
+            "x"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 16,
+          "total_gates": 2112285,
+          "depth": 1255608,
+          "multi_qubit_gates": 234301,
+          "cx_count": 234300,
+          "gate_types": [
+            "barrier",
+            "cx",
+            "measure",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 14.004
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "suite": "mqt_grover",
+        "size": 16,
+        "family": "mqt_grover_16",
+        "description": "Public MQT Bench Grover benchmark, used as a scaled amplitude-amplification/conjugation positive family.",
+        "input": {
+          "num_qubits": 16,
+          "total_gates": 175,
+          "depth": 144,
+          "multi_qubit_gates": 143,
+          "cx_count": 0,
+          "gate_types": [
+            "Q",
+            "barrier",
+            "h",
+            "measure",
+            "x"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 16,
+          "total_gates": 581098,
+          "depth": 476428,
+          "multi_qubit_gates": 234301,
+          "cx_count": 234300,
+          "gate_types": [
+            "barrier",
+            "cx",
+            "h",
+            "measure",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 4.722
+      }
+    }
+  },
+  "grover_mirrored": {
+    "10000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "suite": "grover_mirrored",
+        "size": 10000,
+        "family": "grover_mirrored_10000",
+        "description": "Synthetic repeated mirrored Grover-style shell benchmark, scaled by exact input gate count.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 10000,
+          "depth": 2001,
+          "multi_qubit_gates": 400,
+          "cx_count": 0,
+          "gate_types": [
+            "h",
+            "mcx",
+            "x"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 115811,
+          "depth": 76210,
+          "multi_qubit_gates": 46800,
+          "cx_count": 46800,
+          "gate_types": [
+            "cx",
+            "h",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.868
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "suite": "grover_mirrored",
+        "size": 10000,
+        "family": "grover_mirrored_10000",
+        "description": "Synthetic repeated mirrored Grover-style shell benchmark, scaled by exact input gate count.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 10000,
+          "depth": 2001,
+          "multi_qubit_gates": 400,
+          "cx_count": 0,
+          "gate_types": [
+            "h",
+            "mcx",
+            "x"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 412206,
+          "depth": 216621,
+          "multi_qubit_gates": 46800,
+          "cx_count": 46800,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 2.693
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "suite": "grover_mirrored",
+        "size": 10000,
+        "family": "grover_mirrored_10000",
+        "description": "Synthetic repeated mirrored Grover-style shell benchmark, scaled by exact input gate count.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 10000,
+          "depth": 2001,
+          "multi_qubit_gates": 400,
+          "cx_count": 0,
+          "gate_types": [
+            "h",
+            "mcx",
+            "x"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 115811,
+          "depth": 76210,
+          "multi_qubit_gates": 46800,
+          "cx_count": 46800,
+          "gate_types": [
+            "cx",
+            "h",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 0.917
+      }
+    },
+    "20000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "suite": "grover_mirrored",
+        "size": 20000,
+        "family": "grover_mirrored_20000",
+        "description": "Synthetic repeated mirrored Grover-style shell benchmark, scaled by exact input gate count.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 20000,
+          "depth": 4001,
+          "multi_qubit_gates": 800,
+          "cx_count": 0,
+          "gate_types": [
+            "h",
+            "mcx",
+            "x"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 231611,
+          "depth": 152410,
+          "multi_qubit_gates": 93600,
+          "cx_count": 93600,
+          "gate_types": [
+            "cx",
+            "h",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.818
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "suite": "grover_mirrored",
+        "size": 20000,
+        "family": "grover_mirrored_20000",
+        "description": "Synthetic repeated mirrored Grover-style shell benchmark, scaled by exact input gate count.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 20000,
+          "depth": 4001,
+          "multi_qubit_gates": 800,
+          "cx_count": 0,
+          "gate_types": [
+            "h",
+            "mcx",
+            "x"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 824406,
+          "depth": 433221,
+          "multi_qubit_gates": 93600,
+          "cx_count": 93600,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 5.334
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "suite": "grover_mirrored",
+        "size": 20000,
+        "family": "grover_mirrored_20000",
+        "description": "Synthetic repeated mirrored Grover-style shell benchmark, scaled by exact input gate count.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 20000,
+          "depth": 4001,
+          "multi_qubit_gates": 800,
+          "cx_count": 0,
+          "gate_types": [
+            "h",
+            "mcx",
+            "x"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 231611,
+          "depth": 152410,
+          "multi_qubit_gates": 93600,
+          "cx_count": 93600,
+          "gate_types": [
+            "cx",
+            "h",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 1.829
+      }
+    },
+    "50000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "suite": "grover_mirrored",
+        "size": 50000,
+        "family": "grover_mirrored_50000",
+        "description": "Synthetic repeated mirrored Grover-style shell benchmark, scaled by exact input gate count.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 50000,
+          "depth": 10001,
+          "multi_qubit_gates": 2000,
+          "cx_count": 0,
+          "gate_types": [
+            "h",
+            "mcx",
+            "x"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 579011,
+          "depth": 381010,
+          "multi_qubit_gates": 234000,
+          "cx_count": 234000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 4.602
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "suite": "grover_mirrored",
+        "size": 50000,
+        "family": "grover_mirrored_50000",
+        "description": "Synthetic repeated mirrored Grover-style shell benchmark, scaled by exact input gate count.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 50000,
+          "depth": 10001,
+          "multi_qubit_gates": 2000,
+          "cx_count": 0,
+          "gate_types": [
+            "h",
+            "mcx",
+            "x"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 2061006,
+          "depth": 1083021,
+          "multi_qubit_gates": 234000,
+          "cx_count": 234000,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 13.307
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "suite": "grover_mirrored",
+        "size": 50000,
+        "family": "grover_mirrored_50000",
+        "description": "Synthetic repeated mirrored Grover-style shell benchmark, scaled by exact input gate count.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 50000,
+          "depth": 10001,
+          "multi_qubit_gates": 2000,
+          "cx_count": 0,
+          "gate_types": [
+            "h",
+            "mcx",
+            "x"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 579011,
+          "depth": 381010,
+          "multi_qubit_gates": 234000,
+          "cx_count": 234000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 6.171
+      }
+    },
+    "100000": {
+      "qiskit_opt3": {
+        "method": "qiskit_opt3",
+        "suite": "grover_mirrored",
+        "size": 100000,
+        "family": "grover_mirrored_100000",
+        "description": "Synthetic repeated mirrored Grover-style shell benchmark, scaled by exact input gate count.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 100000,
+          "depth": 20001,
+          "multi_qubit_gates": 4000,
+          "cx_count": 0,
+          "gate_types": [
+            "h",
+            "mcx",
+            "x"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 1158011,
+          "depth": 762010,
+          "multi_qubit_gates": 468000,
+          "cx_count": 468000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 9.648
+      },
+      "baseline_ucc": {
+        "method": "baseline_ucc",
+        "suite": "grover_mirrored",
+        "size": 100000,
+        "family": "grover_mirrored_100000",
+        "description": "Synthetic repeated mirrored Grover-style shell benchmark, scaled by exact input gate count.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 100000,
+          "depth": 20001,
+          "multi_qubit_gates": 4000,
+          "cx_count": 0,
+          "gate_types": [
+            "h",
+            "mcx",
+            "x"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 4122006,
+          "depth": 2166021,
+          "multi_qubit_gates": 468000,
+          "cx_count": 468000,
+          "gate_types": [
+            "cx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 27.802
+      },
+      "optimized_ucc": {
+        "method": "optimized_ucc",
+        "suite": "grover_mirrored",
+        "size": 100000,
+        "family": "grover_mirrored_100000",
+        "description": "Synthetic repeated mirrored Grover-style shell benchmark, scaled by exact input gate count.",
+        "input": {
+          "num_qubits": 8,
+          "total_gates": 100000,
+          "depth": 20001,
+          "multi_qubit_gates": 4000,
+          "cx_count": 0,
+          "gate_types": [
+            "h",
+            "mcx",
+            "x"
+          ]
+        },
+        "status": "ok",
+        "output": {
+          "num_qubits": 8,
+          "total_gates": 1158011,
+          "depth": 762010,
+          "multi_qubit_gates": 468000,
+          "cx_count": 468000,
+          "gate_types": [
+            "cx",
+            "h",
+            "rx",
+            "ry",
+            "rz"
+          ]
+        },
+        "runtime_s": 12.695
+      }
+    }
+  }
+}

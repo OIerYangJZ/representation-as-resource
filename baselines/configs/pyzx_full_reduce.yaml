@@ -1,0 +1,25 @@
+schema: ucc.external-baseline-family.v1
+tool: pyzx
+package: pyzx
+category: semantic-capable
+semantic_capable: true
+bridge: OpenQASM2 -> PyZX basic Circuit/ZX graph -> OpenQASM2 certificate bridge
+configs:
+  - id: pyzx_full_reduce_native
+    mode: recommended_native
+    output_basis: native_pyzx
+    pass_sequence:
+      - Circuit.from_qasm(...).to_basic_gates()
+      - circuit.to_graph()
+      - simplify.full_reduce(graph, quiet=True)
+      - extract_circuit(graph, quiet=True).to_basic_gates()
+  - id: pyzx_full_reduce_unified
+    mode: unified_target_basis
+    output_basis: [cx, rz, h]
+    pass_sequence:
+      - Circuit.from_qasm(...).to_basic_gates()
+      - circuit.to_graph()
+      - simplify.full_reduce(graph, quiet=True)
+      - extract_circuit(graph, quiet=True).to_basic_gates()
+      - OpenQASM2 -> Qiskit transpile(basis_gates=[cx,rz,h], optimization_level=0)
+

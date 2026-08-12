@@ -1,0 +1,25 @@
+{
+  "campaign": "RP23-reorder-probe-202607",
+  "config": {
+    "artifact_commit": "legacy snapshot; generation commit unavailable",
+    "bridge_sequence": "UCCDefaults variants -> line20 target basis",
+    "certificate": "no independent equivalence certificate in historical rows; diagnostic only",
+    "memory_cap_bytes": "not_enforced_historical",
+    "purpose": "pass-order probe; never merged with HW24",
+    "seed": 12345,
+    "timeout_s": 600,
+    "tool_versions": {
+      "qiskit": "2.3.1",
+      "ucc": "0.4.12"
+    }
+  },
+  "dataset": {
+    "path": "research/experiment_registry/frozen_hardware_rows.json",
+    "sha256": "98d5add0b77ecb544b7f6a8ef33a3653dafaa46dbd1115ec5a73f39bdf63adc9"
+  },
+  "freeze_commit": "229eafdb4127ab98b2ad925a9657fa67510a12e7",
+  "immutable_config_sha256": "429456f5f2cc7163730b748c744d6b6d438c3bea8a1e809b7169613b0cfca2d7",
+  "inherits": "line20_v1",
+  "reader_label_prefix": "RP23",
+  "schema": "ucc.campaign-manifest.v1"
+}

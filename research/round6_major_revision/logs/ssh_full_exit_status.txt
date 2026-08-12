@@ -1,0 +1,2 @@
+full_status=0
+finished_at=2026-07-12T14:32:58+08:00

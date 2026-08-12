@@ -1,0 +1,86 @@
+{
+  "analysis_tool_versions": {
+    "pandas": "2.3.3",
+    "psutil": "7.1.3",
+    "pyarrow": "25.0.0",
+    "pytket": "2.16.0",
+    "pyzx": "0.10.2",
+    "qiskit": "2.4.0"
+  },
+  "bridge_policy": "bridge losses de-duplicated by representation_id and tool",
+  "campaign": "w5-external-baselines-20260803",
+  "files": {
+    "EXTERNAL_BASELINE_REPORT.md": {
+      "bytes": 7050,
+      "sha256": "8eea9c5e9256792af16317a5dd4a4b759830381349c9223ec5f6e1fcc672fd59"
+    },
+    "baselines/BASELINE_REGISTRY.md": {
+      "bytes": 2931,
+      "sha256": "0002d5255e85c6c4dab1d4cc666f631d6b091b1ba4f4155366a3a1d1b4e24711"
+    },
+    "baselines/configs/authors_reference.yaml": {
+      "bytes": 772,
+      "sha256": "0694641e1d8cd28254e5df3c187ad89d374d3e7c01971f207b071c4bb6f7a74c"
+    },
+    "baselines/configs/campaign.yaml": {
+      "bytes": 547,
+      "sha256": "214ec86b37b391fc2bc013ae7c740bec4f0c8ace39a07421af76f0f29565b1ca"
+    },
+    "baselines/configs/pyzx_full_reduce.yaml": {
+      "bytes": 878,
+      "sha256": "fe42b19276a44abaaed8f24edd78c9e29f70a4bccd1085886178a6ec682bcae3"
+    },
+    "baselines/configs/qiskit_local.yaml": {
+      "bytes": 612,
+      "sha256": "bd17c0b0b7197a70a5d1e06f2f6e5e25a50cb882fecad8635813f3addf676762"
+    },
+    "baselines/configs/tket_paulisimp.yaml": {
+      "bytes": 778,
+      "sha256": "f3fdef370ac335b7cb05703f6ff3affc9d844e61f3ce9658aa6501b3f418fed3"
+    },
+    "data/frozen/external_baseline_summary.csv": {
+      "bytes": 5538,
+      "sha256": "08237f2e6c01a917f93e038bae989859c801da50740e14017e191a70a27205a9"
+    },
+    "data/frozen/external_baselines.csv": {
+      "bytes": 2443629,
+      "sha256": "f9083e84ff231a1a4f8a726bc877acebf20376707ee6457be5f867a3b2176770"
+    },
+    "data/frozen/external_baselines.parquet": {
+      "bytes": 190766,
+      "sha256": "80ca96d4b2addfee6b190cfd14a1197b595d28c11a302aa8c032bd44f614dd25"
+    },
+    "data/frozen/external_bridge_loss.csv": {
+      "bytes": 8815,
+      "sha256": "3026a804027be177cf1b829725a9b648f0fa9662936b94a5d48a7bdd2ad66814"
+    },
+    "data/frozen/external_campaign_manifest.json": {
+      "bytes": 10004,
+      "sha256": "e8702b7084154754c0b4d32305a6f5e2c660927fd2400bfaaee8d7061e377df3"
+    },
+    "data/runs/w5-external-baselines-20260803/external_baseline_cells.jsonl": {
+      "bytes": 5665583,
+      "sha256": "3c2e889d5bb4f4d04c78f2dcdeb2727a74f52aa3c9379fe8cddc3855563b19b8"
+    },
+    "scripts/audit_bridge_loss.py": {
+      "bytes": 22663,
+      "sha256": "5e64b344a65ebbf6e269b973380c9edc176d0068d17e5e385c18e85dcabbc133"
+    },
+    "scripts/run_external_baselines.py": {
+      "bytes": 37217,
+      "sha256": "9a331c9b630f7efc50272b101e535f435139feaa9a9360f0a0f4758be6c6a146"
+    }
+  },
+  "matrix_complete": true,
+  "numeric_status_policy": "only certified completed rows enter numeric optimization summaries",
+  "parquet_validation": "PAR1 magic and pandas/pyarrow cell_id round trip",
+  "schema": "ucc.external-baseline-freeze.v1",
+  "status_counts": {
+    "completed": 1695,
+    "correctness_failure": 0,
+    "memory_error": 0,
+    "predicate_error": 33,
+    "timeout": 0,
+    "unsupported": 0
+  }
+}

@@ -1,0 +1,125 @@
+\subsection{Executable Model--Implementation Correspondence}
+\label{sec:model-implementation-mapping}
+
+The formal fields above are implemented by one canonical binary codec rather
+than by dimension-changing estimates.  The executable specification is
+\texttt{encoding/FORMAT.md}; its reference implementation is
+\texttt{encoding/codec.py}, and the only bit-accounting entry point is
+\texttt{instrumentation/resource\_accounting.py}.  A complete codec frame has
+the form
+\begin{equation}
+ \mathtt{UCCACCT0}\,\Vert\,
+ \mathsf u(\text{version})\,\Vert\,
+ \mathsf u(\text{type})\,\Vert\,
+ \mathsf u(|z|)\,\Vert\,z,
+ \label{eq:executable-codec-frame}
+\end{equation}
+where the displayed terminal zero denotes a null byte, $\mathsf u$ is the
+canonical base-$128$ unsigned varint, and $z$ is a typed canonical payload.
+Signed integers use zigzag coding; rational coefficients are reduced signed
+numerator/positive-denominator pairs.  Maps are ordered by their UTF-8 key
+bytes.  Qubit, generator, symbol, location, node, edge-endpoint, port, pass,
+and head addresses are literal varints in $z$.
+
+\begin{table*}[!t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}l l X X@{}}
+\toprule
+Formal object & Codec object/file & Included information & Measured field \\
+\midrule
+semantic input & \texttt{SemanticStream} & width and address-complete aggregate records & input artifact bits \\
+dispersed flat input & \texttt{FlatUpdateStream} & width, round count, and every additive update & input artifact bits \\
+$\mathsf{ser}_{\rm control}$ & \texttt{ControlState}/\texttt{control.uccbin} & pass count/index, heads, scheduling, status, framing and seed state when present & $B_{\rm control}$ \\
+$\mathsf{ser}_{\rm store}$ & \texttt{StoreState}/\texttt{store.uccbin} & aggregate tables, maps, caches, stacks and their layout, excluding tagged parameter/IR payloads & $B_{\rm store}$ \\
+$\mathsf{ser}_{\rm window}$ & \texttt{LiveWindow}/\texttt{window.uccbin} & ordered live complete-token structure and explicit parameter-slot count & $B_{\rm window}$ \\
+$\mathsf{ser}_{\rm parameter}$ & \texttt{ParameterLedger}/\texttt{parameter.uccbin} & sparse symbolic parameters under complete location tuples & $B_{\rm parameter}$ \\
+$\mathsf{ser}_{\rm IR}$ & \texttt{IRField}/\texttt{ir.uccbin} & serialized DAG width, opcodes, operands, nodes, edges, ports, boundaries and metadata, with parameters removed & $B_{\rm IR}$ \\
+committed prefix & \texttt{committed-prefix.bin} & literal immutable prefix of a codec output frame & $B_{\rm com}$ \\
+external output & \texttt{ExternalToolOutput} & tool, format and literal API payload & output artifact bits \\
+certificate input & \texttt{CertificateInput} & certificate kind, certified-artifact SHA-256 and literal sidecar & certificate artifact bits \\
+pass count & manifest \texttt{passes.count} and row \texttt{p} & actual declared scans of the instrumented compiler & $p$ \\
+\bottomrule
+\end{tabularx}
+\caption{One-to-one map from formal serialized objects to executable artifacts.
+No row permits a gate, token, support, or IR-node count to stand in for bits.}
+\label{tab:model-implementation-map}
+\end{table*}
+
+\begin{lemma}[Canonical prefix-free implementation]
+\label{lem:codec-prefix-free}
+Version-one complete frames are injective and prefix-free.  Concatenations of
+frames are uniquely parseable without an out-of-band arity or record count.
+The semantic and flat decoders preserve their exact aggregate coefficient
+table.
+\end{lemma}
+
+\begin{proof}
+Canonical varints have a unique terminating byte, and the version, type, and
+payload length are therefore uniquely decoded.  The declared payload length
+locates the end of the frame.  A complete valid frame cannot be a proper prefix
+of another complete valid frame: the shorter declared payload ends at its frame
+boundary, whereas any following byte belongs to a subsequent frame.  Typed
+payload values have distinct one-byte tags; lists and maps carry counts, maps
+have strictly increasing keys, and reduced rational pairs are unique.  This
+proves injectivity and unique concatenated parsing.  Finally,
+\texttt{semantic\_signature} sums exact rational sparse parameters by the
+literal pair (generator address, Pauli support), so encode--decode leaves the
+aggregate table unchanged for both input representations.
+\end{proof}
+
+\begin{proposition}[File-backed accounting soundness]
+\label{prop:file-backed-accounting}
+Suppose the version-one verifier accepts a cut manifest $M$.  For every
+$f\in\{\mathrm{control},\mathrm{store},\mathrm{window},
+\mathrm{parameter},\mathrm{IR},\mathrm{com}\}$, let $A_f$ be the file named by
+$M$.  Then the implementation reports
+\begin{equation}
+\begin{aligned}
+ B_f&=8|A_f|_{\rm byte},\\
+ B_{\rm cut}&=B_{\rm control}+B_{\rm store}+B_{\rm window}\\
+             &\quad+B_{\rm parameter}+B_{\rm IR},
+\end{aligned}
+ \label{eq:file-backed-accounting}
+\end{equation}
+and reports the manifest pass count as $p$.  The reported values change when a
+serialized address crosses a varint-width boundary.  They cannot be obtained
+from a node or gate count alone.
+\end{proposition}
+
+\begin{proof}
+The accountant first writes the five complete frames and the literal committed
+prefix, then obtains every byte count by \texttt{stat}, stores the SHA-256 of
+each file, writes $M$, and invokes the verifier before returning a row.  The
+verifier reopens all six files, recomputes sizes and digests, decodes the five
+restart fields, and rejects any disagreement.  It then forms the sum in
+\eqref{eq:file-backed-accounting}; there is no count-to-bit code path.  Since an
+address is a literal canonical varint, for example $127$ and $128$ occupy
+different address lengths.  Conversely, two one-node DAGs may contain those
+different addresses and hence have unequal file lengths despite equal node
+count.
+\end{proof}
+
+\begin{remark}[Observable boundary versus restart cut]
+\label{rem:observable-boundary-accounting}
+The masked-share tracer writes the five restart fields after every update,
+destroys the live Python state, and resumes from only those files, the committed
+prefix, and unread input; its maximum is therefore an implementation of
+$B_{\rm cut}$.  External compilers do not expose their private in-process DAGs,
+caches, or tapes.  Their matched-matrix and natural-factorial rows consequently
+report a file-backed \emph{API-boundary} snapshot and are diagnostic only; they
+are not promoted to measurements of the maximum private $B_{\rm cut}$.  Peak
+RSS remains a separate byte dimension and is not substituted for any field in
+\eqref{eq:info-budget}.
+\end{remark}
+
+\begin{remark}[Self-contained and conditional descriptions]
+\label{rem:dictionary-accounting-code}
+Both input-stream objects declare either \texttt{self\_contained} or
+\texttt{conditional}.  The former forbids an external dictionary.  The latter
+requires the SHA-256 of the exact public family dictionary, and its manifest
+records the dictionary's separate file size and whether it is charged at the
+cut.  Thus a conditional description cannot silently be reported as a
+self-contained circuit code.
+\end{remark}

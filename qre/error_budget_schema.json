@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ucc.example/schemas/qre-error-budget-v1.json",
+  "title": "UCC fixed-total-error QRE budget",
+  "description": "Schema for an additive algorithmic, synthesis, and logical-failure error budget. The campaign runner additionally checks that the three fractions sum to one and that every realized row obeys the requested total bound.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "composition",
+    "epsilon_totals",
+    "fractions",
+    "synthesis_allocation_policies"
+  ],
+  "properties": {
+    "schema": {
+      "const": "ucc.qre.error-budget.v1"
+    },
+    "composition": {
+      "const": "additive_union_bound"
+    },
+    "epsilon_totals": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "maximum": 1
+      }
+    },
+    "fractions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithmic", "synthesis", "logical"],
+      "properties": {
+        "algorithmic": {"type": "number", "minimum": 0, "maximum": 1},
+        "synthesis": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "logical": {"type": "number", "exclusiveMinimum": 0, "maximum": 1}
+      }
+    },
+    "synthesis_allocation_policies": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": ["equal_decimal", "t_cost_greedy"]
+      }
+    },
+    "algorithmic_certificate_rule": {
+      "enum": [
+        "exact_compiler_certificate_implies_zero_algorithmic_error",
+        "certificate_guarded_exact_compilation_with_reserved_budget"
+      ]
+    }
+  }
+}

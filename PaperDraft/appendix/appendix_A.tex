@@ -1,0 +1,621 @@
+\section{Supplementary Theory and Full Proofs}
+
+\subsection{Operational Gap Notation}
+
+For reference, the experimental gap can be written without adding another
+formal theorem hypothesis. Let:
+\begin{itemize}[leftmargin=1.5em]
+    \item $L_B(C)$ be exact lowering into target basis $B$,
+    \item $\kappa$ be a conservative structural cost,
+    \item $\mathcal{T}_K(C)$ be the bounded set of semantic candidates produced
+    by the semantic lift under budget $K$,
+    \item $\mathfrak{A}$ be a configured post-lowering pipeline family used for
+    an experiment.
+\end{itemize}
+
+Define the $(K,w)$-representation gap of $C$ by
+\[
+\mathrm{Gap}^{K,w}_{\mathrm{rep}}(C)
+:=
+\inf_{A \in \mathfrak{A}} \kappa(A(L_B(C)))
+-
+\inf_{T \in \mathcal{T}_K(C)} \kappa(L_B(T)).
+\]
+Define the operational recoverability gap by
+\[
+\mathrm{Gap}^{K,w}_{\mathrm{rec}}(C)
+:=
+\kappa(C_{\mathrm{flat}}^\star) - \kappa(C_{\mathrm{term}}^\star),
+\]
+where $C_{\mathrm{flat}}^\star$ is the best candidate recovered from the flat
+basis-lowered representation and $C_{\mathrm{term}}^\star$ is the best
+candidate recovered from the bounded semantic term representation.
+
+The meaning is simple: semantics may survive lowering, while cheap
+recoverability of the opportunity may not. This notation is operational and
+experimental; the formal lower bound in the main text is the budget-explicit
+final-output theorem for finite-window transducers.
+
+\begin{definition}[Aggregate recovery]
+\label{def:aggregation-equivalent-recovery}
+Consider the Fourier-layer family
+$C_{m,r}=H_{\Lambda}D_m(\boldsymbol{\theta})^rH_{\Lambda}$ with
+$D_m(\boldsymbol{\theta})=\prod_{j=1}^m e^{-i\theta_jP_j/2}$. A compiler
+performs \emph{aggregation-equivalent recovery} on this family if, for each
+non-removable term $P_j$, its successful output can be associated with an
+$O(1)$-size record, subcircuit, or algebraic object whose coefficient is
+equivalent modulo $2\pi$ to the aggregate $r\theta_j$. The object may be
+explicit, as in a phase-polynomial or commuting-diagonal IR, or implicit, as
+in a specialized rewrite, lookup, ZX transformation, or synthesis routine that
+computes the same aggregate diagonal action without storing all $r$ lowered
+occurrences separately.
+\end{definition}
+
+\begin{proposition}[Operational recovery channels]
+\label{prop:classification-boundary}
+For the Fourier-layer family, a pipeline that recovers the constant
+fixed-width output can be classified by the channel through which it carries
+the aggregate coefficient information. Examples include:
+\begin{enumerate}[leftmargin=1.5em]
+    \item store enough persistent summary information to carry the aggregate;
+    \item lift enough lowered volume into a richer IR to reconstruct the
+    aggregate;
+    \item use nonlocal provenance information from before basis lowering that
+    already contains the aggregate;
+    \item reconstruct a global semantic representation equivalent to a
+    phase-polynomial, ZX, stabilizer-phase, or commuting-diagonal Hamiltonian
+    object.
+\end{enumerate}
+Consequently, a successful future flat-looking implementation would not by
+itself refute the main theorem. It would instead classify the implementation by
+identifying where the aggregate information crosses the finite-state boundary,
+or by showing that the formal transducer model is missing a cheaper channel.
+\end{proposition}
+
+\begin{proof}[Justification]
+The fixed-width theorem lower-bounds final output length for constant-budget
+finite-window transducers on a certified noncolliding family. A pipeline that
+achieves the semantic constant output must still represent the aggregate
+coefficients that distinguish the noncolliding cases. The listed channels are
+implementation-level ways to carry that information. This is a classification
+statement rather than an optimality claim.
+\end{proof}
+
+\subsection*{Additional Structural Families}
+
+The artifact also targets phase-ladder, mirrored, and conjugation patterns that
+appear in QPE/QFT-style workloads and Grover-style workloads. These families
+are not used here as additional theorem instances. They are best read as
+structural stress families: the semantic controller preserves repeated
+phase-heavy ladders, mirrored shells, and conjugation shells long enough to
+compare projected costs before materializing the selected candidate.
+
+For phase-ladder workloads, the relevant empirical question is whether bounded
+semantic terms preserve a repeated commuting-diagonal opportunity that is
+harder to recover after early lowering. For mirrored and conjugation workloads,
+the relevant empirical question is whether the artifact recognizes repeated
+shell structure and avoids materializing every candidate before selection. The
+Grover and mirrored-shell experiments in Appendix~C are therefore empirical
+positive cases and robustness checks, not support for a separate theorem-level
+family separation.
+
+\subsection{Self-Contained Rational CP Period Certificate}
+\label{app:sec:rational-period}
+
+The canonical four-qubit rational witness has diagonal block
+\begin{equation*}
+\begin{aligned}
+D={}&\prod_{j=0}^{3}RZ_j(\theta_j)
+ \prod_{0\leq a<b\leq3}CP_{ab}(\theta_{ab}),\\
+\boldsymbol\theta_{RZ}/\pi
+={}&(1/7,1/8,1/9,1/10),\\
+(\theta_{01},\theta_{02},\theta_{03})/\pi
+={}&(1/12,1/13,1/14),\\
+(\theta_{12},\theta_{13},\theta_{23})/\pi
+={}&(1/14,1/15,1/16).
+\end{aligned}
+\end{equation*}
+For a reduced rational angle $\theta/\pi=p/q$, both $RZ(\theta)$ and
+$CP(\theta)$ have projective single-term order
+\begin{equation*}
+ \operatorname{ord}(p/q)
+ =\frac{2q}{\gcd(|p|,2q)},
+\end{equation*}
+because the relevant relative phase is $p/q$ modulo $2$.  The complete
+single-term certificate is
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+term & support & $\theta/\pi$ & $T_j$\\
+\midrule
+$RZ_0$ & $0$ & $1/7$ & $14$\\
+$RZ_1$ & $1$ & $1/8$ & $16$\\
+$RZ_2$ & $2$ & $1/9$ & $18$\\
+$RZ_3$ & $3$ & $1/10$ & $20$\\
+$CP_{01}$ & $01$ & $1/12$ & $24$\\
+$CP_{02}$ & $02$ & $1/13$ & $26$\\
+$CP_{03}$ & $03$ & $1/14$ & $28$\\
+$CP_{12}$ & $12$ & $1/14$ & $28$\\
+$CP_{13}$ & $13$ & $1/15$ & $30$\\
+$CP_{23}$ & $23$ & $1/16$ & $32$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Hence
+\begin{equation*}
+\begin{aligned}
+T_{\mathrm{terms}}
+&=\operatorname{lcm}(14,16,18,20,24,26,28,28,30,32)\\
+&=2^5\cdot3^2\cdot5\cdot7\cdot13=131040,
+\end{aligned}
+\end{equation*}
+which proves that $D^{131040}$ is a global phase.  To certify minimality
+for the product rather than merely obtain this common upper bound, subtract
+the phase of $0000$.  For $z=z_0z_1z_2z_3$, the exact relative phase is
+\begin{equation*}
+\begin{aligned}
+w(z)={}&z_0/7+z_1/8+z_2/9+z_3/10\\
+ &+z_0z_1/12+z_0z_2/13+z_0z_3/14\\
+ &+z_1z_2/14+z_1z_3/15+z_2z_3/16
+ \pmod 2.
+\end{aligned}
+\end{equation*}
+In particular,
+\begin{equation*}
+\begin{aligned}
+ w(1011)&=\frac{37007}{65520},\\
+ \operatorname{ord}(w(1011))
+ &=\frac{2\cdot65520}{\gcd(37007,2\cdot65520)}\\
+ &=131040.
+\end{aligned}
+\end{equation*}
+Thus no smaller positive power of $D$ is a global phase, and
+$T=131040$ exactly.  It follows that
+$D^1,\ldots,D^R$ are pairwise distinct up to global phase for every
+$R<T$.
+
+The machine certificate uses only Python \texttt{fractions.Fraction} and
+prints all 16 relative numerators, denominators, and orders.  The frozen
+integer output contains
+\begin{equation*}
+\begin{gathered}
+\texttt{term\_order\_lcm=131040},\\
+\texttt{relative\_order\_lcm=131040},\\
+\texttt{minimality\_state\_1011\_order=131040},\\
+\texttt{exact\_global\_phase\_period\_T=131040}.
+\end{gathered}
+\end{equation*}
+The reproducibility files and hashes are listed below; each digest is split
+at its 32-hex midpoint only for typesetting.
+\begin{itemize}[leftmargin=1.5em]
+ \item verifier: \path{research/rational_witness/verify_period.py},
+ SHA256 \texttt{c7c90f26e00e515383e94e4bbd707574}\allowbreak
+ \texttt{eb3aabf94ad71c3cd5e2cdb8d5db7e76};
+ \item integer output:
+ \path{research/rational_witness/period_certificate.txt}, SHA256
+ \texttt{375295d776f21ea2a82ee4f2bab5205d}\allowbreak
+ \texttt{25bfef85ee864900baacfbd80be9bd6e};
+ \item manifest: \path{research/rational_witness/SHA256SUMS}.
+\end{itemize}
+From the repaired-manuscript root, the byte-for-byte check is
+\begin{quote}
+\footnotesize
+\texttt{cd research/rational\_witness}\\
+\texttt{python3 verify\_period.py \textbackslash}\\
+\texttt{\quad --check period\_certificate.txt}
+\end{quote}
+
+\subsection{Full Proofs for the Transducer Lower Bound}
+\label{app:sec:full-proofs}
+
+This section supplies the full finite-state proof layer underlying
+\Cref{thm:final-output,cor:finite-tail,cor:counting-toll}. The main text states
+the shorter version; the appendix keeps the pumpability data explicit.
+The following statements restate the main-text theorem and corollaries with
+full hypotheses and complete proofs; they are not additional independent
+results.
+
+\subsubsection{Pumpable Pair Families}
+
+Persistent store can depend on $r$, so the induction tracks both a store value
+and a tape word. In this subsection, $D$ in pumpability data denotes a period
+modulus, not the diagonal witness layer in $C_r=H_\Lambda D^rH_\Lambda^{-1}$.
+The next definition restates the main-text pumpable-pair definition with
+explicit residue data for the full proof.
+
+\begin{definition}[Pumpable pair family, restated with explicit residue data]
+\label{app:def:pumpable}
+Let $\Gamma$ be a finite alphabet and $P$ a finite set of store values. A family
+\[
+  X(r)=(\beta(r),W(r))\in P\times\Gamma^*,\qquad r\in\mathbb{N},
+\]
+is \emph{pumpable} if there exist integers $h\ge0$ and $D\ge1$ such that for
+every residue $\rho\in\{0,\ldots,D-1\}$ there are
+\[
+  \beta_\rho\in P,
+  \qquad
+  A_\rho,B_\rho,C_\rho\in\Gamma^*,
+\]
+with
+\[
+  X(h+\rho+kD)=(\beta_\rho,A_\rho B_\rho^k C_\rho)
+\]
+for every $k\ge0$. The word $B_\rho$ is the pump word on residue $\rho$. The
+residue is \emph{live} if $B_\rho\ne\epsilon$ and \emph{collapsed} if
+$B_\rho=\epsilon$.
+\end{definition}
+
+\begin{lemma}[Input pumpability]
+\label{app:lem:input-pumpable}
+For the fixed-width witness $T_0(r)=\Pi M^r\Sigma$, the pair family consisting
+of the initial persistent store and $T_0(r)$ is pumpable with $h=0$, $D=1$,
+pump word $M$, and fixed store value.
+\end{lemma}
+
+\begin{proof}
+Take $A_0=\Pi$, $B_0=M$, and $C_0=\Sigma$.
+\end{proof}
+
+\subsubsection{One-Pass Propagation}
+
+Fix a precision bound $q$ and a charged alphabet $\Gamma=\Gamma_B(q)$. Under
+this bound, a pass of $\mathcal{A}$ can be viewed as an ordinary deterministic
+subsequential transducer over a finite alphabet. Its finite state consists of
+the ephemeral state, the persistent store, and the $w$-token window. The
+end-of-pass persistent store is one component of the final finite state.
+
+\begin{lemma}[One-pass pumpability propagation]
+\label{app:lem:one-pass-pump}
+Let $X(r)=(\beta(r),W(r))$ be a pumpable pair family over a finite input
+alphabet. Let $\tau$ be one deterministic finite-window, finite-burst pass whose
+output alphabet and store set are finite. Let
+\[
+  \tau(\beta(r),W(r))=(\beta'(r),W'(r))
+\]
+be the resulting final store and output tape. Then
+$X'(r)=(\beta'(r),W'(r))$ is pumpable.
+\end{lemma}
+
+\begin{proof}
+Fix pumpability data
+$h,D,\{\beta_\rho,A_\rho,B_\rho,C_\rho\}_\rho$ for $X$. We first treat one
+residue $\rho$, then recombine all residues into $r$-indexed pumpability data
+for $X'$.
+
+For a fixed residue $\rho$, write
+\[
+  W_k=A B^k C,
+  \qquad
+  \beta_k=\beta,
+\]
+where $k\ge0$ and $A,B,C,\beta$ abbreviate the residue data. Absorb the
+ephemeral state, persistent store, and window into the pass's finite state set
+$S$. Starting from the state determined by $\beta$, process $A$. This emits a
+fixed word $O_A$ and reaches a state $s_A\in S$.
+
+Let $f:S\to S$ be the state map obtained by reading the block $B$, and let
+$o(s)\in(\Gamma')^*$ be the output emitted while reading $B$ starting in state
+$s$. The sequence
+\[
+  s_A,\ f(s_A),\ f^2(s_A),\ldots
+\]
+in the finite set $S$ is ultimately periodic. Thus there exist $u\ge0$ and
+$\ell\ge1$ with $u+\ell\le |S|+1$ such that
+\[
+  f^{t+\ell}(s_A)=f^t(s_A)
+  \qquad\text{for all }t\ge u.
+\]
+For $k=u+v\ell+\eta$ with $0\le\eta<\ell$, the output while reading $B^k$ is
+\[
+\begin{aligned}
+  &\bigl(o(s_A)o(f(s_A))\cdots o(f^{u-1}(s_A))\bigr)\\
+  &\quad\cdot\Bigl(o(f^u(s_A))\cdots
+  o(f^{u+\ell-1}(s_A))\Bigr)^v\\
+  &\quad\cdot\bigl(o(f^u(s_A))\cdots
+  o(f^{u+\eta-1}(s_A))\bigr).
+\end{aligned}
+\]
+After this, the pass reads the fixed suffix $C$, emits a word depending only
+on the state $f^{u+\eta}(s_A)$, and ends in a persistent store value depending
+only on the same state.
+
+Restore the residue subscripts. For each original residue
+$\rho\in\{0,\ldots,D-1\}$, let $u_\rho\ge0$ and $\ell_\rho\ge1$ be the
+preperiod and cycle length obtained above, let $f_\rho$, $s_{A_\rho}$, and
+$O_{A_\rho}$ be the corresponding state map, post-prefix state, and prefix
+output. For $0\le\eta<\ell_\rho$, let $F_{\rho,\eta}$ be the complete word
+emitted while reading the fixed suffix $C_\rho$ from state
+$f_\rho^{u_\rho+\eta}(s_{A_\rho})$, including the end-of-tape finalizer output,
+and define
+\begin{align*}
+  P_\rho &:=
+  o\bigl(s_{A_\rho}\bigr)o\bigl(f_\rho(s_{A_\rho})\bigr)\cdots
+  o\bigl(f_\rho^{u_\rho-1}(s_{A_\rho})\bigr),\\
+  Q_\rho &:=
+  o\bigl(f_\rho^{u_\rho}(s_{A_\rho})\bigr)\cdots
+  o\bigl(f_\rho^{u_\rho+\ell_\rho-1}(s_{A_\rho})\bigr),\\
+  R_{\rho,\eta} &:=
+  o\bigl(f_\rho^{u_\rho}(s_{A_\rho})\bigr)\cdots
+  o\bigl(f_\rho^{u_\rho+\eta-1}(s_{A_\rho})\bigr)\cdot F_{\rho,\eta}.
+\end{align*}
+Let $\beta'_{\rho,\eta}$ be the end-of-pass persistent store value reached from
+that state. Define
+\[
+\begin{aligned}
+  u^*&:=\max_{\rho} u_\rho,
+  &\ell^*&:=\lcmop_{\rho}\ell_\rho,\\
+  h'&:=h+D u^*,
+  &D'&:=D\ell^*.
+\end{aligned}
+\]
+Each new residue $\rho'\in\{0,\ldots,D'-1\}$ decomposes uniquely as
+\[
+  \rho'=\rho+D\tilde\eta,
+  \qquad
+  \rho\in\{0,\ldots,D-1\},\quad
+  \tilde\eta\in\{0,\ldots,\ell^*-1\}.
+\]
+For $r=h'+\rho'+k'D'$ with $k'\ge0$, the old representation
+$r=h+\rho+kD$ has
+\[
+  k=u^*+\tilde\eta+k'\ell^*.
+\]
+Since $u^*\ge u_\rho$, we have $k\ge u_\rho$ for every $k'\ge0$; and since
+$\ell_\rho\mid\ell^*$, the residue of $k-u_\rho$ modulo $\ell_\rho$ does not
+depend on $k'$. Set
+\[
+  \eta:=(u^*+\tilde\eta-u_\rho)\bmod \ell_\rho,
+  \qquad
+  v_0:=\Bigl\lfloor\frac{u^*+\tilde\eta-u_\rho}{\ell_\rho}\Bigr\rfloor\ge0,
+\]
+so that
+\[
+  k=u_\rho+(v_0+k'\ell^*/\ell_\rho)\ell_\rho+\eta.
+\]
+By the output decomposition above, for every $k'\ge0$,
+\[
+  X'(h'+\rho'+k'D')
+  =\bigl(\beta'_{\rho,\eta},\ A'_{\rho'}(B'_{\rho'})^{k'}C'_{\rho'}\bigr),
+\]
+where
+\[
+  A'_{\rho'}:=O_{A_\rho}P_\rho Q_\rho^{v_0},
+  \qquad
+  B'_{\rho'}:=Q_\rho^{\ell^*/\ell_\rho},
+  \qquad
+  C'_{\rho'}:=R_{\rho,\eta}.
+\]
+This is exactly pumpability of $X'$ with data $(h',D')$ and residue data
+$\{\beta'_{\rho,\eta},A'_{\rho'},B'_{\rho'},C'_{\rho'}\}_{\rho'}$.
+\end{proof}
+
+\begin{corollary}[Per-tape induction, for proof]
+\label{app:cor:per-tape}
+Assume $\mathcal{A}$ has constant budget, so all executions use one finite
+alphabet $\Gamma_B(q_*)$. For every pass index $i=0,1,\ldots,p$, the pair
+family consisting of the persistent store after pass $i$ and the tape $T_i(r)$
+is pumpable.
+\end{corollary}
+
+\begin{proof}
+The base case is \Cref{app:lem:input-pumpable}. Apply
+\Cref{app:lem:one-pass-pump} successively to passes $1,\ldots,p$.
+\end{proof}
+
+\begin{remark}[Unary scratch tapes]
+\label{app:rem:unary}
+If pass 1 writes one marker per input period, then
+$T_1(r)=\mathtt{marker}^r$ is pumpable with live pump word
+$\mathtt{marker}$. \Cref{app:lem:one-pass-pump} applies to every later
+pass. A later constant-budget pass may output one marker every $c$ input
+markers, permute markers, or add a fixed periodic decoration, but it remains
+pumpable. It cannot turn $\mathtt{marker}^r$ into a family of $O(1)$ many
+correct aggregate circuits for all noncolliding $r$; if the final pump
+collapses, the final output repeats on a residue class.
+\end{remark}
+
+\subsubsection{Collapse Versus Final-Output Length}
+
+\begin{lemma}[Pumpable outputs are bounded-or-linear on each residue]
+\label{app:lem:bounded-or-linear}
+Let $W(r)$ be a pumpable word family with data
+$(h,D,A_\rho,B_\rho,C_\rho)$. For $r=h+\rho+kD$:
+\begin{enumerate}[label=(\alph*)]
+\item if $B_\rho=\epsilon$, then $W(h+\rho+kD)$ is independent of $k$;
+\item if $B_\rho\ne\epsilon$, then
+\[
+  |W(h+\rho+kD)|\ge k.
+\]
+\end{enumerate}
+Consequently, on a live residue,
+\[
+  |W(r)|\ge \frac{r-h-D+1}{D}
+\]
+for all $r\ge h+D$ in that residue.
+\end{lemma}
+
+\begin{proof}
+Both statements are immediate from
+$W(h+\rho+kD)=A_\rho B_\rho^k C_\rho$. If $B_\rho\ne\epsilon$, then
+$|B_\rho|\ge1$, so $|A_\rho B_\rho^k C_\rho|\ge k$. Since
+$r=h+\rho+kD$ and $0\le\rho<D$, $k\ge(r-h-D+1)/D$.
+\end{proof}
+
+\begin{lemma}[Correct noncolliding final outputs cannot collapse]
+\label{app:lem:no-collapse}
+Assume finite-range noncollision (Assumption~\ref{ass:noncollision}) with
+$N(R)=R$ on the interval $1\le r\le R$. Suppose the final output family
+$T_p(r)$ is pumpable with data $(h,D,A_\rho,B_\rho,C_\rho)$ and
+$\mathcal{A}$ is correct on every $r\in\{1,\ldots,R\}$. Without loss of
+generality take $h\ge1$: if $h=0$, replace $h$ by $h+D$; this preserves
+pumpability after discarding the finite prefix of indices $k=0$ on each residue
+and absorbing one copy of $B_\rho$ into $A_\rho$. Then every residue class
+appearing twice in the tail $\{h,h+1,\ldots,R\}$ is live. In particular, for
+every $r\in\{h+D,\ldots,R\}$,
+\[
+  |T_p(r)|\ge \frac{r-h-D+1}{D}.
+\]
+\end{lemma}
+
+\begin{proof}
+Let $r=h+\rho+kD$ with $k\ge1$ and $r\le R$. Then
+$r-D=h+\rho+(k-1)D$ also lies in the tail, and by the convention $h\ge1$ it
+satisfies $r-D\ge h\ge1$, so both $r$ and $r-D$ lie in the correctness domain
+$\{1,\ldots,R\}$. If $B_\rho=\epsilon$,
+\Cref{app:lem:bounded-or-linear} gives
+\[
+  T_p(r)=T_p(r-D)
+\]
+as literal circuit strings. Hence the two outputs have the same unitary.
+Correctness at both $r$ and $r-D$ would imply
+\[
+U(\mathcal{L}_B(C_r))=U(\mathcal{L}_B(C_{r-D}))
+\]
+up to global phase, which by exactness of the lowering means $D^r\equiv
+D^{r-D}$ up to global phase, contradicting Assumption~\ref{ass:noncollision}
+with $N(R)=R$. Therefore $B_\rho\ne\epsilon$, and
+\Cref{app:lem:bounded-or-linear} gives the stated length bound.
+\end{proof}
+
+\subsubsection{Final-Output Theorem and Corollaries}
+
+\begin{theorem}[$p$-pass final-output lower bound, restated with full hypotheses]
+\label{app:thm:final-output}
+Fix a fixed-width diagonal witness family
+$C_r=H_\Lambda D^rH_\Lambda^{-1}$ with exact lowering
+$\mathcal{L}_B(C_r)=\Pi M^r\Sigma$, and assume unbounded noncollision
+(Assumption~\ref{ass:unbounded-noncollision}): the powers $D^r$ are pairwise
+distinct up to global phase for all $r\ge1$, so $N(R)=R$ on every range. Let
+$\mathcal{A}$ be a uniform deterministic $p$-pass finite-window, finite-burst
+transducer with constant budget that is correct on the input
+$\mathcal{L}_B(C_r)=\Pi M^r\Sigma$ for every $r\ge1$.
+Here uniform means one fixed deterministic transducer, with the same passes,
+transition rules, finite state, window, burst bound, and store bound for all
+repetition counts $r$.
+
+Then there exist constants $h\ge1$ and $D\ge1$, depending on $\mathcal{A}$ and
+the fixed witness but not on $r$, such that for every $r\ge h+D$,
+\[
+  |T_p(r)|\ge \frac{r-h-D+1}{D}=\Omega_{\mathcal{A}}(r).
+\]
+Equivalently, no constant-budget transducer in this model that is correct on
+the whole noncolliding fixed-width family can emit $o(r)$-length final outputs
+on that family.
+\end{theorem}
+
+\begin{proof}
+By constant budget, all executions use a finite charged token alphabet.
+\Cref{app:cor:per-tape} gives pumpability of the final pair family and
+hence of $T_p(r)$, with data $(h,D)$ depending only on $\mathcal{A}$ and the
+witness. By the convention of \Cref{app:lem:no-collapse}, take $h\ge1$,
+so every comparison point $r-D\ge h\ge1$ used below lies in the correctness
+domain.
+
+Fix any $r\ge h+D$ and any $R\ge r$. By Assumption~\ref{ass:unbounded-noncollision},
+$N(R)=R$, and $\mathcal{A}$ is correct on every $r'\in\{1,\ldots,R\}$. Thus
+\Cref{app:lem:no-collapse} applies and gives the displayed bound at $r$.
+In particular every final residue is live: if any final residue collapsed, two
+sufficiently large inputs in that residue would receive the same final output
+string, contradicting correctness and noncollision.
+\end{proof}
+
+\paragraph{Correctness quantifier.}
+Correctness in \Cref{app:thm:final-output} is required at every $r\ge1$; the
+conclusion then holds at every $r\ge h+D$, without exception. This global
+quantifier is not decorative: the collapse argument in
+\Cref{app:lem:no-collapse} compares the outputs at $r$ and $r-D$ and
+needs correctness at both points. Correctness at isolated points is not
+sufficient; if $\mathcal{A}$ were correct at $r$ but not at $r-D$, identical
+final strings at those two inputs would yield no contradiction.
+
+\begin{corollary}[Finite-range tail form, restated with full hypotheses]
+\label{app:cor:finite-tail}
+Let $\mathcal{A}$ be a constant-budget transducer, and let $(h,D)$ be
+pumpability data for its final pair family as provided by
+\Cref{app:cor:per-tape}. Suppose finite-range noncollision
+(Assumption~\ref{ass:noncollision}) holds with $N(R)=R$ on the range
+$1\le r\le R$ and $\mathcal{A}$ is correct on every
+$r\in\{1,\ldots,R\}$. Then
+\[
+  |T_p(r)|\ge \frac{r-h-D+1}{D}
+  \qquad\text{for every }h+D\le r\le R.
+\]
+The constants $(h,D)$ are determined by $\mathcal{A}$ and the witness family
+alone; in particular they do not depend on $R$. No statement is made for
+transducers outside the constant-budget regime: there, pumpability data in the
+sense of \Cref{app:def:pumpable} need not exist, and any finite-range
+inequality would require explicit control of pumping constants not supplied by
+this theorem.
+\end{corollary}
+
+\begin{proof}
+Constant budget puts all executions over one finite charged alphabet, so
+\Cref{app:cor:per-tape} supplies pumpability data $(h,D)$ for the
+final tape. The construction of this data uses only the fixed transducer, its
+finite alphabets and state sets, and the fixed witness words $\Pi,M,\Sigma$;
+it is obtained before any finite endpoint $R$ is chosen. Hence $(h,D)$ are
+independent of $R$. \Cref{app:lem:no-collapse} then applies verbatim on
+the range $1\le r\le R$.
+\end{proof}
+
+\begin{corollary}[Bit-level output counting toll, restated for proof]
+\label{app:cor:counting-toll}
+Assume finite-range noncollision supplies $N(R)$ pairwise distinct target
+unitaries, up to global phase, on a range. Suppose a deterministic exact
+compiler emits final outputs $T_p(r)$. Then
+\[
+  \max_{1\le r\le R}B_{\mathrm{self}}(T_p(r))
+  \ge \left\lceil\log_2 N(R)\right\rceil.
+\]
+The same inequality holds for a fixed family-relative code when one public
+dictionary is shared by the whole range.  For the rational-angle CP witness,
+only the displayed per-range inequality is claimed on fixed ranges
+$R<T=131040$.
+\end{corollary}
+
+\begin{proof}
+A circuit string determines its unitary, so a deterministic exact compiler
+that is correct on two inputs whose target unitaries are distinct up to global
+phase must emit two distinct output strings. The noncollision hypothesis
+therefore forces at least $N(R)$ pairwise distinct codewords.  If their
+prefix-free lengths are $\ell_1,\ldots,\ell_{N(R)}$, Kraft's inequality
+gives $\sum_i2^{-\ell_i}\leq1$, so
+$N(R)2^{-\max_i\ell_i}\leq1$.  Hence the largest length is at least
+$\lceil\log_2N(R)\rceil$.  The argument applies independently to either
+fixed code and does not convert token count or gate count into bits.
+\end{proof}
+
+\subsection{Bookkeeping for the Masked-Share Cut}
+\label{app:sec:streaming-proof}
+
+This subsection records the restart property used by the masked-share
+tradeoff (\cref{thm:main-tradeoff}).  It also makes explicit why a
+materialized update log, phase table, graph, RAM/cache layout, old-input
+spool, dynamic-pass state, or random seed is part of the cut message rather
+than an uncharged reconstruction channel.
+
+\begin{lemma}[Restart from the serialized cut]
+\label{app:lem:reconstruction}
+Fix $\mathcal A$ as in \cref{def:compiler}.  At the inter-round cut
+$c_{\mathrm{MS}}$, the five fields in \eqref{eq:info-budget}, together
+with any prefix already committed to the final write-once output, determine
+the continuation of that run for every supplied second-round continuation
+$v$.  For a randomized run this statement is conditional on the serialized
+seed/tape and cursor.
+\end{lemma}
+
+\begin{proof}
+The control field restores the exact transition, all head positions,
+dynamic pass/termination schedule, and random seed/tape cursor.  The store
+and window fields restore RAM, stack, hash/cache metadata, nonparameter
+machine data, and ordered live token structures.  The parameter field
+restores every omitted coefficient by its location tag.  The IR field
+restores every other live intermediate tape, DAG, table, addressed record,
+and any consumed input block retained for rescanning.  These disjoint fields
+therefore reconstruct the complete machine configuration.  Conditional on
+the serialized random tape, the receiver can append the supplied second
+round and execute the same dynamically chosen continuation.  The separately
+transmitted final-output prefix is prepended to the suffix produced after
+restart.  No additional state, old-input file, or public-family side channel
+is used.
+\end{proof}

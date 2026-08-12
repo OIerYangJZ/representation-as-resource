@@ -1,0 +1,212 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{authblk}
+\usepackage[hidelinks]{hyperref}
+
+\setlength{\parskip}{2pt}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+
+\title{\vspace{-2.5em}Representation-Dependent Recoverability and a\\
+Fourier-Layer Separation in Quantum Compilation}
+\author[1]{Jinze Yang\thanks{Email: \href{mailto:theyjz001@gmail.com}{theyjz001@gmail.com}}}
+\author[2]{Yangyang Li\thanks{Corresponding author: \href{mailto:yyli@xidian.edu.cn}{yyli@xidian.edu.cn}}}
+\author[3,4]{Xiu-Hao Deng\thanks{Corresponding author: \href{mailto:dengxiuhao@iqasz.cn}{dengxiuhao@iqasz.cn}}}
+\author[2]{Yunen Liu\thanks{Email: \href{mailto:yeliu@stu.xidian.edu.cn}{yeliu@stu.xidian.edu.cn}}}
+\affil[1]{School of Physics, Xidian University, Xi'an 710071, China}
+\affil[2]{Key Laboratory of Intelligent Perception and Image Understanding of Ministry of Education of China,
+Joint International Research Laboratory of Intelligent Perception and Computation,
+International Research Center for Intelligent Perception and Computation,
+Collaborative Innovation Center of Quantum Information of Shaanxi Province,
+School of Artificial Intelligence, Xidian University, Xi'an 710071, China}
+\affil[3]{Shenzhen International Quantum Academy, Shenzhen 518048, China}
+\affil[4]{Shenzhen Branch, Hefei National Laboratory, Shenzhen, 518048, China}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-2em}
+
+\noindent
+Quantum circuit lowering is usually treated as a semantics-preserving translation: high-level
+structure is decomposed into a fixed native basis, and downstream passes optimize the resulting
+instruction stream. We ask a sharper question. \emph{When lowering preserves the unitary, does it
+also preserve the recoverability of an optimization opportunity for a resource-bounded compiler?}
+The answer is no. We exhibit a Fourier-layer family on which semantic-first compilation compresses
+repeated commuting-diagonal structure to growth in the number of phase terms alone, while any
+compiler below a precise resource threshold retains growth in the repetition count as well. The
+phenomenon is not inverse cancellation, pass ordering, or a claim that one named tool dominates
+another; it is a representation-level information bottleneck.
+
+\section*{The witness and the separation}
+
+Let $D_m(\theta)=\prod_{j=1}^{m}\exp(-i\theta_j P_j/2)$, where the $P_j$ are bounded-arity diagonal
+phase terms that all commute, and define the non-inverse family
+\[
+  C_{m,r} \;=\; H_\Lambda\, D_m(\theta)^{\,r}\, H_\Lambda ,
+\]
+with $H_\Lambda$ a fixed Hadamard boundary. There is no adjacent $UU^\dagger$ cancellation; the only
+algebraic opportunity is that the diagonal factors commute, so repeated coefficients can be added
+\emph{before} basis materialization. Writing $\mathrm{pg}_B(\cdot)$ for the number of nontrivial
+phase-gadget atoms retained after lowering to a fixed basis $B$, our main result is a
+resource-bounded separation.
+
+\begin{theorem}[Fourier-layer recoverability separation]
+Fix resource budgets and a bounded-arity lowering scheme. For $C_{m,r}$ with $m>w$ under bounded
+arity, non-resonance, and periodic separated lowering, every compiler that does \emph{not}
+instantiate diagonal aggregation $\mathcal{R}_{\mathrm{diag}}$ satisfies
+$\mathrm{pg}_B\big(A(L_B(C_{m,r}))\big)\ge c\,rm-O(m)$,
+while a semantic compiler that aggregates coefficients before lowering emits
+$\mathrm{pg}_B\le C\,m$.
+\end{theorem}
+
+\begin{corollary}[Fixed width]
+If the width is fixed to a constant $m_0>w$, then $C_{m_0,r}$ gives a direct $\Omega(r)$ versus
+$O(1)$ separation: every below-threshold compiler retains $\Omega(r)$ phase-gadget structure, while a
+pre-basis semantic compiler emits a constant-size circuit. This is the asymptotic form of the
+experiment below, where the semantic artifact emits exactly $42$ gates at every tested scale,
+independent of the repetition count $r$.
+\end{corollary}
+
+\noindent
+The resource $\mathcal{R}_{\mathrm{diag}}$ is defined as a \emph{capability} rather than a budget
+region: a compiler instantiates it on $C_{m,r}$ if, at some point in execution, it constructs data
+sufficient to (i) associate each lowered occurrence with its semantic role across repetitions,
+(ii) compute or represent the aggregate coefficient $r\theta_j \bmod 2\pi$, and (iii) justify
+replacing the $r$ repeated occurrences of each term by $O(1)$ aggregate representatives. ``Below the
+threshold'' simply means the execution does none of these. This capability formulation removes any
+circular feasible-region object and lets the lower bound be stated as an information obstruction:
+after periodic lowering, all interior copies of a phase term look identical to bounded local
+observation, so a compiler that has not instantiated $\mathcal{R}_{\mathrm{diag}}$ cannot group them.
+A companion result closes the boundary from the other side.
+
+\begin{theorem}[Necessity of the aggregation resource]
+Any semantics-preserving compiler---with no restriction on its internal algorithm---that emits an
+$O(m)$ target-basis circuit for $C_{m,r}$ over an unbounded range of $r$ must instantiate
+$\mathcal{R}_{\mathrm{diag}}$: it must preserve, summarize, lift, or reconstruct an equivalent global
+diagonal representation.
+\end{theorem}
+
+\noindent
+Thus a future tool that recovers the bounded form by building a global phase-polynomial, ZX,
+stabilizer-phase, or commuting-diagonal representation would \emph{confirm} the classification rather
+than refute it. The theorem characterizes representations, not brands.
+
+\section*{Why the witness is natural}
+
+The family is synthetic in form but natural in source. Under standard decompositions, the QFT, the
+approximate QFT, and quantum phase estimation all contain commuting diagonal phase layers of the
+form $D_m(\theta)$ adjacent to a Fourier or Hadamard basis-change boundary. The witness isolates
+exactly this object between fixed Hadamard boundaries and repeats it, so that the mechanism under
+test---coefficient addition in a commuting diagonal representation---is not confounded by routing,
+terminal swaps, inverse cancellation, or approximation thresholds. We do not claim every QFT or QPE
+instance exhibits the same gap; the claim is narrower and stronger: the diagonal layer is a genuine
+algorithmic object, and a controlled family built from it makes representation alone create the
+separation.
+
+\section*{Construction and experimental validation}
+
+We instantiate the resource-rich side in a bounded compiler artifact built on UCC. Structured
+circuits are lifted into a small semantic term algebra
+($T ::= \mathrm{Prim} \mid T_1\!\circ\! T_2 \mid T^r \mid \mathrm{Conj} \mid \mathrm{Fourier} \mid
+\mathrm{Mirror}$), candidate selection is performed on projected costs, and only the winning
+candidate is materialized late into the target basis. Keeping the commuting diagonal term explicit
+long enough to add coefficients is the implementation-level way the artifact crosses
+$\mathcal{R}_{\mathrm{diag}}$.
+
+On the fixed-width witness ($n=4$), the semantic path returns a constant $42$-gate circuit (depth
+$24$, $12$ two-qubit gates) at every tested scale, while a strong flat preset grows and then times
+out (Table~\ref{tab:headline}). A width sweep confirms the predicted $O(m)$ scaling: outputs of
+$42$, $65$, and $93$ gates for $n=4,5,6$, constant in $r$ at each width. Crucially, a stripped-down
+phase-polynomial reference---no UCC internals, only commuting-diagonal coefficient aggregation on
+the same input and target basis---returns the \emph{same} $42$-gate output, demonstrating that the
+constant form is a property of the resource, not the tool.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{rrrr}
+\toprule
+Requested gates & Flat preset (gates) & Semantic (gates) & Semantic runtime \\
+\midrule
+4{,}000   & 9{,}588   & 42 & 3.2\,s \\
+10{,}000  & 23{,}988  & 42 & 14.6\,s \\
+20{,}000  & 47{,}988  & 42 & 55.8\,s \\
+50{,}000  & timeout   & 42 & 20.1\,s \\
+100{,}000 & timeout   & 42 & 27.1\,s \\
+\bottomrule
+\end{tabular}
+\caption{Non-inverse Fourier-layer scaling on $H_\Lambda D_m(\theta)^r H_\Lambda$ at $n=4$. The
+semantic path is repetition-independent; the flat preset grows or times out under the fixed
+protocol.}
+\label{tab:headline}
+\end{table}
+
+Three further controls tie the result to the predicted mechanism. A Fourier-path \emph{ablation}
+disables the semantic lifting and reruns the witness: the constant-output recovery disappears and
+the compiler times out at every scale, confirming the $42$-gate form is caused by semantic
+aggregation rather than a favorable ordering of flat passes. \emph{External bridge pipelines} built
+on PyZX and TKET, evaluated through the same basis protocol, fail to recover the bounded forms,
+evidence that in these configured pipelines strong external tools did not reconstruct the global
+diagonal representation the necessity theorem identifies as required. Finally,
+a Clifford$+T$ \emph{resource proxy} (Table~\ref{tab:resource}) shows the fault-tolerant
+consequence: delaying aggregation until after materialization presents a resource estimator with a
+linearly growing number of independent rotation-approximation tasks, whereas the resource-rich path
+holds at a constant count. On official QFT/QPE/QAOA-family instances the artifact matches the strong
+preset while cutting $65$--$78\%$ of baseline gate count.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{rrrrr}
+\toprule
+Requested gates & \multicolumn{2}{c}{Semantic-first} & \multicolumn{2}{c}{Materialize-first} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+ & rotations & $T_{10^{-10}}$ proxy & rotations & $T_{10^{-10}}$ proxy \\
+\midrule
+4{,}000   & 22 & 2{,}200 & 4{,}793  & 479{,}300 \\
+10{,}000  & 22 & 2{,}200 & 11{,}993 & 1{,}199{,}300 \\
+20{,}000  & 22 & 2{,}200 & 23{,}993 & 2{,}399{,}300 \\
+50{,}000  & 22 & 2{,}200 & timeout  & timeout \\
+100{,}000 & 22 & 2{,}200 & timeout  & timeout \\
+\bottomrule
+\end{tabular}
+\caption{Clifford$+T$ resource proxy on the fixed-width witness. Semantic-first aggregation keeps
+rotation count and the synthesis-cost proxy constant; materialize-first pipelines grow linearly
+before timing out.}
+\label{tab:resource}
+\end{table}
+
+\section*{Significance}
+
+The result reframes a class of compiler regressions as a representation-resource boundary rather
+than a tuning failure: any successful future flat-looking compiler must explicitly or implicitly pay
+for the same global aggregation resource. The boundary is falsifiable, and it carries directly into
+fault-tolerant resource estimation, where delaying aggregation until after basis materialization
+inflates the number of rotations a synthesis backend must approximate. A full technical version,
+including all definitions, proofs, and the complete experimental suite, is provided as an appendix.
+
+\clearpage
+\begin{thebibliography}{9}
+\small
+\bibitem{rs} N.~J. Ross and P.~Selinger, \emph{Optimal ancilla-free Clifford+T approximation of
+$z$-rotations}, Quantum Inf.\ Comput.\ \textbf{16}(11\&12), 901--953 (2016).
+\bibitem{zx} R.~Duncan, A.~Kissinger, S.~Perdrix, and J.~van de Wetering, \emph{Graph-theoretic
+simplification of quantum circuits with the ZX-calculus}, Quantum \textbf{4}, 279 (2020).
+\bibitem{pyzx} A.~Kissinger and J.~van de Wetering, \emph{PyZX: Large scale automated diagrammatic
+reasoning}, EPTCS \textbf{318}, 229--241 (2020).
+\bibitem{tket} S.~Sivarajah \emph{et al.}, \emph{t$|$ket$\rangle$: A retargetable compiler for NISQ
+devices}, Quantum Sci.\ Technol.\ \textbf{6}(1), 014003 (2021).
+\bibitem{mqt} N.~Quetschlich, L.~Burgholzer, and R.~Wille, \emph{MQT Bench: Benchmarking software and
+design automation tools for quantum computing}, Quantum \textbf{7}, 1062 (2023).
+\bibitem{qiskit} A.~Javadi-Abhari \emph{et al.}, \emph{Quantum computing with Qiskit},
+arXiv:2405.08810 (2024).
+\end{thebibliography}
+
+\end{document}

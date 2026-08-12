@@ -1,0 +1,472 @@
+{
+  "task": "E7 TKET state-scaling experiment",
+  "preregistration": "PaperDraft/research/E7_preregistration.md",
+  "design": {
+    "m_values": [
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "r": 4,
+    "K": 8,
+    "density": 1.0,
+    "target_seed_base": 20260805,
+    "representation": "masked_share_update",
+    "cell_isolation": "fresh subprocess per cell"
+  },
+  "environment": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "python": "3.13.12",
+    "pytket": "2.16.0",
+    "qiskit": "2.4.0"
+  },
+  "tket_cells": [
+    {
+      "m": 8,
+      "seed": 1,
+      "target_id": "target-2c81a36f4f5240cf959a",
+      "active_support_size": 7,
+      "input_rotations": 28,
+      "input_qasm_bytes": 1477,
+      "rss_build_bytes": 118964224,
+      "rss_peak_bytes": 119717888,
+      "rss_delta_bytes": 753664,
+      "output_circuit_json_bytes": 6047,
+      "output_qasm_bytes": 1424,
+      "output_rz_total": 48,
+      "output_rz_nonclifford": 7,
+      "pass_wall_s": 0.0034114589980163146,
+      "pipeline": "DecomposeBoxes/AutoRebase/RemoveRedundancies/PauliSimp/RemoveRedundancies/AutoRebase"
+    },
+    {
+      "m": 8,
+      "seed": 2,
+      "target_id": "target-2c81a36f4f5240cf959a",
+      "active_support_size": 7,
+      "input_rotations": 28,
+      "input_qasm_bytes": 1511,
+      "rss_build_bytes": 118177792,
+      "rss_peak_bytes": 118947840,
+      "rss_delta_bytes": 770048,
+      "output_circuit_json_bytes": 6097,
+      "output_qasm_bytes": 1435,
+      "output_rz_total": 47,
+      "output_rz_nonclifford": 7,
+      "pass_wall_s": 0.0019597079990489874,
+      "pipeline": "DecomposeBoxes/AutoRebase/RemoveRedundancies/PauliSimp/RemoveRedundancies/AutoRebase"
+    },
+    {
+      "m": 8,
+      "seed": 3,
+      "target_id": "target-2c81a36f4f5240cf959a",
+      "active_support_size": 7,
+      "input_rotations": 28,
+      "input_qasm_bytes": 1530,
+      "rss_build_bytes": 118194176,
+      "rss_peak_bytes": 118947840,
+      "rss_delta_bytes": 753664,
+      "output_circuit_json_bytes": 5735,
+      "output_qasm_bytes": 1345,
+      "output_rz_total": 45,
+      "output_rz_nonclifford": 7,
+      "pass_wall_s": 0.0020040000017615966,
+      "pipeline": "DecomposeBoxes/AutoRebase/RemoveRedundancies/PauliSimp/RemoveRedundancies/AutoRebase"
+    },
+    {
+      "m": 16,
+      "seed": 1,
+      "target_id": "target-bc9054a6a886cd3de871",
+      "active_support_size": 15,
+      "input_rotations": 60,
+      "input_qasm_bytes": 3339,
+      "rss_build_bytes": 118538240,
+      "rss_peak_bytes": 119586816,
+      "rss_delta_bytes": 1048576,
+      "output_circuit_json_bytes": 15269,
+      "output_qasm_bytes": 3725,
+      "output_rz_total": 87,
+      "output_rz_nonclifford": 15,
+      "pass_wall_s": 0.004657125002268003,
+      "pipeline": "DecomposeBoxes/AutoRebase/RemoveRedundancies/PauliSimp/RemoveRedundancies/AutoRebase"
+    },
+    {
+      "m": 16,
+      "seed": 2,
+      "target_id": "target-bc9054a6a886cd3de871",
+      "active_support_size": 15,
+      "input_rotations": 60,
+      "input_qasm_bytes": 3253,
+      "rss_build_bytes": 118751232,
+      "rss_peak_bytes": 119767040,
+      "rss_delta_bytes": 1015808,
+      "output_circuit_json_bytes": 16162,
+      "output_qasm_bytes": 3935,
+      "output_rz_total": 92,
+      "output_rz_nonclifford": 15,
+      "pass_wall_s": 0.004448375002539251,
+      "pipeline": "DecomposeBoxes/AutoRebase/RemoveRedundancies/PauliSimp/RemoveRedundancies/AutoRebase"
+    },
+    {
+      "m": 16,
+      "seed": 3,
+      "target_id": "target-bc9054a6a886cd3de871",
+      "active_support_size": 15,
+      "input_rotations": 60,
+      "input_qasm_bytes": 3341,
+      "rss_build_bytes": 118685696,
+      "rss_peak_bytes": 119717888,
+      "rss_delta_bytes": 1032192,
+      "output_circuit_json_bytes": 15630,
+      "output_qasm_bytes": 3813,
+      "output_rz_total": 89,
+      "output_rz_nonclifford": 15,
+      "pass_wall_s": 0.004507792000367772,
+      "pipeline": "DecomposeBoxes/AutoRebase/RemoveRedundancies/PauliSimp/RemoveRedundancies/AutoRebase"
+    },
+    {
+      "m": 32,
+      "seed": 1,
+      "target_id": "target-f265277ba706c1b65236",
+      "active_support_size": 31,
+      "input_rotations": 124,
+      "input_qasm_bytes": 6958,
+      "rss_build_bytes": 119488512,
+      "rss_peak_bytes": 121356288,
+      "rss_delta_bytes": 1867776,
+      "output_circuit_json_bytes": 38081,
+      "output_qasm_bytes": 9482,
+      "output_rz_total": 172,
+      "output_rz_nonclifford": 31,
+      "pass_wall_s": 0.011551792002137518,
+      "pipeline": "DecomposeBoxes/AutoRebase/RemoveRedundancies/PauliSimp/RemoveRedundancies/AutoRebase"
+    },
+    {
+      "m": 32,
+      "seed": 2,
+      "target_id": "target-f265277ba706c1b65236",
+      "active_support_size": 31,
+      "input_rotations": 124,
+      "input_qasm_bytes": 6884,
+      "rss_build_bytes": 119554048,
+      "rss_peak_bytes": 121257984,
+      "rss_delta_bytes": 1703936,
+      "output_circuit_json_bytes": 40137,
+      "output_qasm_bytes": 10074,
+      "output_rz_total": 187,
+      "output_rz_nonclifford": 31,
+      "pass_wall_s": 0.011888459001056617,
+      "pipeline": "DecomposeBoxes/AutoRebase/RemoveRedundancies/PauliSimp/RemoveRedundancies/AutoRebase"
+    },
+    {
+      "m": 32,
+      "seed": 3,
+      "target_id": "target-f265277ba706c1b65236",
+      "active_support_size": 31,
+      "input_rotations": 124,
+      "input_qasm_bytes": 6988,
+      "rss_build_bytes": 119603200,
+      "rss_peak_bytes": 121307136,
+      "rss_delta_bytes": 1703936,
+      "output_circuit_json_bytes": 39145,
+      "output_qasm_bytes": 9808,
+      "output_rz_total": 179,
+      "output_rz_nonclifford": 31,
+      "pass_wall_s": 0.011759582997910911,
+      "pipeline": "DecomposeBoxes/AutoRebase/RemoveRedundancies/PauliSimp/RemoveRedundancies/AutoRebase"
+    },
+    {
+      "m": 64,
+      "seed": 1,
+      "target_id": "target-be6e936b61ad59fc3549",
+      "active_support_size": 63,
+      "input_rotations": 252,
+      "input_qasm_bytes": 14307,
+      "rss_build_bytes": 121438208,
+      "rss_peak_bytes": 126222336,
+      "rss_delta_bytes": 4784128,
+      "output_circuit_json_bytes": 133185,
+      "output_qasm_bytes": 34559,
+      "output_rz_total": 347,
+      "output_rz_nonclifford": 63,
+      "pass_wall_s": 0.04396149999956833,
+      "pipeline": "DecomposeBoxes/AutoRebase/RemoveRedundancies/PauliSimp/RemoveRedundancies/AutoRebase"
+    },
+    {
+      "m": 64,
+      "seed": 2,
+      "target_id": "target-be6e936b61ad59fc3549",
+      "active_support_size": 63,
+      "input_rotations": 252,
+      "input_qasm_bytes": 14235,
+      "rss_build_bytes": 121618432,
+      "rss_peak_bytes": 126271488,
+      "rss_delta_bytes": 4653056,
+      "output_circuit_json_bytes": 135558,
+      "output_qasm_bytes": 35178,
+      "output_rz_total": 365,
+      "output_rz_nonclifford": 63,
+      "pass_wall_s": 0.044061874999897555,
+      "pipeline": "DecomposeBoxes/AutoRebase/RemoveRedundancies/PauliSimp/RemoveRedundancies/AutoRebase"
+    },
+    {
+      "m": 64,
+      "seed": 3,
+      "target_id": "target-be6e936b61ad59fc3549",
+      "active_support_size": 63,
+      "input_rotations": 252,
+      "input_qasm_bytes": 14358,
+      "rss_build_bytes": 121667584,
+      "rss_peak_bytes": 126386176,
+      "rss_delta_bytes": 4718592,
+      "output_circuit_json_bytes": 133800,
+      "output_qasm_bytes": 34708,
+      "output_rz_total": 349,
+      "output_rz_nonclifford": 63,
+      "pass_wall_s": 0.04459987500013085,
+      "pipeline": "DecomposeBoxes/AutoRebase/RemoveRedundancies/PauliSimp/RemoveRedundancies/AutoRebase"
+    },
+    {
+      "m": 128,
+      "seed": 1,
+      "target_id": "target-78328460a7754ff96b77",
+      "active_support_size": 127,
+      "input_rotations": 508,
+      "input_qasm_bytes": 29502,
+      "rss_build_bytes": 125550592,
+      "rss_peak_bytes": 144703488,
+      "rss_delta_bytes": 19152896,
+      "output_circuit_json_bytes": 583406,
+      "output_qasm_bytes": 156741,
+      "output_rz_total": 688,
+      "output_rz_nonclifford": 127,
+      "pass_wall_s": 0.24923862499781535,
+      "pipeline": "DecomposeBoxes/AutoRebase/RemoveRedundancies/PauliSimp/RemoveRedundancies/AutoRebase"
+    },
+    {
+      "m": 128,
+      "seed": 2,
+      "target_id": "target-78328460a7754ff96b77",
+      "active_support_size": 127,
+      "input_rotations": 508,
+      "input_qasm_bytes": 29347,
+      "rss_build_bytes": 124960768,
+      "rss_peak_bytes": 143147008,
+      "rss_delta_bytes": 18186240,
+      "output_circuit_json_bytes": 585807,
+      "output_qasm_bytes": 157391,
+      "output_rz_total": 701,
+      "output_rz_nonclifford": 127,
+      "pass_wall_s": 0.19619562499792664,
+      "pipeline": "DecomposeBoxes/AutoRebase/RemoveRedundancies/PauliSimp/RemoveRedundancies/AutoRebase"
+    },
+    {
+      "m": 128,
+      "seed": 3,
+      "target_id": "target-78328460a7754ff96b77",
+      "active_support_size": 127,
+      "input_rotations": 508,
+      "input_qasm_bytes": 29410,
+      "rss_build_bytes": 125648896,
+      "rss_peak_bytes": 144130048,
+      "rss_delta_bytes": 18481152,
+      "output_circuit_json_bytes": 586086,
+      "output_qasm_bytes": 157429,
+      "output_rz_total": 705,
+      "output_rz_nonclifford": 127,
+      "pass_wall_s": 0.2035520000026736,
+      "pipeline": "DecomposeBoxes/AutoRebase/RemoveRedundancies/PauliSimp/RemoveRedundancies/AutoRebase"
+    }
+  ],
+  "control_semantic": [
+    {
+      "m": 8,
+      "B_cross_bytes": 196,
+      "final_output_bytes": 67
+    },
+    {
+      "m": 16,
+      "B_cross_bytes": 196,
+      "final_output_bytes": 75
+    },
+    {
+      "m": 32,
+      "B_cross_bytes": 196,
+      "final_output_bytes": 91
+    },
+    {
+      "m": 64,
+      "B_cross_bytes": 196,
+      "final_output_bytes": 123
+    },
+    {
+      "m": 128,
+      "B_cross_bytes": 199,
+      "final_output_bytes": 189
+    }
+  ],
+  "analysis": {
+    "P1_state_linear": {
+      "pass": false,
+      "loglog_slope": 1.701684676990864,
+      "monotone": true,
+      "fallback_noise_floor_used": true,
+      "evaluated_m": [
+        32,
+        64,
+        128
+      ],
+      "mean_rss_delta_bytes": {
+        "8": 759125.3333333334,
+        "16": 1032192.0,
+        "32": 1758549.3333333333,
+        "64": 4718592.0,
+        "128": 18606762.666666668
+      }
+    },
+    "P2_compact_output": {
+      "pass": true,
+      "cells": [
+        {
+          "m": 8,
+          "seed": 1,
+          "output_rz_nonclifford": 7,
+          "bound": 9,
+          "dispersed_input_count": 28,
+          "ok": true
+        },
+        {
+          "m": 8,
+          "seed": 2,
+          "output_rz_nonclifford": 7,
+          "bound": 9,
+          "dispersed_input_count": 28,
+          "ok": true
+        },
+        {
+          "m": 8,
+          "seed": 3,
+          "output_rz_nonclifford": 7,
+          "bound": 9,
+          "dispersed_input_count": 28,
+          "ok": true
+        },
+        {
+          "m": 16,
+          "seed": 1,
+          "output_rz_nonclifford": 15,
+          "bound": 17,
+          "dispersed_input_count": 60,
+          "ok": true
+        },
+        {
+          "m": 16,
+          "seed": 2,
+          "output_rz_nonclifford": 15,
+          "bound": 17,
+          "dispersed_input_count": 60,
+          "ok": true
+        },
+        {
+          "m": 16,
+          "seed": 3,
+          "output_rz_nonclifford": 15,
+          "bound": 17,
+          "dispersed_input_count": 60,
+          "ok": true
+        },
+        {
+          "m": 32,
+          "seed": 1,
+          "output_rz_nonclifford": 31,
+          "bound": 33,
+          "dispersed_input_count": 124,
+          "ok": true
+        },
+        {
+          "m": 32,
+          "seed": 2,
+          "output_rz_nonclifford": 31,
+          "bound": 33,
+          "dispersed_input_count": 124,
+          "ok": true
+        },
+        {
+          "m": 32,
+          "seed": 3,
+          "output_rz_nonclifford": 31,
+          "bound": 33,
+          "dispersed_input_count": 124,
+          "ok": true
+        },
+        {
+          "m": 64,
+          "seed": 1,
+          "output_rz_nonclifford": 63,
+          "bound": 65,
+          "dispersed_input_count": 252,
+          "ok": true
+        },
+        {
+          "m": 64,
+          "seed": 2,
+          "output_rz_nonclifford": 63,
+          "bound": 65,
+          "dispersed_input_count": 252,
+          "ok": true
+        },
+        {
+          "m": 64,
+          "seed": 3,
+          "output_rz_nonclifford": 63,
+          "bound": 65,
+          "dispersed_input_count": 252,
+          "ok": true
+        },
+        {
+          "m": 128,
+          "seed": 1,
+          "output_rz_nonclifford": 127,
+          "bound": 129,
+          "dispersed_input_count": 508,
+          "ok": true
+        },
+        {
+          "m": 128,
+          "seed": 2,
+          "output_rz_nonclifford": 127,
+          "bound": 129,
+          "dispersed_input_count": 508,
+          "ok": true
+        },
+        {
+          "m": 128,
+          "seed": 3,
+          "output_rz_nonclifford": 127,
+          "bound": 129,
+          "dispersed_input_count": 508,
+          "ok": true
+        }
+      ]
+    },
+    "P3_control_logarithmic": {
+      "pass": true,
+      "ratio_128_over_8": 1.0153061224489797,
+      "B_cross_bytes": {
+        "8": 196,
+        "16": 196,
+        "32": 196,
+        "64": 196,
+        "128": 199
+      }
+    },
+    "verdict": "FALSIFIED",
+    "action": "prediction falsified; abstract sentence reverts"
+  }
+}

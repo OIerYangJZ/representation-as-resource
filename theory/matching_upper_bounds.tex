@@ -1,0 +1,90 @@
+\subsection{Memory-capped constructions}
+\label{sec:w1-upper}
+
+\begin{proposition}[Block hybrid]
+\label{prop:w1-block-hybrid}
+Fix $p,h\geq1$ and let $q=\min\{m,ph\}$.  There is a deterministic
+zero-error $p$-pass compiler for \cref{def:w1-dispersed-stream} that
+aggregates $q$ coordinates and passes the other update records through in
+the public $p$-block hybrid mode of $E_{\mathrm{rel}}$.  It obeys
+\begin{align}
+ S&\leq \left\lceil\frac qp\right\rceil\log_2Q
+       +O(\log(mQrp)),
+ \label{eq:w1-upper-state}\\
+ A_p&\leq(r-1)(m-q)\log_2Q+O(r\log(mQrp)),
+ \label{eq:w1-upper-A}\\
+ B_{\mathrm{rel}}^{\mathrm{out}}
+ &\leq q\log_2K+r(m-q)\log_2Q
+       +O(r\log(mQrp)).
+ \label{eq:w1-upper-output}
+\end{align}
+In the compact-output corner $h=\lceil m/p\rceil$, this becomes
+\begin{align}
+ B_{\mathrm{rel}}^{\mathrm{out}}
+ &\leq m\log_2K+O(\log(mQrp)),\\
+ S&\leq\left\lceil\frac mp\right\rceil\log_2Q
+       +O(\log(mQrp)).
+ \label{eq:w1-compact-upper}
+\end{align}
+For two rounds, the construction satisfies
+$A_p+pS\leq m\log_2Q+O(p\log(mQrp))$ after using a smaller final block.
+Compared with
+\eqref{eq:w1-frontier-box} at $\delta=0$, it is within the constant
+$(2p-1)\log_2(K+1)/(p\log_2K)<2\log_2 3$ for every $K\geq2$.
+\end{proposition}
+
+\begin{proof}
+Partition the first $q$ coordinates into at most $p$ consecutive blocks of
+size at most $h$.  On pass $t$, keep only the residues of block $t$ and add
+their first $r-1$ rounds modulo $Q$; when the final-round mates arrive,
+emit the corresponding aggregate base-$K$ block.  The live packed block,
+indices, and framing give \eqref{eq:w1-upper-state}.  On the first pass,
+emit every share of each unselected coordinate in the declared round-major
+order; these rotations already have the correct product and require no
+retained coefficient table.  The selected coordinates can be balanced
+across the $p$ blocks, so the maximum block has size $\lceil q/p\rceil$.
+Their consecutive boundaries are a public function of $(m,p,q)$, so the
+header stores those integers rather than $p$ separate delimiters.
+The prefix contains $r-1$ residues and the
+whole output contains $r$ residues for each such coordinate, giving
+\eqref{eq:w1-upper-A} and \eqref{eq:w1-upper-output}.  If $ph\geq m$ there
+are no passthrough coordinates.  For $r=2$, $(m-q)\log_2Q+ph\log_2Q$ is
+at most $m\log_2Q$ up to the last partial block and framing.  The constant
+comparison uses $(2p-1)/p<2$ and
+$\log_2(K+1)/\log_2K\leq\log_2 3$.
+\end{proof}
+
+\begin{proposition}[Semantic and randomized upper corners]
+\label{prop:w1-semantic-upper}
+Under the same public dictionary, a one-pass semantic compiler receiving
+$x$ emits the packed base-$K$ aggregate code with
+\begin{equation}
+ B_{\mathrm{rel}}^{\mathrm{out}}
+ \leq\lceil m\log_2K\rceil+O(\log(mK)),
+ \qquad S=O(\log(mK)),
+ \label{eq:w1-semantic-upper}
+\end{equation}
+and implements the same $U_x$ as the flat stream.  For any
+$0\leq\delta<1/2$, an input-independent abort coin that runs this exact
+compiler with probability $1-\delta$ and otherwise emits a fixed short
+circuit has worst-input success at least $1-\delta$ and expected relative
+output
+\begin{equation}
+ (1-\delta)\lceil m\log_2K\rceil+O(\log(mK)+1).
+ \label{eq:w1-random-upper}
+\end{equation}
+Thus the randomized family-relative output lower bound is matched up to
+framing and the binary-entropy additive term.  A self-contained
+$R_Z$-circuit upper bound remains
+$O(m(\log m+\log Q))$ bits and at most $m$ rotations; no matching
+self-contained-bit or gate-count claim is made.
+\end{proposition}
+
+\begin{proof}
+Pack the ordered aggregate vector as one base-$K$ integer and retain only
+its streaming index and framing state.  Proposition~\ref{prop:w1-stream-equivalence}
+gives semantic equality with the flat representation.  Prefix the output
+with the abort-coin branch tag for the randomized construction and take
+expectations.  The self-contained construction writes each nonzero
+$R_{P_j}(2\pi x_j/Q)$ with its address and rational parameter.
+\end{proof}

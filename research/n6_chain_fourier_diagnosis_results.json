@@ -1,0 +1,864 @@
+[
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "nonresonant_seeded",
+    "requested_target_gates": 4000,
+    "repeats": 362,
+    "num_phase_terms": 11,
+    "method": "semantic_ucc",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 3994,
+      "depth": 1091,
+      "multi_qubit_gates": 1810,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 2172,
+      "cp_count": 1810
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 6,
+      "total_gates": 68,
+      "depth": 21,
+      "multi_qubit_gates": 8,
+      "cx_count": 8,
+      "gate_types": [
+        "cx",
+        "ry",
+        "rz"
+      ],
+      "rz_count": 36,
+      "cp_count": 0
+    },
+    "runtime_s": 3.644,
+    "matches_expected_43": false,
+    "equivalence": true
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "nonresonant_seeded",
+    "requested_target_gates": 4000,
+    "repeats": 362,
+    "num_phase_terms": 11,
+    "method": "qiskit_opt3",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 3994,
+      "depth": 1091,
+      "multi_qubit_gates": 1810,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 2172,
+      "cp_count": 1810
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 6,
+      "total_gates": 8338,
+      "depth": 2910,
+      "multi_qubit_gates": 3258,
+      "cx_count": 3258,
+      "gate_types": [
+        "cx",
+        "h",
+        "rx",
+        "ry",
+        "rz"
+      ],
+      "rz_count": 3624,
+      "cp_count": 0
+    },
+    "runtime_s": 1.883,
+    "equivalence": true
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "nonresonant_seeded",
+    "requested_target_gates": 4000,
+    "repeats": 362,
+    "num_phase_terms": 11,
+    "method": "baseline_ucc",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 3994,
+      "depth": 1091,
+      "multi_qubit_gates": 1810,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 2172,
+      "cp_count": 1810
+    },
+    "status": "skipped (focusing on semantic)"
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "nonresonant_seeded",
+    "requested_target_gates": 10000,
+    "repeats": 908,
+    "num_phase_terms": 11,
+    "method": "semantic_ucc",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 10000,
+      "depth": 2729,
+      "multi_qubit_gates": 4540,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 5448,
+      "cp_count": 4540
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 6,
+      "total_gates": 43,
+      "depth": 28,
+      "multi_qubit_gates": 10,
+      "cx_count": 10,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ],
+      "rz_count": 21,
+      "cp_count": 0
+    },
+    "runtime_s": 22.538,
+    "matches_expected_43": true
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "nonresonant_seeded",
+    "requested_target_gates": 10000,
+    "repeats": 908,
+    "num_phase_terms": 11,
+    "method": "qiskit_opt3",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 10000,
+      "depth": 2729,
+      "multi_qubit_gates": 4540,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 5448,
+      "cp_count": 4540
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 6,
+      "total_gates": 20900,
+      "depth": 7279,
+      "multi_qubit_gates": 8172,
+      "cx_count": 8172,
+      "gate_types": [
+        "cx",
+        "h",
+        "rx",
+        "ry",
+        "rz"
+      ],
+      "rz_count": 9086,
+      "cp_count": 0
+    },
+    "runtime_s": 6.976
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "nonresonant_seeded",
+    "requested_target_gates": 10000,
+    "repeats": 908,
+    "num_phase_terms": 11,
+    "method": "baseline_ucc",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 10000,
+      "depth": 2729,
+      "multi_qubit_gates": 4540,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 5448,
+      "cp_count": 4540
+    },
+    "status": "skipped (focusing on semantic)"
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "nonresonant_seeded",
+    "requested_target_gates": 20000,
+    "repeats": 1817,
+    "num_phase_terms": 11,
+    "method": "semantic_ucc",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 19999,
+      "depth": 5456,
+      "multi_qubit_gates": 9085,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 10902,
+      "cp_count": 9085
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 6,
+      "total_gates": 43,
+      "depth": 28,
+      "multi_qubit_gates": 10,
+      "cx_count": 10,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ],
+      "rz_count": 21,
+      "cp_count": 0
+    },
+    "runtime_s": 57.494,
+    "matches_expected_43": true
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "nonresonant_seeded",
+    "requested_target_gates": 20000,
+    "repeats": 1817,
+    "num_phase_terms": 11,
+    "method": "qiskit_opt3",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 19999,
+      "depth": 5456,
+      "multi_qubit_gates": 9085,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 10902,
+      "cp_count": 9085
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 6,
+      "total_gates": 41807,
+      "depth": 14551,
+      "multi_qubit_gates": 16353,
+      "cx_count": 16353,
+      "gate_types": [
+        "cx",
+        "h",
+        "rx",
+        "ry",
+        "rz"
+      ],
+      "rz_count": 18176,
+      "cp_count": 0
+    },
+    "runtime_s": 25.825
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "nonresonant_seeded",
+    "requested_target_gates": 20000,
+    "repeats": 1817,
+    "num_phase_terms": 11,
+    "method": "baseline_ucc",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 19999,
+      "depth": 5456,
+      "multi_qubit_gates": 9085,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 10902,
+      "cp_count": 9085
+    },
+    "status": "skipped (focusing on semantic)"
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "nonresonant_seeded",
+    "requested_target_gates": 50000,
+    "repeats": 4544,
+    "num_phase_terms": 11,
+    "method": "semantic_ucc",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 49996,
+      "depth": 13637,
+      "multi_qubit_gates": 22720,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 27264,
+      "cp_count": 22720
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 6,
+      "total_gates": 43,
+      "depth": 28,
+      "multi_qubit_gates": 10,
+      "cx_count": 10,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ],
+      "rz_count": 21,
+      "cp_count": 0
+    },
+    "runtime_s": 73.805,
+    "matches_expected_43": true
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "nonresonant_seeded",
+    "requested_target_gates": 50000,
+    "repeats": 4544,
+    "num_phase_terms": 11,
+    "method": "qiskit_opt3",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 49996,
+      "depth": 13637,
+      "multi_qubit_gates": 22720,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 27264,
+      "cp_count": 22720
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 6,
+      "total_gates": 104524,
+      "depth": 36366,
+      "multi_qubit_gates": 40896,
+      "cx_count": 40896,
+      "gate_types": [
+        "cx",
+        "h",
+        "rx",
+        "ry",
+        "rz"
+      ],
+      "rz_count": 45444,
+      "cp_count": 0
+    },
+    "runtime_s": 166.532
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "nonresonant_seeded",
+    "requested_target_gates": 50000,
+    "repeats": 4544,
+    "num_phase_terms": 11,
+    "method": "baseline_ucc",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 49996,
+      "depth": 13637,
+      "multi_qubit_gates": 22720,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 27264,
+      "cp_count": 22720
+    },
+    "status": "skipped (focusing on semantic)"
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "qft_dyadic",
+    "requested_target_gates": 4000,
+    "repeats": 362,
+    "num_phase_terms": 11,
+    "method": "semantic_ucc",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 3994,
+      "depth": 1091,
+      "multi_qubit_gates": 1810,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 2172,
+      "cp_count": 1810
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 6,
+      "total_gates": 43,
+      "depth": 28,
+      "multi_qubit_gates": 10,
+      "cx_count": 10,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ],
+      "rz_count": 21,
+      "cp_count": 0
+    },
+    "runtime_s": 4.848,
+    "matches_expected_43": true,
+    "equivalence": true
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "qft_dyadic",
+    "requested_target_gates": 4000,
+    "repeats": 362,
+    "num_phase_terms": 11,
+    "method": "qiskit_opt3",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 3994,
+      "depth": 1091,
+      "multi_qubit_gates": 1810,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 2172,
+      "cp_count": 1810
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 6,
+      "total_gates": 7257,
+      "depth": 2550,
+      "multi_qubit_gates": 3620,
+      "cx_count": 3620,
+      "gate_types": [
+        "cx",
+        "h",
+        "ry",
+        "rz"
+      ],
+      "rz_count": 3625,
+      "cp_count": 0
+    },
+    "runtime_s": 1.055,
+    "equivalence": true
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "qft_dyadic",
+    "requested_target_gates": 4000,
+    "repeats": 362,
+    "num_phase_terms": 11,
+    "method": "baseline_ucc",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 3994,
+      "depth": 1091,
+      "multi_qubit_gates": 1810,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 2172,
+      "cp_count": 1810
+    },
+    "status": "skipped (focusing on semantic)"
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "qft_dyadic",
+    "requested_target_gates": 10000,
+    "repeats": 908,
+    "num_phase_terms": 11,
+    "method": "semantic_ucc",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 10000,
+      "depth": 2729,
+      "multi_qubit_gates": 4540,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 5448,
+      "cp_count": 4540
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 6,
+      "total_gates": 41,
+      "depth": 27,
+      "multi_qubit_gates": 10,
+      "cx_count": 10,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ],
+      "rz_count": 21,
+      "cp_count": 0
+    },
+    "runtime_s": 21.128,
+    "matches_expected_43": false
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "qft_dyadic",
+    "requested_target_gates": 10000,
+    "repeats": 908,
+    "num_phase_terms": 11,
+    "method": "qiskit_opt3",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 10000,
+      "depth": 2729,
+      "multi_qubit_gates": 4540,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 5448,
+      "cp_count": 4540
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 6,
+      "total_gates": 18176,
+      "depth": 6372,
+      "multi_qubit_gates": 9080,
+      "cx_count": 9080,
+      "gate_types": [
+        "cx",
+        "h",
+        "ry",
+        "rz"
+      ],
+      "rz_count": 9084,
+      "cp_count": 0
+    },
+    "runtime_s": 6.145
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "qft_dyadic",
+    "requested_target_gates": 10000,
+    "repeats": 908,
+    "num_phase_terms": 11,
+    "method": "baseline_ucc",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 10000,
+      "depth": 2729,
+      "multi_qubit_gates": 4540,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 5448,
+      "cp_count": 4540
+    },
+    "status": "skipped (focusing on semantic)"
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "qft_dyadic",
+    "requested_target_gates": 20000,
+    "repeats": 1817,
+    "num_phase_terms": 11,
+    "method": "semantic_ucc",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 19999,
+      "depth": 5456,
+      "multi_qubit_gates": 9085,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 10902,
+      "cp_count": 9085
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 6,
+      "total_gates": 43,
+      "depth": 28,
+      "multi_qubit_gates": 10,
+      "cx_count": 10,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ],
+      "rz_count": 21,
+      "cp_count": 0
+    },
+    "runtime_s": 54.798,
+    "matches_expected_43": true
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "qft_dyadic",
+    "requested_target_gates": 20000,
+    "repeats": 1817,
+    "num_phase_terms": 11,
+    "method": "qiskit_opt3",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 19999,
+      "depth": 5456,
+      "multi_qubit_gates": 9085,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 10902,
+      "cp_count": 9085
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 6,
+      "total_gates": 36358,
+      "depth": 12735,
+      "multi_qubit_gates": 18170,
+      "cx_count": 18170,
+      "gate_types": [
+        "cx",
+        "h",
+        "ry",
+        "rz"
+      ],
+      "rz_count": 18176,
+      "cp_count": 0
+    },
+    "runtime_s": 24.349
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "qft_dyadic",
+    "requested_target_gates": 20000,
+    "repeats": 1817,
+    "num_phase_terms": 11,
+    "method": "baseline_ucc",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 19999,
+      "depth": 5456,
+      "multi_qubit_gates": 9085,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 10902,
+      "cp_count": 9085
+    },
+    "status": "skipped (focusing on semantic)"
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "qft_dyadic",
+    "requested_target_gates": 50000,
+    "repeats": 4544,
+    "num_phase_terms": 11,
+    "method": "semantic_ucc",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 49996,
+      "depth": 13637,
+      "multi_qubit_gates": 22720,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 27264,
+      "cp_count": 22720
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 6,
+      "total_gates": 31,
+      "depth": 26,
+      "multi_qubit_gates": 10,
+      "cx_count": 10,
+      "gate_types": [
+        "cx",
+        "rz"
+      ],
+      "rz_count": 21,
+      "cp_count": 0
+    },
+    "runtime_s": 74.452,
+    "matches_expected_43": false
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "qft_dyadic",
+    "requested_target_gates": 50000,
+    "repeats": 4544,
+    "num_phase_terms": 11,
+    "method": "qiskit_opt3",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 49996,
+      "depth": 13637,
+      "multi_qubit_gates": 22720,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 27264,
+      "cp_count": 22720
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 6,
+      "total_gates": 90892,
+      "depth": 31823,
+      "multi_qubit_gates": 45440,
+      "cx_count": 45440,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ],
+      "rz_count": 45440,
+      "cp_count": 0
+    },
+    "runtime_s": 155.577
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 6,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "qft_dyadic",
+    "requested_target_gates": 50000,
+    "repeats": 4544,
+    "num_phase_terms": 11,
+    "method": "baseline_ucc",
+    "input": {
+      "num_qubits": 6,
+      "total_gates": 49996,
+      "depth": 13637,
+      "multi_qubit_gates": 22720,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ],
+      "rz_count": 27264,
+      "cp_count": 22720
+    },
+    "status": "skipped (focusing on semantic)"
+  }
+]
