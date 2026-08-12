@@ -1,0 +1,15 @@
+{
+  "schema": "ucc.qre.preflight-anomaly.v1",
+  "second_run_rows": 144,
+  "second_run_completed_valid": 144,
+  "expected_full_matrix_rows": 288,
+  "missing_base_cells": [
+    "hdiag-4000/external_tket_paulisimp",
+    "hdiag-20000/external_tket_paulisimp",
+    "hdiag-20000/materialize_first"
+  ],
+  "root_cause": "The exact symbolic certificate is deliberately incomplete: TKET's equivalent output leaves the pairwise-commuting canonical domain, and the large materialized output produced a different canonical record even though independent dense equivalence passed.",
+  "resolution": "For n <= 6, retain the symbolic outcome but accept a separate content-addressed dense projective-unitary certificate. Reserve ten percent of every total-error budget for the certified exact compiler stage, and apply the same rule to every pipeline.",
+  "unsupported_or_symbolic_predicate_rows_relabelled_as_symbolic_success": false,
+  "points_deleted": false
+}

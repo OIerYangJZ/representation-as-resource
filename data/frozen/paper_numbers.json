@@ -1,0 +1,286 @@
+[
+  {
+    "claim": "Instrumented tradeoff points.",
+    "expected": 592,
+    "format": "comma_int",
+    "id": "w3-cells",
+    "macro": "TradeoffRuns",
+    "observed": 592,
+    "operation": "row_count",
+    "rendered": "592",
+    "source": "data/frozen/tradeoff_summary.csv"
+  },
+  {
+    "claim": "Complete matched-representation matrix cells.",
+    "expected": 1080,
+    "format": "comma_int",
+    "id": "w4-cells",
+    "macro": "MatchedCells",
+    "observed": 1080,
+    "operation": "row_count",
+    "rendered": "1,080",
+    "source": "data/frozen/matched_representation.parquet"
+  },
+  {
+    "claim": "Completed W4 cells; predicate errors are excluded.",
+    "column": "status",
+    "expected": 1065,
+    "format": "comma_int",
+    "id": "w4-completed",
+    "macro": "MatchedCompleted",
+    "observed": 1065,
+    "operation": "value_count",
+    "rendered": "1,065",
+    "source": "data/frozen/matched_representation.parquet",
+    "value": "completed"
+  },
+  {
+    "claim": "W4 predicate-error cells retained outside quality means.",
+    "column": "status",
+    "expected": 15,
+    "format": "comma_int",
+    "id": "w4-predicate-errors",
+    "macro": "MatchedPredicateErrors",
+    "observed": 15,
+    "operation": "value_count",
+    "rendered": "15",
+    "source": "data/frozen/matched_representation.parquet",
+    "value": "predicate_error"
+  },
+  {
+    "claim": "Frozen external-baseline cells.",
+    "expected": 1728,
+    "format": "comma_int",
+    "id": "w5-cells",
+    "macro": "ExternalCells",
+    "observed": 1728,
+    "operation": "row_count",
+    "rendered": "1,728",
+    "source": "data/frozen/external_baselines.parquet"
+  },
+  {
+    "claim": "Completed external-baseline cells.",
+    "column": "status",
+    "expected": 1695,
+    "format": "comma_int",
+    "id": "w5-completed",
+    "macro": "ExternalCompleted",
+    "observed": 1695,
+    "operation": "value_count",
+    "rendered": "1,695",
+    "source": "data/frozen/external_baselines.parquet",
+    "value": "completed"
+  },
+  {
+    "claim": "W5 predicate-error cells retained outside quality means.",
+    "column": "status",
+    "expected": 33,
+    "format": "comma_int",
+    "id": "w5-predicate-errors",
+    "macro": "ExternalPredicateErrors",
+    "observed": 33,
+    "operation": "value_count",
+    "rendered": "33",
+    "source": "data/frozen/external_baselines.parquet",
+    "value": "predicate_error"
+  },
+  {
+    "claim": "Adversarial certificate mutations.",
+    "expected": 56,
+    "format": "comma_int",
+    "id": "w6-mutations",
+    "macro": "CertificateMutationCases",
+    "observed": 56,
+    "operation": "json_path",
+    "path": "mutation_cases",
+    "rendered": "56",
+    "source": "data/frozen/certificate_audit.json"
+  },
+  {
+    "claim": "False accepts in the mutation suite.",
+    "expected": 0,
+    "format": "comma_int",
+    "id": "w6-false-accepts",
+    "macro": "CertificateFalseAccepts",
+    "observed": 0,
+    "operation": "json_path",
+    "path": "mutation_false_accepts",
+    "rendered": "0",
+    "source": "data/frozen/certificate_audit.json"
+  },
+  {
+    "claim": "Dense/symbolic cross-check cases.",
+    "expected": 12,
+    "format": "comma_int",
+    "id": "w6-crosschecks",
+    "macro": "CertificateCrosscheckCases",
+    "observed": 12,
+    "operation": "json_path",
+    "path": "crosscheck_cases",
+    "rendered": "12",
+    "source": "data/frozen/certificate_audit.json"
+  },
+  {
+    "claim": "Fixed-total-error QRE cells.",
+    "expected": 288,
+    "format": "comma_int",
+    "id": "w7-cells",
+    "macro": "QRECells",
+    "observed": 288,
+    "operation": "row_count",
+    "rendered": "288",
+    "source": "data/frozen/qre_results.parquet"
+  },
+  {
+    "claim": "Main-slice materialize-first/semantic-first spacetime ratio.",
+    "column": "spacetime_qubit_seconds",
+    "denominator_selector": {
+      "pipeline_id": "semantic_first"
+    },
+    "expected": 2813.8700379731645,
+    "format": "fixed0",
+    "id": "w7-spacetime-ratio",
+    "macro": "QREMaterializeSpacetimeRatio",
+    "numerator_selector": {
+      "pipeline_id": "materialize_first"
+    },
+    "observed": 2813.8700379731645,
+    "operation": "ratio",
+    "rendered": "2814",
+    "source": "data/frozen/qre_summary.csv"
+  },
+  {
+    "claim": "Natural-workload factorial and external cells.",
+    "expected": 21060,
+    "format": "comma_int",
+    "id": "w8-cells",
+    "macro": "NaturalCells",
+    "observed": 21060,
+    "operation": "row_count",
+    "rendered": "21,060",
+    "source": "data/frozen/natural_workloads.parquet"
+  },
+  {
+    "claim": "Positive workload families satisfying the predeclared all-cell criterion.",
+    "column": "predeclared_positive_family_success",
+    "expected": 5,
+    "format": "comma_int",
+    "id": "w8-stable-families",
+    "macro": "NaturalStableFamilies",
+    "observed": 5,
+    "operation": "true_count",
+    "rendered": "5",
+    "source": "data/frozen/natural_workload_summary.csv"
+  },
+  {
+    "claim": "Systematic negative-control regressions.",
+    "column": "systematic_regression",
+    "expected": 0,
+    "format": "comma_int",
+    "id": "w8-negative-regressions",
+    "macro": "NaturalNegativeRegressions",
+    "observed": 0,
+    "operation": "true_count",
+    "rendered": "0",
+    "source": "data/frozen/natural_negative_controls.csv"
+  },
+  {
+    "claim": "Mean preset-recognizer gate reduction.",
+    "column": "mean",
+    "expected": 364.906746031746,
+    "format": "fixed1",
+    "id": "w8-preset-effect",
+    "macro": "PresetGateEffect",
+    "observed": 364.906746031746,
+    "operation": "selected_value",
+    "rendered": "364.9",
+    "selector": {
+      "factor": "preset_recognizer",
+      "metric": "gates",
+      "workload_class": "natural_positive"
+    },
+    "source": "data/frozen/natural_ablation_effects.csv"
+  },
+  {
+    "claim": "Bootstrap 95 percent lower endpoint for preset effect.",
+    "column": "ci95_low",
+    "expected": 349.7535125248016,
+    "format": "fixed1",
+    "id": "w8-preset-effect-low",
+    "macro": "PresetGateEffectLow",
+    "observed": 349.7535125248016,
+    "operation": "selected_value",
+    "rendered": "349.8",
+    "selector": {
+      "factor": "preset_recognizer",
+      "metric": "gates",
+      "workload_class": "natural_positive"
+    },
+    "source": "data/frozen/natural_ablation_effects.csv"
+  },
+  {
+    "claim": "Bootstrap 95 percent upper endpoint for preset effect.",
+    "column": "ci95_high",
+    "expected": 380.48216765873013,
+    "format": "fixed1",
+    "id": "w8-preset-effect-high",
+    "macro": "PresetGateEffectHigh",
+    "observed": 380.48216765873013,
+    "operation": "selected_value",
+    "rendered": "380.5",
+    "selector": {
+      "factor": "preset_recognizer",
+      "metric": "gates",
+      "workload_class": "natural_positive"
+    },
+    "source": "data/frozen/natural_ablation_effects.csv"
+  },
+  {
+    "claim": "Rows in the normalized provenance index.",
+    "expected": 24748,
+    "format": "comma_int",
+    "id": "w9-unified-rows",
+    "macro": "UnifiedRows",
+    "observed": 24748,
+    "operation": "row_count",
+    "rendered": "24,748",
+    "source": "data/frozen/unified_experiments.parquet"
+  },
+  {
+    "claim": "Predicate-error rows retained outside quality means.",
+    "column": "status",
+    "expected": 48,
+    "format": "comma_int",
+    "id": "w9-predicate-errors",
+    "macro": "UnifiedPredicateErrors",
+    "observed": 48,
+    "operation": "value_count",
+    "rendered": "48",
+    "source": "data/frozen/unified_experiments.parquet",
+    "value": "predicate_error"
+  },
+  {
+    "claim": "Headline theorem tests rerun from the independent directory.",
+    "expected": 9,
+    "format": "comma_int",
+    "id": "w9-clean-theorem-tests",
+    "macro": "CleanTheoryTests",
+    "observed": 9,
+    "operation": "json_path",
+    "path": "theorem_tests_passed",
+    "rendered": "9",
+    "source": "data/frozen/clean_room_receipt.json"
+  },
+  {
+    "claim": "Deterministic synthesis angle-precision pairs exercised in clean-room QRE.",
+    "expected": 17,
+    "format": "comma_int",
+    "id": "w9-clean-grid-pairs",
+    "macro": "CleanGridPairs",
+    "observed": 17,
+    "operation": "json_path",
+    "path": "grid_synth_unique_pairs",
+    "rendered": "17",
+    "source": "data/frozen/clean_room_receipt.json"
+  }
+]

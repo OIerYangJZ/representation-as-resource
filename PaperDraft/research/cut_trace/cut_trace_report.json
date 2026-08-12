@@ -1,0 +1,30 @@
+{
+  "all_event_restart_checks_passed": true,
+  "all_summary_restart_checks_passed": true,
+  "betas": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "event_count": 1320,
+  "files": {
+    "commitment_vs_cross_cut.pdf": "4c7cc3283569ef75dfc3de7c4472f4c65db78283060eac34eb41a417cdbedea7",
+    "cut_trace_events.jsonl": "e50911190ab178b0fbaa88b1e89fc7261b6d32b967d8ad2615d8b81b88fbae73",
+    "cut_trace_summary.csv": "9e36e0ff3707ae04f25cce4ff687923006cb08d7e8f420751d3b822337bac227"
+  },
+  "host": "YangJinseys-MacBook-Pro-8.local",
+  "pid": 63321,
+  "python": "3.13.12",
+  "schema": "ucc.masked-share-cut-trace.v1",
+  "seed": 20260801,
+  "serializer": "binary big-endian v1; all five restart fields charged",
+  "sizes": [
+    8,
+    16,
+    32,
+    64
+  ],
+  "summary_count": 24
+}

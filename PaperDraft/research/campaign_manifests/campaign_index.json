@@ -1,0 +1,63 @@
+{
+  "base_profiles": {
+    "line20_v1": {
+      "backend_source": "research/hardware_aware_backend.py",
+      "backend_source_sha256": "857349877c6879310e13363ca65d44f3cd035c4f072d11983e4d3478c2ee3ae3",
+      "backend_topology": "20-qubit bidirectional nearest-neighbor line",
+      "native_gate_set": [
+        "u",
+        "sx",
+        "p",
+        "cx",
+        "measure",
+        "id"
+      ]
+    },
+    "logical_all_to_all_v1": {
+      "backend_topology": "all-to-all logical, routing disabled",
+      "bridge_sequence": "Qiskit circuit -> declared compiler -> target-basis Qiskit circuit",
+      "native_gate_set": [
+        "cx",
+        "rx",
+        "ry",
+        "rz",
+        "h"
+      ]
+    }
+  },
+  "campaigns": {
+    "HW24": {
+      "manifest": "HW24.json",
+      "reader_label_prefix": "HW24",
+      "sha256": "9ed66289625e613fc6027dc9f7f2252c855a8500ac16a5692dac35edbba87ed7"
+    },
+    "MR25": {
+      "manifest": "MR25.json",
+      "reader_label_prefix": "MR25",
+      "sha256": "1cebc83d424a6f17c2f47922a5fe19bc71113774c10d1d27da6a9e4bdd311160"
+    },
+    "NF25": {
+      "manifest": "NF25.json",
+      "reader_label_prefix": "NF25",
+      "sha256": "877c0c5f6331593db05e30b8769e9b8025cf05d17784c08645f2de06fd7e284f"
+    },
+    "REAL24": {
+      "manifest": "REAL24.json",
+      "reader_label_prefix": "REAL24",
+      "sha256": "56ae8f2385819dae4f78622ccb5bf04c63e62087bcf9eeab4aab6220b9638826"
+    },
+    "RP23": {
+      "manifest": "RP23.json",
+      "reader_label_prefix": "RP23",
+      "sha256": "84ec1ceae6a305b434434c9fe3584cc13abdfe724238649233f71550034adf11"
+    }
+  },
+  "freeze_commit": "229eafdb4127ab98b2ad925a9657fa67510a12e7",
+  "invariants": [
+    "reader_label_prefix is unique across campaigns",
+    "a row may inherit only from its named base profile",
+    "historical missing caps/certificates are explicit strings, never silently imputed",
+    "identical source instance names in distinct campaigns retain distinct prefixes"
+  ],
+  "schema": "ucc.campaign-index.v1"
+}

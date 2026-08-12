@@ -1,0 +1,8 @@
+{
+  "campaign": "MR25-matched-representation-20260801",
+  "inherits": "logical_all_to_all_v1",
+  "manifest_path": "research/matched_representation/campaign_manifest.json",
+  "manifest_sha256": "cf12c1daeb73577174c72b907614be61c62288e173494ffe958f17048c7a4fd4",
+  "reader_label_prefix": "MR25",
+  "schema": "ucc.campaign-link.v1"
+}

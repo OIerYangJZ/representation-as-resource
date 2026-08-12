@@ -1,0 +1,1532 @@
+[
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 3998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 42,
+      "depth": 24,
+      "cx_count": 12
+    },
+    "runtime_s": 2.169,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 3998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 10783,
+      "depth": 5593,
+      "cx_count": 4389
+    },
+    "runtime_s": 1.0,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 3998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 1,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 42,
+      "depth": 24,
+      "cx_count": 12
+    },
+    "runtime_s": 1.87,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 3998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 1,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 9588,
+      "depth": 5593,
+      "cx_count": 4788
+    },
+    "runtime_s": 0.976,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 3998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 2,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 42,
+      "depth": 24,
+      "cx_count": 12
+    },
+    "runtime_s": 1.895,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 3998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 2,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 9588,
+      "depth": 5593,
+      "cx_count": 4788
+    },
+    "runtime_s": 0.975,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 3998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 3,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 42,
+      "depth": 24,
+      "cx_count": 12
+    },
+    "runtime_s": 1.847,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 3998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 3,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 9588,
+      "depth": 5593,
+      "cx_count": 4788
+    },
+    "runtime_s": 0.975,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 3998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 4,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 42,
+      "depth": 24,
+      "cx_count": 12
+    },
+    "runtime_s": 1.878,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 3998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 4,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 9588,
+      "depth": 5593,
+      "cx_count": 4788
+    },
+    "runtime_s": 0.979,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 9998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 42,
+      "depth": 24,
+      "cx_count": 12
+    },
+    "runtime_s": 8.594,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 9998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 26983,
+      "depth": 13993,
+      "cx_count": 10989
+    },
+    "runtime_s": 6.163,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 9998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 1,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 42,
+      "depth": 24,
+      "cx_count": 12
+    },
+    "runtime_s": 8.482,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 9998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 1,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 23988,
+      "depth": 13993,
+      "cx_count": 11988
+    },
+    "runtime_s": 6.082,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 9998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 2,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 42,
+      "depth": 24,
+      "cx_count": 12
+    },
+    "runtime_s": 8.52,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 9998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 2,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 23988,
+      "depth": 13993,
+      "cx_count": 11988
+    },
+    "runtime_s": 6.113,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 9998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 3,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 42,
+      "depth": 24,
+      "cx_count": 12
+    },
+    "runtime_s": 8.492,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 9998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 3,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 23988,
+      "depth": 13993,
+      "cx_count": 11988
+    },
+    "runtime_s": 6.094,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 9998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 4,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 42,
+      "depth": 24,
+      "cx_count": 12
+    },
+    "runtime_s": 8.522,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 9998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 4,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 23988,
+      "depth": 13993,
+      "cx_count": 11988
+    },
+    "runtime_s": 6.098,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 42,
+      "depth": 24,
+      "cx_count": 12
+    },
+    "runtime_s": 32.044,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 53984,
+      "depth": 27993,
+      "cx_count": 21989
+    },
+    "runtime_s": 24.969,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 1,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 42,
+      "depth": 24,
+      "cx_count": 12
+    },
+    "runtime_s": 31.797,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 1,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 47988,
+      "depth": 27993,
+      "cx_count": 23988
+    },
+    "runtime_s": 24.672,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 2,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 42,
+      "depth": 24,
+      "cx_count": 12
+    },
+    "runtime_s": 31.575,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 2,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 47988,
+      "depth": 27993,
+      "cx_count": 23988
+    },
+    "runtime_s": 24.378,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 3,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 42,
+      "depth": 24,
+      "cx_count": 12
+    },
+    "runtime_s": 31.403,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 3,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 47988,
+      "depth": 27993,
+      "cx_count": 23988
+    },
+    "runtime_s": 24.385,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 4,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 42,
+      "depth": 24,
+      "cx_count": 12
+    },
+    "runtime_s": 31.998,
+    "error": null
+  },
+  {
+    "n_qubits": 4,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19998,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 4,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 47988,
+      "depth": 27993,
+      "cx_count": 23988
+    },
+    "runtime_s": 24.738,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 4000,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 65,
+      "depth": 32,
+      "cx_count": 20
+    },
+    "runtime_s": 1.304,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 4000,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 11711,
+      "depth": 4798,
+      "cx_count": 5054
+    },
+    "runtime_s": 0.36,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 4000,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 1,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 65,
+      "depth": 32,
+      "cx_count": 20
+    },
+    "runtime_s": 1.789,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 4000,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 1,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 10655,
+      "depth": 4798,
+      "cx_count": 5320
+    },
+    "runtime_s": 0.815,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 4000,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 2,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 65,
+      "depth": 32,
+      "cx_count": 20
+    },
+    "runtime_s": 1.8,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 4000,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 2,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 10655,
+      "depth": 4798,
+      "cx_count": 5320
+    },
+    "runtime_s": 0.815,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 4000,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 3,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 65,
+      "depth": 32,
+      "cx_count": 20
+    },
+    "runtime_s": 1.786,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 4000,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 3,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 10655,
+      "depth": 4798,
+      "cx_count": 5320
+    },
+    "runtime_s": 0.81,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 4000,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 4,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 65,
+      "depth": 32,
+      "cx_count": 20
+    },
+    "runtime_s": 1.752,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 4000,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 4,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 10655,
+      "depth": 4798,
+      "cx_count": 5320
+    },
+    "runtime_s": 0.813,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 10000,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 65,
+      "depth": 32,
+      "cx_count": 20
+    },
+    "runtime_s": 5.623,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 10000,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 29315,
+      "depth": 11998,
+      "cx_count": 12654
+    },
+    "runtime_s": 2.086,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 10000,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 1,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 65,
+      "depth": 32,
+      "cx_count": 20
+    },
+    "runtime_s": 8.469,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 10000,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 1,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 26655,
+      "depth": 11998,
+      "cx_count": 13320
+    },
+    "runtime_s": 4.991,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 10000,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 2,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 65,
+      "depth": 32,
+      "cx_count": 20
+    },
+    "runtime_s": 8.471,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 10000,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 2,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 26655,
+      "depth": 11998,
+      "cx_count": 13320
+    },
+    "runtime_s": 4.996,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 10000,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 3,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 65,
+      "depth": 32,
+      "cx_count": 20
+    },
+    "runtime_s": 8.484,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 10000,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 3,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 26655,
+      "depth": 11998,
+      "cx_count": 13320
+    },
+    "runtime_s": 4.99,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 10000,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 4,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 65,
+      "depth": 32,
+      "cx_count": 20
+    },
+    "runtime_s": 8.469,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 10000,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 4,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 26655,
+      "depth": 11998,
+      "cx_count": 13320
+    },
+    "runtime_s": 4.995,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19990,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 65,
+      "depth": 32,
+      "cx_count": 20
+    },
+    "runtime_s": 15.379,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19990,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 58619,
+      "depth": 23986,
+      "cx_count": 25308
+    },
+    "runtime_s": 8.164,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19990,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 1,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 65,
+      "depth": 32,
+      "cx_count": 20
+    },
+    "runtime_s": 27.147,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19990,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 1,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 53295,
+      "depth": 23986,
+      "cx_count": 26640
+    },
+    "runtime_s": 19.987,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19990,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 2,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 65,
+      "depth": 32,
+      "cx_count": 20
+    },
+    "runtime_s": 27.16,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19990,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 2,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 53295,
+      "depth": 23986,
+      "cx_count": 26640
+    },
+    "runtime_s": 20.003,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19990,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 3,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 65,
+      "depth": 32,
+      "cx_count": 20
+    },
+    "runtime_s": 27.123,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19990,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 3,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 53295,
+      "depth": 23986,
+      "cx_count": 26640
+    },
+    "runtime_s": 22.604,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19990,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 4,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 65,
+      "depth": 32,
+      "cx_count": 20
+    },
+    "runtime_s": 27.053,
+    "error": null
+  },
+  {
+    "n_qubits": 5,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19990,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 4,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 53295,
+      "depth": 23986,
+      "cx_count": 26640
+    },
+    "runtime_s": 19.925,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 3981,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 93,
+      "depth": 40,
+      "cx_count": 30
+    },
+    "runtime_s": 1.251,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 3981,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 12108,
+      "depth": 4359,
+      "cx_count": 5481
+    },
+    "runtime_s": 0.318,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 3981,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 1,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 93,
+      "depth": 40,
+      "cx_count": 30
+    },
+    "runtime_s": 1.637,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 3981,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 1,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 11358,
+      "depth": 4171,
+      "cx_count": 5670
+    },
+    "runtime_s": 0.672,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 3981,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 2,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 93,
+      "depth": 40,
+      "cx_count": 30
+    },
+    "runtime_s": 1.604,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 3981,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 2,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 11358,
+      "depth": 4171,
+      "cx_count": 5670
+    },
+    "runtime_s": 0.671,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 3981,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 3,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 93,
+      "depth": 40,
+      "cx_count": 30
+    },
+    "runtime_s": 1.636,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 3981,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 3,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 11358,
+      "depth": 4171,
+      "cx_count": 5670
+    },
+    "runtime_s": 0.67,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 3981,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 4,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 93,
+      "depth": 40,
+      "cx_count": 30
+    },
+    "runtime_s": 1.606,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 4000,
+    "actual_input_gates": 3981,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 4,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 11358,
+      "depth": 4171,
+      "cx_count": 5670
+    },
+    "runtime_s": 0.673,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 9987,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 93,
+      "depth": 40,
+      "cx_count": 30
+    },
+    "runtime_s": 4.382,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 9987,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 30417,
+      "depth": 10939,
+      "cx_count": 13775
+    },
+    "runtime_s": 1.852,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 9987,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 1,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 93,
+      "depth": 40,
+      "cx_count": 30
+    },
+    "runtime_s": 6.706,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 9987,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 1,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 28518,
+      "depth": 10463,
+      "cx_count": 14250
+    },
+    "runtime_s": 4.155,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 9987,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 2,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 93,
+      "depth": 40,
+      "cx_count": 30
+    },
+    "runtime_s": 6.659,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 9987,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 2,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 28518,
+      "depth": 10463,
+      "cx_count": 14250
+    },
+    "runtime_s": 4.186,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 9987,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 3,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 93,
+      "depth": 40,
+      "cx_count": 30
+    },
+    "runtime_s": 7.011,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 9987,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 3,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 28518,
+      "depth": 10463,
+      "cx_count": 14250
+    },
+    "runtime_s": 4.38,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 9987,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 4,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 93,
+      "depth": 40,
+      "cx_count": 30
+    },
+    "runtime_s": 6.79,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 10000,
+    "actual_input_gates": 9987,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 4,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 28518,
+      "depth": 10463,
+      "cx_count": 14250
+    },
+    "runtime_s": 4.151,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19983,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 93,
+      "depth": 40,
+      "cx_count": 30
+    },
+    "runtime_s": 14.61,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19983,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 60876,
+      "depth": 21885,
+      "cx_count": 27579
+    },
+    "runtime_s": 7.231,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19983,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 1,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 93,
+      "depth": 40,
+      "cx_count": 30
+    },
+    "runtime_s": 23.826,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19983,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 1,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 57078,
+      "depth": 20935,
+      "cx_count": 28530
+    },
+    "runtime_s": 16.578,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19983,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 2,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 93,
+      "depth": 40,
+      "cx_count": 30
+    },
+    "runtime_s": 23.971,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19983,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 2,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 57078,
+      "depth": 20935,
+      "cx_count": 28530
+    },
+    "runtime_s": 16.564,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19983,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 3,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 93,
+      "depth": 40,
+      "cx_count": 30
+    },
+    "runtime_s": 24.149,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19983,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 3,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 57078,
+      "depth": 20935,
+      "cx_count": 28530
+    },
+    "runtime_s": 16.632,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19983,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 4,
+    "method": "semantic_ucc",
+    "status": "ok",
+    "output": {
+      "total_gates": 93,
+      "depth": 40,
+      "cx_count": 30
+    },
+    "runtime_s": 24.138,
+    "error": null
+  },
+  {
+    "n_qubits": 6,
+    "requested_target_gates": 20000,
+    "actual_input_gates": 19983,
+    "topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 4,
+    "method": "qiskit_opt3",
+    "status": "ok",
+    "output": {
+      "total_gates": 57078,
+      "depth": 20935,
+      "cx_count": 28530
+    },
+    "runtime_s": 16.611,
+    "error": null
+  }
+]

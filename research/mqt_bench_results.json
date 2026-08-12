@@ -1,0 +1,594 @@
+{
+  "mqt_qpeexact_32": {
+    "translation_only": {
+      "method": "translation_only",
+      "family": "mqt_qpeexact_32",
+      "input": {
+        "num_qubits": 32,
+        "total_gates": 606,
+        "depth": 95,
+        "multi_qubit_gates": 512,
+        "cx_count": 0,
+        "gate_types": [
+          "barrier",
+          "cp",
+          "h",
+          "measure",
+          "swap",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 32,
+        "total_gates": 2620,
+        "depth": 367,
+        "multi_qubit_gates": 1038,
+        "cx_count": 1037,
+        "gate_types": [
+          "barrier",
+          "cx",
+          "h",
+          "measure",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.007
+    },
+    "qiskit_opt1": {
+      "method": "qiskit_opt1",
+      "family": "mqt_qpeexact_32",
+      "input": {
+        "num_qubits": 32,
+        "total_gates": 606,
+        "depth": 95,
+        "multi_qubit_gates": 512,
+        "cx_count": 0,
+        "gate_types": [
+          "barrier",
+          "cp",
+          "h",
+          "measure",
+          "swap",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 32,
+        "total_gates": 2619,
+        "depth": 367,
+        "multi_qubit_gates": 1038,
+        "cx_count": 1037,
+        "gate_types": [
+          "barrier",
+          "cx",
+          "h",
+          "measure",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.018
+    },
+    "qiskit_opt3": {
+      "method": "qiskit_opt3",
+      "family": "mqt_qpeexact_32",
+      "input": {
+        "num_qubits": 32,
+        "total_gates": 606,
+        "depth": 95,
+        "multi_qubit_gates": 512,
+        "cx_count": 0,
+        "gate_types": [
+          "barrier",
+          "cp",
+          "h",
+          "measure",
+          "swap",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 32,
+        "total_gates": 1891,
+        "depth": 307,
+        "multi_qubit_gates": 905,
+        "cx_count": 904,
+        "gate_types": [
+          "barrier",
+          "cx",
+          "h",
+          "measure",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.023
+    },
+    "qiskit_commutative_inverse": {
+      "method": "qiskit_commutative_inverse",
+      "family": "mqt_qpeexact_32",
+      "input": {
+        "num_qubits": 32,
+        "total_gates": 606,
+        "depth": 95,
+        "multi_qubit_gates": 512,
+        "cx_count": 0,
+        "gate_types": [
+          "barrier",
+          "cp",
+          "h",
+          "measure",
+          "swap",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 32,
+        "total_gates": 2620,
+        "depth": 367,
+        "multi_qubit_gates": 1038,
+        "cx_count": 1037,
+        "gate_types": [
+          "barrier",
+          "cx",
+          "h",
+          "measure",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.103
+    },
+    "baseline_ucc": {
+      "method": "baseline_ucc",
+      "family": "mqt_qpeexact_32",
+      "input": {
+        "num_qubits": 32,
+        "total_gates": 606,
+        "depth": 95,
+        "multi_qubit_gates": 512,
+        "cx_count": 0,
+        "gate_types": [
+          "barrier",
+          "cp",
+          "h",
+          "measure",
+          "swap",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 32,
+        "total_gates": 5494,
+        "depth": 818,
+        "multi_qubit_gates": 765,
+        "cx_count": 764,
+        "gate_types": [
+          "barrier",
+          "cx",
+          "measure",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.074
+    },
+    "optimized_ucc": {
+      "method": "optimized_ucc",
+      "family": "mqt_qpeexact_32",
+      "input": {
+        "num_qubits": 32,
+        "total_gates": 606,
+        "depth": 95,
+        "multi_qubit_gates": 512,
+        "cx_count": 0,
+        "gate_types": [
+          "barrier",
+          "cp",
+          "h",
+          "measure",
+          "swap",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 32,
+        "total_gates": 1891,
+        "depth": 307,
+        "multi_qubit_gates": 905,
+        "cx_count": 904,
+        "gate_types": [
+          "barrier",
+          "cx",
+          "h",
+          "measure",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.023
+    }
+  },
+  "mqt_qaoa_32": {
+    "translation_only": {
+      "method": "translation_only",
+      "family": "mqt_qaoa_32",
+      "input": {
+        "num_qubits": 32,
+        "total_gates": 538,
+        "depth": 73,
+        "multi_qubit_gates": 442,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "rx",
+          "rzz"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 32,
+        "total_gates": 1422,
+        "depth": 213,
+        "multi_qubit_gates": 884,
+        "cx_count": 884,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.005
+    },
+    "qiskit_opt1": {
+      "method": "qiskit_opt1",
+      "family": "mqt_qaoa_32",
+      "input": {
+        "num_qubits": 32,
+        "total_gates": 538,
+        "depth": 73,
+        "multi_qubit_gates": 442,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "rx",
+          "rzz"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 32,
+        "total_gates": 1422,
+        "depth": 213,
+        "multi_qubit_gates": 884,
+        "cx_count": 884,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.007
+    },
+    "qiskit_opt3": {
+      "method": "qiskit_opt3",
+      "family": "mqt_qaoa_32",
+      "input": {
+        "num_qubits": 32,
+        "total_gates": 538,
+        "depth": 73,
+        "multi_qubit_gates": 442,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "rx",
+          "rzz"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 32,
+        "total_gates": 1422,
+        "depth": 213,
+        "multi_qubit_gates": 884,
+        "cx_count": 884,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.014
+    },
+    "qiskit_commutative_inverse": {
+      "method": "qiskit_commutative_inverse",
+      "family": "mqt_qaoa_32",
+      "input": {
+        "num_qubits": 32,
+        "total_gates": 538,
+        "depth": 73,
+        "multi_qubit_gates": 442,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "rx",
+          "rzz"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 32,
+        "total_gates": 1422,
+        "depth": 213,
+        "multi_qubit_gates": 884,
+        "cx_count": 884,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.031
+    },
+    "baseline_ucc": {
+      "method": "baseline_ucc",
+      "family": "mqt_qaoa_32",
+      "input": {
+        "num_qubits": 32,
+        "total_gates": 538,
+        "depth": 73,
+        "multi_qubit_gates": 442,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "rx",
+          "rzz"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 32,
+        "total_gates": 6310,
+        "depth": 597,
+        "multi_qubit_gates": 884,
+        "cx_count": 884,
+        "gate_types": [
+          "cx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.074
+    },
+    "optimized_ucc": {
+      "method": "optimized_ucc",
+      "family": "mqt_qaoa_32",
+      "input": {
+        "num_qubits": 32,
+        "total_gates": 538,
+        "depth": 73,
+        "multi_qubit_gates": 442,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "rx",
+          "rzz"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 32,
+        "total_gates": 1422,
+        "depth": 213,
+        "multi_qubit_gates": 884,
+        "cx_count": 884,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.016
+    }
+  },
+  "mqt_grover_20": {
+    "translation_only": {
+      "method": "translation_only",
+      "family": "mqt_grover_20",
+      "input": {
+        "num_qubits": 20,
+        "total_gates": 609,
+        "depth": 570,
+        "multi_qubit_gates": 569,
+        "cx_count": 0,
+        "gate_types": [
+          "Q",
+          "barrier",
+          "h",
+          "measure",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 20,
+        "total_gates": 4099297,
+        "depth": 3300108,
+        "multi_qubit_gates": 1546097,
+        "cx_count": 1546096,
+        "gate_types": [
+          "barrier",
+          "cx",
+          "h",
+          "measure",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 6.264
+    },
+    "qiskit_opt1": {
+      "method": "qiskit_opt1",
+      "family": "mqt_grover_20",
+      "input": {
+        "num_qubits": 20,
+        "total_gates": 609,
+        "depth": 570,
+        "multi_qubit_gates": 569,
+        "cx_count": 0,
+        "gate_types": [
+          "Q",
+          "barrier",
+          "h",
+          "measure",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 20,
+        "total_gates": 3908448,
+        "depth": 3269433,
+        "multi_qubit_gates": 1546097,
+        "cx_count": 1546096,
+        "gate_types": [
+          "barrier",
+          "cx",
+          "h",
+          "measure",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 14.343
+    },
+    "qiskit_opt3": {
+      "method": "qiskit_opt3",
+      "family": "mqt_grover_20",
+      "input": {
+        "num_qubits": 20,
+        "total_gates": 609,
+        "depth": 570,
+        "multi_qubit_gates": 569,
+        "cx_count": 0,
+        "gate_types": [
+          "Q",
+          "barrier",
+          "h",
+          "measure",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 20,
+        "total_gates": 3848810,
+        "depth": 3269433,
+        "multi_qubit_gates": 1546097,
+        "cx_count": 1546096,
+        "gate_types": [
+          "barrier",
+          "cx",
+          "h",
+          "measure",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 38.043
+    },
+    "qiskit_commutative_inverse": {
+      "method": "qiskit_commutative_inverse",
+      "family": "mqt_grover_20",
+      "input": {
+        "num_qubits": 20,
+        "total_gates": 609,
+        "depth": 570,
+        "multi_qubit_gates": 569,
+        "cx_count": 0,
+        "gate_types": [
+          "Q",
+          "barrier",
+          "h",
+          "measure",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 20,
+        "total_gates": 4099297,
+        "depth": 3300108,
+        "multi_qubit_gates": 1546097,
+        "cx_count": 1546096,
+        "gate_types": [
+          "barrier",
+          "cx",
+          "h",
+          "measure",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 6.674
+    },
+    "baseline_ucc": {
+      "method": "baseline_ucc",
+      "family": "mqt_grover_20",
+      "status": "timeout",
+      "timeout_s": 120
+    },
+    "optimized_ucc": {
+      "method": "optimized_ucc",
+      "family": "mqt_grover_20",
+      "input": {
+        "num_qubits": 20,
+        "total_gates": 609,
+        "depth": 570,
+        "multi_qubit_gates": 569,
+        "cx_count": 0,
+        "gate_types": [
+          "Q",
+          "barrier",
+          "h",
+          "measure",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 20,
+        "total_gates": 3848810,
+        "depth": 3269433,
+        "multi_qubit_gates": 1546097,
+        "cx_count": 1546096,
+        "gate_types": [
+          "barrier",
+          "cx",
+          "h",
+          "measure",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 39.123
+    }
+  }
+}

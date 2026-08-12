@@ -1,0 +1,1027 @@
+{
+  "qft_inverse": {
+    "full": {
+      "family": "qft_inverse",
+      "ablation": "full",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 10000,
+        "depth": 4000,
+        "multi_qubit_gates": 8000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 0,
+        "depth": 0,
+        "multi_qubit_gates": 0,
+        "cx_count": 0,
+        "gate_types": []
+      },
+      "runtime_s": 5.892
+    },
+    "candidate_selection_only": {
+      "family": "qft_inverse",
+      "ablation": "candidate_selection_only",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 10000,
+        "depth": 4000,
+        "multi_qubit_gates": 8000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 0,
+        "depth": 0,
+        "multi_qubit_gates": 0,
+        "cx_count": 0,
+        "gate_types": []
+      },
+      "runtime_s": 5.866
+    },
+    "commutative_only": {
+      "family": "qft_inverse",
+      "ablation": "commutative_only",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 10000,
+        "depth": 4000,
+        "multi_qubit_gates": 8000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 0,
+        "depth": 0,
+        "multi_qubit_gates": 0,
+        "cx_count": 0,
+        "gate_types": []
+      },
+      "runtime_s": 6.098
+    },
+    "no_prefix": {
+      "family": "qft_inverse",
+      "ablation": "no_prefix",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 10000,
+        "depth": 4000,
+        "multi_qubit_gates": 8000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 0,
+        "depth": 0,
+        "multi_qubit_gates": 0,
+        "cx_count": 0,
+        "gate_types": []
+      },
+      "runtime_s": 6.043
+    },
+    "no_run": {
+      "family": "qft_inverse",
+      "ablation": "no_run",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 10000,
+        "depth": 4000,
+        "multi_qubit_gates": 8000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 0,
+        "depth": 0,
+        "multi_qubit_gates": 0,
+        "cx_count": 0,
+        "gate_types": []
+      },
+      "runtime_s": 6.04
+    },
+    "no_adjacent_inverse": {
+      "family": "qft_inverse",
+      "ablation": "no_adjacent_inverse",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 10000,
+        "depth": 4000,
+        "multi_qubit_gates": 8000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 0,
+        "depth": 0,
+        "multi_qubit_gates": 0,
+        "cx_count": 0,
+        "gate_types": []
+      },
+      "runtime_s": 8.712
+    },
+    "no_candidate_selection": {
+      "family": "qft_inverse",
+      "ablation": "no_candidate_selection",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 10000,
+        "depth": 4000,
+        "multi_qubit_gates": 8000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 0,
+        "depth": 0,
+        "multi_qubit_gates": 0,
+        "cx_count": 0,
+        "gate_types": []
+      },
+      "runtime_s": 6.254
+    }
+  },
+  "qft_control": {
+    "full": {
+      "family": "qft_control",
+      "ablation": "full",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 10000,
+        "depth": 4000,
+        "multi_qubit_gates": 8000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 34750,
+        "depth": 12500,
+        "multi_qubit_gates": 17000,
+        "cx_count": 17000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.181
+    },
+    "candidate_selection_only": {
+      "family": "qft_control",
+      "ablation": "candidate_selection_only",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 10000,
+        "depth": 4000,
+        "multi_qubit_gates": 8000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 34750,
+        "depth": 12500,
+        "multi_qubit_gates": 17000,
+        "cx_count": 17000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.184
+    },
+    "commutative_only": {
+      "family": "qft_control",
+      "ablation": "commutative_only",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 10000,
+        "depth": 4000,
+        "multi_qubit_gates": 8000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 34750,
+        "depth": 12500,
+        "multi_qubit_gates": 17000,
+        "cx_count": 17000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.19
+    },
+    "no_prefix": {
+      "family": "qft_control",
+      "ablation": "no_prefix",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 10000,
+        "depth": 4000,
+        "multi_qubit_gates": 8000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 34750,
+        "depth": 12500,
+        "multi_qubit_gates": 17000,
+        "cx_count": 17000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.173
+    },
+    "no_run": {
+      "family": "qft_control",
+      "ablation": "no_run",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 10000,
+        "depth": 4000,
+        "multi_qubit_gates": 8000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 34750,
+        "depth": 12500,
+        "multi_qubit_gates": 17000,
+        "cx_count": 17000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.184
+    },
+    "no_adjacent_inverse": {
+      "family": "qft_control",
+      "ablation": "no_adjacent_inverse",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 10000,
+        "depth": 4000,
+        "multi_qubit_gates": 8000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 34750,
+        "depth": 12500,
+        "multi_qubit_gates": 17000,
+        "cx_count": 17000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.181
+    },
+    "no_candidate_selection": {
+      "family": "qft_control",
+      "ablation": "no_candidate_selection",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 10000,
+        "depth": 4000,
+        "multi_qubit_gates": 8000,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 34750,
+        "depth": 12500,
+        "multi_qubit_gates": 17000,
+        "cx_count": 17000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.197
+    }
+  },
+  "qpe_style": {
+    "full": {
+      "family": "qpe_style",
+      "ablation": "full",
+      "input": {
+        "num_qubits": 5,
+        "total_gates": 10000,
+        "depth": 8000,
+        "multi_qubit_gates": 7600,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "output": {
+        "num_qubits": 5,
+        "total_gates": 21206,
+        "depth": 14002,
+        "multi_qubit_gates": 6002,
+        "cx_count": 6002,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 2.632
+    },
+    "candidate_selection_only": {
+      "family": "qpe_style",
+      "ablation": "candidate_selection_only",
+      "input": {
+        "num_qubits": 5,
+        "total_gates": 10000,
+        "depth": 8000,
+        "multi_qubit_gates": 7600,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "output": {
+        "num_qubits": 5,
+        "total_gates": 21206,
+        "depth": 14002,
+        "multi_qubit_gates": 6002,
+        "cx_count": 6002,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 2.529
+    },
+    "commutative_only": {
+      "family": "qpe_style",
+      "ablation": "commutative_only",
+      "input": {
+        "num_qubits": 5,
+        "total_gates": 10000,
+        "depth": 8000,
+        "multi_qubit_gates": 7600,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "output": {
+        "num_qubits": 5,
+        "total_gates": 21206,
+        "depth": 14002,
+        "multi_qubit_gates": 6002,
+        "cx_count": 6002,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 2.527
+    },
+    "no_prefix": {
+      "family": "qpe_style",
+      "ablation": "no_prefix",
+      "input": {
+        "num_qubits": 5,
+        "total_gates": 10000,
+        "depth": 8000,
+        "multi_qubit_gates": 7600,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "output": {
+        "num_qubits": 5,
+        "total_gates": 21206,
+        "depth": 14002,
+        "multi_qubit_gates": 6002,
+        "cx_count": 6002,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 2.616
+    },
+    "no_run": {
+      "family": "qpe_style",
+      "ablation": "no_run",
+      "input": {
+        "num_qubits": 5,
+        "total_gates": 10000,
+        "depth": 8000,
+        "multi_qubit_gates": 7600,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "output": {
+        "num_qubits": 5,
+        "total_gates": 21206,
+        "depth": 14002,
+        "multi_qubit_gates": 6002,
+        "cx_count": 6002,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 2.403
+    },
+    "no_adjacent_inverse": {
+      "family": "qpe_style",
+      "ablation": "no_adjacent_inverse",
+      "input": {
+        "num_qubits": 5,
+        "total_gates": 10000,
+        "depth": 8000,
+        "multi_qubit_gates": 7600,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "output": {
+        "num_qubits": 5,
+        "total_gates": 21206,
+        "depth": 14002,
+        "multi_qubit_gates": 6002,
+        "cx_count": 6002,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 2.473
+    },
+    "no_candidate_selection": {
+      "family": "qpe_style",
+      "ablation": "no_candidate_selection",
+      "input": {
+        "num_qubits": 5,
+        "total_gates": 10000,
+        "depth": 8000,
+        "multi_qubit_gates": 7600,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "swap"
+        ]
+      },
+      "output": {
+        "num_qubits": 5,
+        "total_gates": 21206,
+        "depth": 14002,
+        "multi_qubit_gates": 6002,
+        "cx_count": 6002,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 2.47
+    }
+  },
+  "qaoa_ring": {
+    "full": {
+      "family": "qaoa_ring",
+      "ablation": "full",
+      "input": {
+        "num_qubits": 20,
+        "total_gates": 10000,
+        "depth": 6200,
+        "multi_qubit_gates": 4000,
+        "cx_count": 4000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "output": {
+        "num_qubits": 20,
+        "total_gates": 10000,
+        "depth": 6200,
+        "multi_qubit_gates": 4000,
+        "cx_count": 4000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.016
+    },
+    "candidate_selection_only": {
+      "family": "qaoa_ring",
+      "ablation": "candidate_selection_only",
+      "input": {
+        "num_qubits": 20,
+        "total_gates": 10000,
+        "depth": 6200,
+        "multi_qubit_gates": 4000,
+        "cx_count": 4000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "output": {
+        "num_qubits": 20,
+        "total_gates": 10000,
+        "depth": 6200,
+        "multi_qubit_gates": 4000,
+        "cx_count": 4000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.023
+    },
+    "commutative_only": {
+      "family": "qaoa_ring",
+      "ablation": "commutative_only",
+      "input": {
+        "num_qubits": 20,
+        "total_gates": 10000,
+        "depth": 6200,
+        "multi_qubit_gates": 4000,
+        "cx_count": 4000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "output": {
+        "num_qubits": 20,
+        "total_gates": 10000,
+        "depth": 6200,
+        "multi_qubit_gates": 4000,
+        "cx_count": 4000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.016
+    },
+    "no_prefix": {
+      "family": "qaoa_ring",
+      "ablation": "no_prefix",
+      "input": {
+        "num_qubits": 20,
+        "total_gates": 10000,
+        "depth": 6200,
+        "multi_qubit_gates": 4000,
+        "cx_count": 4000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "output": {
+        "num_qubits": 20,
+        "total_gates": 10000,
+        "depth": 6200,
+        "multi_qubit_gates": 4000,
+        "cx_count": 4000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.016
+    },
+    "no_run": {
+      "family": "qaoa_ring",
+      "ablation": "no_run",
+      "input": {
+        "num_qubits": 20,
+        "total_gates": 10000,
+        "depth": 6200,
+        "multi_qubit_gates": 4000,
+        "cx_count": 4000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "output": {
+        "num_qubits": 20,
+        "total_gates": 10000,
+        "depth": 6200,
+        "multi_qubit_gates": 4000,
+        "cx_count": 4000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.016
+    },
+    "no_adjacent_inverse": {
+      "family": "qaoa_ring",
+      "ablation": "no_adjacent_inverse",
+      "input": {
+        "num_qubits": 20,
+        "total_gates": 10000,
+        "depth": 6200,
+        "multi_qubit_gates": 4000,
+        "cx_count": 4000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "output": {
+        "num_qubits": 20,
+        "total_gates": 10000,
+        "depth": 6200,
+        "multi_qubit_gates": 4000,
+        "cx_count": 4000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.024
+    },
+    "no_candidate_selection": {
+      "family": "qaoa_ring",
+      "ablation": "no_candidate_selection",
+      "input": {
+        "num_qubits": 20,
+        "total_gates": 10000,
+        "depth": 6200,
+        "multi_qubit_gates": 4000,
+        "cx_count": 4000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "output": {
+        "num_qubits": 20,
+        "total_gates": 10000,
+        "depth": 6200,
+        "multi_qubit_gates": 4000,
+        "cx_count": 4000,
+        "gate_types": [
+          "cx",
+          "rx",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.016
+    }
+  },
+  "grover_mirrored": {
+    "full": {
+      "family": "grover_mirrored",
+      "ablation": "full",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 10000,
+        "depth": 2001,
+        "multi_qubit_gates": 400,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "mcx",
+          "x"
+        ]
+      },
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 115811,
+        "depth": 76210,
+        "multi_qubit_gates": 46800,
+        "cx_count": 46800,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.872
+    },
+    "candidate_selection_only": {
+      "family": "grover_mirrored",
+      "ablation": "candidate_selection_only",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 10000,
+        "depth": 2001,
+        "multi_qubit_gates": 400,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "mcx",
+          "x"
+        ]
+      },
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 115811,
+        "depth": 76210,
+        "multi_qubit_gates": 46800,
+        "cx_count": 46800,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.897
+    },
+    "commutative_only": {
+      "family": "grover_mirrored",
+      "ablation": "commutative_only",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 10000,
+        "depth": 2001,
+        "multi_qubit_gates": 400,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "mcx",
+          "x"
+        ]
+      },
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 115811,
+        "depth": 76210,
+        "multi_qubit_gates": 46800,
+        "cx_count": 46800,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.915
+    },
+    "no_prefix": {
+      "family": "grover_mirrored",
+      "ablation": "no_prefix",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 10000,
+        "depth": 2001,
+        "multi_qubit_gates": 400,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "mcx",
+          "x"
+        ]
+      },
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 115811,
+        "depth": 76210,
+        "multi_qubit_gates": 46800,
+        "cx_count": 46800,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.915
+    },
+    "no_run": {
+      "family": "grover_mirrored",
+      "ablation": "no_run",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 10000,
+        "depth": 2001,
+        "multi_qubit_gates": 400,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "mcx",
+          "x"
+        ]
+      },
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 115811,
+        "depth": 76210,
+        "multi_qubit_gates": 46800,
+        "cx_count": 46800,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.928
+    },
+    "no_adjacent_inverse": {
+      "family": "grover_mirrored",
+      "ablation": "no_adjacent_inverse",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 10000,
+        "depth": 2001,
+        "multi_qubit_gates": 400,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "mcx",
+          "x"
+        ]
+      },
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 115811,
+        "depth": 76210,
+        "multi_qubit_gates": 46800,
+        "cx_count": 46800,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.913
+    },
+    "no_candidate_selection": {
+      "family": "grover_mirrored",
+      "ablation": "no_candidate_selection",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 10000,
+        "depth": 2001,
+        "multi_qubit_gates": 400,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "mcx",
+          "x"
+        ]
+      },
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 115811,
+        "depth": 76210,
+        "multi_qubit_gates": 46800,
+        "cx_count": 46800,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.9
+    }
+  }
+}

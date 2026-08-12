@@ -1,0 +1,102 @@
+\subsection{Dispersed additive-update representation}
+\label{sec:w1-dispersed}
+
+\begin{definition}[$r$-round dispersed update stream]
+\label{def:w1-dispersed-stream}
+The cyclic specialization of \cref{def:phase-family} with modulus
+$Q\geq3$, $K=Q-1$, $\Delta=2\pi/Q$, $r\geq2$ rounds, and
+$\Sigma=\{+1\}$: for $x\in[K]_0^m$ the shares
+$a^{(1)},\ldots,a^{(r)}\in\mathbb Z_Q^m$ satisfy
+\begin{equation}
+ \sum_{t=1}^r a_j^{(t)}=x_j\pmod Q
+ \qquad(j\in[m]),
+ \label{eq:w1-share-sum}
+\end{equation}
+the flat input is the round-major record sequence
+$\mathsf{Update}(t,j,a_j^{(t)})$, and the semantic input is the addressed
+aggregate vector $x$.
+\end{definition}
+
+\begin{proposition}[Semantic equivalence and token privacy]
+\label{prop:w1-stream-equivalence}
+Every valid flat stream of \cref{def:w1-dispersed-stream} implements the
+same $U_x$ as the semantic input, up to global phase.  Moreover, a single
+flat token never determines $x_j$: for every fixed $(t,j,a)$ and every
+$b\in[K]_0$, there is a valid stream with $a_j^{(t)}=a$ and $x_j=b$.
+Under the canonical sharing distribution in which the first $r-1$ shares
+are independent uniform residues and the last is fixed by
+\eqref{eq:w1-share-sum}, every individual residue is uniform on
+$\mathbb Z_Q$ and independent of $x_j$.
+\end{proposition}
+
+\begin{proof}
+For integer representatives there are $k_j\in\mathbb Z$ with
+$\sum_ta_j^{(t)}=x_j+Qk_j$.  Commutativity and $Q\Delta=2\pi$ give
+\begin{equation*}
+ \prod_tR_{P_j}(\Delta a_j^{(t)})
+ =R_{P_j}(\Delta x_j+2\pi k_j)
+ =(-1)^{k_j}R_{P_j}(\Delta x_j).
+\end{equation*}
+The product of the signs is global.  For privacy, fix the named token and
+choose any one of the other $r-1$ residues to enforce the desired sum;
+the remaining residues are arbitrary.  The distributional claim follows
+because a sum containing at least one independent uniform residue is
+uniform, including the last share after conditioning on $x_j$.
+\end{proof}
+
+\begin{definition}[Forward-pass cut accounting]
+\label{def:w1-pass-accounting}
+Partition the round-major stream into Alice's prefix $A$ (rounds
+$1,\ldots,r-1$) and Bob's suffix $B$ (round $r$).  A forward $p$-pass
+compiler scans $AB$ from left to right at most $p=p(m)$ times.  There are
+$p$ crossings $A\to B$ and at most $p-1$ rewind crossings $B\to A$.
+At every crossing, the complete restart state is the five-field
+serialization of \eqref{eq:info-budget}; rereadable input and every live
+IR object are therefore included.  For a run on $I$, let $A_p(I)$ be the
+number of bits
+irreversibly committed to the final output while the machine scans $A$,
+summed over all passes, and define
+\begin{equation}
+ \Sigma_p(I):=\sum_{t=1}^{p}B_{\mathrm{cut}}(c_{A\to B,t})
+       +\sum_{t=1}^{p-1}B_{\mathrm{cut}}(c_{B\to A,t}).
+ \label{eq:w1-transcript-budget}
+\end{equation}
+Both are literal, self-delimiting transcript lengths.  Unbarred resource
+symbols take maxima over valid inputs.  For randomized compilers, write
+\begin{equation*}
+ \overline A_p:=\max_I\mathbb E_\rho A_p(I,\rho),\qquad
+ \overline\Sigma_p:=\max_I\mathbb E_\rho\Sigma_p(I,\rho),
+\end{equation*}
+and let
+$S:=\max_I\mathbb E_\rho[\max_cB_{\mathrm{cut}}(c;I,\rho)]$ over the
+$2p-1$ named crossings.  Then
+$\overline\Sigma_p\leq(2p-1)S$; the deterministic version is identical
+without expectations.
+\end{definition}
+
+\begin{theorem}[One-pass zero-error mask bound]
+\label{thm:w1-one-pass-mask}
+Let a deterministic one-pass compiler be correct to
+$\epsilon<\sin(\pi/(2Q))$ on every valid stream of
+\cref{def:w1-dispersed-stream}.  Then
+\begin{equation}
+ A_1+B_{\mathrm{cut}}(c_{A\to B,1})
+ \geq\left\lceil m\log_2Q\right\rceil.
+ \label{eq:w1-one-pass-mask}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For each $u\in\mathbb Z_Q^m$, choose a canonical prefix whose aggregate
+is $u$ (put $u$ in its first round and zero in the other prefix rounds).
+The committed prefix and restart state after this prefix must distinguish
+all $Q^m$ choices.  Indeed, for $u\neq u'$, choose one common final share
+$v$ coordinatewise.  At each coordinate at most two residues of $v_j$
+would make either $u_j+v_j$ or $u'_j+v_j$ equal to the single excluded
+aggregate $Q-1$; since $Q\geq3$, an allowed $v_j$ exists.  Both completions
+are valid, and they differ in every coordinate in which $u$ and $u'$ differ.
+By \cref{thm:w1-exact-separation}, one circuit cannot be within
+$\epsilon$ of both targets.  The messages are prefix-free under the
+declared serializers, so Kraft's inequality gives
+\eqref{eq:w1-one-pass-mask}.
+\end{proof}

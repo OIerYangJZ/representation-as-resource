@@ -1,0 +1,367 @@
+{
+  "design": {
+    "preregistration": "PaperDraft/research/E8_preregistration.md",
+    "rotations": 64,
+    "n_values": [
+      64,
+      512,
+      4096,
+      65536
+    ],
+    "angle": 0.37,
+    "metric": "(bytes with rotations - bytes with none) / rotations",
+    "note": "portability check only; not the mechanism of P1"
+  },
+  "rows": [
+    {
+      "n": 64,
+      "rotations": 64,
+      "spread": false,
+      "qiskit": {
+        "qasm3_bytes": {
+          "total": 1065,
+          "empty": 51,
+          "bytes_per_rotation": 15.84375
+        }
+      },
+      "pytket": {
+        "qasm_bytes": {
+          "total": 1255,
+          "empty": 49,
+          "bytes_per_rotation": 18.84375
+        },
+        "json_bytes": {
+          "total": 6998,
+          "empty": 2722,
+          "bytes_per_rotation": 66.8125
+        }
+      }
+    },
+    {
+      "n": 512,
+      "rotations": 64,
+      "spread": false,
+      "qiskit": {
+        "qasm3_bytes": {
+          "total": 1066,
+          "empty": 52,
+          "bytes_per_rotation": 15.84375
+        }
+      },
+      "pytket": {
+        "qasm_bytes": {
+          "total": 1256,
+          "empty": 50,
+          "bytes_per_rotation": 18.84375
+        },
+        "json_bytes": {
+          "total": 26602,
+          "empty": 22326,
+          "bytes_per_rotation": 66.8125
+        }
+      }
+    },
+    {
+      "n": 4096,
+      "rotations": 64,
+      "spread": false,
+      "qiskit": {
+        "qasm3_bytes": {
+          "total": 1067,
+          "empty": 53,
+          "bytes_per_rotation": 15.84375
+        }
+      },
+      "pytket": {
+        "qasm_bytes": {
+          "total": 1257,
+          "empty": 51,
+          "bytes_per_rotation": 18.84375
+        },
+        "json_bytes": {
+          "total": 193586,
+          "empty": 189310,
+          "bytes_per_rotation": 66.8125
+        }
+      }
+    },
+    {
+      "n": 65536,
+      "rotations": 64,
+      "spread": false,
+      "qiskit": {
+        "qasm3_bytes": {
+          "total": 1068,
+          "empty": 54,
+          "bytes_per_rotation": 15.84375
+        }
+      },
+      "pytket": {
+        "qasm_bytes": {
+          "total": 1258,
+          "empty": 52,
+          "bytes_per_rotation": 18.84375
+        },
+        "json_bytes": {
+          "total": 3247874,
+          "empty": 3243598,
+          "bytes_per_rotation": 66.8125
+        }
+      }
+    }
+  ],
+  "decision": {
+    "per_series": {
+      "qiskit.qasm3_bytes": {
+        "points": [
+          [
+            64,
+            15.84375
+          ],
+          [
+            512,
+            15.84375
+          ],
+          [
+            4096,
+            15.84375
+          ],
+          [
+            65536,
+            15.84375
+          ]
+        ],
+        "monotone_nondecreasing": true,
+        "growth_bytes_per_rotation": 0.0,
+        "growth_at_least_3": false
+      },
+      "pytket.qasm_bytes": {
+        "points": [
+          [
+            64,
+            18.84375
+          ],
+          [
+            512,
+            18.84375
+          ],
+          [
+            4096,
+            18.84375
+          ],
+          [
+            65536,
+            18.84375
+          ]
+        ],
+        "monotone_nondecreasing": true,
+        "growth_bytes_per_rotation": 0.0,
+        "growth_at_least_3": false
+      },
+      "pytket.json_bytes": {
+        "points": [
+          [
+            64,
+            66.8125
+          ],
+          [
+            512,
+            66.8125
+          ],
+          [
+            4096,
+            66.8125
+          ],
+          [
+            65536,
+            66.8125
+          ]
+        ],
+        "monotone_nondecreasing": true,
+        "growth_bytes_per_rotation": 0.0,
+        "growth_at_least_3": false
+      }
+    },
+    "verdicts": {
+      "P5_address_width_paid": false
+    }
+  },
+  "posthoc_spread_addresses": {
+    "status": "EXPLORATORY -- not preregistered, no verdict claimed",
+    "reason": "the preregistered P5 design placed all rotations on qubits 0..63 regardless of n, so address width was never varied; P5 is reported failed as preregistered and this arm is a corrected diagnostic only",
+    "rows": [
+      {
+        "n": 64,
+        "rotations": 64,
+        "spread": true,
+        "qiskit": {
+          "qasm3_bytes": {
+            "total": 1065,
+            "empty": 51,
+            "bytes_per_rotation": 15.84375
+          }
+        },
+        "pytket": {
+          "qasm_bytes": {
+            "total": 1255,
+            "empty": 49,
+            "bytes_per_rotation": 18.84375
+          },
+          "json_bytes": {
+            "total": 6998,
+            "empty": 2722,
+            "bytes_per_rotation": 66.8125
+          }
+        }
+      },
+      {
+        "n": 512,
+        "rotations": 64,
+        "spread": true,
+        "qiskit": {
+          "qasm3_bytes": {
+            "total": 1125,
+            "empty": 52,
+            "bytes_per_rotation": 16.765625
+          }
+        },
+        "pytket": {
+          "qasm_bytes": {
+            "total": 1315,
+            "empty": 50,
+            "bytes_per_rotation": 19.765625
+          },
+          "json_bytes": {
+            "total": 26661,
+            "empty": 22326,
+            "bytes_per_rotation": 67.734375
+          }
+        }
+      },
+      {
+        "n": 4096,
+        "rotations": 64,
+        "spread": true,
+        "qiskit": {
+          "qasm3_bytes": {
+            "total": 1186,
+            "empty": 53,
+            "bytes_per_rotation": 17.703125
+          }
+        },
+        "pytket": {
+          "qasm_bytes": {
+            "total": 1376,
+            "empty": 51,
+            "bytes_per_rotation": 20.703125
+          },
+          "json_bytes": {
+            "total": 193705,
+            "empty": 189310,
+            "bytes_per_rotation": 68.671875
+          }
+        }
+      },
+      {
+        "n": 65536,
+        "rotations": 64,
+        "spread": true,
+        "qiskit": {
+          "qasm3_bytes": {
+            "total": 1257,
+            "empty": 54,
+            "bytes_per_rotation": 18.796875
+          }
+        },
+        "pytket": {
+          "qasm_bytes": {
+            "total": 1447,
+            "empty": 52,
+            "bytes_per_rotation": 21.796875
+          },
+          "json_bytes": {
+            "total": 3248063,
+            "empty": 3243598,
+            "bytes_per_rotation": 69.765625
+          }
+        }
+      }
+    ],
+    "analysis": {
+      "per_series": {
+        "qiskit.qasm3_bytes": {
+          "points": [
+            [
+              64,
+              15.84375
+            ],
+            [
+              512,
+              16.765625
+            ],
+            [
+              4096,
+              17.703125
+            ],
+            [
+              65536,
+              18.796875
+            ]
+          ],
+          "monotone_nondecreasing": true,
+          "growth_bytes_per_rotation": 2.953125,
+          "growth_at_least_3": false
+        },
+        "pytket.qasm_bytes": {
+          "points": [
+            [
+              64,
+              18.84375
+            ],
+            [
+              512,
+              19.765625
+            ],
+            [
+              4096,
+              20.703125
+            ],
+            [
+              65536,
+              21.796875
+            ]
+          ],
+          "monotone_nondecreasing": true,
+          "growth_bytes_per_rotation": 2.953125,
+          "growth_at_least_3": false
+        },
+        "pytket.json_bytes": {
+          "points": [
+            [
+              64,
+              66.8125
+            ],
+            [
+              512,
+              67.734375
+            ],
+            [
+              4096,
+              68.671875
+            ],
+            [
+              65536,
+              69.765625
+            ]
+          ],
+          "monotone_nondecreasing": true,
+          "growth_bytes_per_rotation": 2.953125,
+          "growth_at_least_3": false
+        }
+      },
+      "verdicts": {
+        "P5_address_width_paid": false
+      }
+    }
+  }
+}

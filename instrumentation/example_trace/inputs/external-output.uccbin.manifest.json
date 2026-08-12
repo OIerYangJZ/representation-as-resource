@@ -1,0 +1,15 @@
+{
+  "artifact": {
+    "bits": 632,
+    "bytes": 79,
+    "codec_type": "ExternalToolOutput",
+    "path": "external-output.uccbin",
+    "role": "external_output",
+    "sha256": "1ddc855fa1be5f471a858749e7601d5a6dd487cece920c76b56ca4760935511b"
+  },
+  "codec": {
+    "schema": "ucc.accounting",
+    "version": 1
+  },
+  "schema": "ucc.encoded-artifact.v1"
+}

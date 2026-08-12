@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "family_key": "unbounded_independent_pauli_witness",
+  "family_name": "irrational-angle independent-Pauli witness",
+  "construction": "H^tensor4 D^r H^tensor4",
+  "n": 4,
+  "m": 4,
+  "support_matrix_convention": "rows are Pauli-Z character supports; columns are q0,q1,q2,q3",
+  "support_vectors": [
+    {"term": "Z0 Z1", "bits": [1, 1, 0, 0], "angle": "pi*sqrt(2)/11", "angle_over_pi": "sqrt(2)/11", "irrational": true},
+    {"term": "Z1 Z2", "bits": [0, 1, 1, 0], "angle": "pi/13", "angle_over_pi": "1/13", "irrational": false},
+    {"term": "Z2 Z3", "bits": [0, 0, 1, 1], "angle": "pi/17", "angle_over_pi": "1/17", "irrational": false},
+    {"term": "Z0", "bits": [1, 0, 0, 0], "angle": "pi/19", "angle_over_pi": "1/19", "irrational": false}
+  ],
+  "declared_support_rank_f2": 4,
+  "diagonal_definition": "D=exp(-i/2 * sum_j theta_j Z^a_j)",
+  "gate_convention": {
+    "rz": "RZ(theta)=exp(-i theta Z/2)",
+    "cp": "CP(phi)=diag(1,1,1,exp(i phi))",
+    "two_body_lowering": "RZ_i(theta) RZ_j(theta) CP_ij(-2 theta) = exp(-i theta/2) exp(-i theta Z_i Z_j/2)",
+    "lowering_scope": "equality is exact up to the displayed global phase"
+  },
+  "block_gate_count": 10,
+  "boundary_gate_count": 8,
+  "size_mapping": "r=max(1,floor((requested_gates-8)/10)); actual_gates=8+10r",
+  "certificate": {
+    "irrational_angle_expression": "pi*sqrt(2)/11",
+    "irrationality_basis": "sqrt(2) is irrational; division by nonzero rational 11 preserves irrationality",
+    "support_rank_verified": true,
+    "proposition_label": "prop:fooling-set",
+    "lemma_label": "lem:pauli-uniqueness",
+    "unbounded_noncollision_by_proposition": true,
+    "certificate_kind": "symbolic proposition application, not a floating-point or LCM test"
+  },
+  "implementation_binding": {
+    "method": "Qiskit double-precision parameters evaluated from math.pi and math.sqrt(2)",
+    "role": "circuit execution only; not the irrationality or noncollision certificate",
+    "operator_check_atol": 1e-9,
+    "operator_check_rtol": 1e-9
+  }
+}

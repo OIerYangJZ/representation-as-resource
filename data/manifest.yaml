@@ -1,0 +1,128 @@
+schema: ucc.data-manifest.v1
+policy:
+  canonical_rule: Only entries with role canonical_source or canonical_summary may support manuscript numbers.
+  status_rule: Failure and unsupported statuses remain separate and never enter completed-quality means.
+  historical_rule: Raw run trees are retained as provenance but are not scanned as independent canonical datasets.
+primary_key:
+  - experiment_id
+  - instance_id
+  - representation_id
+  - method_id
+  - seed
+  - backend_hash
+  - tool_version
+  - artifact_commit
+  - config_hash
+datasets:
+  - id: w3_tradeoff
+    path: data/frozen/tradeoff_summary.csv
+    role: canonical_source
+    rows: 592
+    generator: scripts/analyze_tradeoff.py
+    campaign: w3-tradeoff-20260802-local
+    receipt: data/frozen/tradeoff_freeze_manifest.json
+  - id: w4_matched
+    path: data/frozen/matched_representation.parquet
+    role: canonical_source
+    rows: 1080
+    generator: scripts/analyze_matched_matrix.py
+    campaign: w4-matched-representation-20260802
+    receipt: data/frozen/matched_representation_freeze_manifest.json
+  - id: w5_external
+    path: data/frozen/external_baselines.parquet
+    role: canonical_source
+    rows: 1728
+    generator: scripts/audit_bridge_loss.py
+    campaign: w5-external-baselines-20260803
+    receipt: data/frozen/external_baseline_freeze_manifest.json
+  - id: w6_certificate
+    path: data/frozen/certificate_audit.json
+    role: canonical_summary
+    generator: tests/test_certificate_crosscheck.py
+    campaign: w6-certificate-audit-20260803
+  - id: w7_qre
+    path: data/frozen/qre_results.parquet
+    role: canonical_source
+    rows: 288
+    generator: scripts/run_qre_campaign.py
+    campaign: w7-fixed-total-error-20260803-local
+    receipt: data/frozen/qre_freeze_manifest.json
+  - id: w8_natural
+    path: data/frozen/natural_workloads.parquet
+    role: canonical_source
+    rows: 21060
+    generator: scripts/run_factorial_ablation.py
+    campaign: w8-natural-factorial-20260803-local
+    receipt: data/frozen/natural_workload_analysis.json
+  - id: w3_tradeoff_summary
+    path: data/frozen/tradeoff_scaling_fits.csv
+    role: canonical_summary
+    generator: scripts/analyze_tradeoff.py
+  - id: w4_factorial_summary
+    path: data/frozen/matched_factorial_summary.csv
+    role: canonical_summary
+    generator: scripts/analyze_matched_matrix.py
+  - id: w5_external_summary
+    path: data/frozen/external_baseline_summary.csv
+    role: canonical_summary
+    generator: scripts/audit_bridge_loss.py
+  - id: w7_qre_summary
+    path: data/frozen/qre_summary.csv
+    role: canonical_summary
+    generator: scripts/analyze_qre_campaign.py
+  - id: w8_workload_summary
+    path: data/frozen/natural_workload_summary.csv
+    role: canonical_summary
+    generator: scripts/run_factorial_ablation.py
+  - id: w8_ablation_summary
+    path: data/frozen/natural_ablation_effects.csv
+    role: canonical_summary
+    generator: scripts/run_factorial_ablation.py
+  - id: e6_eta_sweep
+    path: data/frozen/eta_sweep_pareto.json
+    role: canonical_summary
+    generator: PaperDraft/scripts/run_eta_sweep.py
+    campaign: e6-eta-sweep-20260805
+  - id: e7_tket_state_scaling
+    path: data/frozen/e7_tket_state_scaling.json
+    role: canonical_summary
+    generator: PaperDraft/scripts/run_tket_state_scaling.py
+    campaign: e7-tket-state-scaling-20260805
+raw_provenance_roots:
+  - data/runs/w3-tradeoff-20260802-local
+  - data/runs/w4-matched-representation-20260802
+  - data/runs/w5-external-baselines-20260803
+  - data/runs/w7-fixed-total-error-20260803-local
+  - data/runs/w8-natural-20260803-local
+known_historical_or_stale:
+  - path: data/runs/w4-matched-representation-20260802
+    disposition: historical_raw_provenance
+    reason: Raw representations and logs are retained; the parquet freeze is canonical.
+  - path: data/runs/w5-external-baselines-20260803
+    disposition: historical_raw_provenance
+    reason: Raw per-cell logs are retained; the parquet freeze is canonical.
+  - path: data/runs/w8-natural-20260803-local/natural_baselines.parquet
+    disposition: intermediate_noncanonical
+    reason: The final factorial parquet includes the matched external rows.
+auxiliary_artifacts:
+  - data/frozen/fooling_set_m2_r2_Q5.json
+  - data/frozen/clean_room_receipt.json
+  - data/frozen/figure_build_manifest.json
+  - data/frozen/paper_numbers.json
+  - data/frozen/external_baselines.csv
+  - data/frozen/external_bridge_loss.csv
+  - data/frozen/external_campaign_manifest.json
+  - data/frozen/matched_campaign_manifest.json
+  - data/frozen/matched_factorial_effects.csv
+  - data/frozen/matched_interaction_residuals.csv
+  - data/frozen/matched_representation.csv
+  - data/frozen/matched_scaling_fits.csv
+  - data/frozen/natural_ablation_interactions.csv
+  - data/frozen/natural_negative_controls.csv
+  - data/frozen/natural_workloads.csv
+  - data/frozen/qre_analysis.json
+  - data/frozen/qre_results.csv
+  - data/frozen/tradeoff_anomalies.csv
+  - data/frozen/tradeoff_events.jsonl.gz
+  - data/frozen/tradeoff_manifest.yaml
+  - data/frozen/tradeoff_trace_artifacts.tar.gz

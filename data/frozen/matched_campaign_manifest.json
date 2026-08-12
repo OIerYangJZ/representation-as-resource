@@ -1,0 +1,65 @@
+{
+  "campaign": "w4-matched-representation-20260802",
+  "dimensions": {
+    "compilers": 5,
+    "representations": 9,
+    "seeds": 2,
+    "targets": 12
+  },
+  "finished_unix": 1785733663.586621,
+  "formal": true,
+  "git_revision": "229eafdb4127ab98b2ad925a9657fa67510a12e7",
+  "hostname": "YangJinseys-MacBook-Pro-8.local",
+  "matrix_complete": true,
+  "observed_cells": 1080,
+  "plan_path": "benchmarks/matched_manifest.yaml",
+  "plan_sha256": "db64254d201d1a82926f7fee434a6ee2634b6d6885051b7214eeda15cde4c08b",
+  "planned_cells": 1080,
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "python": "3.13.12",
+  "representation_index_path": "data/runs/w4-matched-representation-20260802/representation_index.jsonl",
+  "representation_index_sha256": "bcd7f6bc74b9efd0a8008317be4c1ddc934af725e576b682fed0de61433c4e69",
+  "rows_path": "data/runs/w4-matched-representation-20260802/matched_cells.jsonl",
+  "rows_sha256": "47f7e3868878ec7df67fa7d595fc33ddfa9e7bfcf894aa7aba8d4f1a58552bc0",
+  "schema": "ucc.matched-campaign.v1",
+  "source_sha256": {
+    "benchmarks/matched_manifest.yaml": "db64254d201d1a82926f7fee434a6ee2634b6d6885051b7214eeda15cde4c08b",
+    "benchmarks/representation_generators.py": "eb9a832ccb52c2c78e34353db7bce44adb3d076d754adbe4485cf206974bc0cb",
+    "encoding/codec.py": "58f0613c0934022911cdb99ceffb9bf0e07aed3dc5953d9ee9366fdbec9194de",
+    "instrumentation/resource_accounting.py": "bcb5870da1a2ba974e899a4323dd7db7e51b62703afd41908ce5d79d584456c1",
+    "scripts/analyze_matched_matrix.py": "63b1b329b8b8b20af7f5253d62ebf80c7a57a7c8ea120ef3278dd2950617b5f0",
+    "scripts/run_matched_matrix.py": "3fbf65f9968c05dc64fb6dcd450864673f3b0ac89e7e9955d6c83f3bede5f992"
+  },
+  "started_unix": 1785733245.1883361,
+  "status_counts": {
+    "completed": 1065,
+    "correctness_failure": 0,
+    "memory_error": 0,
+    "predicate_error": 15,
+    "timeout": 0,
+    "unsupported": 0
+  },
+  "tool_versions": {
+    "matplotlib": "3.10.7",
+    "numpy": "2.3.3",
+    "pandas": "2.3.3",
+    "psutil": "7.1.3",
+    "pytket": "2.16.0",
+    "pyzx": "0.10.2",
+    "qiskit": "2.4.0",
+    "scipy": "1.16.2"
+  },
+  "uniform_controls": {
+    "certificate_global_phase": "ignored",
+    "certificate_kind": "pyzx_rewrite_identity_up_to_global_phase_v1",
+    "hardware": "logical_all_to_all_no_routing",
+    "memory_cap_bytes": 2147483648,
+    "target_basis": [
+      "cx",
+      "rz",
+      "h"
+    ],
+    "timeout_s": 20.0,
+    "total_error_budget": 0.0
+  }
+}

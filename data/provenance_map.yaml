@@ -1,0 +1,182 @@
+schema: ucc.paper-number-provenance.v1
+entries:
+  - id: w3-cells
+    macro: TradeoffRuns
+    source: data/frozen/tradeoff_summary.csv
+    operation: row_count
+    expected: 592
+    format: comma_int
+    claim: Instrumented tradeoff points.
+  - id: w4-cells
+    macro: MatchedCells
+    source: data/frozen/matched_representation.parquet
+    operation: row_count
+    expected: 1080
+    format: comma_int
+    claim: Complete matched-representation matrix cells.
+  - id: w4-completed
+    macro: MatchedCompleted
+    source: data/frozen/matched_representation.parquet
+    operation: value_count
+    column: status
+    value: completed
+    expected: 1065
+    format: comma_int
+    claim: Completed W4 cells; predicate errors are excluded.
+  - id: w4-predicate-errors
+    macro: MatchedPredicateErrors
+    source: data/frozen/matched_representation.parquet
+    operation: value_count
+    column: status
+    value: predicate_error
+    expected: 15
+    format: comma_int
+    claim: W4 predicate-error cells retained outside quality means.
+  - id: w5-cells
+    macro: ExternalCells
+    source: data/frozen/external_baselines.parquet
+    operation: row_count
+    expected: 1728
+    format: comma_int
+    claim: Frozen external-baseline cells.
+  - id: w5-completed
+    macro: ExternalCompleted
+    source: data/frozen/external_baselines.parquet
+    operation: value_count
+    column: status
+    value: completed
+    expected: 1695
+    format: comma_int
+    claim: Completed external-baseline cells.
+  - id: w5-predicate-errors
+    macro: ExternalPredicateErrors
+    source: data/frozen/external_baselines.parquet
+    operation: value_count
+    column: status
+    value: predicate_error
+    expected: 33
+    format: comma_int
+    claim: W5 predicate-error cells retained outside quality means.
+  - id: w6-mutations
+    macro: CertificateMutationCases
+    source: data/frozen/certificate_audit.json
+    operation: json_path
+    path: mutation_cases
+    expected: 56
+    format: comma_int
+    claim: Adversarial certificate mutations.
+  - id: w6-false-accepts
+    macro: CertificateFalseAccepts
+    source: data/frozen/certificate_audit.json
+    operation: json_path
+    path: mutation_false_accepts
+    expected: 0
+    format: comma_int
+    claim: False accepts in the mutation suite.
+  - id: w6-crosschecks
+    macro: CertificateCrosscheckCases
+    source: data/frozen/certificate_audit.json
+    operation: json_path
+    path: crosscheck_cases
+    expected: 12
+    format: comma_int
+    claim: Dense/symbolic cross-check cases.
+  - id: w7-cells
+    macro: QRECells
+    source: data/frozen/qre_results.parquet
+    operation: row_count
+    expected: 288
+    format: comma_int
+    claim: Fixed-total-error QRE cells.
+  - id: w7-spacetime-ratio
+    macro: QREMaterializeSpacetimeRatio
+    source: data/frozen/qre_summary.csv
+    operation: ratio
+    numerator_selector: {pipeline_id: materialize_first}
+    denominator_selector: {pipeline_id: semantic_first}
+    column: spacetime_qubit_seconds
+    expected: 2813.8700379731645
+    format: fixed0
+    claim: Main-slice materialize-first/semantic-first spacetime ratio.
+  - id: w8-cells
+    macro: NaturalCells
+    source: data/frozen/natural_workloads.parquet
+    operation: row_count
+    expected: 21060
+    format: comma_int
+    claim: Natural-workload factorial and external cells.
+  - id: w8-stable-families
+    macro: NaturalStableFamilies
+    source: data/frozen/natural_workload_summary.csv
+    operation: true_count
+    column: predeclared_positive_family_success
+    expected: 5
+    format: comma_int
+    claim: Positive workload families satisfying the predeclared all-cell criterion.
+  - id: w8-negative-regressions
+    macro: NaturalNegativeRegressions
+    source: data/frozen/natural_negative_controls.csv
+    operation: true_count
+    column: systematic_regression
+    expected: 0
+    format: comma_int
+    claim: Systematic negative-control regressions.
+  - id: w8-preset-effect
+    macro: PresetGateEffect
+    source: data/frozen/natural_ablation_effects.csv
+    operation: selected_value
+    selector: {factor: preset_recognizer, workload_class: natural_positive, metric: gates}
+    column: mean
+    expected: 364.906746031746
+    format: fixed1
+    claim: Mean preset-recognizer gate reduction.
+  - id: w8-preset-effect-low
+    macro: PresetGateEffectLow
+    source: data/frozen/natural_ablation_effects.csv
+    operation: selected_value
+    selector: {factor: preset_recognizer, workload_class: natural_positive, metric: gates}
+    column: ci95_low
+    expected: 349.7535125248016
+    format: fixed1
+    claim: Bootstrap 95 percent lower endpoint for preset effect.
+  - id: w8-preset-effect-high
+    macro: PresetGateEffectHigh
+    source: data/frozen/natural_ablation_effects.csv
+    operation: selected_value
+    selector: {factor: preset_recognizer, workload_class: natural_positive, metric: gates}
+    column: ci95_high
+    expected: 380.48216765873013
+    format: fixed1
+    claim: Bootstrap 95 percent upper endpoint for preset effect.
+  - id: w9-unified-rows
+    macro: UnifiedRows
+    source: data/frozen/unified_experiments.parquet
+    operation: row_count
+    expected: 24748
+    format: comma_int
+    claim: Rows in the normalized provenance index.
+  - id: w9-predicate-errors
+    macro: UnifiedPredicateErrors
+    source: data/frozen/unified_experiments.parquet
+    operation: value_count
+    column: status
+    value: predicate_error
+    expected: 48
+    format: comma_int
+    claim: Predicate-error rows retained outside quality means.
+  - id: w9-clean-theorem-tests
+    macro: CleanTheoryTests
+    source: data/frozen/clean_room_receipt.json
+    operation: json_path
+    path: theorem_tests_passed
+    expected: 9
+    format: comma_int
+    claim: Headline theorem tests rerun from the independent directory.
+  - id: w9-clean-grid-pairs
+    macro: CleanGridPairs
+    source: data/frozen/clean_room_receipt.json
+    operation: json_path
+    path: grid_synth_unique_pairs
+    expected: 17
+    format: comma_int
+    claim: Deterministic synthesis angle-precision pairs exercised in clean-room QRE.

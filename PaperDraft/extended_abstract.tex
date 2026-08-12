@@ -1,0 +1,175 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{authblk}
+\usepackage[hidelinks]{hyperref}
+
+\setlength{\parskip}{2pt}
+
+\title{\vspace{-2.5em}Lowering Is Not Free:\\
+A Recoverability Boundary in Quantum Compilation}
+\title{\vspace{-2.5em}Representation-Dependent Recoverability and a\\
+Fourier-Layer Separation in Quantum Compilation}
+\author[1]{Jinze Yang}
+\author[2]{Yangyang Li\thanks{Corresponding author: \href{mailto:yyli@xidian.edu.cn}{yyli@xidian.edu.cn}}}
+\author[3,4]{Xiu-Hao Deng\thanks{Corresponding author: \href{mailto:dengxiuhao@iqasz.cn}{dengxiuhao@iqasz.cn}}}
+\affil[1]{School of Physics, Xidian University, Xi'an 710071, China}
+\affil[2]{Key Laboratory of Intelligent Perception and Image Understanding of Ministry of Education of China,
+Joint International Research Laboratory of Intelligent Perception and Computation,
+International Research Center for Intelligent Perception and Computation,
+Collaborative Innovation Center of Quantum Information of Shaanxi Province,
+School of Artificial Intelligence, Xidian University, Xi'an 710071, China}
+\affil[3]{Shenzhen International Quantum Academy, Shenzhen 518048, China}
+\affil[4]{Shenzhen Branch, Hefei National Laboratory, Shenzhen, 518048, China}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-2em}
+
+\section*{1. Motivation and Context}
+
+Quantum circuit lowering---the projection of high-level structure into a fixed hardware-native
+basis---is conventionally treated as a semantics-preserving translation. This view conflates unitary
+equivalence with structural conservation. Lowering preserves the unitary, but it need not preserve
+the \emph{recoverability} of an optimization opportunity for a resource-bounded compiler. Before
+lowering, a commuting diagonal phase layer names its generators and coefficients explicitly, so
+repeated layers aggregate by adding coefficients. After lowering, the same information is spread
+across many locally similar fragments, and a compiler limited in passes, scanning window, working
+memory, and persistent metadata faces an information bottleneck: it cannot recognize the fragments
+as members of one global aggregate without spending enough summary or lifting resource.
+
+This is not synthetic. Fourier-based subroutines---QFT, AQFT, QPE, amplitude estimation---naturally
+contain commuting diagonal phase layers $D_m(\theta)=\prod_{j=1}^{m}\exp(-i\theta_jP_j/2)$ sandwiched
+between Hadamard or Fourier basis-change boundaries. We formalize the resulting boundary, prove it is
+an asymptotic separation rather than a pass-ordering artifact, and validate it experimentally.
+
+\section*{2. Main Contributions}
+
+\noindent\textbf{(i) A resource-bounded model of recoverability.} We introduce a six-parameter
+capability class $\mathrm{RB}(p,w,s,b,q,\lambda)$ over passes, sliding-window radius, ephemeral
+state, persistent metadata, lifted rewrites, and total lifted volume, yielding a hierarchy
+$\mathrm{LF}\subseteq\mathrm{SF}\subseteq\mathrm{SAF}\subseteq\mathrm{HYB}\subseteq\mathrm{SEM}$.
+Within it we isolate a witness-specific \emph{capability}, diagonal aggregation
+$\mathcal{R}_{\mathrm{diag}}$: a compiler instantiates it if it constructs data sufficient to
+associate each lowered occurrence with its semantic role across repetitions, represent the aggregate
+coefficient $r\theta_j\bmod 2\pi$, and justify replacing the $r$ repetitions of each non-removable
+$P_j$ by $O(1)$ representatives.
+
+\noindent\textbf{(ii) A Fourier-layer separation theorem.} For the non-inverse family
+$C_{m,r}:=H_\Lambda D_m(\theta)^{r}H_\Lambda$ with bounded-arity $P_j$, non-resonance, and periodic
+separated lowering, every compiler below the threshold,
+$A\in\mathrm{RB}^{<\mathcal{R}_{\mathrm{diag}}}$, retains
+$\mathrm{pg}_B(A(L_B(C_{m,r})))\ge c\,rm-O(m)$ bounded-arity phase-gadget atoms, while a compiler that
+aggregates before lowering emits $\mathrm{pg}_B\le C\,m$. At fixed width $m=m_0>w$ this is an
+$\Omega(r)$ versus $O(1)$ separation.
+
+\noindent\textbf{(iii) A necessity theorem.} Under independence of the diagonal characters, any
+semantics-preserving compiler---regardless of internal algorithm---that achieves the $O(m)$ scaling
+for unbounded $r$ must instantiate $\mathcal{R}_{\mathrm{diag}}$, explicitly (a global
+phase-polynomial, ZX, stabilizer-phase, or commuting-diagonal IR) or implicitly (an equivalent
+algebraic rewrite). This is a \emph{classification}, not a universal impossibility: a future
+flat-looking compiler that recovers the bounded form is thereby shown to have funneled resource into
+one of these channels.
+
+\noindent\textbf{(iv) Tool-independent instantiation and validation.} We realize the resource-rich
+side two ways: a bounded semantic-UCC artifact over a term algebra
+($T ::= \mathrm{Prim}\mid T_1\!\circ\!T_2\mid T^r\mid \mathrm{Conj}\mid \mathrm{Fourier}\mid
+\mathrm{Mirror}$) with late materialization, and a minimal phase-polynomial reference that only
+aggregates the commuting \texttt{rz}/\texttt{cp} coefficients. On the $n=4$ fixed-width witness both
+return a constant $42$-gate, depth-$24$, $12$-\texttt{cx} circuit from $4$k to $100$k input gates,
+while \texttt{qiskit opt3}, a PyZX bridge, and TKET FullPeephole grow or time out
+(Table~\ref{tab:headline}). A width sweep gives $42,65,93$ gates for $n=4,5,6$, confirming the
+$O(m)$ law with $m=n(n-1)/2$; all $45$ configurations are certified by exact unitary equivalence
+with zero variance across nonresonant phase seeds.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{rrrr}
+\toprule
+Requested gates & Flat preset (gates) & Semantic (gates) & Semantic runtime \\
+\midrule
+4{,}000   & 9{,}588  & 42 & 3.2\,s \\
+10{,}000  & 23{,}988 & 42 & 14.6\,s \\
+20{,}000  & 47{,}988 & 42 & 55.8\,s \\
+50{,}000  & timeout  & 42 & 20.1\,s \\
+100{,}000 & timeout  & 42 & 27.1\,s \\
+\bottomrule
+\end{tabular}
+\caption{Non-inverse Fourier-layer scaling on $H_\Lambda D_m(\theta)^r H_\Lambda$ at $n=4$. The
+semantic path is repetition-independent; the flat preset grows or times out under the fixed protocol.}
+\label{tab:headline}
+\end{table}
+
+\section*{3. Techniques}
+
+The lower bound rests on a local-profile multiplicity lemma. Under periodic separated lowering,
+interior copies of the same semantic role $P_j$ induce radius-$w$ neighborhoods identical up to
+translation outside an $O(1)$ prefix/suffix anomaly zone. For any compiler below
+$\mathcal{R}_{\mathrm{diag}}$, the accessible profile of an interior position has multiplicity
+$\Theta(r)$; collapsing a constant fraction of those copies into $O(1)$ representatives requires
+building the role-to-occurrence map and the aggregate coefficient---that is, instantiating
+$\mathcal{R}_{\mathrm{diag}}$. This is an information bottleneck rather than a circuit-complexity
+bound: enough persistent metadata or lifted volume removes the obstruction and moves the compiler up
+the hierarchy. The upper bound is the Abelian aggregation identity
+$\big(\prod_j e^{-i\theta_jP_j/2}\big)^r=\prod_j e^{-i(r\theta_j)P_j/2}$; the necessity theorem runs
+it in reverse, using independence of the characters to fix $(r\theta_1,\dots,r\theta_m)\bmod2\pi$ up
+to global phase. A Fourier-path ablation isolates causality: disabling the semantic IR forces
+timeout at every scale, while Fourier-enabled paths deterministically recover the $42$-gate form,
+and minimal pass-reordering repairs fail to close the gap ($485{,}780$ vs.\ $166{,}805$ gates on
+\texttt{phase\_estimation\_real}).
+
+\section*{4. Significance}
+
+\noindent\emph{Fault-tolerant resource estimation.} Using the Ross--Selinger synthesis scaling
+$T_\epsilon(R)=\lceil 3\log_2(1/\epsilon)\rceil R$ as a proxy, semantic-first compilation holds the
+fixed-width witness at $22$ rotations and a constant $T_{10^{-10}}$ proxy of $2{,}200$, whereas
+materialize-first \texttt{qiskit opt3} reaches a proxy of $2{,}399{,}300$ at $20$k before timing out.
+Delayed aggregation therefore inflates the rotation multiplicity that feeds magic-state and T-count
+estimates---an $\Omega(r)$ effect on downstream distillation demand.
+
+\noindent\emph{Architecture.} The result reclassifies semantic term layers, projected-cost selection,
+and delayed materialization from arbitrary engineering choices into the mechanism by which a compiler
+crosses the threshold. The boundary is falsifiable: a pipeline recovering the bounded form without
+any equivalent global representation would break the threshold, while recovery via global
+reconstruction confirms the classification. The minimal $HD^rH$ witness strips away routing and
+approximation noise, serving as a precise probe of this representation boundary.
+
+\section*{5. Relation to Prior Work}
+
+The separation isolates non-inverse, non-local Abelian phase aggregation, distinguishing it from
+local $UU^\dagger$ inverse-cancellation frameworks. It also offers a common lens on several advanced
+compilers: phase-polynomial optimization (Nam et al.) builds an aggregate diagonal object before
+re-synthesis; ZX-calculus rewriting (Duncan et al.; PyZX) operates directly on a global semantic
+representation; and lazy synthesis (Martiel--Goubault de Brugi\`ere) defers premature lowering. The
+necessity theorem frames these as different routes to instantiating $\mathcal{R}_{\mathrm{diag}}$
+rather than unrelated tools. Unlike full-stack benchmarks (MQT Bench, SupermarQ), $HD^rH$ is an
+isolated theorem witness targeting the commuting-diagonal topology native to QFT, AQFT, and QPE,
+without conflating the result with routing constraints or approximate-synthesis noise. A full
+technical version with all definitions, proofs, and the complete experimental suite is provided as an
+appendix.
+
+\clearpage
+\begin{thebibliography}{9}
+\small
+\bibitem{nam} Y.~Nam, N.~J. Ross, Y.~Su, A.~M. Childs, and D.~Maslov, \emph{Automated optimization of
+large quantum circuits with continuous parameters}, npj Quantum Inf.\ \textbf{4}, 23 (2018).
+\bibitem{zx} R.~Duncan, A.~Kissinger, S.~Perdrix, and J.~van de Wetering, \emph{Graph-theoretic
+simplification of quantum circuits with the ZX-calculus}, Quantum \textbf{4}, 279 (2020).
+\bibitem{pyzx} A.~Kissinger and J.~van de Wetering, \emph{PyZX: Large scale automated diagrammatic
+reasoning}, EPTCS \textbf{318}, 229--241 (2020).
+\bibitem{lazy} S.~Martiel and T.~Goubault de Brugi\`ere, \emph{Architecture aware compilation of
+quantum circuits via lazy synthesis}, Quantum \textbf{6}, 729 (2022).
+\bibitem{tket} S.~Sivarajah \emph{et al.}, \emph{t$|$ket$\rangle$: A retargetable compiler for NISQ
+devices}, Quantum Sci.\ Technol.\ \textbf{6}(1), 014003 (2021).
+\bibitem{mqt} N.~Quetschlich, L.~Burgholzer, and R.~Wille, \emph{MQT Bench}, Quantum \textbf{7}, 1062
+(2023).
+\bibitem{rs} N.~J. Ross and P.~Selinger, \emph{Optimal ancilla-free Clifford+T approximation of
+$z$-rotations}, Quantum Inf.\ Comput.\ \textbf{16}(11\&12), 901--953 (2016).
+\end{thebibliography}
+
+\end{document}

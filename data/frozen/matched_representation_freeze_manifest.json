@@ -1,0 +1,84 @@
+{
+  "analysis_tool_versions": {
+    "matplotlib": "3.10.7",
+    "numpy": "2.3.3",
+    "pandas": "2.3.3",
+    "pyarrow": "25.0.0",
+    "scipy": "1.16.2"
+  },
+  "campaign": "w4-matched-representation-20260802",
+  "files": {
+    "MATCHED_REPRESENTATION_REPORT.md": {
+      "bytes": 9497,
+      "sha256": "1d57115c748a01c813c520e96bc7b15779508fb49d5daa61cd19e1ddf4b69820"
+    },
+    "benchmarks/matched_manifest.yaml": {
+      "bytes": 2065,
+      "sha256": "db64254d201d1a82926f7fee434a6ee2634b6d6885051b7214eeda15cde4c08b"
+    },
+    "benchmarks/representation_generators.py": {
+      "bytes": 15229,
+      "sha256": "eb9a832ccb52c2c78e34353db7bce44adb3d076d754adbe4485cf206974bc0cb"
+    },
+    "data/frozen/matched_campaign_manifest.json": {
+      "bytes": 2461,
+      "sha256": "63664d31865e7818ce0fc74bdacff43a5278046f1ca93b7ac462de75d6fa5eac"
+    },
+    "data/frozen/matched_factorial_effects.csv": {
+      "bytes": 1300,
+      "sha256": "751cb864f0d14882cb9cdac45e3a65f54994a259f911aebae74e5dbf3bdb0f79"
+    },
+    "data/frozen/matched_factorial_summary.csv": {
+      "bytes": 13802,
+      "sha256": "8a6f7e4ec347e61a50b6757eb64253d415e418dc6d975b4c495e6e4ccaca37b5"
+    },
+    "data/frozen/matched_interaction_residuals.csv": {
+      "bytes": 4789,
+      "sha256": "154f9b25aa8bafe702635ad10714f8b2485d1d17785a78a69717a89549994d8f"
+    },
+    "data/frozen/matched_representation.csv": {
+      "bytes": 977540,
+      "sha256": "1d336ff27cf430a3c60b338f6ed440c2d1bfabbe1d58ba98b6314a3970b1f182"
+    },
+    "data/frozen/matched_representation.parquet": {
+      "bytes": 121837,
+      "sha256": "129e0ea4854c23773d831c1d000e3357e84840cf9fd1b93e3b9258bf24a695c0"
+    },
+    "data/frozen/matched_scaling_fits.csv": {
+      "bytes": 7547,
+      "sha256": "1dc77fc16a5c0230d20864b712d778a0caf88a7650fca71d8c9c235cdb2e7372"
+    },
+    "data/runs/w4-matched-representation-20260802/matched_cells.jsonl": {
+      "bytes": 1865230,
+      "sha256": "47f7e3868878ec7df67fa7d595fc33ddfa9e7bfcf894aa7aba8d4f1a58552bc0"
+    },
+    "data/runs/w4-matched-representation-20260802/representation_index.jsonl": {
+      "bytes": 74424,
+      "sha256": "bcd7f6bc74b9efd0a8008317be4c1ddc934af725e576b682fed0de61433c4e69"
+    },
+    "figures/representation_compiler_interaction.pdf": {
+      "bytes": 40875,
+      "sha256": "78968ee9c9a3749adadeadb85243335836db4872849c03e86a600581cccc287f"
+    },
+    "scripts/analyze_matched_matrix.py": {
+      "bytes": 34517,
+      "sha256": "2ff75a5619b863d1da3853e76dac584e96964b0742d2b97705812d1711d99346"
+    },
+    "scripts/run_matched_matrix.py": {
+      "bytes": 32683,
+      "sha256": "96c87137128442e77c99538412c94a66928b7a3e2079a1b6368794a546f402c6"
+    }
+  },
+  "matrix_complete": true,
+  "numeric_status_policy": "only status=completed enters numerical outcomes; all rows remain in Parquet",
+  "parquet_validation": "leading and trailing PAR1 magic plus pandas/pyarrow row and cell_id round trip",
+  "schema": "ucc.matched-freeze.v1",
+  "status_counts": {
+    "completed": 1065,
+    "correctness_failure": 0,
+    "memory_error": 0,
+    "predicate_error": 15,
+    "timeout": 0,
+    "unsupported": 0
+  }
+}

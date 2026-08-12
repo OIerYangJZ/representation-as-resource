@@ -1,0 +1,42 @@
+{
+  "certificate_input": {
+    "artifact_bits": 1104,
+    "artifact_bytes": 138,
+    "artifact_manifest_path": "/Users/yangjinsey/Desktop/QFT + inverse-QFT circuits #662(issue)/instrumentation/example_trace/inputs/certificate-input.uccbin.manifest.json",
+    "artifact_path": "/Users/yangjinsey/Desktop/QFT + inverse-QFT circuits #662(issue)/instrumentation/example_trace/inputs/certificate-input.uccbin",
+    "artifact_sha256": "3a2a13262bc0c54c7f55e288fb38e2d3222acadeed2d29150689218b07e7b98d",
+    "codec_schema": "ucc.accounting",
+    "codec_version": 1
+  },
+  "events": 3,
+  "external_output": {
+    "artifact_bits": 632,
+    "artifact_bytes": 79,
+    "artifact_manifest_path": "/Users/yangjinsey/Desktop/QFT + inverse-QFT circuits #662(issue)/instrumentation/example_trace/inputs/external-output.uccbin.manifest.json",
+    "artifact_path": "/Users/yangjinsey/Desktop/QFT + inverse-QFT circuits #662(issue)/instrumentation/example_trace/inputs/external-output.uccbin",
+    "artifact_sha256": "1ddc855fa1be5f471a858749e7601d5a6dd487cece920c76b56ca4760935511b",
+    "codec_schema": "ucc.accounting",
+    "codec_version": 1
+  },
+  "flat_input": {
+    "artifact_bits": 2192,
+    "artifact_bytes": 274,
+    "artifact_manifest_path": "/Users/yangjinsey/Desktop/QFT + inverse-QFT circuits #662(issue)/instrumentation/example_trace/inputs/flat.uccbin.manifest.json",
+    "artifact_path": "/Users/yangjinsey/Desktop/QFT + inverse-QFT circuits #662(issue)/instrumentation/example_trace/inputs/flat.uccbin",
+    "artifact_sha256": "70707eddb122191e1d7a61f72ec4ec35dff00ffbb44f06fbdd22be7ab2aef89a",
+    "codec_schema": "ucc.accounting",
+    "codec_version": 1
+  },
+  "schema": "ucc.accounting-example.v1",
+  "semantic_input": {
+    "artifact_bits": 1456,
+    "artifact_bytes": 182,
+    "artifact_manifest_path": "/Users/yangjinsey/Desktop/QFT + inverse-QFT circuits #662(issue)/instrumentation/example_trace/inputs/semantic.uccbin.manifest.json",
+    "artifact_path": "/Users/yangjinsey/Desktop/QFT + inverse-QFT circuits #662(issue)/instrumentation/example_trace/inputs/semantic.uccbin",
+    "artifact_sha256": "967b97046b294e0b74740e4c0b76713cb5ebdb01ec848f5e40c99a01f04ddf8d",
+    "codec_schema": "ucc.accounting",
+    "codec_version": 1
+  },
+  "trace": "/Users/yangjinsey/Desktop/QFT + inverse-QFT circuits #662(issue)/instrumentation/example_trace/trace.jsonl",
+  "trace_sha256": "a5fdb80281b6d33a8cb4a0ead1b34c4ec19e51136f42fe7b08bd724db87d5922"
+}

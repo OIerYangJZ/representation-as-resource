@@ -1,0 +1,306 @@
+{
+  "Real Instances": {
+    "phase_estimation_real": {
+      "qiskit_opt3": {
+        "num_runs": 3,
+        "status_counts": {
+          "ok": 3
+        },
+        "runtime_s": {
+          "mean": 1.262,
+          "stdev": 0.077,
+          "min": 1.181,
+          "max": 1.365
+        },
+        "output": {
+          "mean_total_gates": 166805,
+          "mean_depth": 119204,
+          "mean_cx_count": 58491,
+          "unique_total_gates": [
+            166805
+          ],
+          "unique_depths": [
+            119204
+          ],
+          "unique_cx_counts": [
+            58491
+          ],
+          "deterministic_total_gates": true,
+          "deterministic_depth": true,
+          "deterministic_cx_count": true
+        }
+      },
+      "optimized_ucc": {
+        "num_runs": 3,
+        "status_counts": {
+          "ok": 3
+        },
+        "runtime_s": {
+          "mean": 1.279,
+          "stdev": 0.056,
+          "min": 1.23,
+          "max": 1.358
+        },
+        "output": {
+          "mean_total_gates": 166805,
+          "mean_depth": 119204,
+          "mean_cx_count": 58491,
+          "unique_total_gates": [
+            166805
+          ],
+          "unique_depths": [
+            119204
+          ],
+          "unique_cx_counts": [
+            58491
+          ],
+          "deterministic_total_gates": true,
+          "deterministic_depth": true,
+          "deterministic_cx_count": true
+        }
+      }
+    },
+    "grover_real": {
+      "qiskit_opt3": {
+        "num_runs": 3,
+        "status_counts": {
+          "ok": 3
+        },
+        "runtime_s": {
+          "mean": 0.492,
+          "stdev": 0.008,
+          "min": 0.481,
+          "max": 0.501
+        },
+        "output": {
+          "mean_total_gates": 79029,
+          "mean_depth": 54163,
+          "mean_cx_count": 32544,
+          "unique_total_gates": [
+            79029
+          ],
+          "unique_depths": [
+            54163
+          ],
+          "unique_cx_counts": [
+            32544
+          ],
+          "deterministic_total_gates": true,
+          "deterministic_depth": true,
+          "deterministic_cx_count": true
+        }
+      },
+      "optimized_ucc": {
+        "num_runs": 3,
+        "status_counts": {
+          "ok": 3
+        },
+        "runtime_s": {
+          "mean": 0.489,
+          "stdev": 0.005,
+          "min": 0.483,
+          "max": 0.494
+        },
+        "output": {
+          "mean_total_gates": 79029,
+          "mean_depth": 54163,
+          "mean_cx_count": 32544,
+          "unique_total_gates": [
+            79029
+          ],
+          "unique_depths": [
+            54163
+          ],
+          "unique_cx_counts": [
+            32544
+          ],
+          "deterministic_total_gates": true,
+          "deterministic_depth": true,
+          "deterministic_cx_count": true
+        }
+      }
+    },
+    "qaoa_real": {
+      "qiskit_opt3": {
+        "num_runs": 3,
+        "status_counts": {
+          "ok": 3
+        },
+        "runtime_s": {
+          "mean": 0.249,
+          "stdev": 0.005,
+          "min": 0.244,
+          "max": 0.256
+        },
+        "output": {
+          "mean_total_gates": 36512,
+          "mean_depth": 2416,
+          "mean_cx_count": 23808,
+          "unique_total_gates": [
+            36512
+          ],
+          "unique_depths": [
+            2416
+          ],
+          "unique_cx_counts": [
+            23808
+          ],
+          "deterministic_total_gates": true,
+          "deterministic_depth": true,
+          "deterministic_cx_count": true
+        }
+      },
+      "optimized_ucc": {
+        "num_runs": 3,
+        "status_counts": {
+          "ok": 3
+        },
+        "runtime_s": {
+          "mean": 0.247,
+          "stdev": 0.009,
+          "min": 0.234,
+          "max": 0.254
+        },
+        "output": {
+          "mean_total_gates": 36512,
+          "mean_depth": 2416,
+          "mean_cx_count": 23808,
+          "unique_total_gates": [
+            36512
+          ],
+          "unique_depths": [
+            2416
+          ],
+          "unique_cx_counts": [
+            23808
+          ],
+          "deterministic_total_gates": true,
+          "deterministic_depth": true,
+          "deterministic_cx_count": true
+        }
+      }
+    }
+  },
+  "Hardware-Aware Cases": {
+    "hw_mqt_qpeexact_20": {
+      "qiskit_opt3": {
+        "num_runs": 3,
+        "status_counts": {
+          "ok": 3
+        },
+        "runtime_s": {
+          "mean": 0.042,
+          "stdev": 0.001,
+          "min": 0.041,
+          "max": 0.043
+        },
+        "output": {
+          "mean_total_gates": 1563,
+          "mean_depth": 406,
+          "mean_cx_count": 806,
+          "unique_total_gates": [
+            1563
+          ],
+          "unique_depths": [
+            406
+          ],
+          "unique_cx_counts": [
+            806
+          ],
+          "deterministic_total_gates": true,
+          "deterministic_depth": true,
+          "deterministic_cx_count": true
+        }
+      },
+      "optimized_ucc": {
+        "num_runs": 3,
+        "status_counts": {
+          "ok": 3
+        },
+        "runtime_s": {
+          "mean": 0.412,
+          "stdev": 0.013,
+          "min": 0.396,
+          "max": 0.427
+        },
+        "output": {
+          "mean_total_gates": 1563,
+          "mean_depth": 405,
+          "mean_cx_count": 804,
+          "unique_total_gates": [
+            1563
+          ],
+          "unique_depths": [
+            405
+          ],
+          "unique_cx_counts": [
+            804
+          ],
+          "deterministic_total_gates": true,
+          "deterministic_depth": true,
+          "deterministic_cx_count": true
+        }
+      }
+    },
+    "hw_mqt_qaoa_20": {
+      "qiskit_opt3": {
+        "num_runs": 3,
+        "status_counts": {
+          "ok": 3
+        },
+        "runtime_s": {
+          "mean": 0.056,
+          "stdev": 0.005,
+          "min": 0.052,
+          "max": 0.063
+        },
+        "output": {
+          "mean_total_gates": 2127,
+          "mean_depth": 523,
+          "mean_cx_count": 1442,
+          "unique_total_gates": [
+            2127
+          ],
+          "unique_depths": [
+            523
+          ],
+          "unique_cx_counts": [
+            1442
+          ],
+          "deterministic_total_gates": true,
+          "deterministic_depth": true,
+          "deterministic_cx_count": true
+        }
+      },
+      "optimized_ucc": {
+        "num_runs": 3,
+        "status_counts": {
+          "ok": 3
+        },
+        "runtime_s": {
+          "mean": 0.907,
+          "stdev": 0.006,
+          "min": 0.899,
+          "max": 0.913
+        },
+        "output": {
+          "mean_total_gates": 1992,
+          "mean_depth": 425,
+          "mean_cx_count": 1387,
+          "unique_total_gates": [
+            1992
+          ],
+          "unique_depths": [
+            425
+          ],
+          "unique_cx_counts": [
+            1387
+          ],
+          "deterministic_total_gates": true,
+          "deterministic_depth": true,
+          "deterministic_cx_count": true
+        }
+      }
+    }
+  }
+}

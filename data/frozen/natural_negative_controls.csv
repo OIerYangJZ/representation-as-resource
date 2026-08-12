@@ -1,0 +1,11 @@
+workload,metric,systematic_regression,n,mean,median,ci95_low,ci95_high
+negative_random_clifford_rz,gates,False,36,0.0,0.0,0.0,0.0
+negative_random_clifford_rz,depth,False,36,0.0,0.0,0.0,0.0
+negative_random_clifford_rz,cx,False,36,0.0,0.0,0.0,0.0
+negative_random_clifford_rz,logical_t_states,False,36,0.0,0.0,0.0,0.0
+negative_random_clifford_rz,spacetime_qubit_seconds,False,36,0.0,0.0,0.0,0.0
+negative_routing_dominated,gates,False,36,0.0,0.0,0.0,0.0
+negative_routing_dominated,depth,False,36,0.0,0.0,0.0,0.0
+negative_routing_dominated,cx,False,36,0.0,0.0,0.0,0.0
+negative_routing_dominated,logical_t_states,False,36,0.0,0.0,0.0,0.0
+negative_routing_dominated,spacetime_qubit_seconds,False,36,0.0,0.0,0.0,0.0

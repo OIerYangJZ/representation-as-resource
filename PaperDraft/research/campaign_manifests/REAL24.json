@@ -1,0 +1,33 @@
+{
+  "campaign": "REAL24-official-real-panel-202607",
+  "config": {
+    "artifact_commit": "legacy snapshot; generation commit unavailable",
+    "bridge_sequence": "structured real instance -> configured method -> {cx,rx,ry,rz,h}",
+    "certificate": "no independent equivalence certificate in historical rows; anti-regression diagnostic only",
+    "memory_cap_bytes": "not_enforced_historical",
+    "runner": "research/compare_real_instances.py",
+    "runner_sha256": "e387c17471a1eaa4d9d0a96953170a9dfd61909c4a1eb18b29ca46c2539118db",
+    "seed": "none_in_historical_runner",
+    "timeout_policy_s": {
+      "baseline_or_semantic_ucc": 240,
+      "other": 120,
+      "qiskit_opt3_other": 180,
+      "qiskit_opt3_phase_estimation": 300
+    },
+    "tool_versions": {
+      "qiskit": "2.3.1",
+      "ucc": "0.4.12"
+    }
+  },
+  "dataset": {
+    "path": "research/campaign_manifests/frozen_real_panel_rows.json",
+    "sha256": "3130af689fb7e84e6e35eeefe13c3fb102990de5c540805fb0c39c9e6b5798f8",
+    "source_sha256": "332bbf04482f69f25903bc13818216a57b469631d8ef40b4d3ccc6cf0e1e5a0a",
+    "source_snapshot": "research/real_instance_results.json"
+  },
+  "freeze_commit": "229eafdb4127ab98b2ad925a9657fa67510a12e7",
+  "immutable_config_sha256": "9e3e75cd570592ef3fb91aa9cd319377e2bfbef10fdebf81304721d16fccc7f8",
+  "inherits": "logical_all_to_all_v1",
+  "reader_label_prefix": "REAL24",
+  "schema": "ucc.campaign-manifest.v1"
+}

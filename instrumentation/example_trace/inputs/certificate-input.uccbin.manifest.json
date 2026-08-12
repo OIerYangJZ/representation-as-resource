@@ -1,0 +1,15 @@
+{
+  "artifact": {
+    "bits": 1104,
+    "bytes": 138,
+    "codec_type": "CertificateInput",
+    "path": "certificate-input.uccbin",
+    "role": "certificate_input",
+    "sha256": "3a2a13262bc0c54c7f55e288fb38e2d3222acadeed2d29150689218b07e7b98d"
+  },
+  "codec": {
+    "schema": "ucc.accounting",
+    "version": 1
+  },
+  "schema": "ucc.encoded-artifact.v1"
+}

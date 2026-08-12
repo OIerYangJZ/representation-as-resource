@@ -1,0 +1,123 @@
+% W6: exact symbolic correctness certificate and soundness domain.
+% This file is input by PaperDraft/ucc_v7_2_prxq_repaired/main.tex.
+
+Let
+
+
+\begin{equation*}
+ \mathcal C_n=\langle H,S,S^\dagger,X,Y,Z,\mathrm{CX},
+ \mathrm{CZ},\mathrm{SWAP}\rangle
+\end{equation*}
+be the Clifford gate language on addressed qubits.  Fix a declared finite
+formal-symbol set $\mathcal S$ and the exact coefficient module
+\begin{equation*}
+ \Lambda=\mathbb Q\pi\oplus
+ \bigoplus_{s\in\mathcal S}\mathbb Q\theta_s.
+\end{equation*}
+For a signed Hermitian $n$-qubit Pauli $P$ and $\lambda\in\Lambda$, write
+$R_P(\lambda)=\exp(-i\lambda P/2)$.
+
+\begin{definition}[Exact commuting-Pauli/Clifford certificate domain]
+\label{def:certificate}
+The domain $\mathcal D_{\rm CPC}$ consists of finite addressed circuits over
+$\mathcal C_n$, exact records $R_Z(\lambda)$ and $R_P(\lambda)$, identity and
+barrier records, and an arbitrary exact global phase.  Every coefficient is
+a reduced rational $\pi$ component plus a sorted sparse list of reduced
+rational formal-symbol components carried by the input; a floating-only
+parameter is not in the exact domain.
+
+Scan a circuit in execution order while maintaining a Clifford frame $F$ and
+the invariant
+\begin{equation}
+ U_{\rm prefix}=F R_{P_t}(\lambda_t)\cdots R_{P_1}(\lambda_1)
+ \quad\text{up to global phase}.
+ \label{eq:w6-frame-invariant}
+\end{equation}
+The frame is represented by the complete signed inverse-conjugation tableau
+$\{F^\dagger X_jF,F^\dagger Z_jF\}_{j=1}^n$.  Appending a physical rotation
+$R_Q(\lambda)$ appends $F^\dagger QF$ to the Pauli list.  The certificate
+predicate additionally requires all extracted $P_j$ to commute pairwise.
+
+Canonicalization moves a Pauli sign into its coefficient, discards an
+identity-axis rotation, adds coefficients on identical unsigned supports,
+reduces the rational $\pi$ coefficient modulo $2$ to the interval $[0,2)$,
+keeps every formal-symbol coefficient exact, deletes zero records, and sorts the remaining records lexicographically by
+their binary $(x,z)$ masks.  Circuit and Clifford global phases are omitted.
+The resulting record is
+\begin{align}
+ \beta_j&:=(b_{j,s})_{s\in\mathcal S}\in\mathbb Q^{\mathcal S},
+ &\bar a_j&\in\mathbb Q\cap[0,2),\nonumber\\
+ \operatorname{can}(C)&=
+ \bigl(n,T_F,((x_j,z_j,\bar a_j,\beta_j))_{j=1}^{\ell}\bigr).
+ \label{eq:w6-canonical-record}
+\end{align}
+The symbolic checker accepts exactly when the two canonical byte records are
+equal.
+\end{definition}
+
+\begin{proposition}[Soundness of canonical symbolic acceptance]
+\label{prop:symbolic-soundness}
+For $C,C'\in\mathcal D_{\rm CPC}$ satisfying the pairwise-commutation
+predicate,
+\begin{equation*}
+ \operatorname{can}(C)=\operatorname{can}(C')
+ \quad\Longrightarrow\quad
+ U_C=e^{i\phi}U_{C'}
+\end{equation*}
+for some $\phi\in\mathbb R$.
+\end{proposition}
+
+\begin{proof}
+Induction over the input records proves \eqref{eq:w6-frame-invariant}.
+For a Clifford record $G$, replace $F$ by $GF$.  For a rotation,
+\begin{equation*}
+ R_Q(\lambda)F=F R_{F^\dagger QF}(\lambda),
+\end{equation*}
+which is exactly the tableau update used by the checker.  Thus the extracted
+record implements the original circuit up to its explicitly ignored global
+phase.
+
+Pairwise commutation permits deterministic reordering without changing the
+unitary.  Sign normalization is exact because
+$R_{-P}(\lambda)=R_P(-\lambda)$, while coefficient reduction changes a factor only
+by
+\begin{equation*}
+ R_P(\lambda+2k\pi)=(-1)^kR_P(\lambda).
+\end{equation*}
+All such signs multiply to one input-independent global phase; an
+identity-axis rotation is also a global phase.  Equality of the sorted
+rotation records, including every formal-symbol component, therefore gives
+equal rotation products projectively.
+
+Finally, equality of the signed tableaus means that
+$F'F^\dagger$ commutes with every Pauli generator.  The Pauli representation
+generates the full matrix algebra, so $F'F^\dagger$ is a scalar.  Hence the
+two Clifford frames also agree up to global phase, proving the claim.
+\end{proof}
+
+\begin{remark}[Status and completeness boundary]
+\label{rem:w6-certificate-status}
+Only status \texttt{completed\_valid}, accompanied by the content-addressed
+canonical records and an independent certificate payload, is an acceptance.
+A canonical mismatch is \texttt{completed\_invalid}; an unlisted gate or
+malformed address is \texttt{unsupported}; failure of pairwise commutation is
+\texttt{predicate\_error}; and a floating coefficient without an exact
+sidecar, an unassigned formal symbol in the dense checker, or a dense distance
+inside the numerical guard band is
+\texttt{numerical\_inconclusive}.  Only \texttt{completed\_valid} rows enter
+quality means.  The proposition is a soundness statement, not a claim that
+every equivalent Clifford-plus-rotation circuit has the same record.
+\end{remark}
+
+For $n\leq6$, the audit independently forms dense matrices and checks the
+normalized Frobenius projective distance
+\begin{equation*}
+ d_{\rm F,proj}(U,V)=2^{-n/2}\min_{|\omega|=1}\|U-\omega V\|_{\rm F}.
+\end{equation*}
+The frozen suite covers both accepted and rejected pairs at every width
+$1\leq n\leq6$ and changes, separately, an angle, a sign, one support bit,
+a qubit permutation, the Clifford frame, and a deleted or duplicated gate.
+The executable definition and status contract are
+\path{certificates/CERTIFICATE_SPEC.md}; the canonicalizer and checker are
+\path{certificates/canonicalize.py} and
+\path{certificates/symbolic_checker.py}.

@@ -1,0 +1,48 @@
+schema: ucc.qre.campaign.v1
+campaign_id: w7-fixed-total-error-20260803-local
+seed: 20260803
+targets_requested_gates: [4000, 20000]
+pipelines:
+  - id: semantic_first
+    category: semantic-first
+    implementation: ucc.compile semantic Fourier/phase aggregation
+  - id: materialize_first
+    category: materialize-first
+    implementation: Qiskit preset optimization level 3 after explicit materialization
+  - id: external_tket_paulisimp
+    category: external-semantic-capable
+    implementation: TKET PauliSimp on a common CX-Rz-H bridge before synthesis
+target_basis: [cx, rx, ry, rz, h]
+external_bridge_basis: [cx, rz, h]
+certificate:
+  symbolic: certificates.symbolic_checker.check_equivalence
+  dense: Qiskit Operator.equiv
+  maximum_symbolic_angle_snap_error: 1.0e-10
+error_budget:
+  schema: ucc.qre.error-budget.v1
+  composition: additive_union_bound
+  epsilon_totals: [1.0e-3, 1.0e-6, 1.0e-9]
+  fractions:
+    algorithmic: 0.1
+    synthesis: 0.45
+    logical: 0.45
+  synthesis_allocation_policies: [equal_decimal, t_cost_greedy]
+  algorithmic_certificate_rule: certificate_guarded_exact_compilation_with_reserved_budget
+synthesizer:
+  executable: PaperDraft/research/fixed_budget_qre/tools/staq_grid_synth
+  source: PaperDraft/research/fixed_budget_qre/tools/grid_synth_deterministic.cpp
+  upstream_staq_commit: a2acd39e60ed0e5f1978fa530df7e1e0c7cedf7a
+  deterministic_patch: replace std::random_device with seed 20260801
+  flags: [--check, --details]
+  per_angle_timeout_s: 600
+qre_profiles:
+  - qre/configs/surface_code_conservative.yaml
+  - qre/configs/surface_code_improved.yaml
+factory_profiles: qre/configs/factory_profiles.yaml
+output:
+  run_directory: data/runs/w7-fixed-total-error-20260803-local
+  frozen_parquet: data/frozen/qre_results.parquet
+  frozen_csv: data/frozen/qre_results.csv
+  freeze_manifest: data/frozen/qre_freeze_manifest.json
+  pareto_figure: figures/qre_pareto.pdf
+  sensitivity_figure: figures/qre_sensitivity.pdf

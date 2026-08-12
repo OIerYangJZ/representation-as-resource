@@ -1,0 +1,118 @@
+{
+  "claims": [
+    {
+      "claim": "The charged compiler model has one executable five-field bit cut budget.",
+      "evidence_kind": "definition",
+      "id": "C01",
+      "location": "abstract/introduction",
+      "primary_evidence": "\\cref{def:compiler,eq:info-budget}",
+      "scope": "formal model only"
+    },
+    {
+      "claim": "Randomized approximate output descriptions require Omega(m log(1/epsilon)) bits.",
+      "evidence_kind": "theorem",
+      "id": "C02",
+      "location": "abstract/conclusion",
+      "primary_evidence": "\\cref{thm:output-counting}",
+      "scope": "declared family-relative and self-contained codes"
+    },
+    {
+      "claim": "Masked-share flat recovery obeys a commitment plus cut-state lower bound.",
+      "evidence_kind": "theorem",
+      "id": "C03",
+      "location": "abstract/conclusion",
+      "primary_evidence": "\\cref{thm:main-tradeoff}",
+      "scope": "two-round masked-share stream"
+    },
+    {
+      "claim": "Memory-capped hybrids attain the deterministic family-relative envelope to leading order.",
+      "evidence_kind": "proposition",
+      "id": "C04",
+      "location": "introduction/discussion",
+      "primary_evidence": "\\cref{prop:hybrid-upper}",
+      "scope": "ordered-share family-relative codec"
+    },
+    {
+      "claim": "Nine matched representations are crossed with all five configured compilers.",
+      "evidence_kind": "figure",
+      "id": "C05",
+      "location": "validation",
+      "primary_evidence": "\\cref{fig:matched-interaction}",
+      "scope": "1,080 frozen cells; 24 cells per representation--compiler pair"
+    },
+    {
+      "claim": "The traced reference compilers directly measure commitment, crossing-state, and IR coordinates.",
+      "evidence_kind": "trace-derived figure",
+      "id": "C06",
+      "location": "validation",
+      "primary_evidence": "\\cref{fig:measured-tradeoff}",
+      "scope": "592 formal-model reference-compiler runs"
+    },
+    {
+      "claim": "The natural-workload campaign reports all structured, null-factor, and negative-control outcomes.",
+      "evidence_kind": "table and figure",
+      "id": "C07",
+      "location": "validation/workloads",
+      "primary_evidence": "\\cref{tab:natural-factorial,fig:natural-factorial}",
+      "scope": "9 families; $2^6$ factors; 3 scales and 3 seeds"
+    },
+    {
+      "claim": "Fixed-total-error synthesis changes logical and model-specific physical resources.",
+      "evidence_kind": "table",
+      "id": "C08",
+      "location": "resource consequences",
+      "primary_evidence": "\\cref{tab:resource-consequence}",
+      "scope": "one disclosed surface-code model"
+    },
+    {
+      "claim": "The exact CNOT-RZ checker is sound up to global phase.",
+      "evidence_kind": "proposition",
+      "id": "C09",
+      "location": "compiler",
+      "primary_evidence": "\\cref{prop:symbolic-soundness}",
+      "scope": "declared symbolic domain only"
+    },
+    {
+      "claim": "TKET PauliSimp and PyZX full-reduce are semantic-capable configured baselines.",
+      "evidence_kind": "figure and frozen external campaign",
+      "id": "C10",
+      "location": "validation",
+      "primary_evidence": "\\cref{fig:matched-interaction,sec:external-baselines}",
+      "scope": "native and unified configurations; bridge loss reported separately"
+    },
+    {
+      "claim": "The historical real panel demonstrates anti-regression rather than independent semantic advantage.",
+      "evidence_kind": "table",
+      "id": "C11",
+      "location": "application workloads",
+      "primary_evidence": "\\cref{tab:real-instances}",
+      "scope": "REAL24 campaign"
+    },
+    {
+      "claim": "External growth curves are configured-pipeline behavior, not empirical proofs of the lower bound.",
+      "evidence_kind": "instrumentation table",
+      "id": "C12",
+      "location": "conclusion",
+      "primary_evidence": "\\cref{tab:evidence-classes}",
+      "scope": "evidence-class separation"
+    },
+    {
+      "claim": "K-ary dispersed updates obey an explicit randomized p-pass state/output frontier.",
+      "evidence_kind": "theorem",
+      "id": "C13",
+      "location": "abstract/conclusion",
+      "primary_evidence": "\\cref{thm:w1-unified-frontier}",
+      "scope": "round-major forward scans; all 2p-1 crossings charged"
+    },
+    {
+      "claim": "The p-block compiler reaches the multipass state frontier within the stated constant factor.",
+      "evidence_kind": "proposition",
+      "id": "C14",
+      "location": "abstract/discussion",
+      "primary_evidence": "\\cref{prop:w1-block-hybrid}",
+      "scope": "family-relative p-block codec; compact-output corner for every r; full curve for r=2"
+    }
+  ],
+  "rule": "Every headline claim has one primary evidence pointer and an explicit scope; unsupported generality is prohibited.",
+  "schema": "ucc.claim-evidence-matrix.v1"
+}

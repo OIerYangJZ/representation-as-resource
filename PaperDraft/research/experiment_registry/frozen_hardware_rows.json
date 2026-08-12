@@ -1,0 +1,54 @@
+{
+  "schema": "ucc.experiment-registry.v1",
+  "backend": {
+    "name": "line20_bidirectional_v1",
+    "num_qubits": 20,
+    "coupling": "bidirectional nearest-neighbor line",
+    "native_operations": ["u", "sx", "p", "cx", "measure", "id"]
+  },
+  "campaigns": {
+    "RP23": {
+      "experiment": "reorder_probe_202607",
+      "seed": 12345,
+      "runner": "defaults_ablation_runner",
+      "config": {
+        "purpose": "UCCDefaults pass-order ablation",
+        "portfolio": "baseline plus three minimal defaults variants plus semantic and qiskit opt3",
+        "timeout_s": 600
+      }
+    },
+    "HW24": {
+      "experiment": "canonical_hardware_aware_202607",
+      "seed": 12345,
+      "runner": "compare_hardware_aware.py",
+      "config": {
+        "purpose": "canonical hardware-aware comparison",
+        "portfolio": "qiskit opt3 versus baseline UCC versus semantic UCC",
+        "timeout_policy_s": {"qpeexact": 120, "qaoa": 120, "grover": 240}
+      }
+    }
+  },
+  "rows": [
+    {"campaign":"RP23","instance":"hw_mqt_qpeexact_20","representation":"flat","method":"baseline_ucc","tool_version":"ucc=0.4.12;qiskit=2.3.1","gates":2077,"depth":626,"cx":1262,"runtime_s":0.126},
+    {"campaign":"RP23","instance":"hw_mqt_qpeexact_20","representation":"high_level","method":"defaults_preinverse_only","tool_version":"ucc=0.4.12;qiskit=2.3.1","gates":1893,"depth":576,"cx":1311,"runtime_s":0.292},
+    {"campaign":"RP23","instance":"hw_mqt_qpeexact_20","representation":"high_level","method":"defaults_reordered_only","tool_version":"ucc=0.4.12;qiskit=2.3.1","gates":1900,"depth":582,"cx":1312,"runtime_s":0.289},
+    {"campaign":"RP23","instance":"hw_mqt_qpeexact_20","representation":"high_level","method":"defaults_minimal_bundle","tool_version":"ucc=0.4.12;qiskit=2.3.1","gates":1893,"depth":576,"cx":1311,"runtime_s":0.287},
+    {"campaign":"RP23","instance":"hw_mqt_qpeexact_20","representation":"semantic","method":"semantic_ucc","tool_version":"ucc=0.4.12;qiskit=2.3.1","gates":1593,"depth":420,"cx":772,"runtime_s":0.296},
+    {"campaign":"RP23","instance":"hw_mqt_qpeexact_20","representation":"flat","method":"qiskit_opt3","tool_version":"qiskit=2.3.1","gates":1572,"depth":407,"cx":812,"runtime_s":0.033},
+
+    {"campaign":"RP23","instance":"hw_mqt_qaoa_20","representation":"flat","method":"baseline_ucc","tool_version":"ucc=0.4.12;qiskit=2.3.1","gates":2088,"depth":522,"cx":1439,"runtime_s":0.098},
+    {"campaign":"RP23","instance":"hw_mqt_qaoa_20","representation":"high_level","method":"defaults_preinverse_only","tool_version":"ucc=0.4.12;qiskit=2.3.1","gates":2050,"depth":487,"cx":1458,"runtime_s":0.270},
+    {"campaign":"RP23","instance":"hw_mqt_qaoa_20","representation":"high_level","method":"defaults_reordered_only","tool_version":"ucc=0.4.12;qiskit=2.3.1","gates":2050,"depth":487,"cx":1458,"runtime_s":0.269},
+    {"campaign":"RP23","instance":"hw_mqt_qaoa_20","representation":"high_level","method":"defaults_minimal_bundle","tool_version":"ucc=0.4.12;qiskit=2.3.1","gates":2050,"depth":487,"cx":1458,"runtime_s":0.271},
+    {"campaign":"RP23","instance":"hw_mqt_qaoa_20","representation":"semantic","method":"semantic_ucc","tool_version":"ucc=0.4.12;qiskit=2.3.1","gates":2050,"depth":487,"cx":1458,"runtime_s":0.278},
+    {"campaign":"RP23","instance":"hw_mqt_qaoa_20","representation":"flat","method":"qiskit_opt3","tool_version":"qiskit=2.3.1","gates":2091,"depth":532,"cx":1530,"runtime_s":0.048},
+
+    {"campaign":"HW24","instance":"hw_mqt_qpeexact_20","representation":"flat","method":"qiskit_opt3","tool_version":"qiskit=2.3.1","gates":1572,"depth":407,"cx":812,"runtime_s":0.056},
+    {"campaign":"HW24","instance":"hw_mqt_qpeexact_20","representation":"flat","method":"baseline_ucc","tool_version":"ucc=0.4.12;qiskit=2.3.1","gates":1976,"depth":648,"cx":1350,"runtime_s":0.174},
+    {"campaign":"HW24","instance":"hw_mqt_qpeexact_20","representation":"semantic","method":"semantic_ucc","tool_version":"ucc=0.4.12;qiskit=2.3.1","gates":1572,"depth":407,"cx":812,"runtime_s":0.235},
+
+    {"campaign":"HW24","instance":"hw_mqt_qaoa_20","representation":"flat","method":"qiskit_opt3","tool_version":"qiskit=2.3.1","gates":2091,"depth":532,"cx":1530,"runtime_s":0.078},
+    {"campaign":"HW24","instance":"hw_mqt_qaoa_20","representation":"flat","method":"baseline_ucc","tool_version":"ucc=0.4.12;qiskit=2.3.1","gates":2057,"depth":513,"cx":1503,"runtime_s":0.141},
+    {"campaign":"HW24","instance":"hw_mqt_qaoa_20","representation":"semantic","method":"semantic_ucc","tool_version":"ucc=0.4.12;qiskit=2.3.1","gates":2050,"depth":487,"cx":1458,"runtime_s":0.112}
+  ]
+}

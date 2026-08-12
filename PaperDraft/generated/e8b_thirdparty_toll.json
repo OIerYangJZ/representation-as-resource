@@ -1,0 +1,885 @@
+{
+  "design": {
+    "preregistration": "PaperDraft/research/E8b_preregistration.md",
+    "m": 4096,
+    "k_fractions": [
+      0.125,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "Q": 3,
+    "tools": {
+      "qiskit": "transpile opt_level=0 -> qasm3.dumps",
+      "pytket": "AutoRebase{CX,Rz,H} -> circuit_to_qasm_str"
+    },
+    "note": "compression is an upper bound on entropy and can only understate the effect"
+  },
+  "rows": [
+    {
+      "m": 4096,
+      "k": 512,
+      "k_fraction": 0.125,
+      "seed": 1,
+      "log2_choose": 2220.710294813065,
+      "qiskit": {
+        "arith": {
+          "raw_bytes": 83413,
+          "xz_bytes": 7116,
+          "gzip_bytes": 12604
+        },
+        "random": {
+          "raw_bytes": 83400,
+          "xz_bytes": 7172,
+          "gzip_bytes": 12614
+        }
+      },
+      "pytket": {
+        "arith": {
+          "raw_bytes": 137431,
+          "xz_bytes": 7904,
+          "gzip_bytes": 13333
+        },
+        "random": {
+          "raw_bytes": 137418,
+          "xz_bytes": 8012,
+          "gzip_bytes": 13437
+        }
+      }
+    },
+    {
+      "m": 4096,
+      "k": 512,
+      "k_fraction": 0.125,
+      "seed": 2,
+      "log2_choose": 2220.710294813065,
+      "qiskit": {
+        "arith": {
+          "raw_bytes": 83188,
+          "xz_bytes": 7116,
+          "gzip_bytes": 12613
+        },
+        "random": {
+          "raw_bytes": 83187,
+          "xz_bytes": 7092,
+          "gzip_bytes": 12634
+        }
+      },
+      "pytket": {
+        "arith": {
+          "raw_bytes": 136756,
+          "xz_bytes": 7920,
+          "gzip_bytes": 13341
+        },
+        "random": {
+          "raw_bytes": 136755,
+          "xz_bytes": 8068,
+          "gzip_bytes": 13398
+        }
+      }
+    },
+    {
+      "m": 4096,
+      "k": 512,
+      "k_fraction": 0.125,
+      "seed": 3,
+      "log2_choose": 2220.710294813065,
+      "qiskit": {
+        "arith": {
+          "raw_bytes": 83438,
+          "xz_bytes": 7104,
+          "gzip_bytes": 12615
+        },
+        "random": {
+          "raw_bytes": 83445,
+          "xz_bytes": 7160,
+          "gzip_bytes": 12651
+        }
+      },
+      "pytket": {
+        "arith": {
+          "raw_bytes": 137506,
+          "xz_bytes": 7944,
+          "gzip_bytes": 13343
+        },
+        "random": {
+          "raw_bytes": 137513,
+          "xz_bytes": 7856,
+          "gzip_bytes": 13472
+        }
+      }
+    },
+    {
+      "m": 4096,
+      "k": 1024,
+      "k_fraction": 0.25,
+      "seed": 1,
+      "log2_choose": 3316.8768412787904,
+      "qiskit": {
+        "arith": {
+          "raw_bytes": 92735,
+          "xz_bytes": 7640,
+          "gzip_bytes": 13363
+        },
+        "random": {
+          "raw_bytes": 92743,
+          "xz_bytes": 7592,
+          "gzip_bytes": 13632
+        }
+      },
+      "pytket": {
+        "arith": {
+          "raw_bytes": 152873,
+          "xz_bytes": 8428,
+          "gzip_bytes": 14821
+        },
+        "random": {
+          "raw_bytes": 152881,
+          "xz_bytes": 8968,
+          "gzip_bytes": 14961
+        }
+      }
+    },
+    {
+      "m": 4096,
+      "k": 1024,
+      "k_fraction": 0.25,
+      "seed": 2,
+      "log2_choose": 3316.8768412787904,
+      "qiskit": {
+        "arith": {
+          "raw_bytes": 92505,
+          "xz_bytes": 7572,
+          "gzip_bytes": 13361
+        },
+        "random": {
+          "raw_bytes": 92507,
+          "xz_bytes": 7600,
+          "gzip_bytes": 13492
+        }
+      },
+      "pytket": {
+        "arith": {
+          "raw_bytes": 152183,
+          "xz_bytes": 8644,
+          "gzip_bytes": 14812
+        },
+        "random": {
+          "raw_bytes": 152185,
+          "xz_bytes": 9028,
+          "gzip_bytes": 14969
+        }
+      }
+    },
+    {
+      "m": 4096,
+      "k": 1024,
+      "k_fraction": 0.25,
+      "seed": 3,
+      "log2_choose": 3316.8768412787904,
+      "qiskit": {
+        "arith": {
+          "raw_bytes": 92570,
+          "xz_bytes": 7612,
+          "gzip_bytes": 13356
+        },
+        "random": {
+          "raw_bytes": 92569,
+          "xz_bytes": 7620,
+          "gzip_bytes": 13446
+        }
+      },
+      "pytket": {
+        "arith": {
+          "raw_bytes": 152378,
+          "xz_bytes": 8496,
+          "gzip_bytes": 14829
+        },
+        "random": {
+          "raw_bytes": 152377,
+          "xz_bytes": 8968,
+          "gzip_bytes": 14958
+        }
+      }
+    },
+    {
+      "m": 4096,
+      "k": 2048,
+      "k_fraction": 0.5,
+      "seed": 1,
+      "log2_choose": 4089.6741638801473,
+      "qiskit": {
+        "arith": {
+          "raw_bytes": 111148,
+          "xz_bytes": 8432,
+          "gzip_bytes": 15332
+        },
+        "random": {
+          "raw_bytes": 111150,
+          "xz_bytes": 8452,
+          "gzip_bytes": 15320
+        }
+      },
+      "pytket": {
+        "arith": {
+          "raw_bytes": 183066,
+          "xz_bytes": 10000,
+          "gzip_bytes": 17703
+        },
+        "random": {
+          "raw_bytes": 183068,
+          "xz_bytes": 10456,
+          "gzip_bytes": 17939
+        }
+      }
+    },
+    {
+      "m": 4096,
+      "k": 2048,
+      "k_fraction": 0.5,
+      "seed": 2,
+      "log2_choose": 4089.6741638801473,
+      "qiskit": {
+        "arith": {
+          "raw_bytes": 110858,
+          "xz_bytes": 8448,
+          "gzip_bytes": 15356
+        },
+        "random": {
+          "raw_bytes": 110881,
+          "xz_bytes": 8544,
+          "gzip_bytes": 15283
+        }
+      },
+      "pytket": {
+        "arith": {
+          "raw_bytes": 182196,
+          "xz_bytes": 10188,
+          "gzip_bytes": 17714
+        },
+        "random": {
+          "raw_bytes": 182219,
+          "xz_bytes": 10512,
+          "gzip_bytes": 17938
+        }
+      }
+    },
+    {
+      "m": 4096,
+      "k": 2048,
+      "k_fraction": 0.5,
+      "seed": 3,
+      "log2_choose": 4089.6741638801473,
+      "qiskit": {
+        "arith": {
+          "raw_bytes": 110998,
+          "xz_bytes": 8408,
+          "gzip_bytes": 15201
+        },
+        "random": {
+          "raw_bytes": 111001,
+          "xz_bytes": 8416,
+          "gzip_bytes": 15315
+        }
+      },
+      "pytket": {
+        "arith": {
+          "raw_bytes": 182616,
+          "xz_bytes": 9964,
+          "gzip_bytes": 17697
+        },
+        "random": {
+          "raw_bytes": 182619,
+          "xz_bytes": 10500,
+          "gzip_bytes": 17943
+        }
+      }
+    },
+    {
+      "m": 4096,
+      "k": 3072,
+      "k_fraction": 0.75,
+      "seed": 1,
+      "log2_choose": 3316.8768412787904,
+      "qiskit": {
+        "arith": {
+          "raw_bytes": 129645,
+          "xz_bytes": 9344,
+          "gzip_bytes": 17001
+        },
+        "random": {
+          "raw_bytes": 129652,
+          "xz_bytes": 9272,
+          "gzip_bytes": 17070
+        }
+      },
+      "pytket": {
+        "arith": {
+          "raw_bytes": 213513,
+          "xz_bytes": 11652,
+          "gzip_bytes": 20638
+        },
+        "random": {
+          "raw_bytes": 213520,
+          "xz_bytes": 11736,
+          "gzip_bytes": 20845
+        }
+      }
+    },
+    {
+      "m": 4096,
+      "k": 3072,
+      "k_fraction": 0.75,
+      "seed": 2,
+      "log2_choose": 3316.8768412787904,
+      "qiskit": {
+        "arith": {
+          "raw_bytes": 129465,
+          "xz_bytes": 9324,
+          "gzip_bytes": 17051
+        },
+        "random": {
+          "raw_bytes": 129452,
+          "xz_bytes": 9328,
+          "gzip_bytes": 17046
+        }
+      },
+      "pytket": {
+        "arith": {
+          "raw_bytes": 212973,
+          "xz_bytes": 11728,
+          "gzip_bytes": 20759
+        },
+        "random": {
+          "raw_bytes": 212960,
+          "xz_bytes": 11732,
+          "gzip_bytes": 20843
+        }
+      }
+    },
+    {
+      "m": 4096,
+      "k": 3072,
+      "k_fraction": 0.75,
+      "seed": 3,
+      "log2_choose": 3316.8768412787904,
+      "qiskit": {
+        "arith": {
+          "raw_bytes": 129415,
+          "xz_bytes": 9244,
+          "gzip_bytes": 16814
+        },
+        "random": {
+          "raw_bytes": 129414,
+          "xz_bytes": 9352,
+          "gzip_bytes": 17001
+        }
+      },
+      "pytket": {
+        "arith": {
+          "raw_bytes": 212823,
+          "xz_bytes": 11680,
+          "gzip_bytes": 20634
+        },
+        "random": {
+          "raw_bytes": 212822,
+          "xz_bytes": 11932,
+          "gzip_bytes": 20786
+        }
+      }
+    },
+    {
+      "m": 4096,
+      "k": 4096,
+      "k_fraction": 1.0,
+      "seed": 1,
+      "log2_choose": 0.0,
+      "qiskit": {
+        "arith": {
+          "raw_bytes": 148098,
+          "xz_bytes": 10256,
+          "gzip_bytes": 18486
+        },
+        "random": {
+          "raw_bytes": 148098,
+          "xz_bytes": 10256,
+          "gzip_bytes": 18486
+        }
+      },
+      "pytket": {
+        "arith": {
+          "raw_bytes": 243826,
+          "xz_bytes": 12812,
+          "gzip_bytes": 23393
+        },
+        "random": {
+          "raw_bytes": 243826,
+          "xz_bytes": 12812,
+          "gzip_bytes": 23393
+        }
+      }
+    },
+    {
+      "m": 4096,
+      "k": 4096,
+      "k_fraction": 1.0,
+      "seed": 2,
+      "log2_choose": 0.0,
+      "qiskit": {
+        "arith": {
+          "raw_bytes": 147993,
+          "xz_bytes": 10260,
+          "gzip_bytes": 18495
+        },
+        "random": {
+          "raw_bytes": 147993,
+          "xz_bytes": 10260,
+          "gzip_bytes": 18495
+        }
+      },
+      "pytket": {
+        "arith": {
+          "raw_bytes": 243511,
+          "xz_bytes": 12680,
+          "gzip_bytes": 23485
+        },
+        "random": {
+          "raw_bytes": 243511,
+          "xz_bytes": 12680,
+          "gzip_bytes": 23485
+        }
+      }
+    },
+    {
+      "m": 4096,
+      "k": 4096,
+      "k_fraction": 1.0,
+      "seed": 3,
+      "log2_choose": 0.0,
+      "qiskit": {
+        "arith": {
+          "raw_bytes": 147963,
+          "xz_bytes": 10232,
+          "gzip_bytes": 18491
+        },
+        "random": {
+          "raw_bytes": 147963,
+          "xz_bytes": 10232,
+          "gzip_bytes": 18491
+        }
+      },
+      "pytket": {
+        "arith": {
+          "raw_bytes": 243421,
+          "xz_bytes": 12700,
+          "gzip_bytes": 23443
+        },
+        "random": {
+          "raw_bytes": 243421,
+          "xz_bytes": 12700,
+          "gzip_bytes": 23443
+        }
+      }
+    }
+  ],
+  "summary": {
+    "k_fraction=0.125": {
+      "k": 512,
+      "k_fraction": 0.125,
+      "log2_choose": 2220.710294813065,
+      "qiskit": {
+        "raw_bytes": {
+          "arith_mean": 83346.33333333333,
+          "random_mean": 83344,
+          "excess_bits": -18.66666666662786,
+          "within_variant_sd_bits": 900.2044212288673
+        },
+        "xz_bytes": {
+          "arith_mean": 7112,
+          "random_mean": 7141.333333333333,
+          "excess_bits": 234.66666666666424,
+          "within_variant_sd_bits": 281.810022690622
+        },
+        "gzip_bytes": {
+          "arith_mean": 12610.666666666666,
+          "random_mean": 12633,
+          "excess_bits": 178.66666666667152,
+          "within_variant_sd_bits": 120.97382637028005
+        }
+      },
+      "pytket": {
+        "raw_bytes": {
+          "arith_mean": 137231,
+          "random_mean": 137228.66666666666,
+          "excess_bits": -18.666666666744277,
+          "within_variant_sd_bits": 2698.1475126464084
+        },
+        "xz_bytes": {
+          "arith_mean": 7922.666666666667,
+          "random_mean": 7978.666666666667,
+          "excess_bits": 448.0,
+          "within_variant_sd_bits": 717.6058961729775
+        },
+        "gzip_bytes": {
+          "arith_mean": 13339,
+          "random_mean": 13435.666666666666,
+          "excess_bits": 773.3333333333285,
+          "within_variant_sd_bits": 241.80065251267533
+        }
+      }
+    },
+    "k_fraction=0.25": {
+      "k": 1024,
+      "k_fraction": 0.25,
+      "log2_choose": 3316.8768412787904,
+      "qiskit": {
+        "raw_bytes": {
+          "arith_mean": 92603.33333333333,
+          "random_mean": 92606.33333333333,
+          "excess_bits": 24.0,
+          "within_variant_sd_bits": 799.1818038191032
+        },
+        "xz_bytes": {
+          "arith_mean": 7608,
+          "random_mean": 7604,
+          "excess_bits": -32,
+          "within_variant_sd_bits": 223.2367950555344
+        },
+        "gzip_bytes": {
+          "arith_mean": 13360,
+          "random_mean": 13523.333333333334,
+          "excess_bits": 1306.6666666666715,
+          "within_variant_sd_bits": 632.8039893117685
+        }
+      },
+      "pytket": {
+        "raw_bytes": {
+          "arith_mean": 152478,
+          "random_mean": 152481,
+          "excess_bits": 24,
+          "within_variant_sd_bits": 2348.02384996405
+        },
+        "xz_bytes": {
+          "arith_mean": 8522.666666666666,
+          "random_mean": 8988,
+          "excess_bits": 3722.6666666666715,
+          "within_variant_sd_bits": 721.4011058735324
+        },
+        "gzip_bytes": {
+          "arith_mean": 14820.666666666666,
+          "random_mean": 14962.666666666666,
+          "excess_bits": 1136.0,
+          "within_variant_sd_bits": 55.553777749332426
+        }
+      }
+    },
+    "k_fraction=0.5": {
+      "k": 2048,
+      "k_fraction": 0.5,
+      "log2_choose": 4089.6741638801473,
+      "qiskit": {
+        "raw_bytes": {
+          "arith_mean": 111001.33333333333,
+          "random_mean": 111010.66666666667,
+          "excess_bits": 74.66666666674428,
+          "within_variant_sd_bits": 947.3237156443525
+        },
+        "xz_bytes": {
+          "arith_mean": 8429.333333333334,
+          "random_mean": 8470.666666666666,
+          "excess_bits": 330.66666666665697,
+          "within_variant_sd_bits": 431.1761692033651
+        },
+        "gzip_bytes": {
+          "arith_mean": 15296.333333333334,
+          "random_mean": 15306,
+          "excess_bits": 77.33333333332848,
+          "within_variant_sd_bits": 544.953412891618
+        }
+      },
+      "pytket": {
+        "raw_bytes": {
+          "arith_mean": 182626,
+          "random_mean": 182635.33333333334,
+          "excess_bits": 74.66666666674428,
+          "within_variant_sd_bits": 2841.9711469330578
+        },
+        "xz_bytes": {
+          "arith_mean": 10050.666666666666,
+          "random_mean": 10489.333333333334,
+          "excess_bits": 3509.333333333343,
+          "within_variant_sd_bits": 785.7214660566569
+        },
+        "gzip_bytes": {
+          "arith_mean": 17704.666666666668,
+          "random_mean": 17940,
+          "excess_bits": 1882.666666666657,
+          "within_variant_sd_bits": 56.31656555184767
+        }
+      }
+    },
+    "k_fraction=0.75": {
+      "k": 3072,
+      "k_fraction": 0.75,
+      "log2_choose": 3316.8768412787904,
+      "qiskit": {
+        "raw_bytes": {
+          "arith_mean": 129508.33333333333,
+          "random_mean": 129506,
+          "excess_bits": -18.66666666662786,
+          "within_variant_sd_bits": 835.1734350819994
+        },
+        "xz_bytes": {
+          "arith_mean": 9304,
+          "random_mean": 9317.333333333334,
+          "excess_bits": 106.66666666667152,
+          "within_variant_sd_bits": 345.63950391508587
+        },
+        "gzip_bytes": {
+          "arith_mean": 16955.333333333332,
+          "random_mean": 17039,
+          "excess_bits": 669.333333333343,
+          "within_variant_sd_bits": 816.0087145504159
+        }
+      },
+      "pytket": {
+        "raw_bytes": {
+          "arith_mean": 213103,
+          "random_mean": 213100.66666666666,
+          "excess_bits": -18.666666666744277,
+          "within_variant_sd_bits": 2414.545551904586
+        },
+        "xz_bytes": {
+          "arith_mean": 11686.666666666666,
+          "random_mean": 11800,
+          "excess_bits": 906.6666666666715,
+          "within_variant_sd_bits": 746.8190320731433
+        },
+        "gzip_bytes": {
+          "arith_mean": 20677,
+          "random_mean": 20824.666666666668,
+          "excess_bits": 1181.333333333343,
+          "within_variant_sd_bits": 464.045974733826
+        }
+      }
+    },
+    "k_fraction=1.0": {
+      "k": 4096,
+      "k_fraction": 1.0,
+      "log2_choose": 0.0,
+      "qiskit": {
+        "raw_bytes": {
+          "arith_mean": 148018,
+          "random_mean": 148018,
+          "excess_bits": 0,
+          "within_variant_sd_bits": 463.033476111609
+        },
+        "xz_bytes": {
+          "arith_mean": 10249.333333333334,
+          "random_mean": 10249.333333333334,
+          "excess_bits": 0.0,
+          "within_variant_sd_bits": 98.9185972852875
+        },
+        "gzip_bytes": {
+          "arith_mean": 18490.666666666668,
+          "random_mean": 18490.666666666668,
+          "excess_bits": 0.0,
+          "within_variant_sd_bits": 29.454296045832695
+        }
+      },
+      "pytket": {
+        "raw_bytes": {
+          "arith_mean": 243586,
+          "random_mean": 243586,
+          "excess_bits": 0,
+          "within_variant_sd_bits": 1389.100428334827
+        },
+        "xz_bytes": {
+          "arith_mean": 12730.666666666666,
+          "random_mean": 12730.666666666666,
+          "excess_bits": 0.0,
+          "within_variant_sd_bits": 464.70444609689525
+        },
+        "gzip_bytes": {
+          "arith_mean": 23440.333333333332,
+          "random_mean": 23440.333333333332,
+          "excess_bits": 0.0,
+          "within_variant_sd_bits": 300.849168558303
+        }
+      }
+    }
+  },
+  "decision": {
+    "P6": [
+      {
+        "tool": "qiskit",
+        "k_fraction": 0.125,
+        "excess_bits": 234.66666666666424,
+        "pass": true
+      },
+      {
+        "tool": "qiskit",
+        "k_fraction": 0.25,
+        "excess_bits": -32,
+        "pass": false
+      },
+      {
+        "tool": "qiskit",
+        "k_fraction": 0.5,
+        "excess_bits": 330.66666666665697,
+        "pass": true
+      },
+      {
+        "tool": "qiskit",
+        "k_fraction": 0.75,
+        "excess_bits": 106.66666666667152,
+        "pass": true
+      },
+      {
+        "tool": "pytket",
+        "k_fraction": 0.125,
+        "excess_bits": 448.0,
+        "pass": true
+      },
+      {
+        "tool": "pytket",
+        "k_fraction": 0.25,
+        "excess_bits": 3722.6666666666715,
+        "pass": true
+      },
+      {
+        "tool": "pytket",
+        "k_fraction": 0.5,
+        "excess_bits": 3509.333333333343,
+        "pass": true
+      },
+      {
+        "tool": "pytket",
+        "k_fraction": 0.75,
+        "excess_bits": 906.6666666666715,
+        "pass": true
+      }
+    ],
+    "P7": [
+      {
+        "tool": "qiskit",
+        "argmax_k_fraction": 0.5,
+        "excess_at_1": 0.0,
+        "excess_at_half": 330.66666666665697,
+        "pass": true
+      },
+      {
+        "tool": "pytket",
+        "argmax_k_fraction": 0.25,
+        "excess_at_1": 0.0,
+        "excess_at_half": 3509.333333333343,
+        "pass": false
+      }
+    ],
+    "P8": [
+      {
+        "tool": "qiskit",
+        "excess_bits": 330.66666666665697,
+        "log2_choose": 4089.6741638801473,
+        "fraction_recovered": 0.08085403712283314,
+        "pass": false
+      },
+      {
+        "tool": "pytket",
+        "excess_bits": 3509.333333333343,
+        "log2_choose": 4089.6741638801473,
+        "fraction_recovered": 0.8580960714004179,
+        "pass": true
+      }
+    ],
+    "P9": [
+      {
+        "tool": "qiskit",
+        "k_fraction": 0.125,
+        "raw_relative_difference": 2.799563268124352e-05,
+        "pass": true
+      },
+      {
+        "tool": "qiskit",
+        "k_fraction": 0.25,
+        "raw_relative_difference": 3.2396242035923834e-05,
+        "pass": true
+      },
+      {
+        "tool": "qiskit",
+        "k_fraction": 0.5,
+        "raw_relative_difference": 8.408307407727566e-05,
+        "pass": true
+      },
+      {
+        "tool": "qiskit",
+        "k_fraction": 0.75,
+        "raw_relative_difference": 1.8016858631968208e-05,
+        "pass": true
+      },
+      {
+        "tool": "qiskit",
+        "k_fraction": 1.0,
+        "raw_relative_difference": 0.0,
+        "pass": true
+      },
+      {
+        "tool": "pytket",
+        "k_fraction": 0.125,
+        "raw_relative_difference": 1.7002960944269406e-05,
+        "pass": true
+      },
+      {
+        "tool": "pytket",
+        "k_fraction": 0.25,
+        "raw_relative_difference": 1.967496950379727e-05,
+        "pass": true
+      },
+      {
+        "tool": "pytket",
+        "k_fraction": 0.5,
+        "raw_relative_difference": 5.110626818384586e-05,
+        "pass": true
+      },
+      {
+        "tool": "pytket",
+        "k_fraction": 0.75,
+        "raw_relative_difference": 1.0949321845976051e-05,
+        "pass": true
+      },
+      {
+        "tool": "pytket",
+        "k_fraction": 1.0,
+        "raw_relative_difference": 0.0,
+        "pass": true
+      }
+    ],
+    "P10": [
+      {
+        "tool": "qiskit",
+        "excess_bits": 330.66666666665697,
+        "within_variant_sd_bits": 431.1761692033651,
+        "pass": false
+      },
+      {
+        "tool": "pytket",
+        "excess_bits": 3509.333333333343,
+        "within_variant_sd_bits": 785.7214660566569,
+        "pass": true
+      }
+    ],
+    "verdicts": {
+      "P6_excess_positive": false,
+      "P7_shape_returns_to_zero": false,
+      "P8_magnitude": false,
+      "P9_textual_control": true,
+      "P10_separation": false
+    }
+  }
+}

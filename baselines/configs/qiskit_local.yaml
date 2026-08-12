@@ -1,0 +1,18 @@
+schema: ucc.external-baseline-family.v1
+tool: qiskit
+package: qiskit
+category: local
+semantic_capable: false
+bridge: OpenQASM2 -> Qiskit QuantumCircuit
+configs:
+  - id: qiskit_opt3_native
+    mode: recommended_native
+    output_basis: native_qiskit
+    pass_sequence:
+      - transpile(optimization_level=3, layout_method=trivial, routing_method=none, seed_transpiler=seed)
+  - id: qiskit_opt3_unified
+    mode: unified_target_basis
+    output_basis: [cx, rz, h]
+    pass_sequence:
+      - transpile(basis_gates=[cx,rz,h], optimization_level=3, layout_method=trivial, routing_method=none, seed_transpiler=seed)
+

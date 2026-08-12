@@ -1,0 +1,162 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}          % Times text + matching math (scalable Type 1)
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{microtype}
+\usepackage{lmodern}
+\setlength{\parskip}{0.75\baselineskip}
+\pagestyle{empty}
+
+% ---------------------------------------------------------------
+% Corresponding author, submitting on behalf of all authors.
+% \AuthorPosition is optional: set it to e.g. {Professor} or
+% {Principal Investigator} and it will appear under the name.
+% ---------------------------------------------------------------
+\newcommand{\AuthorName}{Xiu-Hao Deng}
+\newcommand{\AuthorPosition}{}
+\newcommand{\AuthorInstitutionA}{Shenzhen International Quantum Academy, Shenzhen 518048, China}
+\newcommand{\AuthorInstitutionB}{Shenzhen Branch, Hefei National Laboratory, Shenzhen 518048, China}
+\newcommand{\AuthorEmail}{dengxiuhao@iqasz.cn}
+\newcommand{\LetterDate}{\today}
+
+% Prints the position line only when \AuthorPosition is non-empty.
+\newcommand{\PositionLine}{%
+  \ifx\AuthorPosition\empty\else\AuthorPosition\\\fi}
+
+\begin{document}
+
+% --- Sender block -----------------------------------------------
+{\raggedright
+\AuthorName\\
+\PositionLine
+\AuthorInstitutionA\\
+\AuthorInstitutionB\\
+\AuthorEmail\par}
+
+\vspace{1.5\baselineskip}
+
+\LetterDate
+
+\vspace{1\baselineskip}
+
+{\raggedright
+The Editors\\
+\textit{PRX Quantum}\\
+American Physical Society\par}
+
+\vspace{1.5\baselineskip}
+
+Dear Editors,
+
+On behalf of my coauthors, I am pleased to submit the manuscript
+``Representation as a Computational Resource in Quantum Compilation:
+Approximate Recoverability Tradeoffs and Model-Specific Fault-Tolerant
+Consequences'' for consideration in \textit{PRX Quantum}.
+
+Fault-tolerant compilation deliberately destroys structure. Time-dependent and
+variational schedules split one accumulated phase across many rounds; gate
+synthesis dissolves an angle into a Clifford$+T$ word in which no individual
+letter carries the angle; randomized compiling twirls each rotation into
+sign-randomized fragments. Each transformation is correct and desirable for its
+own reason, and each scatters a quantity that was once written in one place
+across an instruction stream. The literature on phase-polynomial, Pauli-gadget,
+and ZX methods establishes that a sufficiently capable pass can sometimes
+reassemble such a quantity. It does not establish what that reassembly must
+cost. This manuscript answers that question.
+
+The central result is a lower bound with two admissible payment channels. We
+formalize a downstream compiler---one positioned after randomization and
+lowering, as a cloud transpiler or a control-stack stream optimizer is---and
+charge every restart channel in literal bits: control, store, live window,
+parameters, and intermediate representation. For a commuting phase layer with
+$m$ generators compiled to projective accuracy $\epsilon$, any such compiler
+making $p$ forward passes and failing with probability at most $\delta$ obeys
+\begin{equation*}
+  \overline{A}_p + (2p-1)\,S \;\ge\; (1-\delta)\,m \log_2 K_\epsilon - h_2(\delta),
+\end{equation*}
+where $\overline{A}_p$ is committed output and $S$ the serialized crossing
+state. The scattered information must be bought back either in bits of compiler
+state or in magic states, and there is no third option. Because a memory-capped
+block compiler attains the envelope within a constant factor, the frontier is
+tight rather than merely a floor. Charging the intermediate representation
+explicitly is what makes the statement non-evadable: a ZX graph, a
+phase-polynomial table, a cache, or a spilled update log is an accounted
+channel rather than a free side door.
+
+A lower bound of this kind would be of limited interest if its hypotheses were
+met only by a constructed secret sharing. They are not. Time-dependent
+scheduling supplies the additive decomposition, randomized compiling supplies
+the sign symmetry, and the Ross--Selinger synthesis grid supplies the modulus,
+so the hypotheses are satisfied by streams that a fault-tolerant stack emits
+anyway. Under a disclosed frame-tracked presentation the crossing state is the
+Pauli frame itself, which yields a tension we expect will interest the
+noise-tailoring community: the randomization that averages coherent noise is
+the same randomization that forces a re-aggregating compiler to carry
+$\Omega(m \log(1/\epsilon))$ bits. The boundaries of the claim are stated
+explicitly; the non-commuting interleaving of a generic Trotter step lies
+outside them and is not asserted.
+
+A refinement shows that the two currencies are not worth the same. Once a
+committed record is executed rather than buffered, the committed channel
+additionally pays $\log_2\binom{m}{k}$---the entropy of the compiler's own
+decision about which $k$ coordinates to commit early---while a deferring
+compiler is handed that decision for free by the stream that follows. The toll
+is independent of $m$ and vanishes exactly when the commitment schedule is
+public. It was measured on an instrumented device under a preregistration
+frozen before the run, and matches the predicted entropy to within $0.17$ bits
+at the worst cell.
+
+The paper does not stop at the information-theoretic statement. Instrumented
+reference compilers expose the state, IR, and commitment coordinates directly
+at the bit level, and one fixed total error budget is propagated through actual
+\texttt{staq grid\_synth} Clifford$+T$ synthesis and executable surface-code
+scheduling. Under the disclosed model, the same unitary compiled from a
+dispersed rather than an aggregate representation costs $385$--$1{,}753$ times
+the logical $T$ states and $538$--$5{,}573$ times the spacetime volume, with no
+reversal anywhere in the scanned error and factory grid. The representational
+gap becomes a fault-tolerant one.
+
+We believe the work suits \textit{PRX Quantum} because it sits across
+communities that rarely share a paper---compiler and IR design, randomized
+compiling and noise tailoring, fault-tolerant resource estimation, and
+classical communication complexity---and because its conclusion is a design
+rule with a proof attached: randomize and lower late. It also identifies
+representation as a controlled variable that resource-estimation studies should
+report rather than leave implicit. The stance toward existing tools is
+explanatory rather than competitive. TKET's \texttt{PauliSimp} and PyZX's
+\texttt{full\_reduce} already implement the semantic-first principle on their
+global intermediate representations; the contribution here is the bound that
+says what any such tool must pay to do so on a dispersed stream. Their recovery
+is measured and credited---external TKET uses $0.443$--$0.536$ times the
+reference's $T$ states on the same witness---and no headline ranks our
+implementation above them. In the same spirit, two preregistered attempts to
+carry the commitment toll onto third-party compilers failed, and are reported
+as failures rather than repaired.
+
+Every headline number is generated from a normalized frozen-data registry with
+a numeric provenance map and a one-command entry point. Correctness is gated by
+an independent symbolic or dense certificate, status outcomes are never
+converted into numerical wins, and a clean-room runner reconstructs the
+theorem, benchmark, and resource-estimation subsets in an independent
+directory.
+
+This manuscript is original and previously unpublished. It has not been posted
+as a preprint, and it is not under consideration at any other journal. We
+declare no competing interests.
+
+Thank you for your consideration. We would be glad to answer any questions.
+
+\vspace{1.5\baselineskip}
+
+{\raggedright
+Sincerely,\\[2.5\baselineskip]
+\AuthorName\\
+\PositionLine
+\AuthorInstitutionA\\
+\textit{on behalf of all authors}\par}
+
+\end{document}

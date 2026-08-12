@@ -1,0 +1,15 @@
+{
+  "certificate_kind": "symbolic proposition application",
+  "irrational_expression": "pi*sqrt(2)/11",
+  "lowering_max_abs_error": 1.1102230246251565e-16,
+  "pivots": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "rank_f2": 4,
+  "status": "passed",
+  "support_rank_verified": true,
+  "unbounded_noncollision_by_proposition": true
+}

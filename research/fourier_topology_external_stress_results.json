@@ -1,0 +1,1070 @@
+[
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 4000,
+    "repeats": 570,
+    "num_phase_terms": 7,
+    "method": "semantic_ucc",
+    "description": "Generalized Fourier witness: 4 qubits, chain_cp topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 3998,
+      "depth": 1713,
+      "multi_qubit_gates": 1710,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 27,
+      "depth": 18,
+      "multi_qubit_gates": 6,
+      "cx_count": 6,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ]
+    },
+    "runtime_s": 1.393
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 4000,
+    "repeats": 570,
+    "num_phase_terms": 7,
+    "method": "qiskit_opt3",
+    "description": "Generalized Fourier witness: 4 qubits, chain_cp topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 3998,
+      "depth": 1713,
+      "multi_qubit_gates": 1710,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 6851,
+      "depth": 3998,
+      "multi_qubit_gates": 3420,
+      "cx_count": 3420,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ]
+    },
+    "runtime_s": 0.619
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 4000,
+    "repeats": 570,
+    "num_phase_terms": 7,
+    "method": "pyzx_opt",
+    "description": "Generalized Fourier witness: 4 qubits, chain_cp topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 3998,
+      "depth": 1713,
+      "multi_qubit_gates": 1710,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 10838,
+      "depth": 5139,
+      "multi_qubit_gates": 3420,
+      "cx_count": 3420,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ]
+    },
+    "runtime_s": 1.396
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 4000,
+    "repeats": 570,
+    "num_phase_terms": 7,
+    "method": "tket_full_peephole",
+    "description": "Generalized Fourier witness: 4 qubits, chain_cp topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 3998,
+      "depth": 1713,
+      "multi_qubit_gates": 1710,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 20555,
+      "depth": 10852,
+      "multi_qubit_gates": 3420,
+      "cx_count": 3420,
+      "gate_types": [
+        "cx",
+        "rx",
+        "rz"
+      ]
+    },
+    "runtime_s": 40.807
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 10000,
+    "repeats": 1427,
+    "num_phase_terms": 7,
+    "method": "semantic_ucc",
+    "description": "Generalized Fourier witness: 4 qubits, chain_cp topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 9997,
+      "depth": 4284,
+      "multi_qubit_gates": 4281,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 27,
+      "depth": 18,
+      "multi_qubit_gates": 6,
+      "cx_count": 6,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ]
+    },
+    "runtime_s": 5.149
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 10000,
+    "repeats": 1427,
+    "num_phase_terms": 7,
+    "method": "qiskit_opt3",
+    "description": "Generalized Fourier witness: 4 qubits, chain_cp topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 9997,
+      "depth": 4284,
+      "multi_qubit_gates": 4281,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 17136,
+      "depth": 9997,
+      "multi_qubit_gates": 8562,
+      "cx_count": 8562,
+      "gate_types": [
+        "cx",
+        "h",
+        "ry",
+        "rz"
+      ]
+    },
+    "runtime_s": 2.968
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "chain_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 10000,
+    "repeats": 1427,
+    "num_phase_terms": 7,
+    "method": "pyzx_opt",
+    "description": "Generalized Fourier witness: 4 qubits, chain_cp topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 9997,
+      "depth": 4284,
+      "multi_qubit_gates": 4281,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 27121,
+      "depth": 12852,
+      "multi_qubit_gates": 8562,
+      "cx_count": 8562,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ]
+    },
+    "runtime_s": 7.421
+  },
+  {
+    "method": "tket_full_peephole",
+    "status": "timeout",
+    "timeout_s": 300,
+    "diagonal_topology": "chain_cp",
+    "requested_target_gates": 10000
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "ring_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 4000,
+    "repeats": 499,
+    "num_phase_terms": 8,
+    "method": "semantic_ucc",
+    "description": "Generalized Fourier witness: 4 qubits, ring_cp topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 4000,
+      "depth": 2497,
+      "multi_qubit_gates": 1996,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 32,
+      "depth": 23,
+      "multi_qubit_gates": 8,
+      "cx_count": 8,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ]
+    },
+    "runtime_s": 1.364
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "ring_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 4000,
+    "repeats": 499,
+    "num_phase_terms": 8,
+    "method": "qiskit_opt3",
+    "description": "Generalized Fourier witness: 4 qubits, ring_cp topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 4000,
+      "depth": 2497,
+      "multi_qubit_gates": 1996,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 7996,
+      "depth": 7987,
+      "multi_qubit_gates": 3992,
+      "cx_count": 3992,
+      "gate_types": [
+        "cx",
+        "h",
+        "ry",
+        "rz"
+      ]
+    },
+    "runtime_s": 0.528
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "ring_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 4000,
+    "repeats": 499,
+    "num_phase_terms": 8,
+    "method": "pyzx_opt",
+    "description": "Generalized Fourier witness: 4 qubits, ring_cp topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 4000,
+      "depth": 2497,
+      "multi_qubit_gates": 1996,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 11984,
+      "depth": 10481,
+      "multi_qubit_gates": 3992,
+      "cx_count": 3992,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ]
+    },
+    "runtime_s": 1.454
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "ring_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 4000,
+    "repeats": 499,
+    "num_phase_terms": 8,
+    "method": "tket_full_peephole",
+    "description": "Generalized Fourier witness: 4 qubits, ring_cp topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 4000,
+      "depth": 2497,
+      "multi_qubit_gates": 1996,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 23987,
+      "depth": 23957,
+      "multi_qubit_gates": 3992,
+      "cx_count": 3992,
+      "gate_types": [
+        "cx",
+        "rx",
+        "rz"
+      ]
+    },
+    "runtime_s": 14.155
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "ring_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 10000,
+    "repeats": 1249,
+    "num_phase_terms": 8,
+    "method": "semantic_ucc",
+    "description": "Generalized Fourier witness: 4 qubits, ring_cp topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 10000,
+      "depth": 6247,
+      "multi_qubit_gates": 4996,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 32,
+      "depth": 23,
+      "multi_qubit_gates": 8,
+      "cx_count": 8,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ]
+    },
+    "runtime_s": 5.448
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "ring_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 10000,
+    "repeats": 1249,
+    "num_phase_terms": 8,
+    "method": "qiskit_opt3",
+    "description": "Generalized Fourier witness: 4 qubits, ring_cp topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 10000,
+      "depth": 6247,
+      "multi_qubit_gates": 4996,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 19996,
+      "depth": 19987,
+      "multi_qubit_gates": 9992,
+      "cx_count": 9992,
+      "gate_types": [
+        "cx",
+        "h",
+        "ry",
+        "rz"
+      ]
+    },
+    "runtime_s": 2.265
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "ring_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 10000,
+    "repeats": 1249,
+    "num_phase_terms": 8,
+    "method": "pyzx_opt",
+    "description": "Generalized Fourier witness: 4 qubits, ring_cp topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 10000,
+      "depth": 6247,
+      "multi_qubit_gates": 4996,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 29984,
+      "depth": 26231,
+      "multi_qubit_gates": 9992,
+      "cx_count": 9992,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ]
+    },
+    "runtime_s": 7.303
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "ring_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 10000,
+    "repeats": 1249,
+    "num_phase_terms": 8,
+    "method": "tket_full_peephole",
+    "description": "Generalized Fourier witness: 4 qubits, ring_cp topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 10000,
+      "depth": 6247,
+      "multi_qubit_gates": 4996,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 59987,
+      "depth": 59957,
+      "multi_qubit_gates": 9992,
+      "cx_count": 9992,
+      "gate_types": [
+        "cx",
+        "rx",
+        "rz"
+      ]
+    },
+    "runtime_s": 37.467
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "sparse_cp_0.5",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 4000,
+    "repeats": 570,
+    "num_phase_terms": 7,
+    "method": "semantic_ucc",
+    "description": "Generalized Fourier witness: 4 qubits, sparse_cp_0.5 topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 3998,
+      "depth": 1712,
+      "multi_qubit_gates": 1710,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 27,
+      "depth": 12,
+      "multi_qubit_gates": 6,
+      "cx_count": 6,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ]
+    },
+    "runtime_s": 1.962
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "sparse_cp_0.5",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 4000,
+    "repeats": 570,
+    "num_phase_terms": 7,
+    "method": "qiskit_opt3",
+    "description": "Generalized Fourier witness: 4 qubits, sparse_cp_0.5 topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 3998,
+      "depth": 1712,
+      "multi_qubit_gates": 1710,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 6851,
+      "depth": 4563,
+      "multi_qubit_gates": 3420,
+      "cx_count": 3420,
+      "gate_types": [
+        "cx",
+        "h",
+        "ry",
+        "rz"
+      ]
+    },
+    "runtime_s": 1.171
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "sparse_cp_0.5",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 4000,
+    "repeats": 570,
+    "num_phase_terms": 7,
+    "method": "pyzx_opt",
+    "description": "Generalized Fourier witness: 4 qubits, sparse_cp_0.5 topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 3998,
+      "depth": 1712,
+      "multi_qubit_gates": 1710,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 10838,
+      "depth": 5133,
+      "multi_qubit_gates": 3420,
+      "cx_count": 3420,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ]
+    },
+    "runtime_s": 1.69
+  },
+  {
+    "method": "tket_full_peephole",
+    "status": "timeout",
+    "timeout_s": 300,
+    "diagonal_topology": "sparse_cp_0.5",
+    "requested_target_gates": 4000
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "sparse_cp_0.5",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 10000,
+    "repeats": 1427,
+    "num_phase_terms": 7,
+    "method": "semantic_ucc",
+    "description": "Generalized Fourier witness: 4 qubits, sparse_cp_0.5 topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 9997,
+      "depth": 4283,
+      "multi_qubit_gates": 4281,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 27,
+      "depth": 12,
+      "multi_qubit_gates": 6,
+      "cx_count": 6,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ]
+    },
+    "runtime_s": 8.471
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "sparse_cp_0.5",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 10000,
+    "repeats": 1427,
+    "num_phase_terms": 7,
+    "method": "qiskit_opt3",
+    "description": "Generalized Fourier witness: 4 qubits, sparse_cp_0.5 topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 9997,
+      "depth": 4283,
+      "multi_qubit_gates": 4281,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 17136,
+      "depth": 11419,
+      "multi_qubit_gates": 8562,
+      "cx_count": 8562,
+      "gate_types": [
+        "cx",
+        "h",
+        "ry",
+        "rz"
+      ]
+    },
+    "runtime_s": 6.323
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "sparse_cp_0.5",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 10000,
+    "repeats": 1427,
+    "num_phase_terms": 7,
+    "method": "pyzx_opt",
+    "description": "Generalized Fourier witness: 4 qubits, sparse_cp_0.5 topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 9997,
+      "depth": 4283,
+      "multi_qubit_gates": 4281,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 27121,
+      "depth": 12846,
+      "multi_qubit_gates": 8562,
+      "cx_count": 8562,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ]
+    },
+    "runtime_s": 8.709
+  },
+  {
+    "method": "tket_full_peephole",
+    "status": "timeout",
+    "timeout_s": 300,
+    "diagonal_topology": "sparse_cp_0.5",
+    "requested_target_gates": 10000
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 4000,
+    "repeats": 399,
+    "num_phase_terms": 10,
+    "method": "semantic_ucc",
+    "description": "Generalized Fourier witness: 4 qubits, full_pair_cp topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 3998,
+      "depth": 1998,
+      "multi_qubit_gates": 2394,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 42,
+      "depth": 24,
+      "multi_qubit_gates": 12,
+      "cx_count": 12,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ]
+    },
+    "runtime_s": 2.108
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 4000,
+    "repeats": 399,
+    "num_phase_terms": 10,
+    "method": "qiskit_opt3",
+    "description": "Generalized Fourier witness: 4 qubits, full_pair_cp topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 3998,
+      "depth": 1998,
+      "multi_qubit_gates": 2394,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 10783,
+      "depth": 5593,
+      "multi_qubit_gates": 4389,
+      "cx_count": 4389,
+      "gate_types": [
+        "cx",
+        "h",
+        "ry",
+        "rz"
+      ]
+    },
+    "runtime_s": 1.231
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 4000,
+    "repeats": 399,
+    "num_phase_terms": 10,
+    "method": "pyzx_opt",
+    "description": "Generalized Fourier witness: 4 qubits, full_pair_cp topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 3998,
+      "depth": 1998,
+      "multi_qubit_gates": 2394,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 13574,
+      "depth": 6392,
+      "multi_qubit_gates": 4788,
+      "cx_count": 4788,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ]
+    },
+    "runtime_s": 1.673
+  },
+  {
+    "method": "tket_full_peephole",
+    "status": "timeout",
+    "timeout_s": 300,
+    "diagonal_topology": "full_pair_cp",
+    "requested_target_gates": 4000
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 10000,
+    "repeats": 999,
+    "num_phase_terms": 10,
+    "method": "semantic_ucc",
+    "description": "Generalized Fourier witness: 4 qubits, full_pair_cp topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 9998,
+      "depth": 4998,
+      "multi_qubit_gates": 5994,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 42,
+      "depth": 24,
+      "multi_qubit_gates": 12,
+      "cx_count": 12,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ]
+    },
+    "runtime_s": 8.603
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 10000,
+    "repeats": 999,
+    "num_phase_terms": 10,
+    "method": "qiskit_opt3",
+    "description": "Generalized Fourier witness: 4 qubits, full_pair_cp topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 9998,
+      "depth": 4998,
+      "multi_qubit_gates": 5994,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 26983,
+      "depth": 13993,
+      "multi_qubit_gates": 10989,
+      "cx_count": 10989,
+      "gate_types": [
+        "cx",
+        "h",
+        "ry",
+        "rz"
+      ]
+    },
+    "runtime_s": 6.454
+  },
+  {
+    "family": "generalized_fourier_witness",
+    "n_qubits": 4,
+    "diagonal_topology": "full_pair_cp",
+    "angle_family": "nonresonant_seeded",
+    "angle_seed": 0,
+    "requested_target_gates": 10000,
+    "repeats": 999,
+    "num_phase_terms": 10,
+    "method": "pyzx_opt",
+    "description": "Generalized Fourier witness: 4 qubits, full_pair_cp topology, nonresonant_seeded angles, seed 0.",
+    "input": {
+      "num_qubits": 4,
+      "total_gates": 9998,
+      "depth": 4998,
+      "multi_qubit_gates": 5994,
+      "cx_count": 0,
+      "gate_types": [
+        "cp",
+        "h",
+        "rz"
+      ]
+    },
+    "status": "ok",
+    "output": {
+      "num_qubits": 4,
+      "total_gates": 33974,
+      "depth": 15992,
+      "multi_qubit_gates": 11988,
+      "cx_count": 11988,
+      "gate_types": [
+        "cx",
+        "h",
+        "rz"
+      ]
+    },
+    "runtime_s": 8.565
+  },
+  {
+    "method": "tket_full_peephole",
+    "status": "timeout",
+    "timeout_s": 300,
+    "diagonal_topology": "full_pair_cp",
+    "requested_target_gates": 10000
+  }
+]

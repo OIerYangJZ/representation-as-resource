@@ -1,0 +1,358 @@
+{
+  "4000": {
+    "qiskit_opt3": {
+      "method": "qiskit_opt3",
+      "family": "fourier_phase_sandwich",
+      "requested_target_gates": 4000,
+      "input": {
+        "num_qubits": 4,
+        "total_gates": 3998,
+        "depth": 1998,
+        "multi_qubit_gates": 2394,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "rz"
+        ]
+      },
+      "output": {
+        "num_qubits": 4,
+        "total_gates": 9588,
+        "depth": 5593,
+        "multi_qubit_gates": 4788,
+        "cx_count": 4788,
+        "gate_types": [
+          "cx",
+          "h",
+          "ry",
+          "rz"
+        ]
+      },
+    "baseline_ucc": {
+      "method": "baseline_ucc",
+      "family": "fourier_phase_sandwich",
+      "requested_target_gates": 4000,
+      "input": {
+        "num_qubits": 4,
+        "total_gates": 3998,
+        "depth": 1998,
+        "multi_qubit_gates": 2394,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "rz"
+        ]
+      },
+      "output": {
+        "num_qubits": 4,
+        "total_gates": 42,
+        "depth": 24,
+        "multi_qubit_gates": 12,
+        "cx_count": 12,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+    "optimized_ucc_full": {
+      "method": "optimized_ucc_full",
+      "family": "fourier_phase_sandwich",
+      "requested_target_gates": 4000,
+      "input": {
+        "num_qubits": 4,
+        "total_gates": 3998,
+        "depth": 1998,
+        "multi_qubit_gates": 2394,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "rz"
+        ]
+      },
+      "output": {
+        "num_qubits": 4,
+        "total_gates": 42,
+        "depth": 24,
+        "multi_qubit_gates": 12,
+        "cx_count": 12,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+    "optimized_ucc_no_fourier_layer_ir": {
+      "method": "optimized_ucc_no_fourier_layer_ir",
+      "family": "fourier_phase_sandwich",
+      "requested_target_gates": 4000,
+      "status": "timeout",
+      "timeout_s": 60
+    }
+  "10000": {
+    "qiskit_opt3": {
+      "method": "qiskit_opt3",
+      "family": "fourier_phase_sandwich",
+      "requested_target_gates": 10000,
+      "input": {
+        "num_qubits": 4,
+        "total_gates": 9998,
+        "depth": 4998,
+        "multi_qubit_gates": 5994,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "rz"
+        ]
+      },
+      "output": {
+        "num_qubits": 4,
+        "total_gates": 23988,
+        "depth": 13993,
+        "multi_qubit_gates": 11988,
+        "cx_count": 11988,
+        "gate_types": [
+          "cx",
+          "h",
+          "ry",
+          "rz"
+        ]
+      },
+    "baseline_ucc": {
+      "method": "baseline_ucc",
+      "family": "fourier_phase_sandwich",
+      "requested_target_gates": 10000,
+      "input": {
+        "num_qubits": 4,
+        "total_gates": 9998,
+        "depth": 4998,
+        "multi_qubit_gates": 5994,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "rz"
+        ]
+      },
+      "output": {
+        "num_qubits": 4,
+        "total_gates": 42,
+        "depth": 24,
+        "multi_qubit_gates": 12,
+        "cx_count": 12,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+    "optimized_ucc_full": {
+      "method": "optimized_ucc_full",
+      "family": "fourier_phase_sandwich",
+      "requested_target_gates": 10000,
+      "input": {
+        "num_qubits": 4,
+        "total_gates": 9998,
+        "depth": 4998,
+        "multi_qubit_gates": 5994,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "rz"
+        ]
+      },
+      "output": {
+        "num_qubits": 4,
+        "total_gates": 42,
+        "depth": 24,
+        "multi_qubit_gates": 12,
+        "cx_count": 12,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+    "optimized_ucc_no_fourier_layer_ir": {
+      "method": "optimized_ucc_no_fourier_layer_ir",
+      "family": "fourier_phase_sandwich",
+      "requested_target_gates": 10000,
+      "status": "timeout",
+      "timeout_s": 60
+    }
+  "20000": {
+    "qiskit_opt3": {
+      "method": "qiskit_opt3",
+      "family": "fourier_phase_sandwich",
+      "requested_target_gates": 20000,
+      "status": "timeout",
+      "timeout_s": 60
+    },
+    "baseline_ucc": {
+      "method": "baseline_ucc",
+      "family": "fourier_phase_sandwich",
+      "requested_target_gates": 20000,
+      "status": "timeout",
+      "timeout_s": 60
+    },
+    "optimized_ucc_full": {
+      "method": "optimized_ucc_full",
+      "family": "fourier_phase_sandwich",
+      "requested_target_gates": 20000,
+      "status": "timeout",
+      "timeout_s": 60
+    },
+    "optimized_ucc_no_fourier_layer_ir": {
+      "method": "optimized_ucc_no_fourier_layer_ir",
+      "family": "fourier_phase_sandwich",
+      "requested_target_gates": 20000,
+      "status": "timeout",
+      "timeout_s": 60
+    }
+  "50000": {
+    "qiskit_opt3": {
+      "method": "qiskit_opt3",
+      "family": "fourier_phase_sandwich",
+      "requested_target_gates": 50000,
+      "status": "timeout",
+      "timeout_s": 120
+    },
+    "baseline_ucc": {
+      "method": "baseline_ucc",
+      "family": "fourier_phase_sandwich",
+      "requested_target_gates": 50000,
+      "input": {
+        "num_qubits": 4,
+        "total_gates": 49998,
+        "depth": 24998,
+        "multi_qubit_gates": 29994,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "rz"
+        ]
+      },
+      "output": {
+        "num_qubits": 4,
+        "total_gates": 42,
+        "depth": 24,
+        "multi_qubit_gates": 12,
+        "cx_count": 12,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+    "optimized_ucc_full": {
+      "method": "optimized_ucc_full",
+      "family": "fourier_phase_sandwich",
+      "requested_target_gates": 50000,
+      "input": {
+        "num_qubits": 4,
+        "total_gates": 49998,
+        "depth": 24998,
+        "multi_qubit_gates": 29994,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "rz"
+        ]
+      },
+      "output": {
+        "num_qubits": 4,
+        "total_gates": 42,
+        "depth": 24,
+        "multi_qubit_gates": 12,
+        "cx_count": 12,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+    "optimized_ucc_no_fourier_layer_ir": {
+      "method": "optimized_ucc_no_fourier_layer_ir",
+      "family": "fourier_phase_sandwich",
+      "requested_target_gates": 50000,
+      "status": "timeout",
+      "timeout_s": 120
+    }
+  "100000": {
+    "qiskit_opt3": {
+      "method": "qiskit_opt3",
+      "family": "fourier_phase_sandwich",
+      "requested_target_gates": 100000,
+      "status": "timeout",
+      "timeout_s": 120
+    },
+    "baseline_ucc": {
+      "method": "baseline_ucc",
+      "family": "fourier_phase_sandwich",
+      "requested_target_gates": 100000,
+      "input": {
+        "num_qubits": 4,
+        "total_gates": 99998,
+        "depth": 49998,
+        "multi_qubit_gates": 59994,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "rz"
+        ]
+      },
+      "output": {
+        "num_qubits": 4,
+        "total_gates": 42,
+        "depth": 24,
+        "multi_qubit_gates": 12,
+        "cx_count": 12,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+    "optimized_ucc_full": {
+      "method": "optimized_ucc_full",
+      "family": "fourier_phase_sandwich",
+      "requested_target_gates": 100000,
+      "input": {
+        "num_qubits": 4,
+        "total_gates": 99998,
+        "depth": 49998,
+        "multi_qubit_gates": 59994,
+        "cx_count": 0,
+        "gate_types": [
+          "cp",
+          "h",
+          "rz"
+        ]
+      },
+      "output": {
+        "num_qubits": 4,
+        "total_gates": 42,
+        "depth": 24,
+        "multi_qubit_gates": 12,
+        "cx_count": 12,
+        "gate_types": [
+          "cx",
+          "h",
+          "rz"
+        ]
+      },
+    "optimized_ucc_no_fourier_layer_ir": {
+      "method": "optimized_ucc_no_fourier_layer_ir",
+      "family": "fourier_phase_sandwich",
+      "requested_target_gates": 100000,
+      "status": "timeout",
+      "timeout_s": 120
+    }

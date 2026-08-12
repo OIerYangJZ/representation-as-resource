@@ -1,0 +1,4 @@
+pipeline_id,logical_rotations,logical_t_states,code_distance,physical_qubits,factory_physical_qubits,factories,cycles,runtime_seconds,spacetime_qubit_seconds
+external_tket_paulisimp,29,798,23,258152,253920,16,13317,0.013316999999999999,3437.810184
+materialize_first,23992,2679110,31,468968,461280,16,57966528,57.966528,27184446.703103997
+semantic_first,22,1800,25,305000,300000,16,31675,0.031675,9660.875

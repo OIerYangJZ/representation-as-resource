@@ -1,0 +1,58 @@
+[project]
+name = "ucc"
+version = "0.4.12"
+description = "Unitary Compiler Collection: A quantum circuit interface and compiler for multiple quantum frameworks"
+authors = [
+    { name = "Jordan Sullivan" },
+    { name = "Misty Wahl" },
+    { name = "Nate Stemen" },
+    { name = "Brad Chase" },
+]
+license = "AGPL-3.0-only"
+readme = "README.md"
+repository = "https://github.com/unitaryfoundation/ucc"
+requires-python = ">=3.12,<3.14"
+packages = [{ include = "ucc" }]
+classifiers = [
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+]
+dependencies = [
+    "cirq-core>=1.4.1,<2.0.0",
+    "ply>=3.11,<4.0.0",
+    "pytket>=1.40.0,<3.0.0",
+    "qbraid>=0.9.3,<1.0.0",
+    "qiskit>=1.4.2,<3.0.0",
+    "qiskit-qasm3-import>=0.5.1,<1.0.0",
+    "quimb==1.12.1",
+]
+
+
+[dependency-groups]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.10",
+    "ruff>=0.9.4",
+    "pre-commit>=4.1.0",
+    "bqskit>=1.2.0,<2.0.0",
+]
+research = [
+    "mqt.bench>=2.2.1,<3.0.0",
+    "pyzx>=0.9.0,<0.11.0",
+    "supermarq>=0.5.64,<0.6.0",
+]
+docs = [
+    "sphinx>=8.1.3",
+    "myst-parser>=0.15",
+    "linkify-it-py>=2.0.3",
+    "sphinxcontrib-bibtex>=2.6.3",
+]
+
+[project.scripts]
+# No CLI entrypoint currently implemented.
+
+[tool.ruff]
+line-length = 79
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

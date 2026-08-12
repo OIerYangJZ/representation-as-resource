@@ -1,0 +1,633 @@
+{
+  "canonicalizer": "exact_commuting_pauli_clifford_canonical_v1",
+  "crosscheck_cases": 12,
+  "crosscheck_disagreements": 0,
+  "crosschecks": [
+    {
+      "certificate_sha256": "6d6cd129f72a8f0d128ebc3dca438c78daa6f3cee0c228c5aecafabef6a2af85",
+      "dense_projective_distance": 2.2904389293718658e-16,
+      "dense_status": "completed_valid",
+      "expected": "completed_valid",
+      "symbolic_status": "completed_valid",
+      "width": 1
+    },
+    {
+      "dense_projective_distance": 0.012271769298308949,
+      "dense_status": "completed_invalid",
+      "expected": "completed_invalid",
+      "symbolic_status": "completed_invalid",
+      "width": 1
+    },
+    {
+      "certificate_sha256": "a7ad81fdd78278e3618de236d250a4290bb955f0611ba7926aeaee6ef2b08024",
+      "dense_projective_distance": 3.4680588955059986e-16,
+      "dense_status": "completed_valid",
+      "expected": "completed_valid",
+      "symbolic_status": "completed_valid",
+      "width": 2
+    },
+    {
+      "dense_projective_distance": 0.012271769298308923,
+      "dense_status": "completed_invalid",
+      "expected": "completed_invalid",
+      "symbolic_status": "completed_invalid",
+      "width": 2
+    },
+    {
+      "certificate_sha256": "9139d6e567d993881707b34da25e3754dea8cb7754f7ad0780d8f18ee7c9a4b6",
+      "dense_projective_distance": 3.4680588955059986e-16,
+      "dense_status": "completed_valid",
+      "expected": "completed_valid",
+      "symbolic_status": "completed_valid",
+      "width": 3
+    },
+    {
+      "dense_projective_distance": 0.012271769298308923,
+      "dense_status": "completed_invalid",
+      "expected": "completed_invalid",
+      "symbolic_status": "completed_invalid",
+      "width": 3
+    },
+    {
+      "certificate_sha256": "a3c0f3e456dee2d3291553a418e87f29d83cef3a187e40e6e68c607d4ff717a2",
+      "dense_projective_distance": 3.4680588955059986e-16,
+      "dense_status": "completed_valid",
+      "expected": "completed_valid",
+      "symbolic_status": "completed_valid",
+      "width": 4
+    },
+    {
+      "dense_projective_distance": 0.012271769298308923,
+      "dense_status": "completed_invalid",
+      "expected": "completed_invalid",
+      "symbolic_status": "completed_invalid",
+      "width": 4
+    },
+    {
+      "certificate_sha256": "3a55edadb4b6f233fdb75c9762e6c66347d006c1ac1c26c0eba1a53b65ad869a",
+      "dense_projective_distance": 4.60796892750692e-16,
+      "dense_status": "completed_valid",
+      "expected": "completed_valid",
+      "symbolic_status": "completed_valid",
+      "width": 5
+    },
+    {
+      "dense_projective_distance": 0.012271769298308923,
+      "dense_status": "completed_invalid",
+      "expected": "completed_invalid",
+      "symbolic_status": "completed_invalid",
+      "width": 5
+    },
+    {
+      "certificate_sha256": "4b21a0fd3852a521a5902d8868381e22feb4146f4fb3add1c6f3615d94504253",
+      "dense_projective_distance": 3.5395161093345755e-16,
+      "dense_status": "completed_valid",
+      "expected": "completed_valid",
+      "symbolic_status": "completed_valid",
+      "width": 6
+    },
+    {
+      "dense_projective_distance": 0.012271769298308921,
+      "dense_status": "completed_invalid",
+      "expected": "completed_invalid",
+      "symbolic_status": "completed_invalid",
+      "width": 6
+    }
+  ],
+  "dense_checker": "normalized_frobenius_projective_width_le_6_v1",
+  "formal_local_run": true,
+  "mutation_cases": 56,
+  "mutation_checker_disagreements": 0,
+  "mutation_false_accepts": 0,
+  "mutations": [
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.012271769298309013,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "angle",
+      "symbolic_status": "completed_invalid",
+      "variant": 0
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.5805693545089246,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "sign",
+      "symbolic_status": "completed_invalid",
+      "variant": 0
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.41052452752235724,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "support_bit",
+      "symbolic_status": "completed_invalid",
+      "variant": 0
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 1.3662523068139896,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "qubit_permutation",
+      "symbolic_status": "completed_invalid",
+      "variant": 0
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.9999999999999998,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "clifford_frame",
+      "symbolic_status": "completed_invalid",
+      "variant": 0
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.24482135039843234,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "delete_gate",
+      "symbolic_status": "completed_invalid",
+      "variant": 0
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.24482135039843234,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "duplicate_gate",
+      "symbolic_status": "completed_invalid",
+      "variant": 0
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.012271769298308907,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "angle",
+      "symbolic_status": "completed_invalid",
+      "variant": 1
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.6273634807977829,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "sign",
+      "symbolic_status": "completed_invalid",
+      "variant": 1
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.4436129715409087,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "support_bit",
+      "symbolic_status": "completed_invalid",
+      "variant": 1
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 1.358111571174961,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "qubit_permutation",
+      "symbolic_status": "completed_invalid",
+      "variant": 1
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.9999999999999999,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "clifford_frame",
+      "symbolic_status": "completed_invalid",
+      "variant": 1
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.26916141701425234,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "delete_gate",
+      "symbolic_status": "completed_invalid",
+      "variant": 1
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.2691614170142524,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "duplicate_gate",
+      "symbolic_status": "completed_invalid",
+      "variant": 1
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.012271769298308944,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "angle",
+      "symbolic_status": "completed_invalid",
+      "variant": 2
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.67377970678444,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "sign",
+      "symbolic_status": "completed_invalid",
+      "variant": 2
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.47643419969316114,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "support_bit",
+      "symbolic_status": "completed_invalid",
+      "variant": 2
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 1.3495804351655607,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "qubit_permutation",
+      "symbolic_status": "completed_invalid",
+      "variant": 2
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.9999999999999999,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "clifford_frame",
+      "symbolic_status": "completed_invalid",
+      "variant": 2
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.29346094891072344,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "delete_gate",
+      "symbolic_status": "completed_invalid",
+      "variant": 2
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.29346094891072344,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "duplicate_gate",
+      "symbolic_status": "completed_invalid",
+      "variant": 2
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.012271769298308999,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "angle",
+      "symbolic_status": "completed_invalid",
+      "variant": 3
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.7197900730699762,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "sign",
+      "symbolic_status": "completed_invalid",
+      "variant": 3
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.5089684416985407,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "support_bit",
+      "symbolic_status": "completed_invalid",
+      "variant": 3
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 1.340734411496953,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "qubit_permutation",
+      "symbolic_status": "completed_invalid",
+      "variant": 3
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 1.0,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "clifford_frame",
+      "symbolic_status": "completed_invalid",
+      "variant": 3
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.3177162866677229,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "delete_gate",
+      "symbolic_status": "completed_invalid",
+      "variant": 3
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.31771628666772295,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "duplicate_gate",
+      "symbolic_status": "completed_invalid",
+      "variant": 3
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.012271769298308881,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "angle",
+      "symbolic_status": "completed_invalid",
+      "variant": 4
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.7653668647301796,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "sign",
+      "symbolic_status": "completed_invalid",
+      "variant": 4
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.541196100146197,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "support_bit",
+      "symbolic_status": "completed_invalid",
+      "variant": 4
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 1.3316532832349564,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "qubit_permutation",
+      "symbolic_status": "completed_invalid",
+      "variant": 4
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 1.0,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "clifford_frame",
+      "symbolic_status": "completed_invalid",
+      "variant": 4
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.3419237775206024,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "delete_gate",
+      "symbolic_status": "completed_invalid",
+      "variant": 4
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.34192377752060243,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "duplicate_gate",
+      "symbolic_status": "completed_invalid",
+      "variant": 4
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.012271769298308971,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "angle",
+      "symbolic_status": "completed_invalid",
+      "variant": 5
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.8104826280099796,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "sign",
+      "symbolic_status": "completed_invalid",
+      "variant": 5
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.5730977622997506,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "support_bit",
+      "symbolic_status": "completed_invalid",
+      "variant": 5
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 1.3224205766956476,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "qubit_permutation",
+      "symbolic_status": "completed_invalid",
+      "variant": 5
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 1.0,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "clifford_frame",
+      "symbolic_status": "completed_invalid",
+      "variant": 5
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.3660797759102819,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "delete_gate",
+      "symbolic_status": "completed_invalid",
+      "variant": 5
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.36607977591028185,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "duplicate_gate",
+      "symbolic_status": "completed_invalid",
+      "variant": 5
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.01227176929830898,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "angle",
+      "symbolic_status": "completed_invalid",
+      "variant": 6
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.8551101868605641,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "sign",
+      "symbolic_status": "completed_invalid",
+      "variant": 6
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.6046542117908007,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "support_bit",
+      "symbolic_status": "completed_invalid",
+      "variant": 6
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 1.3131229556236,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "qubit_permutation",
+      "symbolic_status": "completed_invalid",
+      "variant": 6
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 1.0,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "clifford_frame",
+      "symbolic_status": "completed_invalid",
+      "variant": 6
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.3901806440322565,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "delete_gate",
+      "symbolic_status": "completed_invalid",
+      "variant": 6
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.39018064403225655,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "duplicate_gate",
+      "symbolic_status": "completed_invalid",
+      "variant": 6
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.012271769298308945,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "angle",
+      "symbolic_status": "completed_invalid",
+      "variant": 7
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.8992226593092131,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "sign",
+      "symbolic_status": "completed_invalid",
+      "variant": 7
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.635846440194145,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "support_bit",
+      "symbolic_status": "completed_invalid",
+      "variant": 7
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 1.3038495316423657,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "qubit_permutation",
+      "symbolic_status": "completed_invalid",
+      "variant": 7
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 1.0,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "clifford_frame",
+      "symbolic_status": "completed_invalid",
+      "variant": 7
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.41422275238443707,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "delete_gate",
+      "symbolic_status": "completed_invalid",
+      "variant": 7
+    },
+    {
+      "checker_disagreement": false,
+      "dense_projective_distance": 0.41422275238443695,
+      "dense_status": "completed_invalid",
+      "false_accept": false,
+      "mutation": "duplicate_gate",
+      "symbolic_status": "completed_invalid",
+      "variant": 7
+    }
+  ],
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "python": "3.13.12",
+  "schema": "ucc.certificate-audit.v1",
+  "source_sha256": {
+    "certificates/CERTIFICATE_SPEC.md": "cbf6c5ea6eb6586041d74804cbe814448a20a1f1d30081096804ab6bc00ee024",
+    "certificates/audit.py": "ad9d54850103175c7a75679b263412ed6e5f949c1a92cd6209493096a9e2c291",
+    "certificates/canonicalize.py": "2a6f0f35d31ee9686087838cb34d3bd6f76ee28b8e306210c3fb324f7f78757f",
+    "certificates/symbolic_checker.py": "acfdde94860919461ea961b43d1dada90bd7e65626133a316d6af96f16e29019",
+    "tests/test_certificate_crosscheck.py": "8f4453b2598de131a12e1f648c88d7a3903e0c5f6f81af59034257250f37d387",
+    "tests/test_certificate_mutations.py": "61dff11b3aa2f345d03632300ac734b749c1912b1d18108ffd0ee6de421fd18d",
+    "theory/certificate_soundness.tex": "4baf87c2c7be97f03dffb02a42861515caf1d08f33e7e80c9aee7f29368dd181"
+  },
+  "status_cases": {
+    "numerical_inconclusive": "numerical_inconclusive",
+    "predicate_error": "predicate_error",
+    "unsupported": "unsupported"
+  },
+  "status_counts": {
+    "completed_invalid": 62,
+    "completed_valid": 6
+  },
+  "versions": {
+    "numpy": "2.3.3",
+    "qiskit": "2.4.0"
+  }
+}

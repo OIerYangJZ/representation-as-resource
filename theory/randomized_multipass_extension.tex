@@ -1,0 +1,90 @@
+\subsection{Randomized multipass frontier}
+\label{sec:w1-randomized-multipass}
+
+Put
+\begin{equation}
+ L_\delta(m,K):=(1-\delta)m\log_2K-h_2(\delta),
+ \qquad 0\leq\delta<\tfrac12.
+ \label{eq:w1-Ldelta}
+\end{equation}
+
+\begin{theorem}[$K$-ary randomized multipass recoverability frontier]
+\label{thm:w1-unified-frontier}
+Let $Q\geq3$, $K=Q-1$, and
+$0\leq\epsilon<\sin(\pi/(2Q))$.  Let a possibly randomized compiler be
+correct within projective error $\epsilon$, with probability at least
+$1-\delta$ for every $x\in[K]_0^m$ and every valid $r$-round dispersed
+representation of $x$.  Assume that it makes at most $p=p(m)$ forward
+passes in the charged model of \cref{def:w1-pass-accounting}.  Then:
+\begin{align}
+ \overline B_{\mathrm{rel}}^{\mathrm{out}}
+ &\geq L_\delta(m,K),
+ &
+ \overline B_{\mathrm{self}}^{\mathrm{out}}
+ &\geq L_\delta(m,K),
+ \label{eq:w1-output-lower}\\
+ \overline A_p+\overline\Sigma_p
+ &\geq L_\delta(m,K).
+ \label{eq:w1-pass-lower}
+\end{align}
+In particular, for the worst-input expected crossing cap $S$ of
+\cref{def:w1-pass-accounting},
+\begin{equation}
+ \boxed{\quad
+ \overline A_p+(2p-1)S
+ \geq(1-\delta)m\log_2K-h_2(\delta).
+ \quad}
+ \label{eq:w1-frontier-box}
+\end{equation}
+Here $S$ includes RAM, parameters, cache/hash metadata, materialized input,
+and all IR fields from \eqref{eq:info-budget}; it is not a RAM-only bound.
+For the tuned choice of \cref{cor:w1-epsilon-cyclic}, both right-hand sides
+are $\Omega((1-\delta)m\log(1/\epsilon))$ for fixed
+$\delta<1/2$.
+\end{theorem}
+
+\begin{proof}
+For \eqref{eq:w1-output-lower}, take $X$ uniform on $[K]_0^m$ and fix one
+valid dispersed representation for each value of $X$.
+The packing separation is greater than $2\epsilon$, so nearest-packing
+decoding recovers $X$ from a successful output.  Fano's inequality gives
+\begin{equation*}
+ I(X;C)\geq m\log_2K-h_2(\delta)
+ -\delta\log_2(K^m-1)\geq L_\delta(m,K).
+\end{equation*}
+Expected length in either separately fixed prefix-free output code is at
+least this mutual information; a worst-input expectation is at least the
+uniform average.
+
+For \eqref{eq:w1-pass-lower}, independently choose a uniform prefix
+aggregate $U\in\mathbb Z_Q^m$, put it in the first prefix round, put zero
+in any other prefix rounds, and set the last share $V=X-U\pmod Q$.
+Then $V$ is uniform and independent of $X$, so
+$H(X\mid V)=m\log_2K$.  Convert the $p$ scans into the standard alternating
+simulation across the $A\mid B$ partition.  The transcript $T$ contains
+each complete crossing snapshot and all output chunks written on Alice's
+side.  Given $T$ and $V$, Bob can reproduce every Bob-side segment and the
+complete final output; random-tape state and dynamic control are present in
+the crossing serialization.  The output decoder therefore recovers $X$
+with error at most $\delta$, and conditional Fano yields
+\begin{equation*}
+ I(X;T\mid V)\geq L_\delta(m,K).
+\end{equation*}
+The framed transcript is prefix-free conditional on $V$, so its expected
+literal length is at least this information.  Its length is precisely
+$A_p+\Sigma_p$ up to fields already included in the self-delimiting
+serializers.  Maximizing over inputs proves \eqref{eq:w1-pass-lower}; the
+cap and tuned-$\epsilon$ consequences follow.
+\end{proof}
+
+\begin{remark}[What is and is not optimal]
+\label{rem:w1-optimality-scope}
+Equation~\eqref{eq:w1-output-lower} is an output-information bound and
+\eqref{eq:w1-frontier-box} is a transcript bound; neither converts
+self-contained circuit bits into gates.  The factor $2p-1$ counts the
+actual alternating crossings of a forward scan.  A random-access input
+oracle, an uncharged rereadable file, or reverse scans would be a different
+model.  For $p=1$ and zero error, \cref{thm:w1-one-pass-mask} strengthens
+$m\log_2K$ to $m\log_2(K+1)$.  No such strengthening is claimed for
+randomized or general multipass protocols.
+\end{remark}

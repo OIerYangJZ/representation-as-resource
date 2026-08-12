@@ -1,0 +1,546 @@
+{
+  "rows": [
+    {
+      "m": 32,
+      "eta": 0.0,
+      "seed": 1,
+      "twirled": 0,
+      "deferred_B_cross_bytes": 7,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 5,
+      "resume_verified": true
+    },
+    {
+      "m": 32,
+      "eta": 0.0,
+      "seed": 2,
+      "twirled": 0,
+      "deferred_B_cross_bytes": 7,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 5,
+      "resume_verified": true
+    },
+    {
+      "m": 32,
+      "eta": 0.0,
+      "seed": 3,
+      "twirled": 0,
+      "deferred_B_cross_bytes": 7,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 5,
+      "resume_verified": true
+    },
+    {
+      "m": 32,
+      "eta": 0.25,
+      "seed": 1,
+      "twirled": 10,
+      "deferred_B_cross_bytes": 11,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 25,
+      "resume_verified": true
+    },
+    {
+      "m": 32,
+      "eta": 0.25,
+      "seed": 2,
+      "twirled": 13,
+      "deferred_B_cross_bytes": 12,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 31,
+      "resume_verified": true
+    },
+    {
+      "m": 32,
+      "eta": 0.25,
+      "seed": 3,
+      "twirled": 10,
+      "deferred_B_cross_bytes": 11,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 25,
+      "resume_verified": true
+    },
+    {
+      "m": 32,
+      "eta": 0.5,
+      "seed": 1,
+      "twirled": 19,
+      "deferred_B_cross_bytes": 14,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 43,
+      "resume_verified": true
+    },
+    {
+      "m": 32,
+      "eta": 0.5,
+      "seed": 2,
+      "twirled": 17,
+      "deferred_B_cross_bytes": 14,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 39,
+      "resume_verified": true
+    },
+    {
+      "m": 32,
+      "eta": 0.5,
+      "seed": 3,
+      "twirled": 13,
+      "deferred_B_cross_bytes": 12,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 31,
+      "resume_verified": true
+    },
+    {
+      "m": 32,
+      "eta": 0.75,
+      "seed": 1,
+      "twirled": 25,
+      "deferred_B_cross_bytes": 16,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 55,
+      "resume_verified": true
+    },
+    {
+      "m": 32,
+      "eta": 0.75,
+      "seed": 2,
+      "twirled": 18,
+      "deferred_B_cross_bytes": 14,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 41,
+      "resume_verified": true
+    },
+    {
+      "m": 32,
+      "eta": 0.75,
+      "seed": 3,
+      "twirled": 23,
+      "deferred_B_cross_bytes": 15,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 51,
+      "resume_verified": true
+    },
+    {
+      "m": 32,
+      "eta": 1.0,
+      "seed": 1,
+      "twirled": 32,
+      "deferred_B_cross_bytes": 18,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 69,
+      "resume_verified": true
+    },
+    {
+      "m": 32,
+      "eta": 1.0,
+      "seed": 2,
+      "twirled": 32,
+      "deferred_B_cross_bytes": 18,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 69,
+      "resume_verified": true
+    },
+    {
+      "m": 32,
+      "eta": 1.0,
+      "seed": 3,
+      "twirled": 32,
+      "deferred_B_cross_bytes": 18,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 69,
+      "resume_verified": true
+    },
+    {
+      "m": 64,
+      "eta": 0.0,
+      "seed": 1,
+      "twirled": 0,
+      "deferred_B_cross_bytes": 7,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 5,
+      "resume_verified": true
+    },
+    {
+      "m": 64,
+      "eta": 0.0,
+      "seed": 2,
+      "twirled": 0,
+      "deferred_B_cross_bytes": 7,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 5,
+      "resume_verified": true
+    },
+    {
+      "m": 64,
+      "eta": 0.0,
+      "seed": 3,
+      "twirled": 0,
+      "deferred_B_cross_bytes": 7,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 5,
+      "resume_verified": true
+    },
+    {
+      "m": 64,
+      "eta": 0.25,
+      "seed": 1,
+      "twirled": 13,
+      "deferred_B_cross_bytes": 12,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 31,
+      "resume_verified": true
+    },
+    {
+      "m": 64,
+      "eta": 0.25,
+      "seed": 2,
+      "twirled": 14,
+      "deferred_B_cross_bytes": 12,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 33,
+      "resume_verified": true
+    },
+    {
+      "m": 64,
+      "eta": 0.25,
+      "seed": 3,
+      "twirled": 16,
+      "deferred_B_cross_bytes": 13,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 37,
+      "resume_verified": true
+    },
+    {
+      "m": 64,
+      "eta": 0.5,
+      "seed": 1,
+      "twirled": 36,
+      "deferred_B_cross_bytes": 20,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 77,
+      "resume_verified": true
+    },
+    {
+      "m": 64,
+      "eta": 0.5,
+      "seed": 2,
+      "twirled": 33,
+      "deferred_B_cross_bytes": 19,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 71,
+      "resume_verified": true
+    },
+    {
+      "m": 64,
+      "eta": 0.5,
+      "seed": 3,
+      "twirled": 33,
+      "deferred_B_cross_bytes": 19,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 71,
+      "resume_verified": true
+    },
+    {
+      "m": 64,
+      "eta": 0.75,
+      "seed": 1,
+      "twirled": 48,
+      "deferred_B_cross_bytes": 23,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 101,
+      "resume_verified": true
+    },
+    {
+      "m": 64,
+      "eta": 0.75,
+      "seed": 2,
+      "twirled": 48,
+      "deferred_B_cross_bytes": 23,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 101,
+      "resume_verified": true
+    },
+    {
+      "m": 64,
+      "eta": 0.75,
+      "seed": 3,
+      "twirled": 47,
+      "deferred_B_cross_bytes": 23,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 99,
+      "resume_verified": true
+    },
+    {
+      "m": 64,
+      "eta": 1.0,
+      "seed": 1,
+      "twirled": 64,
+      "deferred_B_cross_bytes": 28,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 133,
+      "resume_verified": true
+    },
+    {
+      "m": 64,
+      "eta": 1.0,
+      "seed": 2,
+      "twirled": 64,
+      "deferred_B_cross_bytes": 28,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 133,
+      "resume_verified": true
+    },
+    {
+      "m": 64,
+      "eta": 1.0,
+      "seed": 3,
+      "twirled": 64,
+      "deferred_B_cross_bytes": 28,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 6,
+      "streaming_A_pre_bytes": 133,
+      "resume_verified": true
+    },
+    {
+      "m": 128,
+      "eta": 0.0,
+      "seed": 1,
+      "twirled": 0,
+      "deferred_B_cross_bytes": 8,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 7,
+      "streaming_A_pre_bytes": 6,
+      "resume_verified": true
+    },
+    {
+      "m": 128,
+      "eta": 0.0,
+      "seed": 2,
+      "twirled": 0,
+      "deferred_B_cross_bytes": 8,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 7,
+      "streaming_A_pre_bytes": 6,
+      "resume_verified": true
+    },
+    {
+      "m": 128,
+      "eta": 0.0,
+      "seed": 3,
+      "twirled": 0,
+      "deferred_B_cross_bytes": 8,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 7,
+      "streaming_A_pre_bytes": 6,
+      "resume_verified": true
+    },
+    {
+      "m": 128,
+      "eta": 0.25,
+      "seed": 1,
+      "twirled": 32,
+      "deferred_B_cross_bytes": 19,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 7,
+      "streaming_A_pre_bytes": 70,
+      "resume_verified": true
+    },
+    {
+      "m": 128,
+      "eta": 0.25,
+      "seed": 2,
+      "twirled": 32,
+      "deferred_B_cross_bytes": 19,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 7,
+      "streaming_A_pre_bytes": 70,
+      "resume_verified": true
+    },
+    {
+      "m": 128,
+      "eta": 0.25,
+      "seed": 3,
+      "twirled": 27,
+      "deferred_B_cross_bytes": 18,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 7,
+      "streaming_A_pre_bytes": 60,
+      "resume_verified": true
+    },
+    {
+      "m": 128,
+      "eta": 0.5,
+      "seed": 1,
+      "twirled": 66,
+      "deferred_B_cross_bytes": 31,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 7,
+      "streaming_A_pre_bytes": 138,
+      "resume_verified": true
+    },
+    {
+      "m": 128,
+      "eta": 0.5,
+      "seed": 2,
+      "twirled": 65,
+      "deferred_B_cross_bytes": 30,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 7,
+      "streaming_A_pre_bytes": 136,
+      "resume_verified": true
+    },
+    {
+      "m": 128,
+      "eta": 0.5,
+      "seed": 3,
+      "twirled": 64,
+      "deferred_B_cross_bytes": 29,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 7,
+      "streaming_A_pre_bytes": 134,
+      "resume_verified": true
+    },
+    {
+      "m": 128,
+      "eta": 0.75,
+      "seed": 1,
+      "twirled": 103,
+      "deferred_B_cross_bytes": 42,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 7,
+      "streaming_A_pre_bytes": 212,
+      "resume_verified": true
+    },
+    {
+      "m": 128,
+      "eta": 0.75,
+      "seed": 2,
+      "twirled": 95,
+      "deferred_B_cross_bytes": 39,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 7,
+      "streaming_A_pre_bytes": 196,
+      "resume_verified": true
+    },
+    {
+      "m": 128,
+      "eta": 0.75,
+      "seed": 3,
+      "twirled": 101,
+      "deferred_B_cross_bytes": 42,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 7,
+      "streaming_A_pre_bytes": 208,
+      "resume_verified": true
+    },
+    {
+      "m": 128,
+      "eta": 1.0,
+      "seed": 1,
+      "twirled": 128,
+      "deferred_B_cross_bytes": 51,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 8,
+      "streaming_A_pre_bytes": 262,
+      "resume_verified": true
+    },
+    {
+      "m": 128,
+      "eta": 1.0,
+      "seed": 2,
+      "twirled": 128,
+      "deferred_B_cross_bytes": 51,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 8,
+      "streaming_A_pre_bytes": 262,
+      "resume_verified": true
+    },
+    {
+      "m": 128,
+      "eta": 1.0,
+      "seed": 3,
+      "twirled": 128,
+      "deferred_B_cross_bytes": 51,
+      "deferred_A_pre_bytes": 0,
+      "streaming_B_cross_bytes": 8,
+      "streaming_A_pre_bytes": 262,
+      "resume_verified": true
+    }
+  ],
+  "design": {
+    "m_values": [
+      32,
+      64,
+      128
+    ],
+    "etas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "Q": 3,
+    "rounds": 2,
+    "aggregates": "binary",
+    "presentation": "tracked (sign bits alongside residues)",
+    "verification": "snapshot-only restart reproduces exact output"
+  },
+  "analysis": {
+    "32": {
+      "deferred_slope_bytes_per_eta_measured": 10.266666666666666,
+      "deferred_slope_bytes_per_eta_predicted_floor": 10.339850002884624,
+      "measured_over_predicted": 0.9929222052353234,
+      "streaming_Apre_slope_bytes_per_eta": 60.0,
+      "streaming_B_cross_max_bytes": 6.0
+    },
+    "64": {
+      "deferred_slope_bytes_per_eta_measured": 21.066666666666666,
+      "deferred_slope_bytes_per_eta_predicted_floor": 20.67970000576925,
+      "measured_over_predicted": 1.018712392384293,
+      "streaming_Apre_slope_bytes_per_eta": 129.06666666666666,
+      "streaming_B_cross_max_bytes": 6.0
+    },
+    "128": {
+      "deferred_slope_bytes_per_eta_measured": 43.33333333333333,
+      "deferred_slope_bytes_per_eta_predicted_floor": 41.3594000115385,
+      "measured_over_predicted": 1.0477263529268834,
+      "streaming_Apre_slope_bytes_per_eta": 260.26666666666665,
+      "streaming_B_cross_max_bytes": 8.0
+    }
+  }
+}

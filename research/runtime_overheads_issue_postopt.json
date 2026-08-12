@@ -1,0 +1,204 @@
+{
+  "phase_estimation_real": {
+    "qiskit_opt3": {
+      "runtime_s": 1.089,
+      "output": {
+        "total_gates": 166805,
+        "depth": 119204,
+        "cx_count": 58491
+      }
+    },
+    "full_optimized": {
+      "runtime_s": 1.161,
+      "output": {
+        "total_gates": 166805,
+        "depth": 119204,
+        "cx_count": 58491
+      },
+      "components": [
+        {
+          "component": "qiskit_transpile::source_preset_opt3",
+          "runtime_s": 1.161,
+          "pct_total": 100.0,
+          "calls": 1
+        }
+      ]
+    }
+  },
+  "grover_real": {
+    "qiskit_opt3": {
+      "runtime_s": 0.453,
+      "output": {
+        "total_gates": 79029,
+        "depth": 54163,
+        "cx_count": 32544
+      }
+    },
+    "full_optimized": {
+      "runtime_s": 0.444,
+      "output": {
+        "total_gates": 79029,
+        "depth": 54163,
+        "cx_count": 32544
+      },
+      "components": [
+        {
+          "component": "qiskit_transpile::source_preset_opt3",
+          "runtime_s": 0.444,
+          "pct_total": 100.0,
+          "calls": 1
+        }
+      ]
+    }
+  },
+  "qaoa_real": {
+    "qiskit_opt3": {
+      "runtime_s": 0.346,
+      "output": {
+        "total_gates": 36512,
+        "depth": 2416,
+        "cx_count": 23808
+      }
+    },
+    "full_optimized": {
+      "runtime_s": 0.215,
+      "output": {
+        "total_gates": 36512,
+        "depth": 2416,
+        "cx_count": 23808
+      },
+      "components": [
+        {
+          "component": "qiskit_transpile::source_preset_opt3",
+          "runtime_s": 0.215,
+          "pct_total": 100.0,
+          "calls": 1
+        }
+      ]
+    }
+  },
+  "hw_mqt_qpeexact_20": {
+    "qiskit_opt3": {
+      "runtime_s": 0.056,
+      "output": {
+        "total_gates": 1572,
+        "depth": 407,
+        "cx_count": 812
+      }
+    },
+    "full_optimized": {
+      "runtime_s": 0.279,
+      "output": {
+        "total_gates": 1593,
+        "depth": 420,
+        "cx_count": 772
+      },
+      "components": [
+        {
+          "component": "qiskit_transpile::backend_transpile_opt3",
+          "runtime_s": 0.143,
+          "pct_total": 51.1,
+          "calls": 4
+        },
+        {
+          "component": "_compile_backend_default_portfolio",
+          "runtime_s": 0.096,
+          "pct_total": 34.3,
+          "calls": 1
+        },
+        {
+          "component": "UCCDefault1.run",
+          "runtime_s": 0.04,
+          "pct_total": 14.2,
+          "calls": 1
+        },
+        {
+          "component": "_structural_pre_simplify",
+          "runtime_s": 0.034,
+          "pct_total": 12.3,
+          "calls": 1
+        },
+        {
+          "component": "_select_lowest_cost_circuit",
+          "runtime_s": 0.018,
+          "pct_total": 6.5,
+          "calls": 2
+        },
+        {
+          "component": "qiskit_transpile::backend_transpile_opt0",
+          "runtime_s": 0.005,
+          "pct_total": 1.6,
+          "calls": 2
+        },
+        {
+          "component": "qiskit_transpile::basis_translate_or_normalize",
+          "runtime_s": 0.001,
+          "pct_total": 0.5,
+          "calls": 1
+        }
+      ]
+    }
+  },
+  "hw_mqt_qaoa_20": {
+    "qiskit_opt3": {
+      "runtime_s": 0.044,
+      "output": {
+        "total_gates": 2091,
+        "depth": 532,
+        "cx_count": 1530
+      }
+    },
+    "full_optimized": {
+      "runtime_s": 0.241,
+      "output": {
+        "total_gates": 2050,
+        "depth": 487,
+        "cx_count": 1458
+      },
+      "components": [
+        {
+          "component": "qiskit_transpile::backend_transpile_opt3",
+          "runtime_s": 0.129,
+          "pct_total": 53.4,
+          "calls": 3
+        },
+        {
+          "component": "_compile_backend_default_portfolio",
+          "runtime_s": 0.056,
+          "pct_total": 23.2,
+          "calls": 1
+        },
+        {
+          "component": "UCCDefault1.run",
+          "runtime_s": 0.042,
+          "pct_total": 17.5,
+          "calls": 1
+        },
+        {
+          "component": "_structural_pre_simplify",
+          "runtime_s": 0.024,
+          "pct_total": 10.0,
+          "calls": 1
+        },
+        {
+          "component": "_select_lowest_cost_circuit",
+          "runtime_s": 0.02,
+          "pct_total": 8.3,
+          "calls": 2
+        },
+        {
+          "component": "qiskit_transpile::backend_transpile_opt0",
+          "runtime_s": 0.004,
+          "pct_total": 1.5,
+          "calls": 2
+        },
+        {
+          "component": "qiskit_transpile::basis_translate_or_normalize",
+          "runtime_s": 0.001,
+          "pct_total": 0.5,
+          "calls": 1
+        }
+      ]
+    }
+  }
+}

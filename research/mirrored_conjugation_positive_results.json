@@ -1,0 +1,530 @@
+{
+  "grover_real": {
+    "qiskit_opt3": {
+      "method": "qiskit_opt3",
+      "family": "grover_real",
+      "description": "Official Qiskit GroverOperator circuit with a concrete marked bitstring oracle on 11 qubits and 36 Grover iterations.",
+      "input": {
+        "num_qubits": 11,
+        "total_gates": 47,
+        "depth": 37,
+        "multi_qubit_gates": 36,
+        "cx_count": 0,
+        "gate_types": [
+          "Q",
+          "h"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 11,
+        "total_gates": 79029,
+        "depth": 54163,
+        "multi_qubit_gates": 32544,
+        "cx_count": 32544,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.532
+    },
+    "baseline_ucc": {
+      "method": "baseline_ucc",
+      "family": "grover_real",
+      "description": "Official Qiskit GroverOperator circuit with a concrete marked bitstring oracle on 11 qubits and 36 Grover iterations.",
+      "input": {
+        "num_qubits": 11,
+        "total_gates": 47,
+        "depth": 37,
+        "multi_qubit_gates": 36,
+        "cx_count": 0,
+        "gate_types": [
+          "Q",
+          "h"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 11,
+        "total_gates": 287047,
+        "depth": 152298,
+        "multi_qubit_gates": 32544,
+        "cx_count": 32544,
+        "gate_types": [
+          "cx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 1.852
+    },
+    "optimized_ucc": {
+      "method": "optimized_ucc",
+      "family": "grover_real",
+      "description": "Official Qiskit GroverOperator circuit with a concrete marked bitstring oracle on 11 qubits and 36 Grover iterations.",
+      "input": {
+        "num_qubits": 11,
+        "total_gates": 47,
+        "depth": 37,
+        "multi_qubit_gates": 36,
+        "cx_count": 0,
+        "gate_types": [
+          "Q",
+          "h"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 11,
+        "total_gates": 79029,
+        "depth": 54163,
+        "multi_qubit_gates": 32544,
+        "cx_count": 32544,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.53
+    }
+  },
+  "mqt_grover_8": {
+    "qiskit_opt3": {
+      "method": "qiskit_opt3",
+      "family": "mqt_grover_8",
+      "description": "Public MQT Bench `grover` benchmark with circuit_size=8.",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 25,
+        "depth": 10,
+        "multi_qubit_gates": 9,
+        "cx_count": 0,
+        "gate_types": [
+          "Q",
+          "barrier",
+          "h",
+          "measure",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 5170,
+        "depth": 3788,
+        "multi_qubit_gates": 2193,
+        "cx_count": 2192,
+        "gate_types": [
+          "barrier",
+          "cx",
+          "h",
+          "measure",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.063
+    },
+    "baseline_ucc": {
+      "method": "baseline_ucc",
+      "family": "mqt_grover_8",
+      "description": "Public MQT Bench `grover` benchmark with circuit_size=8.",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 25,
+        "depth": 10,
+        "multi_qubit_gates": 9,
+        "cx_count": 0,
+        "gate_types": [
+          "Q",
+          "barrier",
+          "h",
+          "measure",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 18992,
+        "depth": 10990,
+        "multi_qubit_gates": 2193,
+        "cx_count": 2192,
+        "gate_types": [
+          "barrier",
+          "cx",
+          "measure",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.134
+    },
+    "optimized_ucc": {
+      "method": "optimized_ucc",
+      "family": "mqt_grover_8",
+      "description": "Public MQT Bench `grover` benchmark with circuit_size=8.",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 25,
+        "depth": 10,
+        "multi_qubit_gates": 9,
+        "cx_count": 0,
+        "gate_types": [
+          "Q",
+          "barrier",
+          "h",
+          "measure",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 5170,
+        "depth": 3788,
+        "multi_qubit_gates": 2193,
+        "cx_count": 2192,
+        "gate_types": [
+          "barrier",
+          "cx",
+          "h",
+          "measure",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.053
+    }
+  },
+  "mqt_grover_12": {
+    "qiskit_opt3": {
+      "method": "qiskit_opt3",
+      "family": "mqt_grover_12",
+      "description": "Public MQT Bench `grover` benchmark with circuit_size=12.",
+      "input": {
+        "num_qubits": 12,
+        "total_gates": 60,
+        "depth": 37,
+        "multi_qubit_gates": 36,
+        "cx_count": 0,
+        "gate_types": [
+          "Q",
+          "barrier",
+          "h",
+          "measure",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 12,
+        "total_gates": 71706,
+        "depth": 55801,
+        "multi_qubit_gates": 29191,
+        "cx_count": 29190,
+        "gate_types": [
+          "barrier",
+          "cx",
+          "h",
+          "measure",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.601
+    },
+    "baseline_ucc": {
+      "method": "baseline_ucc",
+      "family": "mqt_grover_12",
+      "description": "Public MQT Bench `grover` benchmark with circuit_size=12.",
+      "input": {
+        "num_qubits": 12,
+        "total_gates": 60,
+        "depth": 37,
+        "multi_qubit_gates": 36,
+        "cx_count": 0,
+        "gate_types": [
+          "Q",
+          "barrier",
+          "h",
+          "measure",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 12,
+        "total_gates": 259797,
+        "depth": 150911,
+        "multi_qubit_gates": 29191,
+        "cx_count": 29190,
+        "gate_types": [
+          "barrier",
+          "cx",
+          "measure",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 1.783
+    },
+    "optimized_ucc": {
+      "method": "optimized_ucc",
+      "family": "mqt_grover_12",
+      "description": "Public MQT Bench `grover` benchmark with circuit_size=12.",
+      "input": {
+        "num_qubits": 12,
+        "total_gates": 60,
+        "depth": 37,
+        "multi_qubit_gates": 36,
+        "cx_count": 0,
+        "gate_types": [
+          "Q",
+          "barrier",
+          "h",
+          "measure",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 12,
+        "total_gates": 71706,
+        "depth": 55801,
+        "multi_qubit_gates": 29191,
+        "cx_count": 29190,
+        "gate_types": [
+          "barrier",
+          "cx",
+          "h",
+          "measure",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 0.654
+    }
+  },
+  "mqt_grover_16": {
+    "qiskit_opt3": {
+      "method": "qiskit_opt3",
+      "family": "mqt_grover_16",
+      "description": "Public MQT Bench `grover` benchmark with circuit_size=16.",
+      "input": {
+        "num_qubits": 16,
+        "total_gates": 175,
+        "depth": 144,
+        "multi_qubit_gates": 143,
+        "cx_count": 0,
+        "gate_types": [
+          "Q",
+          "barrier",
+          "h",
+          "measure",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 16,
+        "total_gates": 581098,
+        "depth": 476428,
+        "multi_qubit_gates": 234301,
+        "cx_count": 234300,
+        "gate_types": [
+          "barrier",
+          "cx",
+          "h",
+          "measure",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 5.115
+    },
+    "baseline_ucc": {
+      "method": "baseline_ucc",
+      "family": "mqt_grover_16",
+      "description": "Public MQT Bench `grover` benchmark with circuit_size=16.",
+      "input": {
+        "num_qubits": 16,
+        "total_gates": 175,
+        "depth": 144,
+        "multi_qubit_gates": 143,
+        "cx_count": 0,
+        "gate_types": [
+          "Q",
+          "barrier",
+          "h",
+          "measure",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 16,
+        "total_gates": 2112285,
+        "depth": 1255608,
+        "multi_qubit_gates": 234301,
+        "cx_count": 234300,
+        "gate_types": [
+          "barrier",
+          "cx",
+          "measure",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 14.738
+    },
+    "optimized_ucc": {
+      "method": "optimized_ucc",
+      "family": "mqt_grover_16",
+      "description": "Public MQT Bench `grover` benchmark with circuit_size=16.",
+      "input": {
+        "num_qubits": 16,
+        "total_gates": 175,
+        "depth": 144,
+        "multi_qubit_gates": 143,
+        "cx_count": 0,
+        "gate_types": [
+          "Q",
+          "barrier",
+          "h",
+          "measure",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 16,
+        "total_gates": 581098,
+        "depth": 476428,
+        "multi_qubit_gates": 234301,
+        "cx_count": 234300,
+        "gate_types": [
+          "barrier",
+          "cx",
+          "h",
+          "measure",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 5.171
+    }
+  },
+  "grover_mirrored_100k": {
+    "qiskit_opt3": {
+      "method": "qiskit_opt3",
+      "family": "grover_mirrored_100k",
+      "description": "Structured repeated mirrored Grover-style benchmark at 100,000 input gates.",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 20001,
+        "multi_qubit_gates": 4000,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "mcx",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 1158011,
+        "depth": 762010,
+        "multi_qubit_gates": 468000,
+        "cx_count": 468000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 10.534
+    },
+    "baseline_ucc": {
+      "method": "baseline_ucc",
+      "family": "grover_mirrored_100k",
+      "description": "Structured repeated mirrored Grover-style benchmark at 100,000 input gates.",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 20001,
+        "multi_qubit_gates": 4000,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "mcx",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 4122006,
+        "depth": 2166021,
+        "multi_qubit_gates": 468000,
+        "cx_count": 468000,
+        "gate_types": [
+          "cx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 29.847
+    },
+    "optimized_ucc": {
+      "method": "optimized_ucc",
+      "family": "grover_mirrored_100k",
+      "description": "Structured repeated mirrored Grover-style benchmark at 100,000 input gates.",
+      "input": {
+        "num_qubits": 8,
+        "total_gates": 100000,
+        "depth": 20001,
+        "multi_qubit_gates": 4000,
+        "cx_count": 0,
+        "gate_types": [
+          "h",
+          "mcx",
+          "x"
+        ]
+      },
+      "status": "ok",
+      "output": {
+        "num_qubits": 8,
+        "total_gates": 1158011,
+        "depth": 762010,
+        "multi_qubit_gates": 468000,
+        "cx_count": 468000,
+        "gate_types": [
+          "cx",
+          "h",
+          "rx",
+          "ry",
+          "rz"
+        ]
+      },
+      "runtime_s": 13.669
+    }
+  }
+}

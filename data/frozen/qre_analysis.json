@@ -1,0 +1,141 @@
+{
+  "artifacts_sha256": {
+    "data/frozen/qre_results.parquet": "5d58d4da1939f68a323757955e1e60aa48d57338baef45f1e56aa0746b951118",
+    "data/frozen/qre_summary.csv": "389f2e6c31999714ce18c07e304682f908a42a06c4b00ef4605526e9afba13b7",
+    "figures/qre_pareto.pdf": "ce355bd1283ee4b38f56ebf151734aa48692d2a60e0b485a55a44d2aae7fe6d4",
+    "figures/qre_sensitivity.pdf": "875b8f27b6ed92d9b6b6f10905467b7564c76df65f198710b0a444207f57b541"
+  },
+  "main_slice": [
+    {
+      "code_distance": 23,
+      "cycles": 13317,
+      "factories": 16,
+      "factory_physical_qubits": 253920,
+      "logical_rotations": 29,
+      "logical_t_states": 798,
+      "physical_qubits": 258152,
+      "pipeline_id": "external_tket_paulisimp",
+      "runtime_seconds": 0.013316999999999999,
+      "spacetime_qubit_seconds": 3437.810184
+    },
+    {
+      "code_distance": 31,
+      "cycles": 57966528,
+      "factories": 16,
+      "factory_physical_qubits": 461280,
+      "logical_rotations": 23992,
+      "logical_t_states": 2679110,
+      "physical_qubits": 468968,
+      "pipeline_id": "materialize_first",
+      "runtime_seconds": 57.966528,
+      "spacetime_qubit_seconds": 27184446.703103997
+    },
+    {
+      "code_distance": 25,
+      "cycles": 31675,
+      "factories": 16,
+      "factory_physical_qubits": 300000,
+      "logical_rotations": 22,
+      "logical_t_states": 1800,
+      "physical_qubits": 305000,
+      "pipeline_id": "semantic_first",
+      "runtime_seconds": 0.031675,
+      "spacetime_qubit_seconds": 9660.875
+    }
+  ],
+  "ratios": {
+    "external_tket_paulisimp": {
+      "cycles": {
+        "above_one": 0,
+        "below_one": 96,
+        "equal_one": 0,
+        "maximum": 0.5956284153005464,
+        "median": 0.4768196608938837,
+        "minimum": 0.35048591517757177
+      },
+      "logical_t_states": {
+        "above_one": 0,
+        "below_one": 96,
+        "equal_one": 0,
+        "maximum": 0.5355371900826447,
+        "median": 0.47341982139045047,
+        "minimum": 0.4433106575963719
+      },
+      "physical_qubits": {
+        "above_one": 0,
+        "below_one": 30,
+        "equal_one": 66,
+        "maximum": 1.0,
+        "median": 1.0,
+        "minimum": 0.6049382716049383
+      },
+      "spacetime_qubit_seconds": {
+        "above_one": 0,
+        "below_one": 96,
+        "equal_one": 0,
+        "maximum": 0.5956284153005464,
+        "median": 0.4588492377649743,
+        "minimum": 0.21202234374939527
+      }
+    },
+    "materialize_first": {
+      "cycles": {
+        "above_one": 96,
+        "below_one": 0,
+        "equal_one": 0,
+        "maximum": 2576.8075725379213,
+        "median": 1143.035647197004,
+        "minimum": 421.9341307642347
+      },
+      "logical_t_states": {
+        "above_one": 96,
+        "below_one": 0,
+        "equal_one": 0,
+        "maximum": 1753.4018348623854,
+        "median": 933.7914151449604,
+        "minimum": 385.1658536585366
+      },
+      "physical_qubits": {
+        "above_one": 96,
+        "below_one": 0,
+        "equal_one": 0,
+        "maximum": 2.162629757785467,
+        "median": 1.5157135802469135,
+        "minimum": 1.2747138397502602
+      },
+      "spacetime_qubit_seconds": {
+        "above_one": 96,
+        "below_one": 0,
+        "equal_one": 0,
+        "maximum": 5572.680736457443,
+        "median": 1765.5986445304266,
+        "minimum": 537.8452759481659
+      }
+    },
+    "t_cost_greedy_savings_fraction": {
+      "maximum": 0.11593085643034164,
+      "median": 0.03009580925912382,
+      "minimum": 0.007146751081276092,
+      "paired_cells": 144,
+      "positive_cells": 144
+    }
+  },
+  "schema": "ucc.qre.analysis.v1",
+  "validation": {
+    "certificate_missing": 0,
+    "dense_certificate_failures": 0,
+    "duplicate_cells": 0,
+    "expected_rows": 288,
+    "maximum_total_error_fraction": 0.9808348000000005,
+    "observed_rows": 288,
+    "status_counts": {
+      "completed_valid": 288
+    },
+    "symbolic_status_counts": {
+      "completed_invalid": 48,
+      "completed_valid": 144,
+      "predicate_error": 96
+    },
+    "total_error_violations": 0
+  }
+}

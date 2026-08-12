@@ -1,0 +1,16 @@
+schema: ucc.qre.surface-code-profile.v1
+id: surface_code_conservative
+description: Conservative lattice-surgery scenario at physical error 1e-3.
+physical_error_rate: 1.0e-3
+threshold: 1.0e-2
+logical_error_prefactor: 0.1
+minimum_odd_distance: 3
+maximum_odd_distance: 99
+data_patch_qubits_coefficient: 2.0
+factory_qubits_coefficient: 30.0
+factory_logical_patches: 15
+factory_period_d_cycles: 11.0
+clifford_layer_d_cycles: 1.0
+cycle_time_seconds: 1.0e-6
+distillation_output_coefficient: 35.0
+notes: Explicit scenario model; absolute values are not a hardware-vendor forecast.

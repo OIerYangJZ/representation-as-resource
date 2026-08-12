@@ -1,0 +1,35 @@
+schema: ucc.natural-ablation-matrix.v1
+campaign_id: w8-natural-factorial-20260803-local
+design: full_factorial
+factors:
+  semantic_lift: [0, 1]
+  aggregation: [0, 1]
+  selector: [0, 1]
+  cache_reuse: [0, 1]
+  preset_recognizer: [0, 1]
+  projected_block_selection: [0, 1]
+default_all_on:
+  semantic_lift: 1
+  aggregation: 1
+  selector: 1
+  cache_reuse: 1
+  preset_recognizer: 1
+  projected_block_selection: 1
+all_off:
+  semantic_lift: 0
+  aggregation: 0
+  selector: 0
+  cache_reuse: 0
+  preset_recognizer: 0
+  projected_block_selection: 0
+quality_metrics: [gates, depth, cx, logical_t_states, spacetime_qubit_seconds]
+operational_metrics: [runtime_s, rss_bytes, input_ir_bytes, output_ir_bytes, description_bits]
+status_values:
+  - completed_valid
+  - completed_invalid
+  - unsupported
+  - predicate_error
+  - numerical_inconclusive
+  - timeout
+  - memory_error
+  - error

@@ -1,0 +1,102 @@
+{
+  "schema": "ucc.revision-audit-1-15.v1",
+  "audit_date": "2026-08-01",
+  "scope": "items 1 through 15 of the supplied issue list",
+  "items": [
+    {
+      "id": 1,
+      "status": "fixed_verified",
+      "evidence": ["definition def:masked-share", "theorem thm:main-tradeoff", "proposition prop:hybrid-upper"],
+      "finding": "The flat stream carries two Z_3 shares and no token contains x_j; the semantic stream supplies x directly. The inter-round commitment-plus-cut lower bound and semantic O(log m) cut upper bound use one family-relative code."
+    },
+    {
+      "id": 2,
+      "status": "fixed_verified",
+      "evidence": ["definition def:info-budget-bits", "theorem thm:output-counting", "remark rem:pass-through"],
+      "finding": "B_rel, B_self, and G are separately defined and never cross-compared; only the zero-failure family-relative upper bound is claimed tight."
+    },
+    {
+      "id": 3,
+      "status": "fixed_verified",
+      "evidence": ["definition def:compiler", "equation eq:info-budget", "scripts/trace_cut_budget.py"],
+      "finding": "The cut budget is the literal sum of control, store, window, parameter, and IR restart serializations; Q and V are explicit projections and no theorem substitutes them for the total."
+    },
+    {
+      "id": 4,
+      "status": "fixed_verified",
+      "evidence": ["definition def:parmodule", "equation eq:precision-charge", "definition def:token-codec"],
+      "finding": "Sparse parameters encode only nonzero symbol IDs, coefficients, the rational-pi numerator/denominator, and separately charged addresses."
+    },
+    {
+      "id": 5,
+      "status": "fixed_verified",
+      "evidence": ["definition def:token-codec", "remark rem:encoding-regimes"],
+      "finding": "The growing-width self-delimiting codec charges opcode, arity, qubit addresses, Pauli support, parameter IDs/payloads, and delimiter; fixed-width and growing-width regimes are separate."
+    },
+    {
+      "id": 6,
+      "status": "fixed_verified",
+      "evidence": ["proposition prop:epsilon-packing", "theorem thm:output-counting"],
+      "finding": "A no-wrap K_epsilon-ary packing has K_epsilon=Theta(1/epsilon), separation at least 4 epsilon, and randomized output lower bound Omega(m log(1/epsilon))."
+    },
+    {
+      "id": 7,
+      "status": "fixed_verified",
+      "evidence": ["definition def:compiler", "equation eq:expected-cut", "equation eq:randomized-main-tradeoff"],
+      "finding": "The model permits random-access RAM/DAG/cache/hash state and dynamic passes, charges the random tape/cursor, and proves randomized bounds by Fano/conditional Fano."
+    },
+    {
+      "id": 8,
+      "status": "fixed_verified",
+      "evidence": ["proposition prop:hybrid-upper", "remark rem:corners"],
+      "finding": "A memory-capped hybrid is constructed for every beta and matches the deterministic family-relative lower envelope to leading order; no self-contained or gate-count matching claim is made."
+    },
+    {
+      "id": 9,
+      "status": "fixed_verified",
+      "evidence": ["lemma lem:diamond-comparison"],
+      "finding": "The manuscript proves d_proj <= d_diamond <= 2 d_proj for the unnormalized convention and states the explicit normalized inequalities and halved threshold."
+    },
+    {
+      "id": 10,
+      "status": "fixed_verified",
+      "evidence": ["corollary cor:fixed-grid-output", "appendix corollary app:cor:counting-toll"],
+      "finding": "Kraft's inequality gives the deterministic binary worst-case bound B_out >= m rather than m-1."
+    },
+    {
+      "id": 11,
+      "status": "fixed_verified",
+      "evidence": ["appendix section app:sec:rational-period", "research/rational_witness/period_certificate.txt", "research/rational_witness/verify_period.py"],
+      "finding": "All ten rational angles and single-term orders, their LCM, a minimality state of order 131040, exact integer output, verifier, and SHA256 manifest are present and pass byte-for-byte verification."
+    },
+    {
+      "id": 12,
+      "status": "fixed_verified",
+      "evidence": ["definition def:region-discovery", "remark rem:discovery-scope"],
+      "finding": "The method is explicitly restricted to supported contiguous Pauli/phase/preset patterns; it disclaims general DAG maximality and general linear-time complexity."
+    },
+    {
+      "id": 13,
+      "status": "fixed_verified",
+      "evidence": ["definition def:certificate", "proposition prop:symbolic-soundness", "research/symbolic_certificate/mutation_crosscheck.json"],
+      "finding": "The exact CNOT-RZ domain, modulo-2pi rule, global phase, unsupported status, soundness proof, 20 mutation cases, and dense cross-checks are explicit and verified."
+    },
+    {
+      "id": 14,
+      "status": "fixed_verified",
+      "evidence": ["section sec:cut-tracing", "scripts/trace_cut_budget.py", "research/cut_trace/cut_trace_report.json"],
+      "finding": "The tracer records all requested fields after every input update. All 1320 event/final checks restart from serialized state only; 24 projected summaries generate the measured B_com versus B_cross curve."
+    },
+    {
+      "id": 15,
+      "status": "fixed_verified",
+      "evidence": ["table tab:resource-consequence", "scripts/run_fixed_budget_qre.py", "research/fixed_budget_qre/fixed_budget_qre.json"],
+      "finding": "All methods share epsilon_synth=1e-3 with sum_i epsilon_i within budget; actual checked staq synthesis and an explicit QRE report logical T, physical qubits, cycles, factories, runtime, and spacetime volume."
+    }
+  ],
+  "summary": {
+    "fixed_verified": 15,
+    "incomplete": 0,
+    "unsupported": 0
+  }
+}
