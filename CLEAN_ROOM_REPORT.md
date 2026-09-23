@@ -4,8 +4,7 @@
 
 PASS.  A minimal artifact was copied to an independent temporary directory, a fresh virtual
 environment was created without network access and explicitly bound to the locked project
-site-packages at `/Users/yangjinsey/Desktop/QFT + inverse-QFT circuits #662(issue)/.venv/lib/python3.13/site-packages`, and all requested
-subsets were executed from that directory.
+site-packages, and all requested subsets were executed from that directory.
 
 - Headline-theorem exhaustive subset: 9 tests passed across
   `test_qary_packing.py`, `test_update_stream_equivalence.py`, and
@@ -18,8 +17,8 @@ subsets were executed from that directory.
 - Deterministic grid-synthesis pairs exercised: 17.
 
 The machine-readable receipt is `data/frozen/clean_room_receipt.json`; the command log is
-`reproducibility/clean_room.log` (SHA-256 `aaadc9262d987df2b1ad552111d8898aac293a673d39b8f32629d9d59b9e86eb`).  The temporary directory was
-`/var/folders/tg/nbn_fl894vb3j41w5zvzfl1c0000gn/T/ucc-clean-room-kodr6yja` and was removed after verification.
+`reproducibility/clean_room.log` (SHA-256 `2d43c3ef8ace9cbf53302c349eeb9d2257d89e367e5cb357af805b03208d33ec`).  The temporary directory was
+removed after verification.
 
 This validates a theorem-test subset, a benchmark subset, and a QRE subset.  It does not rerun the
 full 21,060-cell W8 campaign or all 288 W7 cells inside the temporary directory.

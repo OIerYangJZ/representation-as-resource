@@ -1,5 +1,5 @@
 {
-  "artifact_commit": "52aed6601781ed2b8d363bc56d79468a36974b04",
+  "artifact_commit": "229eafdb4127ab98b2ad925a9657fa67510a12e7",
   "canonical_source_rows": 24748,
   "conflicting_numeric_cells": 0,
   "csv_parquet_checks": [
@@ -30,21 +30,30 @@
   ],
   "duplicate_primary_key_rows": 0,
   "duplicate_tex_labels": [],
+  "external_raw_archive": {
+    "checked_files": 0,
+    "checkout_path": "data/raw-archive",
+    "configured": true,
+    "hash_drift": [],
+    "present": false,
+    "repository": "ssh://git@github.com/OIerYangJZ/paper1-data.git",
+    "revision": "5f90733d7d83d2690f3e0ad5164824879ca95b84"
+  },
   "hash_drift": [],
   "known_historical_or_stale": [
     {
       "disposition": "historical_raw_provenance",
-      "path": "data/runs/w4-matched-representation-20260802",
-      "reason": "Raw representations and logs are retained; the parquet freeze is canonical."
+      "path": "data/raw-archive/runs/w4-matched-representation-20260802",
+      "reason": "Raw representations and logs are in the optional archive; the committed parquet freeze is canonical."
     },
     {
       "disposition": "historical_raw_provenance",
-      "path": "data/runs/w5-external-baselines-20260803",
-      "reason": "Raw per-cell logs are retained; the parquet freeze is canonical."
+      "path": "data/raw-archive/runs/w5-external-baselines-20260803",
+      "reason": "Raw per-cell logs are in the optional archive; the committed parquet freeze is canonical."
     },
     {
       "disposition": "intermediate_noncanonical",
-      "path": "data/runs/w8-natural-20260803-local/natural_baselines.parquet",
+      "path": "data/raw-archive/runs/w8-natural-20260803-local/natural_baselines.parquet",
       "reason": "The final factorial parquet includes the matched external rows."
     }
   ],
@@ -63,7 +72,7 @@
     "predicate_error": 48
   },
   "tex_labels": 187,
-  "unified_sha256": "deb8637a7d35904b27452bd441f53635ddfa0ee0ebdc9b0b1b5930c1a64039f4",
+  "unified_sha256": "7defd561f20436eda1a022512c744bdc135b4eecb90c5d88d646cc2f770d526e",
   "unique_primary_keys": 24748,
   "unregistered_frozen_artifacts": []
 }

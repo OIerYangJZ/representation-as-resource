@@ -70,6 +70,14 @@ def main() -> None:
         ROOT / "PaperDraft/figures/eta_sweep_pareto.pdf",
     )
 
+    cleanup_spec = importlib.util.spec_from_file_location(
+        "generate_round3_cleanup_figures",
+        ROOT / "research/round3_protocol_repair/generate_round3_cleanup_figures.py",
+    )
+    cleanup_module = importlib.util.module_from_spec(cleanup_spec)
+    cleanup_spec.loader.exec_module(cleanup_module)
+    cleanup_module.generate_real_instance_bars()
+
     outputs = sorted(figures.glob("*.pdf"))
     source_map = {
         "measured_tradeoff_frontier.pdf": ["data/frozen/tradeoff_summary.csv", "data/frozen/tradeoff_scaling_fits.csv"],
@@ -80,17 +88,27 @@ def main() -> None:
         "ablation_effects.pdf": ["data/frozen/natural_ablation_effects.csv", "data/frozen/natural_ablation_interactions.csv"],
         "eta_sweep_pareto.pdf": ["data/frozen/eta_sweep_pareto.json"],
     }
-    manifest = {
-        "schema": "ucc.figure-build.v1",
-        "figures": {
+    figure_records = {
             path.name: {
                 "path": str(path.relative_to(ROOT)), "bytes": path.stat().st_size,
                 "sha256": sha256(path), "sources": source_map[path.name],
                 "source_sha256": {source: sha256(ROOT / source) for source in source_map[path.name]},
             }
             for path in outputs if path.name in source_map
-        },
     }
+    real_instance_figure = ROOT / "PaperDraft/figures/real_instance_grouped_bar.png"
+    real_instance_sources = [
+        "research/real_instance_results.json",
+        "research/round3_protocol_repair/generate_round3_cleanup_figures.py",
+    ]
+    figure_records[real_instance_figure.name] = {
+        "path": str(real_instance_figure.relative_to(ROOT)),
+        "bytes": real_instance_figure.stat().st_size,
+        "sha256": sha256(real_instance_figure),
+        "sources": real_instance_sources,
+        "source_sha256": {source: sha256(ROOT / source) for source in real_instance_sources},
+    }
+    manifest = {"schema": "ucc.figure-build.v1", "figures": figure_records}
     target = ROOT / "data/frozen/figure_build_manifest.json"
     target.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n")
     print(json.dumps(manifest, indent=2, sort_keys=True))

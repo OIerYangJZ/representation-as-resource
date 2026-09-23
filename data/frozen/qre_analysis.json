@@ -2,8 +2,8 @@
   "artifacts_sha256": {
     "data/frozen/qre_results.parquet": "5d58d4da1939f68a323757955e1e60aa48d57338baef45f1e56aa0746b951118",
     "data/frozen/qre_summary.csv": "389f2e6c31999714ce18c07e304682f908a42a06c4b00ef4605526e9afba13b7",
-    "figures/qre_pareto.pdf": "ce355bd1283ee4b38f56ebf151734aa48692d2a60e0b485a55a44d2aae7fe6d4",
-    "figures/qre_sensitivity.pdf": "875b8f27b6ed92d9b6b6f10905467b7564c76df65f198710b0a444207f57b541"
+    "figures/qre_pareto.pdf": "35d4339c00dbfe3fddeb1d79eadfcacb93cf8cbd17a7558f08cc7dc2d4608146",
+    "figures/qre_sensitivity.pdf": "7489c37749c4f88ba383ed506a87ac68dcba52770fa2e1cbfe68cfa65bec60fb"
   },
   "main_slice": [
     {

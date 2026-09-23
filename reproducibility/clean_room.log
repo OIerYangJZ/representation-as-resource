@@ -1,9 +1,9 @@
-$ /var/folders/tg/nbn_fl894vb3j41w5zvzfl1c0000gn/T/ucc-clean-room-kodr6yja/.venv/bin/python -m pytest tests/test_qary_packing.py tests/test_update_stream_equivalence.py tests/search_small_compiler_counterexamples.py -q
+$ <clean-room>/.venv/bin/python -m pytest tests/test_qary_packing.py tests/test_update_stream_equivalence.py tests/search_small_compiler_counterexamples.py -q
 .........                                                                [100%]
 9 passed in 0.05s
 
 
-$ /var/folders/tg/nbn_fl894vb3j41w5zvzfl1c0000gn/T/ucc-clean-room-kodr6yja/.venv/bin/python reproducibility/clean_room_smoke.py --receipt /Users/yangjinsey/Desktop/QFT + inverse-QFT circuits #662(issue)/data/frozen/clean_room_receipt.json
+$ <clean-room>/.venv/bin/python reproducibility/clean_room_smoke.py --receipt <repository>/data/frozen/clean_room_receipt.json
 {
   "authors": {
     "certificate_sha256": "c1bcf57316bd8275d5279a95d8cba276a7b775cf7577b47407137aad0c67931d",
@@ -16,7 +16,7 @@ $ /var/folders/tg/nbn_fl894vb3j41w5zvzfl1c0000gn/T/ucc-clean-room-kodr6yja/.venv
     "qasm_sha256": "d14b20d89930d0160d7ab7af3a3d1ef8ce60ec5b0fcf566d088697f8cc9c06ba",
     "qre": {
       "logical_t_states": 2200,
-      "qre_classical_runtime_s": 0.346022500001709,
+      "qre_classical_runtime_s": 0.24129079200793058,
       "qre_code_distance": 25,
       "qre_cycles": 38725,
       "qre_data_physical_qubits": 7500,
@@ -42,7 +42,7 @@ $ /var/folders/tg/nbn_fl894vb3j41w5zvzfl1c0000gn/T/ucc-clean-room-kodr6yja/.venv
     "qasm_sha256": "cc07bb74a668181cc210fd21832869d11509384f7a45a568f4d916eda9845233",
     "qre": {
       "logical_t_states": 2200,
-      "qre_classical_runtime_s": 0.10822562500106869,
+      "qre_classical_runtime_s": 0.09482199998456053,
       "qre_code_distance": 25,
       "qre_cycles": 38825,
       "qre_data_physical_qubits": 7500,
@@ -74,7 +74,7 @@ $ /var/folders/tg/nbn_fl894vb3j41w5zvzfl1c0000gn/T/ucc-clean-room-kodr6yja/.venv
     "pytket": "2.16.0",
     "qiskit": "2.4.0"
   },
-  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
   "python": "3.13.12",
   "schema": "ucc.clean-room-smoke.v1"
 }

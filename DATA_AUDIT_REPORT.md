@@ -4,7 +4,7 @@
 
 The normalized provenance index contains **24,748** source rows and
 **0** duplicate nine-field primary-key rows.  The index is
-`data/frozen/unified_experiments.parquet` (SHA-256 `deb8637a7d35904b27452bd441f53635ddfa0ee0ebdc9b0b1b5930c1a64039f4`).
+`data/frozen/unified_experiments.parquet` (SHA-256 `7defd561f20436eda1a022512c744bdc135b4eecb90c5d88d646cc2f770d526e`).
 Status classes are preserved as `{"completed_valid": 24700, "predicate_error": 48}`;
 non-completed rows are not coerced into numeric outcomes.
 
@@ -27,6 +27,10 @@ TeX sources: 0 across 187 labels.
 Receipt drift is reported, never repaired in place.  A drifted file must be rerun and re-frozen or
 explicitly classified as historical before it can support a manuscript number.
 
+## Optional raw provenance archive
+
+Not materialized. The optional archive is `ssh://git@github.com/OIerYangJZ/paper1-data.git` at revision `5f90733d7d83d2690f3e0ad5164824879ca95b84` and can be fetched with `./reproducibility/fetch_raw_data.sh`. Its absence does not affect the committed frozen-data rebuild.
+
 ## Unregistered frozen artifacts
 
 - None.
@@ -36,12 +40,13 @@ receipts until registered in `data/manifest.yaml`.
 
 ## Historical/intermediate data retained
 
-- `data/runs/w4-matched-representation-20260802` — historical_raw_provenance: Raw representations and logs are retained; the parquet freeze is canonical.
-- `data/runs/w5-external-baselines-20260803` — historical_raw_provenance: Raw per-cell logs are retained; the parquet freeze is canonical.
-- `data/runs/w8-natural-20260803-local/natural_baselines.parquet` — intermediate_noncanonical: The final factorial parquet includes the matched external rows.
+- `data/raw-archive/runs/w4-matched-representation-20260802` — historical_raw_provenance: Raw representations and logs are in the optional archive; the committed parquet freeze is canonical.
+- `data/raw-archive/runs/w5-external-baselines-20260803` — historical_raw_provenance: Raw per-cell logs are in the optional archive; the committed parquet freeze is canonical.
+- `data/raw-archive/runs/w8-natural-20260803-local/natural_baselines.parquet` — intermediate_noncanonical: The final factorial parquet includes the matched external rows.
 
-No raw run tree was deleted.  The manifest identifies which immutable table is canonical so that
-duplicate filenames in raw, CSV, and parquet forms cannot be mixed during analysis.
+The full raw run tree is retained in the separately versioned archive.  The manifest identifies
+which immutable in-repository table is canonical so that duplicate filenames in raw, CSV, and
+parquet forms cannot be mixed during analysis.
 
 ## Reproduction
 

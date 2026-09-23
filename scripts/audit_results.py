@@ -9,9 +9,8 @@ import hashlib
 import json
 import math
 import re
-import subprocess
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 import pandas as pd
 import yaml
@@ -63,14 +62,6 @@ def file_digest(path: Path) -> str:
         for block in iter(lambda: stream.read(1024 * 1024), b""):
             h.update(block)
     return h.hexdigest()
-
-
-def git_revision() -> str:
-    result = subprocess.run(
-        ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True, capture_output=True, check=False
-    )
-    value = result.stdout.strip()
-    return value if re.fullmatch(r"[0-9a-f]{40}", value) else "working-tree"
 
 
 def status(value: Any, certificate: Any = None) -> str:
@@ -280,9 +271,49 @@ def hash_drift(manifest: dict[str, Any]) -> list[dict[str, str]]:
     return drift
 
 
+def external_archive_status(manifest: dict[str, Any]) -> dict[str, Any]:
+    archive = manifest.get("raw_provenance_archive", {})
+    checkout = archive.get("checkout_path")
+    if not checkout:
+        return {"configured": False, "present": False, "checked_files": 0, "hash_drift": []}
+    root = ROOT / checkout
+    result: dict[str, Any] = {
+        "configured": True,
+        "repository": archive.get("repository"),
+        "revision": archive.get("revision"),
+        "checkout_path": checkout,
+        "present": root.is_dir(),
+        "checked_files": 0,
+        "hash_drift": [],
+    }
+    if not root.is_dir():
+        return result
+    receipts = [item.get("receipt") for item in manifest["datasets"] if item.get("receipt")]
+    for relative in sorted(set(receipts)):
+        receipt_path = ROOT / relative
+        if not receipt_path.exists() or receipt_path.suffix != ".json":
+            continue
+        payload = json.loads(receipt_path.read_text())
+        for item, expected in payload.get("external_artifacts_sha256", {}).items():
+            candidate = root / item
+            result["checked_files"] += 1
+            observed = file_digest(candidate) if candidate.exists() else "missing"
+            if observed != expected:
+                result["hash_drift"].append({
+                    "receipt": relative,
+                    "path": item,
+                    "kind": "external_archive",
+                    "expected": expected,
+                    "observed": observed,
+                })
+    return result
+
+
 def audit() -> dict[str, Any]:
     manifest = yaml.safe_load(MANIFEST.read_text())
-    commit = git_revision()
+    commit = str(manifest["frozen_artifact_commit"])
+    if not re.fullmatch(r"[0-9a-f]{40}", commit):
+        raise ValueError("data/manifest.yaml has an invalid frozen_artifact_commit")
     records = normalize_w3(commit) + normalize_w4(commit) + normalize_w5(commit) + normalize_w7(commit) + normalize_w8()
     unified = pd.DataFrame(records)
     duplicates = unified[unified.duplicated(PRIMARY_KEY, keep=False)]
@@ -309,6 +340,7 @@ def audit() -> dict[str, Any]:
     )]
     duplicate_labels, label_count = tex_label_audit()
     drift = hash_drift(manifest)
+    external_archive = external_archive_status(manifest)
     status_counts = unified["status"].value_counts(dropna=False).to_dict()
     report = {
         "schema": "ucc.data-audit.v1", "artifact_commit": commit,
@@ -319,6 +351,7 @@ def audit() -> dict[str, Any]:
         "csv_parquet_checks": pair_checks, "conflicting_numeric_cells": sum(x["conflicting_cells"] for x in pair_checks),
         "tex_labels": label_count, "duplicate_tex_labels": duplicate_labels,
         "unregistered_frozen_artifacts": unregistered, "hash_drift": drift,
+        "external_raw_archive": external_archive,
         "known_historical_or_stale": manifest.get("known_historical_or_stale", []),
         "unified_sha256": file_digest(OUTPUT),
     }
@@ -333,6 +366,24 @@ def write_report(result: dict[str, Any]) -> None:
     )
     unregistered = "\n".join(f"- `{path}`" for path in result["unregistered_frozen_artifacts"]) or "- None."
     drift = "\n".join(f"- `{item['path']}` differs from `{item['receipt']}` ({item['kind']})." for item in result["hash_drift"]) or "- None."
+    external = result["external_raw_archive"]
+    if external["present"]:
+        external_lines = (
+            f"Present at `{external['checkout_path']}`; checked {external['checked_files']} registered raw files."
+        )
+        if external["hash_drift"]:
+            external_lines += "\n\n" + "\n".join(
+                f"- `{item['path']}`: expected `{item['expected']}`, observed `{item['observed']}`."
+                for item in external["hash_drift"]
+            )
+        else:
+            external_lines += " No external-archive hash drift was detected."
+    else:
+        external_lines = (
+            f"Not materialized. The optional archive is `{external['repository']}` at revision "
+            f"`{external['revision']}` and can be fetched with `./reproducibility/fetch_raw_data.sh`. "
+            "Its absence does not affect the committed frozen-data rebuild."
+        )
     stale = "\n".join(f"- `{item['path']}` — {item['disposition']}: {item['reason']}" for item in result["known_historical_or_stale"])
     REPORT.write_text(f"""# Data audit report
 
@@ -360,6 +411,10 @@ TeX sources: {len(result['duplicate_tex_labels'])} across {result['tex_labels']}
 Receipt drift is reported, never repaired in place.  A drifted file must be rerun and re-frozen or
 explicitly classified as historical before it can support a manuscript number.
 
+## Optional raw provenance archive
+
+{external_lines}
+
 ## Unregistered frozen artifacts
 
 {unregistered}
@@ -371,8 +426,9 @@ receipts until registered in `data/manifest.yaml`.
 
 {stale}
 
-No raw run tree was deleted.  The manifest identifies which immutable table is canonical so that
-duplicate filenames in raw, CSV, and parquet forms cannot be mixed during analysis.
+The full raw run tree is retained in the separately versioned archive.  The manifest identifies
+which immutable in-repository table is canonical so that duplicate filenames in raw, CSV, and
+parquet forms cannot be mixed during analysis.
 
 ## Reproduction
 
@@ -394,6 +450,7 @@ def main() -> None:
         result["duplicate_primary_key_rows"] or result["missing_registered_files"]
         or result["row_count_mismatches"] or result["conflicting_numeric_cells"]
         or result["duplicate_tex_labels"] or result["hash_drift"]
+        or result["external_raw_archive"]["hash_drift"]
     )
     if args.check and blocking:
         raise SystemExit(1)

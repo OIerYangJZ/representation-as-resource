@@ -83,7 +83,10 @@ def main() -> None:
     outputs.append(run([
         str(python), "reproducibility/clean_room_smoke.py", "--receipt", str(RECEIPT)
     ], clean, env))
-    LOG.write_text("\n\n".join(outputs))
+    portable_log = "\n\n".join(outputs)
+    portable_log = portable_log.replace(str(clean), "<clean-room>")
+    portable_log = portable_log.replace(str(ROOT), "<repository>")
+    LOG.write_text(portable_log)
     receipt = json.loads(RECEIPT.read_text())
     receipt["theorem_tests_passed"] = 9
     RECEIPT.write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
@@ -94,8 +97,7 @@ def main() -> None:
 
 PASS.  A minimal artifact was copied to an independent temporary directory, a fresh virtual
 environment was created without network access and explicitly bound to the locked project
-site-packages at `{locked_site_packages}`, and all requested
-subsets were executed from that directory.
+site-packages, and all requested subsets were executed from that directory.
 
 - Headline-theorem exhaustive subset: {receipt['theorem_tests_passed']} tests passed across
   `test_qary_packing.py`, `test_update_stream_equivalence.py`, and
@@ -109,7 +111,7 @@ subsets were executed from that directory.
 
 The machine-readable receipt is `data/frozen/clean_room_receipt.json`; the command log is
 `reproducibility/clean_room.log` (SHA-256 `{log_sha}`).  The temporary directory was
-`{clean}` and was {'retained' if args.keep else 'removed after verification'}.
+{'retained by explicit request' if args.keep else 'removed after verification'}.
 
 This validates a theorem-test subset, a benchmark subset, and a QRE subset.  It does not rerun the
 full 21,060-cell W8 campaign or all 288 W7 cells inside the temporary directory.

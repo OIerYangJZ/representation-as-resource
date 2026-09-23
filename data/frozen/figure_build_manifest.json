@@ -3,7 +3,7 @@
     "ablation_effects.pdf": {
       "bytes": 20080,
       "path": "figures/ablation_effects.pdf",
-      "sha256": "43e8992004598a95ff3b59a633e7e803644c4de0f8f201335705ddd26137a9ad",
+      "sha256": "0aff1867e8220f510200d30740a6328f84619a3cb668e7377dc81146bd986187",
       "source_sha256": {
         "data/frozen/natural_ablation_effects.csv": "89b1860389a8edc68da6016624c76b0390f9eb9bf39a1ac9d15f960516158bb0",
         "data/frozen/natural_ablation_interactions.csv": "06a0b46adf35a15df537d30a626c9571e6bc1e43ed31ae6480d90c0c275cf4f4"
@@ -14,9 +14,9 @@
       ]
     },
     "eta_sweep_pareto.pdf": {
-      "bytes": 21999,
+      "bytes": 21819,
       "path": "figures/eta_sweep_pareto.pdf",
-      "sha256": "0d042cb1befdfaeb09343aa693e7e99dad601eac6732520531dbf26abffeeaaf",
+      "sha256": "eed467faabf683a8b6ec758a6890490e74136e86217e898d82b7235e4bccaf0a",
       "source_sha256": {
         "data/frozen/eta_sweep_pareto.json": "76ea5f40d19cd284a2c3be32eb4d5ba210781ca732cb1d52d8e9d885575761af"
       },
@@ -27,7 +27,7 @@
     "measured_tradeoff_frontier.pdf": {
       "bytes": 57645,
       "path": "figures/measured_tradeoff_frontier.pdf",
-      "sha256": "79dc42b85b89bedb473c032d9f17d1fc058ed6d61f7bca085d8dba884afe1825",
+      "sha256": "de253512e6df2288b771d3b2a0bc62ab6fb663f5ebebcb3bd2cbe8d34576a719",
       "source_sha256": {
         "data/frozen/tradeoff_scaling_fits.csv": "8dcc645ce5f9c293927efa2c9563c832488412c10d1568d4989fe167ffb41083",
         "data/frozen/tradeoff_summary.csv": "4f0f3e19164f1df3534ded93f594b8052ceabc4a8ee2b2c366a39a8a0f660ffb"
@@ -40,7 +40,7 @@
     "natural_workload_summary.pdf": {
       "bytes": 18421,
       "path": "figures/natural_workload_summary.pdf",
-      "sha256": "ca3f63ea206ca111d39e7cc36705fb8e9fea2f508231be5c11c4f7c7d49467d1",
+      "sha256": "56bb096f58afb9c50e0f8f3339032c0f4f554b88eea5cae3e1af5ba25f9e2a72",
       "source_sha256": {
         "data/frozen/natural_negative_controls.csv": "b8a81d15a9c106011bcbff72778fa784502fb4acc341fd5443937e57a7b11da5",
         "data/frozen/natural_workload_summary.csv": "fc6962393e534148dcc5be511fa5568c3228e7fb5b5d746ab7b9bdccca65326a"
@@ -53,7 +53,7 @@
     "qre_pareto.pdf": {
       "bytes": 29889,
       "path": "figures/qre_pareto.pdf",
-      "sha256": "ce355bd1283ee4b38f56ebf151734aa48692d2a60e0b485a55a44d2aae7fe6d4",
+      "sha256": "35d4339c00dbfe3fddeb1d79eadfcacb93cf8cbd17a7558f08cc7dc2d4608146",
       "source_sha256": {
         "data/frozen/qre_results.parquet": "5d58d4da1939f68a323757955e1e60aa48d57338baef45f1e56aa0746b951118"
       },
@@ -64,7 +64,7 @@
     "qre_sensitivity.pdf": {
       "bytes": 33865,
       "path": "figures/qre_sensitivity.pdf",
-      "sha256": "875b8f27b6ed92d9b6b6f10905467b7564c76df65f198710b0a444207f57b541",
+      "sha256": "7489c37749c4f88ba383ed506a87ac68dcba52770fa2e1cbfe68cfa65bec60fb",
       "source_sha256": {
         "data/frozen/qre_results.parquet": "5d58d4da1939f68a323757955e1e60aa48d57338baef45f1e56aa0746b951118"
       },
@@ -72,10 +72,23 @@
         "data/frozen/qre_results.parquet"
       ]
     },
+    "real_instance_grouped_bar.png": {
+      "bytes": 45821,
+      "path": "PaperDraft/figures/real_instance_grouped_bar.png",
+      "sha256": "d561562c65de2e563639b665d294b2dc7c2ab67cf889ec579e9fcc530aa8cd88",
+      "source_sha256": {
+        "research/real_instance_results.json": "332bbf04482f69f25903bc13818216a57b469631d8ef40b4d3ccc6cf0e1e5a0a",
+        "research/round3_protocol_repair/generate_round3_cleanup_figures.py": "f86bebd621d56c3cfe91327d46a8dfb8ba555c3c7a5805167f842e8f23f8f6c9"
+      },
+      "sources": [
+        "research/real_instance_results.json",
+        "research/round3_protocol_repair/generate_round3_cleanup_figures.py"
+      ]
+    },
     "representation_compiler_interaction.pdf": {
       "bytes": 40875,
       "path": "figures/representation_compiler_interaction.pdf",
-      "sha256": "2a3a306d1c8f0192f05d78072eb39be8003a504733266431437b7bdf84a58e4f",
+      "sha256": "5ec2aae8822bc180393a848ed93ed4998c08c11ea52451a4a4b919c462e73cb9",
       "source_sha256": {
         "data/frozen/matched_factorial_summary.csv": "8a6f7e4ec347e61a50b6757eb64253d415e418dc6d975b4c495e6e4ccaca37b5",
         "data/frozen/matched_interaction_residuals.csv": "154f9b25aa8bafe702635ad10714f8b2485d1d17785a78a69717a89549994d8f",
