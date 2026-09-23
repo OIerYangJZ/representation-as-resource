@@ -874,7 +874,7 @@ wheels = [
 
 [[package]]
 name = "mqt-bench"
-version = "2.2.2"
+version = "2.3.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "networkx" },
@@ -882,9 +882,9 @@ dependencies = [
     { name = "qiskit", extra = ["qasm3-import"] },
     { name = "scikit-learn" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/33/ca/d1d3a935b795e644cc0f54b30e7ca1599aedae93772982c6821bc83784c2/mqt_bench-2.2.2.tar.gz", hash = "sha256:b6834c85f0245bf0af020eccf2c97a9cb57dce632e6e4997475ff7b54c112fa6", size = 910915, upload-time = "2026-04-20T12:21:56.534Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/ef/48/eea69e8206580620f9da45e56d1d7e105f05eb4f2d466ad8c6357e9bfc27/mqt_bench-2.3.0.tar.gz", hash = "sha256:f754fbb0bafcbdbd7e93c27cc9a1dab40887b77a56866169d446a0c9d7bc432a", size = 897944, upload-time = "2026-09-12T07:40:45.936Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/67/a2/baf7a7d37baaee2a0d4014958803af514c8bf74038e18c19a340431005dc/mqt_bench-2.2.2-py3-none-any.whl", hash = "sha256:0bc55471fd23631db650482eb6ab42bfaa678bbcbc34676db82be2ab508e057c", size = 81362, upload-time = "2026-04-20T12:21:55.071Z" },
+    { url = "https://files.pythonhosted.org/packages/9a/3d/2b9cbfd9f9a986e52ddecd867d27b2d033b97d4181d7a9cd1997a1b52383/mqt_bench-2.3.0-py3-none-any.whl", hash = "sha256:90337047f042037e7f2e62221a8a77f3c41a974e0ac1b87238e53b6841b6a78e", size = 84286, upload-time = "2026-09-12T07:40:43.924Z" },
 ]
 
 [[package]]
