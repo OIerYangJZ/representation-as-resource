@@ -169,15 +169,15 @@ wheels = [
 
 [[package]]
 name = "cirq-superstaq"
-version = "0.5.66"
+version = "0.5.68"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "cirq-core" },
     { name = "general-superstaq" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/78/30/62e2c805cef4a8dd4768df1a35b06db2d02d0bcac32e69a2279e84d678e0/cirq_superstaq-0.5.66.tar.gz", hash = "sha256:aebeee086f9c924caa297984ea93b4ac06aab7b4ae95167a31ad9555620032a1", size = 81734, upload-time = "2026-05-07T17:07:30.43Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/42/27/b60614993f3ac29d70503f8819468f23554d3bfeaa48de45bd36de0cc634/cirq_superstaq-0.5.68.tar.gz", hash = "sha256:6361ecac2ae3315a879d81051110ea1fbce59e172189d4bbeccd875d4a62f590", size = 87464, upload-time = "2026-08-12T20:10:57.608Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/f6/c7/af7cdf72116b348b9d8258b303440a113d74819c56157e82f2cf37a565e9/cirq_superstaq-0.5.66-py3-none-any.whl", hash = "sha256:7dc49d3552833cb4680896b40dec0c48f80f0f4f28ffee54e382e671be28f8a9", size = 97525, upload-time = "2026-05-07T17:07:29.215Z" },
+    { url = "https://files.pythonhosted.org/packages/0f/78/072e2aa14eaf7c12bac517aaff793f7db488b3dd9af4a5bc7179554d5fb7/cirq_superstaq-0.5.68-py3-none-any.whl", hash = "sha256:870eac5402f9ace0c1f95835bd706be7e9d6925805a6c1b09ff777b6b3e7ed10", size = 102756, upload-time = "2026-08-12T20:10:56.555Z" },
 ]
 
 [[package]]
@@ -497,16 +497,16 @@ wheels = [
 
 [[package]]
 name = "general-superstaq"
-version = "0.5.66"
+version = "0.5.68"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "numpy" },
     { name = "pydantic", extra = ["email"] },
     { name = "requests" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/a3/7d/4e739cc91a2acd35d1db051495d67e55dbf8e40d104473428d21017e5ad7/general_superstaq-0.5.66.tar.gz", hash = "sha256:e8ec36190867c218b3b59032de5c29f38f8cd049b5b75e650043665b59e0fe8b", size = 59027, upload-time = "2026-05-07T17:07:18.435Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/42/9b/a039cc416162042ae6ad41d88249e569eb62354b3710a1c3a1510fb90205/general_superstaq-0.5.68.tar.gz", hash = "sha256:a9e0e8db0953da0876407d2ca0cf618f64128de3b0323c9396437c413ccc5d8f", size = 58388, upload-time = "2026-08-12T20:10:49.22Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/30/ef/ab203e1394b444515c4f1bf0af58dda922887e8ae841afd5988bfdc419b2/general_superstaq-0.5.66-py3-none-any.whl", hash = "sha256:fd328ab3e1c54cd0d3bd5b794e892b7afadbdb92c3a3977d356846053a4ce30e", size = 75746, upload-time = "2026-05-07T17:07:17.131Z" },
+    { url = "https://files.pythonhosted.org/packages/a4/62/19387b99549271299d234dd4c8e90936eddd225308ec976a4b7366a0aa47/general_superstaq-0.5.68-py3-none-any.whl", hash = "sha256:ab90a7be380fb2d28eda688e575135e54b44edc3f3fd6d31da10341b36c5bd18", size = 75203, upload-time = "2026-08-12T20:10:48.17Z" },
 ]
 
 [[package]]
@@ -1531,16 +1531,16 @@ wheels = [
 
 [[package]]
 name = "qiskit-superstaq"
-version = "0.5.66"
+version = "0.5.68"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "general-superstaq" },
     { name = "qiskit" },
     { name = "symengine" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/4e/f1/96a83f69c1698b0176174d373747821445bb72510f652b08a5274ef3e068/qiskit_superstaq-0.5.66.tar.gz", hash = "sha256:e64cee1ee0f5af84a9461a7bd64ce28cc2ff74208d18fb75ea7c845c069aafc1", size = 58271, upload-time = "2026-05-07T17:07:24.327Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/f9/cc/c045d4d8d2377957284d101328319672dd370ef47fa3b344d5cd2e9ebd37/qiskit_superstaq-0.5.68.tar.gz", hash = "sha256:96f40756b7ad4bb98bfd7b4a6b442edc0a67160da3a6ff0ad5a70098d903eecb", size = 62215, upload-time = "2026-08-12T20:10:53.164Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/1f/4c/2f771030ae62459e5b31e30c0bf8bbbddaecd46391e6571e29a46ffa03f2/qiskit_superstaq-0.5.66-py3-none-any.whl", hash = "sha256:6174b64faf44d3bf1cad51f4c016a400c99c63f3dd960d09282e8aacf56b78e2", size = 70434, upload-time = "2026-05-07T17:07:23.153Z" },
+    { url = "https://files.pythonhosted.org/packages/79/bc/f58c152a7d021ec8d7b3dd30322efe18c1915dddc4157dea6b0935751ced/qiskit_superstaq-0.5.68-py3-none-any.whl", hash = "sha256:cd662d97547603da98a9e15497c5359036c6aa13005f767a5684cb66805c644f", size = 73418, upload-time = "2026-08-12T20:10:52.185Z" },
 ]
 
 [[package]]
@@ -1890,7 +1890,7 @@ wheels = [
 
 [[package]]
 name = "supermarq"
-version = "0.5.66"
+version = "0.5.68"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "cirq-superstaq" },
@@ -1898,9 +1898,9 @@ dependencies = [
     { name = "scikit-learn" },
     { name = "seaborn" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/8d/37/be8e5162098c5934700256d7c677f3b79828b612514aafee599e2eef7ddf/supermarq-0.5.66.tar.gz", hash = "sha256:cbe4f07a2649b35e0aa1d35d83b57d30ebf696df9fb13b0bfab882d29400a276", size = 84996, upload-time = "2026-05-07T17:07:36.672Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/8c/85/273cf432df9af0deb52d3eae9b3bc72526b5fe8904ee6693d4ca3bc5ddc2/supermarq-0.5.68.tar.gz", hash = "sha256:3cdbeda834cb4afc9b1185d22fbe66e997cab5976a3875bdd88fbafbe1691150", size = 86240, upload-time = "2026-08-12T20:11:02.115Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/5d/13/2d1e514e8d2223c5476cf6cd479fdb126af74ea0034c6d7d2c40f3f4827d/supermarq-0.5.66-py3-none-any.whl", hash = "sha256:2d0ba5e873e7f42fd295b720a857f45be86b4b688f409e350a53d4f51b2b60bc", size = 116922, upload-time = "2026-05-07T17:07:35.291Z" },
+    { url = "https://files.pythonhosted.org/packages/f4/92/a3837da666ab5ed06e0e0132452786ac32c752614b657b5184f440e52272/supermarq-0.5.68-py3-none-any.whl", hash = "sha256:9eaf93aaaf452d1b9d25d34f8ae106a8681dc3ef815744fcffce1747041cccf7", size = 119026, upload-time = "2026-08-12T20:11:00.935Z" },
 ]
 
 [[package]]
