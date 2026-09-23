@@ -1,0 +1,11 @@
+fallback repository: https://github.com/meamy/feynman.git
+commit: d2c382a2ab43a40a87f12f4255645bbb55f704f8
+clone status: completed after network approval
+
+Prerequisite probes:
+  command -v ghc   -> no output
+  command -v cabal -> no output
+  command -v stack -> no output
+  command -v nix   -> no output
+
+The upstream README requires GHC >= 8.0.2 and Cabal >= 1.24.0. No Haskell toolchain was present. Because the higher-priority public staq rotation-folding baseline built and ran, the fallback was not used and no machine-wide Haskell installation was introduced.

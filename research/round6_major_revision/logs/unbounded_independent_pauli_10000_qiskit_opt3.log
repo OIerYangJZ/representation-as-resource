@@ -1,0 +1,7 @@
+command: /home/lyy/ucc_paper_round6_20260712/.venv/bin/python /home/lyy/ucc_paper_round6_20260712/research/round6_major_revision/run_round6_experiments.py --worker --family unbounded_independent_pauli --size 10000 --method qiskit_opt3 --timeout-s 600
+returncode: 0
+elapsed_s: 2.223
+--- stdout ---
+{"actual_input_gates": 9998, "angle_specification": "theta=(pi*sqrt(2)/11,pi/13,pi/17,pi/19); first ratio is symbolically irrational", "block_gate_count": 10, "boundary_gate_count": 8, "cx_count": 5994, "depth": 7001, "equivalence_checked": true, "equivalent_up_to_global_phase": true, "family_key": "unbounded_independent_pauli", "gate_count": 12000, "gate_types": ["cx", "h", "ry", "rz"], "instance_name": "unbounded_independent_pauli_n4_r999", "m": 4, "method_key": "qiskit_opt3", "n": 4, "notes": "qiskit.transpile(basis_gates=TARGET_BASIS, optimization_level=3, layout_method='trivial', routing_method='none')", "operator_atol": 1e-09, "operator_max_abs_error": 6.571329155433227e-12, "operator_rtol": 1e-09, "paper_method_name": "qiskit opt3", "r": 999, "requested_gates": 10000, "rotation_count": 5999, "source_command_or_script": "research/round6_major_revision/run_round6_experiments.py --worker --family unbounded_independent_pauli --size 10000 --method qiskit_opt3 --timeout-s 600", "status": "completed", "support_rank_f2": 4, "support_rank_verified": true, "timeout_s": 600, "unbounded_noncollision_by_proposition": true, "wall_time_s": 1.966}
+
+--- stderr ---

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/classical-f057fb7d-e748-4194-97b2-6cee7cd2252a/styles.css">
+
+<!-- ═══ 字体下载 ═══════════════════════════════════════════════════════════
+     只有「Google Fonts 上的字体」才需要动这一行：把字体名加进 family= 参数，
+     名字里的空格写成 +，多个字体用 & 连接。例如再加一个 Playfair Display：
+       …css2?family=Lora:wght@400;600&family=Playfair+Display:wght@400;700&display=swap
+     中文字体同理，例如加 &family=Noto+Serif+SC:wght@400;600
+     本机已安装的字体（宋体 Songti SC、Times New Roman 等）不用改这里，
+     在下面的排版面板里直接写名字即可。 -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lora:wght@400;600&display=swap">
+
+<script src="_ds/classical-f057fb7d-e748-4194-97b2-6cee7cd2252a/_ds_bundle.js"></script>
+<script src="./doc-page.js"></script>
+<style>
+doc-page:not(:defined){visibility:hidden}
+
+/* ══════════════════════════════════════════════════════════════════════
+   海报排版控制台  ·  POSTER TYPOGRAPHY CONTROL PANEL
+   ──────────────────────────────────────────────────────────────────────
+   海报用到的每一处字体和字号都写在这个区块里，按海报的部分分组。
+   下面的正文标记里没有任何字体字面值，只有 var(--pf-…) 引用，
+   所以每一部分都可以在这里单独调，互不影响。
+
+   ▸ 怎么改字体
+     找到那一部分的  --pf-xxx-font ，把冒号后面的内容整个换成字体名：
+         --pf-title-font: "Playfair Display", Georgia, serif;
+     · 字体名带空格要加引号；后面跟一两个备用字体，找不到时不至于掉成默认字体
+     · 本机已装的字体 → 直接写名字就行（如 "Songti SC"、"Times New Roman"）
+     · Google Fonts 的字体 → 还要把它加进上面 <link> 的 family= 参数
+     · 想一次改一大片，就改下面「字体总表」里的两个总名
+
+   ▸ 怎么改字号
+     找到那一部分的  --pf-xxx-size ，改数字即可。单位 mm，按
+     841 × 1189 mm（A0）实际尺寸计。行高是无单位倍数，会自己跟着字号走，
+     不用另外调；上下标用的是 em，也会自动跟随。
+   ══════════════════════════════════════════════════════════════════════ */
+#poster{
+
+  /* ══ 字体总表 ══════════════════════════════════════════════════════
+     海报默认只用两款字体。改这两行 = 全局换字体；
+     只想换某一部分，就别动这里，去那一部分的 --pf-xxx-font 上写字体名。 */
+  --pf-font-display:         "Cormorant Garamond", system-ui, sans-serif;  /* 标题·标签·数字 */
+  --pf-font-text:            "Lora", system-ui, sans-serif;                /* 正文·阅读 */
+
+  /* 备用字体（逗号后面那些）不要随便删：图里的箭头 ⇒ 等字符
+     Cormorant / Lora 本身没有，要靠备用字体补字。换字体时把新字体加在
+     最前面即可，例如  "Playfair Display", "Cormorant Garamond", system-ui, sans-serif; */
+
+  /* 若要排中文，把中文字体写在最前面，西文字体留在后面兜底，例如：
+     --pf-font-text: "Noto Serif SC", "Songti SC", "Lora", serif;   */
+
+  /* ── 0 · 页面默认 ─────────────────────────────────────────────────
+     下面没有单独指定字体的元素都继承这一项。 */
+  --pf-base-font:            var(--pf-font-text);
+
+  /* 正文中夹杂的少量展示体短语 —— "Recovery is certified"、completed_valid
+     这两处。（公式不走这一项，见第 11 节的数学字体。） */
+  --pf-inline-emph-font:     var(--pf-font-display);
+
+  /* ── 1 · 抬头 ──────────────────────────────────────────────────── */
+  --pf-eyebrow-font:         var(--pf-font-display);  /* 眉标 AQIS 2026 · Poster Session */
+  --pf-eyebrow-size:         7.5mm;
+
+  --pf-title-font:           var(--pf-font-text);     /* 海报大标题 */
+  --pf-title-size:           33mm;
+
+  --pf-subtitle-font:        var(--pf-font-display);  /* 副标题（斜体） */
+  --pf-subtitle-size:        14mm;
+
+  --pf-authors-font:         var(--pf-font-text);     /* 作者 · 单位 */
+  --pf-authors-size:         8.5mm;
+
+  /* ── 2 · 章节标题 01 … 06 ──────────────────────────────────────── */
+  --pf-section-title-font:   var(--pf-font-text);     /* 六个章节标题统一 */
+  --pf-section-title-size:   15mm;
+  --pf-section-number-font:  var(--pf-section-title-font);  /* 金色编号 01/02/… */
+  --pf-section-number-size:  1em;                           /* 1em = 跟随所在标题 */
+
+  /* ── 3 · 正文 ──────────────────────────────────────────────────── */
+  /* 主体段落用本机安装的 Anthropic Serif Web（字体家族名就是这个，
+     正体和斜体两个字重都装了；它没有粗体切，<b> 由浏览器合成加粗）。
+     后面的 Lora 只是兜底，遇到该字体缺的字符时补字。 */
+  --pf-body-font:            "Anthropic Serif Web", var(--pf-font-text);  /* 主体段落 */
+  --pf-body-size:            9mm;
+
+  --pf-body-sm-font:         var(--pf-font-text);     /* 小号段落：结尾说明·来源·链接 */
+  --pf-body-sm-size:         8.4mm;
+
+  --pf-list-font:            var(--pf-font-text);     /* 第 01 栏的三条项目符号 */
+  --pf-list-size:            9mm;
+
+  /* ── 4 · 预算词条行（第 02 栏） ────────────────────────────────── */
+  --pf-budget-font:          var(--pf-font-display);  /* control / store / … */
+  --pf-budget-size:          8.6mm;
+
+  /* ── 5 · 定理框（第 03 栏） ────────────────────────────────────── */
+  --pf-theorem-label-font:   var(--pf-font-display);  /* THEOREM 标签 */
+  --pf-theorem-label-size:   7mm;
+  /* 不等式本身现在是 MathML 公式，字体走下面第 11 节的数学字体，
+     这里只管字号（公式跟着容器字号缩放）。 */
+  --pf-theorem-formula-size: 12mm;
+  --pf-theorem-note-font:    var(--pf-font-text);     /* 框内下方小字注 */
+  --pf-theorem-note-size:    8mm;
+
+  /* ── 6 · 四张插图 ──────────────────────────────────────────────────
+     图注是普通 HTML，字体字号随便调。
+     图「内部」的标注字号不在这里 —— 它们要对齐 SVG 里画出来的方框、
+     坐标轴和刻度，所以留在各自 SVG 中、紧挨着坐标写。这里给每张图开放
+     两个旋钮：标注字体，以及整图缩放（文字和图形一起放大，是不撑破
+     框线的唯一放大方式，例如写 115%）。 */
+  --pf-figcaption-font:      var(--pf-font-text);     /* 图注 */
+  --pf-figcaption-size:      7.2mm;
+
+  --pf-fig-label-font:       var(--pf-font-text);     /* 四张图标注的共同默认字体 */
+
+  --pf-fig1-label-font:      var(--pf-fig-label-font);  /* 图1 相位层分散·两种货币 */
+  --pf-fig1-scale:           100%;
+  --pf-fig2-label-font:      var(--pf-fig-label-font);  /* 图2 权衡边界 */
+  --pf-fig2-scale:           100%;
+  --pf-fig3-label-font:      var(--pf-fig-label-font);  /* 图3 承诺代价实测 */
+  --pf-fig3-scale:           100%;
+  --pf-fig4-label-font:      var(--pf-fig-label-font);  /* 图4 容错开销比 */
+  --pf-fig4-scale:           100%;
+
+  /* ── 7 · 小栏「The exchange rate, in miniature」 ───────────────── */
+  --pf-callout-label-font:   var(--pf-font-display);  /* 小标签 */
+  --pf-callout-label-size:   7mm;
+  --pf-callout-body-font:    var(--pf-font-text);     /* 栏内正文 */
+  --pf-callout-body-size:    8.8mm;
+
+  /* ── 8 · 适用范围两格（第 06 栏） ──────────────────────────────── */
+  --pf-scope-head-font:      var(--pf-font-display);  /* 「Two hypotheses hold」等小标题 */
+  --pf-scope-head-size:      9mm;
+  --pf-scope-body-font:      var(--pf-font-text);     /* 格内文字 */
+  --pf-scope-body-size:      8.4mm;
+
+  /* ── 9 · 统计数字块 ───────────────────────────────────────────── */
+  --pf-stat-number-font:     var(--pf-font-display);  /* 1,080 / 1,728 / … */
+  --pf-stat-number-size:     13mm;
+  --pf-stat-label-font:      var(--pf-font-text);     /* 数字下方的说明 */
+  --pf-stat-label-size:      7.4mm;
+
+  /* ── 10 · 页脚 ────────────────────────────────────────────────── */
+  --pf-footer-label-font:    var(--pf-font-display);  /* TAKEAWAY 标签 */
+  --pf-footer-label-size:    16mm;
+  --pf-takeaway-font:        var(--pf-font-display);  /* 「Randomize and lower late.」 */
+  --pf-takeaway-size:        24mm;
+  --pf-footer-body-font:     var(--pf-font-text);     /* 页脚结语段 */
+  --pf-footer-body-size:     9.5mm;
+
+  /* ── 11 · 公式 ────────────────────────────────────────────────────
+     海报里所有公式都是 MathML，由浏览器原生排版（不联网、不用 JS）。
+     数学字体必须是带 MATH 表的字体，否则上下标位置和大运算符会不对；
+     本机已装 STIX Two Math，作为首选。math 关键字是浏览器的数学字体兜底。
+     公式字号不在这里定 —— 它继承所在段落/容器的字号，跟着一起缩放；
+     --pf-math-scale 只做微调，用来把公式的视觉大小配平正文字体。 */
+  --pf-math-font:            "STIX Two Math", "Latin Modern Math", math;
+  --pf-math-scale:           102%;
+
+  /* ── 12 · 基金致谢（页脚下方） ─────────────────────────────────── */
+  --pf-funding-label-font:   var(--pf-font-display);  /* FUNDING 标签 */
+  --pf-funding-label-size:   8mm;
+  --pf-funding-font:         var(--pf-font-text);     /* 基金号正文 */
+  --pf-funding-size:         6.5mm;
+}
+
+/* ══ 公式渲染 ══════════════════════════════════════════════════════════
+   math 元素统一取数学字体；变量的斜体、上下标位置都由 MathML 自己处理，
+   所以公式里不要再写 font-style:italic 或 <sub>/<sup>。 */
+#poster math{ font-family:var(--pf-math-font); font-size:var(--pf-math-scale); font-style:normal }
+#poster math[display="block"]{ margin:0 auto }
+
+/* 图内公式：SVG 用 <foreignObject> 开一个小窗口放 MathML。窗口的 x/y/width/
+   height 用 SVG 用户单位，直接贴着图里的方框坐标写；里面的 font-size 也是
+   用户单位（和同图 SVG 的 font-size 数值可比），所以整图缩放时公式一起缩放。
+   HTML 不吃 fill，颜色要用 color 写。
+   注意：.fo / .fo-row 是 flex 容器，公式和文字之间的普通空格会被吞掉，
+   要写成 &nbsp;（例如 “carry&nbsp;<math>S</math>&nbsp;bits”）。 */
+#poster foreignObject{ overflow:visible }
+#poster .fo{ display:flex; align-items:center; height:100%; line-height:1.1;
+             color:var(--color-text); white-space:nowrap }
+#poster .fo-c{ justify-content:center }
+#poster .fo-row{ display:flex; gap:8px; height:100%; white-space:nowrap }
+#poster .fo-row > div{ width:56px; display:flex; align-items:center; justify-content:center }
+</style>
+</helmet>
+<doc-page width="841mm" height="1189mm">
+<section class="page" id="poster" style="padding:28mm 40mm 26mm; display:flex; flex-direction:column; gap:10mm; background:var(--color-bg); color:var(--color-text); font-family:var(--pf-base-font)">
+
+  <header style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:9mm">
+    <div style="font-family:var(--pf-eyebrow-font); font-size:var(--pf-eyebrow-size); letter-spacing:0.36em; text-transform:uppercase; color:var(--color-accent-700)">AQIS 2026 · Poster Session</div>
+    <div style="width:100%; height:1px; background:var(--color-divider)"></div>
+    <h1 style="margin:0; font-family:var(--pf-title-font); font-size:var(--pf-title-size); line-height:1.04; font-weight:400; letter-spacing:-0.015em; max-width:640mm; text-wrap:balance">Representation as a Computational Resource in Quantum Compilation</h1>
+    <p style="margin:0; font-family:var(--pf-subtitle-font); font-style:italic; font-size:var(--pf-subtitle-size); line-height:1.25; color:var(--color-neutral-700); max-width:560mm; text-wrap:balance">Approximate recoverability tradeoffs and model-specific fault-tolerant consequences</p>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:3mm; font-family:var(--pf-authors-font); font-size:var(--pf-authors-size); color:var(--color-neutral-700)">
+      <div style="display:flex; align-items:center; gap:8mm">
+        <span>Jinze Yang<sup style="font-size:0.6em">1</sup></span>
+        <span style="color:var(--color-accent)">·</span>
+        <span>Yangyang Li<sup style="font-size:0.6em">1</sup></span>
+        <span style="color:var(--color-accent)">·</span>
+        <span>Xiu-Hao Deng<sup style="font-size:0.6em">2,3</sup></span>
+      </div>
+      <div style="display:flex; align-items:center; gap:6mm; font-style:italic; font-size:0.8em">
+        <span><sup style="font-size:0.7em">1</sup>&nbsp;Xidian University</span>
+        <span style="color:var(--color-accent)">·</span>
+        <span><sup style="font-size:0.7em">2</sup>&nbsp;Shenzhen International Quantum Academy</span>
+        <span style="color:var(--color-accent)">·</span>
+        <span><sup style="font-size:0.7em">3</sup>&nbsp;Hefei National Laboratory</span>
+      </div>
+    </div>
+    <div style="width:100%; height:3px; border-top:1px solid var(--color-divider); border-bottom:1px solid var(--color-divider)"></div>
+  </header>
+
+  <div style="flex:1; display:grid; grid-template-columns:repeat(3, 1fr); gap:22mm; align-items:stretch">
+
+    <div style="display:flex; flex-direction:column; gap:11mm; justify-content:space-between">
+      <div>
+        <h2 style="margin:0 0 4mm; font-family:var(--pf-section-title-font); font-size:var(--pf-section-title-size); font-weight:400; line-height:1.1"><span style="color:var(--color-accent); font-family:var(--pf-section-number-font); font-size:var(--pf-section-number-size); font-feature-settings:'tnum'">01</span> &nbsp;Compilation destroys structure</h2>
+        <div style="height:1px; background:var(--color-accent); opacity:0.65"></div>
+      </div>
+      <p style="margin:0; font-family:var(--pf-body-font); font-size:var(--pf-body-size); line-height:1.5; text-align:justify">Fault-tolerant pipelines deliberately scatter a quantity that was once written in one place — and the scattering is correct, standard, and desirable in each case:</p>
+      <ul style="margin:0; padding-left:9mm; font-family:var(--pf-list-font); font-size:var(--pf-list-size); line-height:1.45; display:flex; flex-direction:column; gap:4mm">
+        <li><b>Scheduling.</b> Variational and time-dependent layers split one accumulated phase across many rounds.</li>
+        <li><b>Synthesis.</b> An angle becomes a Clifford+<i>T</i> word in which no single gate carries the angle.</li>
+        <li><b>Randomized compiling.</b> Each rotation is twirled into sign-randomized fragments.</li>
+      </ul>
+      <p style="margin:0; font-family:var(--pf-body-font); font-size:var(--pf-body-size); line-height:1.5; text-align:justify">We ask what it costs a <i>downstream</i> compiler — a cloud transpiler, a control-stack stream optimizer — to put the quantity back together, and show the price is payable in exactly two currencies: <b>bits of compiler state</b>, or <b>magic states</b>.</p>
+
+      <figure style="margin:0">
+        <svg viewBox="0 0 480 452" style="width:var(--pf-fig1-scale); display:block; font-family:var(--pf-fig1-label-font)" role="img" aria-label="Dispersal of a commuting phase layer into rounds, and the cut at which the two currencies are paid">
+          <g font-size="14" fill="var(--color-text)">
+            <text x="0" y="14" font-size="13" letter-spacing="2.2" fill="var(--color-accent-700)">SEMANTIC</text>
+            <g stroke="var(--color-text)" stroke-width="1" fill="none">
+              <rect x="100" y="4" width="56" height="34" rx="3"></rect>
+              <rect x="164" y="4" width="56" height="34" rx="3"></rect>
+              <rect x="228" y="4" width="56" height="34" rx="3"></rect>
+              <rect x="356" y="4" width="56" height="34" rx="3"></rect>
+            </g>
+            <foreignObject x="100" y="4" width="312" height="34">
+              <div class="fo-row" style="font-size:15px">
+                <div><math><msub><mi>P</mi><mn>1</mn></msub><mo>,</mo><msub><mi>θ</mi><mn>1</mn></msub></math></div>
+                <div><math><msub><mi>P</mi><mn>2</mn></msub><mo>,</mo><msub><mi>θ</mi><mn>2</mn></msub></math></div>
+                <div><math><msub><mi>P</mi><mn>3</mn></msub><mo>,</mo><msub><mi>θ</mi><mn>3</mn></msub></math></div>
+                <div>···</div>
+                <div><math><msub><mi>P</mi><mi>m</mi></msub><mo>,</mo><msub><mi>θ</mi><mi>m</mi></msub></math></div>
+              </div>
+            </foreignObject>
+            <text x="0" y="34" font-size="13" fill="var(--color-neutral-600)">m records</text>
+
+            <g stroke="var(--color-accent)" stroke-width="1.2" fill="none">
+              <line x1="256" y1="52" x2="256" y2="88"></line>
+              <path d="M251 82 L256 90 L261 82"></path>
+            </g>
+            <text x="268" y="76" font-size="14" font-style="italic" fill="var(--color-accent-700)">schedule · twirl · lower</text>
+
+            <text x="0" y="99" font-size="13" letter-spacing="2.2" fill="var(--color-accent-700)">DISPERSED</text>
+            <g stroke="var(--color-neutral-500)" stroke-width="1" fill="none">
+              <rect x="100" y="106" width="56" height="30" rx="3"></rect><rect x="164" y="106" width="56" height="30" rx="3"></rect><rect x="228" y="106" width="56" height="30" rx="3"></rect><rect x="292" y="106" width="56" height="30" rx="3"></rect><rect x="356" y="106" width="56" height="30" rx="3"></rect>
+              <rect x="100" y="146" width="56" height="30" rx="3"></rect><rect x="164" y="146" width="56" height="30" rx="3"></rect><rect x="228" y="146" width="56" height="30" rx="3"></rect><rect x="292" y="146" width="56" height="30" rx="3"></rect><rect x="356" y="146" width="56" height="30" rx="3"></rect>
+              <rect x="100" y="186" width="56" height="30" rx="3"></rect><rect x="164" y="186" width="56" height="30" rx="3"></rect><rect x="228" y="186" width="56" height="30" rx="3"></rect><rect x="292" y="186" width="56" height="30" rx="3"></rect><rect x="356" y="186" width="56" height="30" rx="3"></rect>
+            </g>
+            <foreignObject x="100" y="106" width="312" height="30">
+              <div class="fo-row" style="font-size:13px; color:var(--color-neutral-700)">
+                <div><math><mo>±</mo><msub><mi>a</mi><mn>1</mn></msub></math></div>
+                <div><math><mo>±</mo><msub><mi>a</mi><mn>2</mn></msub></math></div>
+                <div><math><mo>±</mo><msub><mi>a</mi><mn>3</mn></msub></math></div>
+                <div>···</div>
+                <div><math><mo>±</mo><msub><mi>a</mi><mi>m</mi></msub></math></div>
+              </div>
+            </foreignObject>
+            <foreignObject x="100" y="146" width="312" height="30">
+              <div class="fo-row" style="font-size:13px; color:var(--color-neutral-700)">
+                <div><math><mo>±</mo><msub><mi>a</mi><mn>1</mn></msub></math></div>
+                <div><math><mo>±</mo><msub><mi>a</mi><mn>2</mn></msub></math></div>
+                <div><math><mo>±</mo><msub><mi>a</mi><mn>3</mn></msub></math></div>
+                <div>···</div>
+                <div><math><mo>±</mo><msub><mi>a</mi><mi>m</mi></msub></math></div>
+              </div>
+            </foreignObject>
+            <foreignObject x="100" y="186" width="312" height="30">
+              <div class="fo-row" style="font-size:13px; color:var(--color-neutral-700)">
+                <div><math><mo>±</mo><msub><mi>a</mi><mn>1</mn></msub></math></div>
+                <div><math><mo>±</mo><msub><mi>a</mi><mn>2</mn></msub></math></div>
+                <div><math><mo>±</mo><msub><mi>a</mi><mn>3</mn></msub></math></div>
+                <div>···</div>
+                <div><math><mo>±</mo><msub><mi>a</mi><mi>m</mi></msub></math></div>
+              </div>
+            </foreignObject>
+            <g text-anchor="end" font-size="13" fill="var(--color-neutral-600)">
+              <text x="92" y="126">round 1</text><text x="92" y="166">round 2</text><text x="92" y="206">round 3</text>
+            </g>
+            <text x="0" y="240" font-size="14" font-style="italic" fill="var(--color-text)">no record — and no prefix — determines the edge total</text>
+            <foreignObject x="0" y="246" width="480" height="30">
+              <div class="fo" style="font-size:15px; color:var(--color-accent-700)">
+                <math>
+                  <msub><mi>x</mi><mi>j</mi></msub><mo>=</mo>
+                  <munder><mo>∑</mo><mi>t</mi></munder>
+                  <msubsup><mi>s</mi><mi>j</mi><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></msubsup>
+                  <msubsup><mi>a</mi><mi>j</mi><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></msubsup>
+                  <mspace width="0.7em"></mspace><mi>mod</mi><mspace width="0.2em"></mspace><mi>Q</mi>
+                </math>
+              </div>
+            </foreignObject>
+
+            <line x1="0" y1="284" x2="480" y2="284" stroke="var(--color-divider)" stroke-width="1"></line>
+
+            <text x="0" y="312" font-size="13" letter-spacing="2.2" fill="var(--color-accent-700)">AT ANY CUT</text>
+            <line x1="240" y1="326" x2="240" y2="452" stroke="var(--color-accent)" stroke-width="1.4" stroke-dasharray="7 6"></line>
+            <text x="240" y="340" text-anchor="middle" font-size="13" fill="var(--color-accent-700)" font-style="italic">cut</text>
+            <g stroke="var(--color-text)" stroke-width="1" fill="none">
+              <rect x="0" y="356" width="216" height="82" rx="3"></rect>
+              <rect x="264" y="356" width="216" height="82" rx="3"></rect>
+            </g>
+            <foreignObject x="0" y="370" width="216" height="26">
+              <div class="fo fo-c" style="font-size:16px">carry&nbsp;<math><mi>S</mi></math>&nbsp;bits of state</div>
+            </foreignObject>
+            <text x="108" y="410" text-anchor="middle" font-size="13" fill="var(--color-neutral-600)">defer, aggregate, emit once</text>
+            <text x="372" y="384" text-anchor="middle" font-size="16">commit now</text>
+            <text x="372" y="410" text-anchor="middle" font-size="13" fill="var(--color-neutral-600)">corrections ⇒ magic states</text>
+          </g>
+        </svg>
+        <figcaption style="font-family:var(--pf-figcaption-font); font-size:var(--pf-figcaption-size); line-height:1.35; margin-top:4mm; color:var(--color-neutral-700)">One commuting phase layer, lowered into <math><mi>r</mi></math> contiguous rounds of grid residues. At every cut the scattered information is either carried across in state or committed to output and repaid downstream.</figcaption>
+      </figure>
+
+      <div>
+        <h2 style="margin:0 0 4mm; font-family:var(--pf-section-title-font); font-size:var(--pf-section-title-size); font-weight:400; line-height:1.1"><span style="color:var(--color-accent); font-family:var(--pf-section-number-font); font-size:var(--pf-section-number-size); font-feature-settings:'tnum'">02</span> &nbsp;A budget-explicit model</h2>
+        <div style="height:1px; background:var(--color-accent); opacity:0.65"></div>
+      </div>
+      <p style="margin:0; font-family:var(--pf-body-font); font-size:var(--pf-body-size); line-height:1.5; text-align:justify">Every channel that would let a restarted compiler recover the aggregate is charged in bits — no gate count is ever converted into a bit value:</p>
+      <div style="font-family:var(--pf-budget-font); font-size:var(--pf-budget-size); line-height:1.6; letter-spacing:0.02em; display:grid; grid-template-columns:1fr 1fr; gap:2mm 6mm; border-top:1px solid var(--color-divider); border-bottom:1px solid var(--color-divider); padding:5mm 0">
+        <span>control</span><span>store</span><span>live window</span><span>parameters</span><span style="grid-column:1 / -1">intermediate representation</span>
+      </div>
+      <p style="margin:0; font-family:var(--pf-body-font); font-size:var(--pf-body-size); line-height:1.5; text-align:justify"><span style="font-family:var(--pf-inline-emph-font); font-style:italic">Recovery is certified, not asserted.</span> The representation-aware pipeline uses bounded recognition, aggregation certificates and conservative fallback; a measured cell becomes numerical only once a symbolic or dense certificate returns <span style="font-family:var(--pf-inline-emph-font)">completed_valid</span>. Unsupported is never conflated with incorrect, and bridge loss is reported apart from compiler quality.</p>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:11mm; justify-content:space-between">
+      <div>
+        <h2 style="margin:0 0 4mm; font-family:var(--pf-section-title-font); font-size:var(--pf-section-title-size); font-weight:400; line-height:1.1"><span style="color:var(--color-accent); font-family:var(--pf-section-number-font); font-size:var(--pf-section-number-size); font-feature-settings:'tnum'">03</span> &nbsp;The frontier</h2>
+        <div style="height:1px; background:var(--color-accent); opacity:0.65"></div>
+      </div>
+      <div style="border:1px solid var(--color-accent); padding:9mm 8mm; display:flex; flex-direction:column; gap:5mm; align-items:center; text-align:center">
+        <div style="font-family:var(--pf-theorem-label-font); font-size:var(--pf-theorem-label-size); letter-spacing:0.28em; text-transform:uppercase; color:var(--color-accent-700)">Theorem</div>
+        <math display="block" style="font-size:var(--pf-theorem-formula-size); line-height:1.3">
+          <mrow>
+            <msub><mi>A</mi><mi>p</mi></msub>
+            <mo>+</mo>
+            <mrow><mo stretchy="false">(</mo><mn>2</mn><mi>p</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow>
+            <mspace width="0.22em"></mspace><mi>S</mi>
+            <mo>≥</mo>
+            <mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>δ</mi><mo stretchy="false">)</mo></mrow>
+            <mspace width="0.22em"></mspace><mi>m</mi><mspace width="0.22em"></mspace>
+            <msub><mi>log</mi><mn>2</mn></msub><mo>&#x2061;</mo><mspace width="0.14em"></mspace>
+            <msub><mi>K</mi><mi>ε</mi></msub>
+            <mo>−</mo>
+            <msub><mi>h</mi><mn>2</mn></msub><mo>&#x2061;</mo>
+            <mrow><mo stretchy="false">(</mo><mi>δ</mi><mo stretchy="false">)</mo></mrow>
+          </mrow>
+        </math>
+        <div style="font-family:var(--pf-theorem-note-font); font-size:var(--pf-theorem-note-size); line-height:1.45; color:var(--color-neutral-700)">for any compiler making <math><mi>p</mi></math> forward passes and failing with probability at most <math><mi>δ</mi></math></div>
+      </div>
+      <p style="margin:0; font-family:var(--pf-body-font); font-size:var(--pf-body-size); line-height:1.5; text-align:justify"><math><msub><mi>A</mi><mi>p</mi></msub></math> is committed output, <math><mi>S</mi></math> the serialized crossing state, and <math><msub><mi>K</mi><mi>ε</mi></msub><mo>=</mo><mi mathvariant="normal">Θ</mi><mo stretchy="false">(</mo><mn>1</mn><mo>/</mo><mi>ε</mi><mo stretchy="false">)</mo></math> the number of distinguishable settings on the Ross–Selinger synthesis grid. The two cannot both be small. The bound is carried by the schedule alone, so the folded compile-time presentation of randomized compiling inherits it verbatim — nothing depends on tracking Pauli frames.</p>
+
+      <figure style="margin:0">
+        <svg viewBox="0 0 480 396" style="width:var(--pf-fig2-scale); display:block; font-family:var(--pf-fig2-label-font)" role="img" aria-label="Tradeoff frontier between committed output and crossing state">
+          <defs>
+            <pattern id="hatch" width="9" height="9" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+              <line x1="0" y1="0" x2="0" y2="9" stroke="var(--color-accent)" stroke-width="0.8" opacity="0.35"></line>
+            </pattern>
+          </defs>
+          <g fill="var(--color-text)">
+            <polygon points="86,66 86,306 344,306" fill="url(#hatch)"></polygon>
+            <line x1="86" y1="66" x2="344" y2="306" stroke="var(--color-accent)" stroke-width="2"></line>
+            <line x1="120" y1="66" x2="337" y2="252" stroke="var(--color-accent)" stroke-width="1.1" stroke-dasharray="6 5"></line>
+            <line x1="86" y1="30" x2="86" y2="306" stroke="var(--color-text)" stroke-width="1.2"></line>
+            <line x1="86" y1="306" x2="452" y2="306" stroke="var(--color-text)" stroke-width="1.2"></line>
+            <foreignObject x="86" y="4" width="330" height="22">
+              <div class="fo" style="font-size:14px; font-style:italic"><math><msub><mi>A</mi><mi>p</mi></msub></math>&nbsp;— committed output (bits)</div>
+            </foreignObject>
+            <foreignObject x="86" y="324" width="366" height="22">
+              <div class="fo fo-c" style="font-size:14px; font-style:italic"><math><mi>S</mi></math>&nbsp;— crossing state carried (bits)</div>
+            </foreignObject>
+            <text x="100" y="184" font-size="14" font-style="italic" fill="var(--color-accent-700)">impossible</text>
+            <g fill="var(--color-text)">
+              <circle cx="86" cy="66" r="6"></circle>
+              <circle cx="215" cy="186" r="6"></circle>
+              <circle cx="344" cy="306" r="6"></circle>
+            </g>
+            <g font-size="14">
+              <text x="100" y="62">materialize-first — commits everything</text>
+              <text x="229" y="182">memory-capped block hybrid</text>
+              <text x="229" y="200" font-size="12" fill="var(--color-neutral-600)">within a constant factor of the floor</text>
+              <text x="356" y="268">full deferral</text>
+              <foreignObject x="356" y="272" width="110" height="18">
+                <div class="fo" style="font-size:12px; color:var(--color-neutral-600)"><math><msub><mi>A</mi><mi>p</mi></msub><mo>=</mo><mn>0</mn></math></div>
+              </foreignObject>
+            </g>
+            <g>
+              <circle cx="90" cy="356" r="5" fill="none" stroke="var(--color-accent)" stroke-width="2"></circle>
+              <text x="104" y="361" font-size="12.5" fill="var(--color-accent-700)">semantic input — never dispersed: compact output, log state</text>
+            </g>
+            <text x="269" y="384" text-anchor="middle" font-size="13" fill="var(--color-neutral-700)" font-style="italic">solid: the proved floor  ·  dashed: the attained envelope</text>
+          </g>
+        </svg>
+        <figcaption style="font-family:var(--pf-figcaption-font); font-size:var(--pf-figcaption-size); line-height:1.35; margin-top:4mm; color:var(--color-neutral-700)">Everything below the solid line is unreachable for a compiler fed the dispersed stream; a block compiler reaches the line up to a constant factor.</figcaption>
+      </figure>
+
+      <div>
+        <h2 style="margin:0 0 4mm; font-family:var(--pf-section-title-font); font-size:var(--pf-section-title-size); font-weight:400; line-height:1.1"><span style="color:var(--color-accent); font-family:var(--pf-section-number-font); font-size:var(--pf-section-number-size); font-feature-settings:'tnum'">04</span> &nbsp;Not at par</h2>
+        <div style="height:1px; background:var(--color-accent); opacity:0.65"></div>
+      </div>
+      <p style="margin:0; font-family:var(--pf-body-font); font-size:var(--pf-body-size); line-height:1.5; text-align:justify">Once a committed record is <i>executed</i> rather than buffered, the committed channel pays a further <math><msub><mi>log</mi><mn>2</mn></msub><mo>&#x2061;</mo><mrow><mo>(</mo><mfrac linethickness="0"><mi>m</mi><mi>k</mi></mfrac><mo>)</mo></mrow></math> — the entropy of the compiler's own decision about which coordinates to commit early. A compiler that defers is handed that decision for free by the stream that follows.</p>
+      <sc-if value="{{ showToll }}" hint-placeholder-val="{{ true }}">
+      <figure style="margin:0">
+        <svg viewBox="0 0 480 280" style="width:var(--pf-fig3-scale); display:block; font-family:var(--pf-fig3-label-font)" role="img" aria-label="Measured commitment toll against prediction">
+          <g fill="var(--color-text)">
+            <line x1="70" y1="200" x2="466" y2="200" stroke="var(--color-text)" stroke-width="1.2"></line>
+            <line x1="70" y1="20" x2="70" y2="200" stroke="var(--color-text)" stroke-width="1.2"></line>
+            <g stroke="var(--color-divider)" stroke-width="1">
+              <line x1="70" y1="128" x2="466" y2="128"></line>
+              <line x1="70" y1="56" x2="466" y2="56"></line>
+            </g>
+            <g text-anchor="end" font-size="13" fill="var(--color-neutral-600)">
+              <text x="62" y="205">0</text><text x="62" y="133">1</text><text x="62" y="61">2</text>
+            </g>
+            <text x="8" y="20" font-size="13" fill="var(--color-neutral-600)">bits / generator</text>
+            <g fill="none" stroke="var(--color-text)" stroke-width="1.4">
+              <rect x="96" y="48" width="54" height="152"></rect>
+              <rect x="170" y="57" width="54" height="143"></rect>
+              <rect x="244" y="58" width="54" height="142"></rect>
+            </g>
+            <g stroke="var(--color-accent)" stroke-width="3">
+              <line x1="90" y1="56" x2="156" y2="56"></line>
+              <line x1="164" y1="57" x2="230" y2="57"></line>
+              <line x1="238" y1="58" x2="304" y2="58"></line>
+            </g>
+            <g stroke="var(--color-text)" stroke-width="1.4">
+              <line x1="318" y1="200" x2="372" y2="200"></line>
+              <line x1="392" y1="200" x2="446" y2="200"></line>
+            </g>
+            <g text-anchor="middle" font-size="13">
+              <text x="123" y="40">2.11</text><text x="197" y="49">1.99</text><text x="271" y="50">1.97</text>
+              <text x="345" y="192">0</text><text x="419" y="192">0</text>
+            </g>
+            <g text-anchor="middle" font-size="13" fill="var(--color-neutral-700)">
+              <text x="197" y="220">512</text><text x="271" y="220">2048</text>
+              <text x="419" y="220">control</text>
+            </g>
+            <foreignObject x="96" y="209" width="54" height="18">
+              <div class="fo fo-c" style="font-size:13px; color:var(--color-neutral-700)"><math><mi>m</mi><mo>=</mo><mn>128</mn></math></div>
+            </foreignObject>
+            <foreignObject x="318" y="209" width="54" height="18">
+              <div class="fo fo-c" style="font-size:13px; color:var(--color-neutral-700)"><math><mi>η</mi><mo>=</mo><mn>1</mn></math></div>
+            </foreignObject>
+            <foreignObject x="70" y="226" width="254" height="24">
+              <div class="fo fo-c" style="font-size:13px; color:var(--color-neutral-600)"><math><mi>η</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></math>&nbsp;· flat across a 16× range of&nbsp;<math><mi>m</mi></math></div>
+            </foreignObject>
+            <text x="382" y="242" text-anchor="middle" font-size="13" fill="var(--color-neutral-600)">toll vanishes</text>
+            <g><line x1="70" y1="264" x2="100" y2="264" stroke="var(--color-accent)" stroke-width="3"></line>
+              <foreignObject x="106" y="252" width="374" height="28">
+                <div class="fo" style="font-size:13px; color:var(--color-neutral-700)">predicted&nbsp;<math><msub><mi>log</mi><mn>2</mn></msub><mo>&#x2061;</mo><mrow><mo>(</mo><mfrac linethickness="0"><mi>m</mi><mi>k</mi></mfrac><mo>)</mo></mrow><mo>/</mo><mi>k</mi></math>&nbsp;— matched within 0.02 bits typically</div>
+              </foreignObject>
+            </g>
+          </g>
+        </svg>
+        <figcaption style="font-family:var(--pf-figcaption-font); font-size:var(--pf-figcaption-size); line-height:1.35; margin-top:4mm; color:var(--color-neutral-700)">Measured on an instrumented device under a preregistration frozen before the run. The toll is exactly zero when the commitment schedule is public.</figcaption>
+      </figure>
+      </sc-if>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:11mm; justify-content:space-between">
+      <div>
+        <h2 style="margin:0 0 4mm; font-family:var(--pf-section-title-font); font-size:var(--pf-section-title-size); font-weight:400; line-height:1.1"><span style="color:var(--color-accent); font-family:var(--pf-section-number-font); font-size:var(--pf-section-number-size); font-feature-settings:'tnum'">05</span> &nbsp;What it costs downstream</h2>
+        <div style="height:1px; background:var(--color-accent); opacity:0.65"></div>
+      </div>
+      <p style="margin:0; font-family:var(--pf-body-font); font-size:var(--pf-body-size); line-height:1.5; text-align:justify">Propagating one fixed total error budget through actual Clifford+<i>T</i> synthesis and surface-code scheduling turns the representational gap into a fault-tolerant one. Over all 96 matched target / error / allocation / QEC / factory settings, no reversal occurs.</p>
+
+      <figure style="margin:0">
+        <svg viewBox="0 0 480 300" style="width:var(--pf-fig4-scale); display:block; font-family:var(--pf-fig4-label-font)" role="img" aria-label="Fault-tolerant cost ratios on a logarithmic axis">
+          <g fill="var(--color-text)">
+            <g stroke="var(--color-divider)" stroke-width="1">
+              <line x1="100" y1="40" x2="100" y2="230"></line>
+              <line x1="240" y1="40" x2="240" y2="230"></line>
+              <line x1="310" y1="40" x2="310" y2="230"></line>
+              <line x1="380" y1="40" x2="380" y2="230"></line>
+              <line x1="450" y1="40" x2="450" y2="230"></line>
+            </g>
+            <line x1="170" y1="34" x2="170" y2="236" stroke="var(--color-text)" stroke-width="1.4"></line>
+            <text x="170" y="26" text-anchor="middle" font-size="12" fill="var(--color-neutral-700)">parity 1×</text>
+            <g font-size="14">
+              <text x="100" y="62">logical <tspan font-style="italic">T</tspan> states</text>
+              <text x="100" y="140">spacetime volume</text>
+              <text x="100" y="196" font-size="13" fill="var(--color-neutral-700)">external semantic tool, credited</text>
+            </g>
+            <g fill="none" stroke="var(--color-text)" stroke-width="1.4">
+              <rect x="351" y="70" width="46" height="26"></rect>
+              <rect x="361" y="148" width="71" height="26"></rect>
+            </g>
+            <g stroke="var(--color-text)" stroke-width="1.2">
+              <line x1="351" y1="66" x2="351" y2="100"></line><line x1="397" y1="66" x2="397" y2="100"></line>
+              <line x1="361" y1="144" x2="361" y2="178"></line><line x1="432" y1="144" x2="432" y2="178"></line>
+            </g>
+            <g font-size="13" fill="var(--color-accent-700)" font-feature-settings="'tnum'">
+              <text x="345" y="88" text-anchor="end">385–1,753×</text>
+              <text x="355" y="166" text-anchor="end">538–5,573×</text>
+            </g>
+            <circle cx="421" cy="161" r="5" fill="var(--color-accent)"></circle>
+            <line x1="421" y1="144" x2="421" y2="126" stroke="var(--color-accent)" stroke-width="1"></line>
+            <text x="421" y="120" text-anchor="middle" font-size="13" fill="var(--color-accent-700)">2,814× headline</text>
+            <g stroke="var(--color-text)" stroke-width="1.4">
+              <line x1="145" y1="212" x2="152" y2="212"></line>
+              <line x1="145" y1="205" x2="145" y2="219"></line><line x1="152" y1="205" x2="152" y2="219"></line>
+            </g>
+            <text x="162" y="216" font-size="12" fill="var(--color-neutral-700)">TKET PauliSimp: 0.44–0.54× the <tspan font-style="italic">T</tspan> states</text>
+            <g text-anchor="middle" font-size="12" fill="var(--color-neutral-600)" font-feature-settings="'tnum'">
+              <text x="100" y="250">0.1×</text><text x="170" y="250">1×</text><text x="240" y="250">10×</text><text x="310" y="250">100×</text><text x="380" y="250">1,000×</text><text x="450" y="250">10,000×</text>
+            </g>
+            <text x="275" y="284" text-anchor="middle" font-size="14" font-style="italic">materialize-first cost, relative to semantic-first (log scale)</text>
+          </g>
+        </svg>
+        <figcaption style="font-family:var(--pf-figcaption-font); font-size:var(--pf-figcaption-size); line-height:1.35; margin-top:4mm; color:var(--color-neutral-700)">Outputs of checked angle synthesis and the disclosed scheduling models — not universal hardware predictions.</figcaption>
+      </figure>
+
+      <div style="border-left:2px solid var(--color-accent); padding:2mm 0 2mm 7mm">
+        <div style="font-family:var(--pf-callout-label-font); font-size:var(--pf-callout-label-size); letter-spacing:0.28em; text-transform:uppercase; color:var(--color-accent-700); margin-bottom:3mm">The exchange rate, in miniature</div>
+        <p style="margin:0; font-family:var(--pf-callout-body-font); font-size:var(--pf-callout-body-size); line-height:1.5; text-align:justify">One QAOA cost layer, 3-regular MaxCut on 22 vertices — <math><mi>m</mi><mo>=</mo><mn>33</mn></math> edges at <math><mi>ε</mi><mo>=</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></math>. The layer is worth 252 bits, about <b>31 bytes</b>. A compiler that defers carries those 31 bytes across every cut. One that commits early buys the same information back at roughly 30 <i>T</i> gates per corrected coordinate: order <b><math><msup><mn>10</mn><mn>3</mn></msup></math> magic states</b>.</p>
+      </div>
+
+      <sc-if value="{{ showScope }}" hint-placeholder-val="{{ true }}">
+      <div>
+        <h2 style="margin:0 0 4mm; font-family:var(--pf-section-title-font); font-size:var(--pf-section-title-size); font-weight:400; line-height:1.1"><span style="color:var(--color-accent); font-family:var(--pf-section-number-font); font-size:var(--pf-section-number-size); font-feature-settings:'tnum'">06</span> &nbsp;Where the bound bites</h2>
+        <div style="height:1px; background:var(--color-accent); opacity:0.65"></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:6mm; font-family:var(--pf-scope-body-font); font-size:var(--pf-scope-body-size); line-height:1.45">
+        <div style="border-top:1px solid var(--color-divider); padding-top:4mm">
+          <div style="font-family:var(--pf-scope-head-font); font-size:var(--pf-scope-head-size); margin-bottom:3mm">Two hypotheses hold</div>
+          <p style="margin:0">Variational and Trotter cost layers: rounds contiguous in the stream, coefficients free to vary round to round.</p>
+        </div>
+        <div style="border-top:1px solid var(--color-divider); padding-top:4mm">
+          <div style="font-family:var(--pf-scope-head-font); font-size:var(--pf-scope-head-size); margin-bottom:3mm; color:var(--color-neutral-600)">One fails</div>
+          <p style="margin:0; color:var(--color-neutral-700)">Controlled-power ladders and phase estimation: contiguous, but round one already fixes the aggregate.</p>
+        </div>
+      </div>
+      <p style="margin:0; font-family:var(--pf-body-sm-font); font-size:var(--pf-body-sm-size); line-height:1.45; text-align:justify">Clifford records — routing, swap, and the Pauli-frame insertions of randomized compiling itself — sit interior to the block and normalize away, so the sign-randomized and folded presentations obey the same floor.</p>
+      </sc-if>
+
+      <sc-if value="{{ showStats }}" hint-placeholder-val="{{ true }}">
+      <div style="border-top:1px solid var(--color-divider); border-bottom:1px solid var(--color-divider); padding:6mm 0; display:grid; grid-template-columns:repeat(2, 1fr); gap:5mm 6mm; font-feature-settings:'tnum'">
+        <div><div style="font-family:var(--pf-stat-number-font); font-size:var(--pf-stat-number-size); line-height:1">1,080</div><div style="font-family:var(--pf-stat-label-font); font-size:var(--pf-stat-label-size); color:var(--color-neutral-700)">matched cells, 9 representations × 5 compilers</div></div>
+        <div><div style="font-family:var(--pf-stat-number-font); font-size:var(--pf-stat-number-size); line-height:1">1,728</div><div style="font-family:var(--pf-stat-label-font); font-size:var(--pf-stat-label-size); color:var(--color-neutral-700)">external-baseline cells, bridge loss reported apart</div></div>
+        <div><div style="font-family:var(--pf-stat-number-font); font-size:var(--pf-stat-number-size); line-height:1">288</div><div style="font-family:var(--pf-stat-label-font); font-size:var(--pf-stat-label-size); color:var(--color-neutral-700)">fixed-total-error fault-tolerant estimates</div></div>
+        <div><div style="font-family:var(--pf-stat-number-font); font-size:var(--pf-stat-number-size); line-height:1">21,060</div><div style="font-family:var(--pf-stat-label-font); font-size:var(--pf-stat-label-size); color:var(--color-neutral-700)">workload and negative-control cells, six-factor ablation</div></div>
+      </div>
+      </sc-if>
+      <p style="margin:0; font-family:var(--pf-body-sm-font); font-size:var(--pf-body-sm-size); line-height:1.45; text-align:justify; color:var(--color-neutral-700)">Every headline number is generated from a normalized frozen registry of 24,748 records; one command reruns the data audits, tables, figures and tests, and an independent clean-room directory reconstructs the theorem, benchmark and resource-estimate subsets.</p>
+      <div style="border-top:1px solid var(--color-divider); padding-top:5mm; font-family:var(--pf-body-sm-font); font-size:var(--pf-body-sm-size); line-height:1.45">Full paper, artifacts and preregistrations: <span style="color:var(--color-accent-700)">link or contact here</span></div>
+    </div>
+  </div>
+
+  <footer style="border-top:1px solid var(--color-divider); border-bottom:1px solid var(--color-divider); padding:7mm 0; display:flex; flex-direction:column; align-items:center; gap:6mm; text-align:center">
+    <div style="font-family:var(--pf-footer-label-font); font-size:var(--pf-footer-label-size); letter-spacing:0.36em; text-transform:uppercase; color:var(--color-accent-700)">Takeaway</div>
+    <div style="font-family:var(--pf-takeaway-font); font-style:italic; font-size:var(--pf-takeaway-size); line-height:1.12; font-weight:400">Randomize and lower late.</div>
+    <p style="margin:0; font-family:var(--pf-footer-body-font); font-size:var(--pf-footer-body-size); line-height:1.45; max-width:600mm; text-wrap:pretty">The information a compiler discards before aggregating cannot be recovered for free — it must be bought back in memory or in magic states, and buying it back early is strictly the more expensive of the two. Treat recoverability as a controlled variable in compilation and resource estimation.</p>
+  </footer>
+
+  <div style="margin-top:-3mm; display:flex; flex-direction:column; align-items:center; gap:2mm; text-align:center">
+    <div style="font-family:var(--pf-funding-label-font); font-size:var(--pf-funding-label-size); letter-spacing:0.3em; text-transform:uppercase; color:var(--color-accent-700)">Funding</div>
+    <p style="margin:0; font-family:var(--pf-funding-font); font-size:var(--pf-funding-size); line-height:1.3; max-width:755mm; color:var(--color-neutral-700); text-wrap:pretty">This work was supported in part by the National Natural Science Foundation of China under Grant No. 62476209, in part by the Key Research and Development Program of Shaanxi under Grant No. 2024CY2-GJHX-18, and in part by the Fundamental Research Funds for the Central Universities under Grant No. QTZX26097, the Science, Technology and Innovation Commission of Shenzhen Municipality (Grant Nos. JCYJ20170412152620376 and KYTDPT20181011104202253), the Innovation Program for Quantum Science and Technology (2021ZD0301703), Guangdong Major Project of Basic Research (2025B0303000007), and the Shenzhen Science and Technology Program (Grant No. KQTD20200820113010023).</p>
+  </div>
+</section>
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showTollFigure&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showScopeBox&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showCampaignStats&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    return {
+      showToll: p.showTollFigure ?? true,
+      showScope: p.showScopeBox ?? true,
+      showStats: p.showCampaignStats ?? true,
+    };
+  }
+}
+</script>
+</body>
+</html>

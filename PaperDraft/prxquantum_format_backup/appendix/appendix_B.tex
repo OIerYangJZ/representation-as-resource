@@ -1,0 +1,373 @@
+\section{Artifact Engineering}
+The implementation described in this appendix is a bounded recognizer and
+candidate controller, not a general maximal-commuting-region extractor for
+arbitrary DAGs.  Its semantic nodes are limited to explicit supported
+Pauli/phase records, local phase-ladder or Fourier spans,
+mirrored/self-inverse composite blocks, and repeated-run or preset semantic
+references.  The word ``region'' below means a contiguous span accepted by
+that configured grammar under its scan order.  Soundness of a selected
+rewrite is supplied by the independent certificate and conservative
+fallback, not by a claim of global maximality.
+
+\subsection{Candidate Control and Bounded Pipeline}
+
+The semantic path is advisory, not authoritative: semantic terms are
+lowered late, semantic subterms are compiled once and reused, and a
+semantic candidate loses to a flat reference whenever it does not
+clearly improve the conservative structural cost.  The term caches,
+compiled-subterm caches, and repeated-run block caches in the
+implementation follow from treating the semantic term rather than the
+materialized circuit as the unit of comparison.  The whole method is the
+following bounded pipeline.
+
+\begin{enumerate}[leftmargin=1.8em]
+    \item \textbf{Input.} A high-level circuit $C$, target basis $B$, and iteration budget $K$.
+    \item Compute stable signatures for instructions and candidate blocks in $C$.
+    \item Run bounded preprocessing $\mathcal{S}_K(C)$: repeated-prefix
+    and repeated-run detection and reuse; adjacent
+    block--inverse(block) cancellation; commutative inverse
+    cancellation; semantic lifting into instruction-span, phase-ladder,
+    and mirrored/self-inverse nodes where applicable; early stop if one
+    full round does not improve the selected cost.
+    \item Construct the candidate set
+    \[
+    \begin{aligned}
+    \mathcal{C}(C) = \{&\mathcal{L}_B(C),
+    \mathcal{P}_{\mathrm{ucc}}(\mathcal{L}_B(C)),\\
+    &\mathcal{P}_{\mathrm{ucc}}(\mathcal{L}_B(\mathcal{S}_K(C))),
+    \mathcal{R}(C)\},
+    \end{aligned}
+    \]
+    where $\mathcal{R}(C)$ is an optional semantic or preset-reference
+    candidate for large repeated structures, itself produced from the
+    semantic term algebra (Fourier-layer lowering, mirrored/self-inverse
+    lowering, or a bounded repeated-run rebuild).
+    \item If the circuit factors as $C=P\cdot B^r\cdot S$, form the
+    bounded block-candidate set $\mathcal{B}(B)=\{B_1,\dots,B_q\}$ and
+    select $i^\star=\arg\min_i\kappa_{\mathrm{proj}}(P,B_i,r,S)$ on the
+    projected full-circuit cost, rebuilding only $B_{i^\star}$.  This is
+    what lets the repeated-run path avoid materializing several giant
+    candidates merely to compare them.
+    \item Evaluate all candidates under the conservative structural cost
+    $\kappa$, with fixed lexicographic tie-breaking, and return
+    $\widehat{C}=\arg\min_{X\in\mathcal{C}(C)}\kappa(X)$.
+\end{enumerate}
+
+The role of candidate control is not to dominate all downstream flows.
+It is to prevent avoidable structured-circuit regressions by preserving
+the best available output among a small family of semantically
+equivalent candidates.
+
+
+\subsection{Complexity Discussion}
+
+The method is intentionally bounded and does not attempt global optimization. Let $n := |C|$ be the number of high-level instructions. Suppose one outer iteration consists of $r$ bounded scans, and scan $j$ has cost $T_j(n)$. Then the total runtime of preprocessing satisfies
+\[
+T_{\mathrm{pre}}(n)
+\in
+O\!\left(
+K \cdot \sum_{j=1}^{r} T_j(n)
+\right).
+\]
+The dominant scans are near-linear in $n$ up to implementation-dependent
+hashing, block-comparison, and bookkeeping costs, so practical behavior
+stays near-linear up to a bounded constant on repeat-heavy workloads.  A
+large-circuit fast path handles repeat-dominant cases, source-level
+short-circuiting avoids downstream work on Qiskit-native all-to-all
+composites, and backend-aware portfolio expansion is restricted to cases
+where instability matters.  The method is therefore a bounded systems
+heuristic, not a globally optimizing pass.
+
+\begin{proposition}[Expected regime of benefit]
+The preprocessing stage is most likely to help on circuits whose useful structure is already explicit at the high-level instruction stream or in the bounded semantic lift, especially exact inverse blocks, repeated blocks, phase-ladder layers, mirrored/self-inverse shells, and dominant repeated prefixes. It is not expected to uniformly improve families whose performance is dominated by later synthesis or routing decisions that are not captured by the preprocessing signatures or semantic nodes.
+\end{proposition}
+
+\begin{proof}[Justification]
+This follows from the construction of the pass. Every preprocessing rule
+operates on high-level structural regularities detected through stable
+signatures, exact inverse relations, or the bounded semantic lift into semantic
+terms such as Fourier layers and mirrored/self-inverse shells. Therefore the
+pass can only exploit structure that survives in this representation.
+Conversely, if output quality is dominated by later basis-specific synthesis or
+hardware-routing effects not visible at this stage, the preprocessing pass may
+improve little or only preserve parity with stronger downstream baselines. The
+representation-aware compilation principle is therefore selective rather than
+universal: it claims that some opportunities are materially easier to preserve
+and compare before lowering, not that all useful optimization should be moved
+to the semantic layer.
+\end{proof}
+
+
+\subsection{Integration Into UCC}
+\label{sec:integration}
+
+The semantic artifact changes the UCC flow in six places:
+\begin{enumerate}[leftmargin=1.5em]
+    \item it performs structural simplification before basis lowering,
+    \item it lifts suitable subcircuits into a bounded semantic term algebra before candidate generation,
+    \item it compares candidate outputs conservatively to avoid structured-circuit regressions,
+    \item it uses source-level short-circuiting on suitable all-to-all Qiskit-native cases,
+    \item it restricts backend-aware portfolio expansion to cases where extra probing is justified,
+    \item it memoizes bounded semantic references and repeated-run block selections for reuse.
+\end{enumerate}
+
+The organizing distinction is that some circuit growth is unavoidable
+basis-translation overhead while some is structural regression caused by
+losing recoverable semantic evidence before candidate selection.
+
+\subsection{Method and Provenance Map}
+\label{app:method-provenance}
+
+Every frozen numerical row is addressed by the complete primary key
+\begin{equation*}
+\begin{split}
+(&\texttt{experiment},\texttt{instance},\texttt{representation},
+  \texttt{method},\texttt{seed},\\
+ &\texttt{backend\_hash},\texttt{tool\_version},\texttt{config\_hash}).
+\end{split}
+\end{equation*}
+The backend and configuration hashes are SHA256 digests of canonical JSON
+(sorted keys and no insignificant whitespace).  A row collision on all eight
+fields is rejected.  In particular, the reorder-probe hardware rows and the
+canonical hardware-aware rows have different experiment and configuration
+keys, and therefore different reader labels even when the underlying MQT
+instance name is the same.  The frozen source is
+\path{research/experiment_registry/frozen_hardware_rows.json};
+\path{scripts/generate_keyed_tables.py} validates key uniqueness and generates
+the three affected table fragments plus
+\path{expanded_primary_keys.json}.  The generated labels expose the campaign,
+instance, seed, and the first eight configuration-hash digits.  Hand-edited
+numeric rows are not accepted by this path.
+
+The canonical validation data are grouped by experiment family in the artifact.
+The external-baseline method map immediately below uses the disclosed
+\(\texttt{timeout\_s}=600\) second wall-clock budget per method per instance;
+it does not override the distinct \texttt{RP23}, \texttt{HW24}, or
+\texttt{REAL24} campaign manifests. The table maps paper-facing names to
+JSON keys, tool/pass sequences, artifact flags, and source classes. The older
+real-panel UCC default row is included only to define that frozen-control
+label in the main text and Appendix~C; it is not one of the canonical methods
+used in the 600\,s external-baseline comparison.
+
+\begin{table*}[t]
+\centering
+\tiny
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.18\textwidth}
+                  >{\raggedright\arraybackslash}p{0.12\textwidth}
+                  >{\raggedright\arraybackslash}X
+                  >{\raggedright\arraybackslash}p{0.16\textwidth}
+                  >{\raggedright\arraybackslash}p{0.07\textwidth}
+                  >{\raggedright\arraybackslash}p{0.10\textwidth}@{}}
+\toprule
+Paper name & JSON key & Tool/pass sequence & Artifact flags & Budget & Source classes \\
+\midrule
+semantic UCC (Fourier-layer IR enabled)
+& \path{semantic_ucc}
+& \path{ucc.compile} to \{\texttt{cx}, \texttt{rx}, \texttt{ry}, \texttt{rz}, \texttt{h}\} with Fourier-layer IR enabled
+& \path{UCC_DISABLE_FOURIER_LAYER_IR} unset
+& 600\,s
+& main, abl, res, corr \\
+upstream UCC v0.4.12 pre-semantic default
+& \path{baseline_ucc}
+& \path{ucc.compile} loaded from the legacy baseline repository in \path{research/compare_real_instances.py}; target basis \{\texttt{cx}, \texttt{rx}, \texttt{ry}, \texttt{rz}, \texttt{h}\}
+& legacy baseline repo; semantic candidate controls absent
+& 240\,s in real-panel runner
+& real, appx \\
+artifact UCC (Fourier-layer IR disabled)
+& \path{no_fourier_ucc}
+& same artifact compile path with Fourier-layer IR disabled
+& \path{UCC_DISABLE_FOURIER_LAYER_IR=1}
+& 600\,s
+& abl, res \\
+\texttt{qiskit opt3}
+& \path{qiskit_opt3}
+& \path{qiskit.transpile(..., optimization_level=3, layout_method="trivial", routing_method="none")}
+& none
+& 600\,s
+& main, abl, res \\
+PyZX configured bridge
+& \path{pyzx_configured}
+& Qiskit QASM2 to PyZX, \path{to_basic_gates}, \path{basic_optimization}, Qiskit target-basis cleanup
+& none
+& 600\,s
+& main \\
+PyZX \texttt{full\_reduce}
+& \path{pyzx_full_reduce}
+& Qiskit QASM2 to PyZX graph, \path{full_reduce}, circuit extraction, Qiskit target-basis cleanup
+& none
+& 600\,s
+& main \\
+TKET FullPeephole
+& \path{tket_fullpeephole}
+& Qiskit-to-TKET bridge when available, otherwise QASM fallback, then \path{FullPeepholeOptimise}
+& none
+& 600\,s
+& main \\
+TKET PauliSimp (unrebased configuration)
+& \path{tket_paulisimp_unrebased}
+& direct Qiskit--TKET bridge, then \path{PauliSimp}; retained only to record the predicate error
+& none
+& 600\,s
+& status \\
+TKET PauliSimp (rebased)
+& \path{tket_paulisimp_rebased}
+& direct bridge, \path{DecomposeBoxes}, \texttt{AutoRebase(\{CX, RZ, Rx\})}, \path{RemoveRedundancies}, \path{PauliSimp}, \path{RemoveRedundancies}, target-basis cleanup
+& generic identical preamble
+& 600\,s
+& main, irr \\
+TKET GuidedPauliSimp
+& \path{tket_guided_paulisimp}
+& same TKET bridge/fallback sequence, then \path{GuidedPauliSimp}
+& none
+& 600\,s
+& main \\
+staq rotation folding
+& \path{staq_rotation_folding}
+& Qiskit opt0 target-basis QASM2, public \path{staq} \path{fold_rotations}, QASM2 parse, target-basis cleanup
+& no family labels; generic double-precision parser/serializer patch disclosed
+& 600\,s
+& main, irr \\
+phase-polynomial reference
+& \path{phase_poly_reference}
+& recognize the $H D^r H$ witness, aggregate commuting \texttt{rz}/\texttt{cp} coefficients, then lower through Qiskit opt0
+& none
+& 600\,s
+& main, abl, res, corr \\
+\bottomrule
+\end{tabularx}
+\caption{Method/provenance map for the canonical validation protocol. The direct Qiskit-to-TKET bridge was available in the validation environment; the QASM fallback is documented for reproducibility when that bridge is unavailable.}
+\label{tab:method-provenance}
+\end{table*}
+
+The source classes in \cref{tab:method-provenance} expand as follows:
+Here ``main'' denotes membership in the canonical comparison campaign and does
+not necessarily imply inclusion in the two headline tables.
+\begin{itemize}[leftmargin=1.5em]
+    \item main: canonical 600\,s external-baseline comparison.
+    \item abl: Fourier-layer IR ablation.
+    \item res: resource-consequence check.
+    \item corr: large-instance correctness extension.
+    \item irr: irrational independent-Pauli unbounded witness suite.
+    \item status: provenance-only configuration excluded from numerical
+    quality comparison when its predicate fails.
+    \item real: official real-instance frozen panel.
+    \item appx: older frozen-control appendix panels.
+\end{itemize}
+
+The new executable protocol and provenance are in
+\path{research/round6_major_revision/}: the witness declaration and exact-rank
+verifier, \path{unbounded_witness_results.json},
+\path{rational_cp_round6_results.json},
+\path{public_phase_folding_results.json},
+\path{tket_paulisimp_results.json}, per-cell logs, and the environment
+snapshot. After global-phase alignment, the implemented check computes the
+maximum elementwise error $\epsilon$ and requires
+$\epsilon \leq \mathrm{atol}+\mathrm{rtol}\max_{i,j}|U_{ij}|$. Thus
+$\mathrm{atol}=\mathrm{rtol}=10^{-9}$ gives an effective upper threshold of
+approximately $2\times10^{-9}$ because unitary entries have magnitude at most
+one. Recorded maximum errors increase with repetition count $r$, while every
+row marked completed and valid satisfies this criterion. The irrational-witness
+PyZX $10$k result passes at approximately $1.05\times10^{-9}$; the $20$k result
+at approximately $2.68\times10^{-9}$ is a correctness failure. Timeout,
+predicate-error, unsupported-conversion, and correctness-failure statuses are
+kept distinct. The staq provenance records
+public commit \texttt{a2acd39} (with the full hash in the artifact) and the
+generic double-precision OpenQASM patch used for continuous-angle round trips.
+
+\subsection{Certificate, Cut-Trace, and QRE Artifacts}
+
+The exact canonicalizer and symbolic checker are
+\path{certificates/canonicalize.py} and
+\path{certificates/symbolic_checker.py}.  The frozen audit
+\path{data/frozen/certificate_audit.json} contains 12 accepted/rejected dense
+cross-check cases over widths one through six and 56 adversarial mutations.
+The checker and dense evaluator use separate implementations: the former
+propagates complete signed Clifford tableaus and exact rational-$\pi$ Pauli
+coefficients, while the latter constructs full numerical matrices and a
+projective distance.  Only \texttt{completed\_valid} records carrying an
+independent certificate enter numerical means; unsupported, predicate-error,
+and numerical-inconclusive records remain status-only.
+
+The theorem-model reference compiler is
+\path{scripts/trace_cut_budget.py}.  Its event schema records after every input update
+\texttt{committed\_output\_bytes}, the five cut fields from
+\eqref{eq:info-budget}, pass index, RSS, elapsed nanoseconds, artifact paths,
+and digests.  It deletes the explicit live compiler-state object and resumes
+from only the committed prefix, five serialized fields, and unread input
+suffix.  The frozen \path{research/cut_trace/} bundle was produced by the
+earlier serializer and lacks the per-event field files, so its 1,320 events and
+24 summaries are historical only and are not accepted by the version-one
+verifier.  The checked three-cut codec fixture and its manifests are in the
+project-root \path{instrumentation/example_trace/}; a full empirical curve
+requires rerunning this revised tracer.
+
+The W7 runner and allocator are the project-root
+\path{scripts/run_qre_campaign.py} and
+\path{scripts/allocate_synthesis_error.py}; their total-error schema, two QEC
+profiles, and factory grid are under \path{qre/}.  The 288-row Parquet/CSV,
+full angle records, analysis, figures, and manifests are under
+\path{data/frozen/}, \path{data/runs/w7-fixed-total-error-20260803-local/}, and
+\path{figures/}.  The earlier single-profile runner and its six-row result are
+retained as historical artifacts under \path{research/fixed_budget_qre/} but
+are not the W7 main result.  The grid synthesizer is built from
+public staq commit
+\texttt{a2acd39e60ed0e5f1978fa530df7e1e0c7cedf7a}; the disclosed artifact change
+only replaces the nondeterministic candidate-search seed with 20260801.  The
+runner omits staq's \texttt{--time} fast path because that path bypasses its
+internal detail/check branch; it instead measures subprocess time externally
+and requires \texttt{Check flag = 1} for every unique angle.  The QRE is the
+explicit surface-code model family stated in the main text, not a vendor
+service or an independent architecture implementation.
+
+\subsection{Immutable Campaign Hierarchy}
+
+The machine-readable index
+\path{research/campaign_manifests/campaign_index.json} defines two base
+profiles and five noninterchangeable campaigns.  \texttt{RP23} is the
+pass-order probe, \texttt{HW24} is the canonical line-backend campaign,
+\texttt{REAL24} is the official real-instance anti-regression panel,
+\texttt{MR25} is the matched-representation matrix, and \texttt{NF25} is the
+natural-kernel factorial ablation.  Each prefix is unique and must appear in a
+reader-facing label before the source instance name.
+
+Every campaign manifest records or explicitly marks unavailable the backend
+topology, native gate set, seed, timeout policy, memory cap, tool versions,
+artifact/freeze commit, bridge sequence, certificate policy, immutable config
+hash, and frozen dataset hash.  Historical campaigns did not enforce a memory
+cap or independent certificate; their manifests say
+\texttt{not\_enforced\_historical} and ``diagnostic only'' rather than imputing
+a modern policy.  In particular, \texttt{HW24} uses 120\,s for QPE/QAOA and
+240\,s for Grover, whereas \texttt{RP23} uses 600\,s.  Those rows may share an
+MQT source-instance string but cannot share a short label or be averaged.
+
+The configuration hierarchy is single-parent: a campaign inherits only its
+named base profile and then supplies explicit overrides.  Backend and config
+hashes use canonical JSON.  The frozen source snapshots
+\path{frozen_hardware_aware_rows.json} and
+\path{frozen_real_panel_rows.json} live beside the manifests, so later changes
+to a runner cannot silently change a displayed row.
+
+\subsection{Claim--Evidence Matrix}
+
+Every headline statement in the abstract, introduction, resource section, and
+conclusion is registered with one primary theorem, proposition, table, figure,
+or artifact test and an explicit scope.  The machine-readable source is
+\path{research/claim_evidence/claim_evidence.json}; the compact reader map is
+\cref{tab:claim-evidence}.
+
+\begin{table*}[tbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}l l l X@{}}
+\toprule
+ID & claim location & primary evidence & authorized scope \\
+\midrule
+\input{research/claim_evidence/claim_evidence_rows.tex} \\
+\bottomrule
+\end{tabularx}
+\caption{Claim--evidence matrix.  The full JSON also contains the exact claim
+text and evidence class.  A claim outside the displayed scope is not made by
+this paper.}
+\label{tab:claim-evidence}
+\end{table*}

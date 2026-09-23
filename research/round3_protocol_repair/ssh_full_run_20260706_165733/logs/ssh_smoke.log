@@ -1,0 +1,37 @@
+main_external_baselines: size=48 method=qiskit_opt3 timeout=30s
+main_external_baselines: size=48 method=qiskit_commutative_inverse timeout=30s
+main_external_baselines: size=48 method=pyzx_configured timeout=30s
+main_external_baselines: size=48 method=pyzx_full_reduce timeout=30s
+main_external_baselines: size=48 method=tket_fullpeephole timeout=30s
+main_external_baselines: size=48 method=tket_paulisimp timeout=30s
+main_external_baselines: size=48 method=tket_guided_paulisimp timeout=30s
+main_external_baselines: size=48 method=semantic_ucc timeout=30s
+main_external_baselines: size=48 method=phase_poly_reference timeout=30s
+fourier_ablation_completion: size=48 method=semantic_ucc timeout=30s
+fourier_ablation_completion: size=48 method=no_fourier_ucc timeout=30s
+fourier_ablation_completion: size=48 method=qiskit_opt3 timeout=30s
+fourier_ablation_completion: size=48 method=qiskit_commutative_inverse timeout=30s
+fourier_ablation_completion: size=48 method=phase_poly_reference timeout=30s
+resource_consequence_check: size=48 method=semantic_ucc timeout=30s
+resource_consequence_check: size=48 method=phase_poly_reference timeout=30s
+resource_consequence_check: size=48 method=qiskit_opt3 timeout=30s
+resource_consequence_check: size=48 method=no_fourier_ucc timeout=30s
+correctness_extension: repeats=3 method=semantic_ucc timeout=30s
+correctness_extension: repeats=3 method=phase_poly_reference timeout=30s
+/home/lyy/ucc_paper_round3/ucc/compile.py:28: UserWarning: Warning: This package is designed for Python 3.12-3.13. You are using Python 3.10.
+  warnings.warn(
+Round 3 protocol repair run complete.
+research/round3_protocol_repair/method_name_map.md
+research/round3_protocol_repair/baseline_call_sequences.md
+research/round3_protocol_repair/smoke_round3_main_external_baselines_results.json
+research/round3_protocol_repair/smoke_round3_main_external_baselines_results.md
+research/round3_protocol_repair/smoke_round3_fourier_ablation_completion_results.json
+research/round3_protocol_repair/smoke_round3_fourier_ablation_completion_results.md
+research/round3_protocol_repair/smoke_round3_resource_consequence_check_results.json
+research/round3_protocol_repair/smoke_round3_resource_consequence_check_results.md
+research/round3_protocol_repair/smoke_round3_correctness_extension_results.json
+research/round3_protocol_repair/smoke_round3_correctness_extension_results.md
+research/round3_protocol_repair/smoke_round3_table_provenance_map.md
+research/round3_protocol_repair/smoke_round3_environment_snapshot.md
+research/round3_protocol_repair/smoke_round3_summary_for_paper_patch.md
+research/round3_protocol_repair/smoke_round3_run_log.md

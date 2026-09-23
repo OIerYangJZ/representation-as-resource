@@ -4,14 +4,14 @@
 
 The normalized provenance index contains **24,748** source rows and
 **0** duplicate nine-field primary-key rows.  The index is
-`data/frozen/unified_experiments.parquet` (SHA-256 `df1c703041234a0882cc521dba1fcdb42882a84a6106dc2fbd6a967f2f3c4e00`).
+`data/frozen/unified_experiments.parquet` (SHA-256 `deb8637a7d35904b27452bd441f53635ddfa0ee0ebdc9b0b1b5930c1a64039f4`).
 Status classes are preserved as `{"completed_valid": 24700, "predicate_error": 48}`;
 non-completed rows are not coerced into numeric outcomes.
 
 Registered-file omissions: 0.  Registered row-count
 mismatches: 0.  Conflicting CSV/parquet cells:
 0.  Duplicate labels among the active manuscript-directory
-TeX sources: 0 across 178 labels.
+TeX sources: 0 across 187 labels.
 
 ## Numeric mirror checks
 

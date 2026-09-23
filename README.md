@@ -1,96 +1,124 @@
-# Representation as a Computational Resource in Quantum Compilation
+##  <a href="https://github.com/unitaryfoundation/ucc"><img src="https://raw.githubusercontent.com/unitaryfoundation/ucc/main/docs/source/img/UCC-logo.png" alt="light orange oval with a hissing black cat in the center with UCC written across the bottom" width="150"/></a> Unitary Compiler Collection
 
-Manuscript source, analysis code, and frozen data for:
+[![Repository](https://img.shields.io/badge/GitHub-5C5C5C.svg?logo=github)](https://github.com/unitaryfoundation/ucc)
+[![PyPI version](https://badge.fury.io/py/ucc.svg)](https://badge.fury.io/py/ucc)
+[![Downloads](https://static.pepy.tech/personalized-badge/ucc?period=total&units=international_system&left_color=black&right_color=green&left_text=Downloads)](https://www.pepy.tech/projects/ucc)
+[![License](https://img.shields.io/github/license/unitaryfoundation/ucc)](https://github.com/unitaryfoundation/ucc/blob/main/LICENSE)
+[![Unitary Foundation](https://img.shields.io/badge/Supported%20By-Unitary%20Foundation-FFFF00.svg)](https://unitary.foundation)
+[![Documentation Status](https://readthedocs.org/projects/ucc/badge/?version=latest)](https://ucc.readthedocs.io/en/latest/?badge=latest)
+[![codecov](https://codecov.io/gh/unitaryfoundation/ucc/branch/main/graph/badge.svg)](https://codecov.io/gh/unitaryfoundation/ucc)
+[![Discord Chat](https://img.shields.io/badge/dynamic/json?color=blue&label=Discord&query=approximate_presence_count&suffix=%20online.&url=https%3A%2F%2Fdiscord.com%2Fapi%2Finvites%2FJqVGmpkP96%3Fwith_counts%3Dtrue)](http://discord.unitary.foundation)
 
-> **Representation as a Computational Resource in Quantum Compilation:
-> Approximate Recoverability Tradeoffs and Model-Specific Fault-Tolerant
-> Consequences**
-> Jinze Yang, Yangyang Li, Xiu-Hao Deng
+The **Unitary Compiler Collection (UCC)** is a Python library for frontend-agnostic, high performance compilation of quantum circuits. UCC's goal is to gather together the best of open source compilation to make quantum programming simpler, faster, and more scalable.
 
-| | |
-|---|---|
-| Manuscript | `PaperDraft/main.tex` → `PaperDraft/main.pdf` |
-| Supplement | `PaperDraft/supplement.tex` → `PaperDraft/supplement.pdf` |
-| arXiv variant | `PaperDraft/main_arXiv.tex` |
-| Canonical data | `data/frozen/`, registered in `data/manifest.yaml` |
-| Rebuild everything | `./reproducibility/run_submission.sh` |
+By leveraging [qBraid](https://github.com/qBraid/qBraid), UCC interfaces automatically with multiple quantum computing frameworks, including [Qiskit](https://github.com/Qiskit/qiskit), [Cirq](https://github.com/quantumlib/Cirq), and [PyTKET](https://github.com/CQCL/tket) and supports programs in OpenQASM 2 and [OpenQASM 3](https://openqasm.com/). For the full list, just call `ucc.supported_circuit_formats`.
 
-## Reproducing the submission
+### Want to know more?
+
+| Resource | Description |
+|----------|-------------|
+| [Documentation](https://ucc.readthedocs.io/en/latest/) | Check out our documentation for more information on using and contributing to UCC. |
+| [Discussions](https://github.com/unitaryfoundation/ucc/discussions) | For code, repo, or ecosystem questions. |
+| [Discord](https://discord.com/channels/764231928676089909/1346546840526524427) | For casual or time-sensitive questions, including weekly community calls.|
+| [Research Publications](https://ucc.readthedocs.io/en/latest/research_references.html) | Explore academic work utilizing UCC. |
+
+## Quickstart
+
+### Installation
+
+**Note**: UCC requires Python version ≥ 3.12.
+
+For normal users of `UCC`, you can install via `pip` as
+```bash
+pip install ucc
+```
+
+If developing, including if building custom transpiler passes, please install [uv](https://docs.astral.sh/uv/getting-started/installation/), which is used to managed dependencies and ensure a reproducible development enviroment. Once uv is installed, setup your development environment via
 
 ```bash
-uv sync                          # creates .venv from uv.lock
-./reproducibility/run_submission.sh
+git clone https://github.com/unitaryfoundation/ucc.git
+cd ucc
+uv sync --all-extras --all-groups
 ```
 
-The script runs the data audit, regenerates every table and figure from frozen
-data, checks each registered W3–W9 headline number against
-`data/provenance_map.yaml`, runs the clean-room subset and the full test suite,
-builds both TeX documents, and fails if either LaTeX log has unresolved
-references. No network access is needed.
+This `uv sync` command ensures the optional developer and documentation dependences are installed. For development with uv, we assume you either prefix each command with ``uv run``, or
+you first activate the [uv managed virtual environment](https://docs.astral.sh/uv/pip/environments/#using-a-virtual-environment) by running ``source .venv/bin/activate`` in your shell.
 
-For the clean-room subset alone:
+For more details on using uv, refer to its [documentation](https://docs.astral.sh/uv/) or [this tutorial](https://realpython.com/python-uv/).
 
-```bash
-.venv/bin/python reproducibility/run_clean_room.py
+
+### Example with Qiskit, Cirq, and PyTKET
+
+Define a circuit with your preferred quantum SDK and compile it!
+
+```python
+from ucc import compile
+
+from pytket import Circuit as TketCircuit
+from cirq import Circuit as CirqCircuit
+from qiskit import QuantumCircuit as QiskitCircuit
+from cirq import H, CNOT, LineQubit
+
+def test_tket_compile():
+    circuit = TketCircuit(2)
+    circuit.H(0)
+    circuit.CX(0, 1)
+    compile(circuit)
+
+def test_qiskit_compile():
+    circuit = QiskitCircuit(2)
+    circuit.h(0)
+    circuit.cx(0, 1)
+    compile(circuit)
+
+def test_cirq_compile():
+    qubits = LineQubit.range(2)
+    circuit = CirqCircuit(
+        H(qubits[0]),
+        CNOT(qubits[0], qubits[1]))
+    compile(circuit)
 ```
+<!-- start-how-does-ucc-stack-up -->
+<!-- comment used to strip this section from being added to the docs build-->
+## How does UCC stack up?
 
-Exact package versions and the deterministic grid-synthesis binary hash are
-frozen in `reproducibility/environment.lock`.
+UCC seeks to provide an end-to-end compiler that works well for the majority of the users out of the box. Today, this is achieved by running a particular subset of [Qiskit](https://github.com/Qiskit/qiskit) transpiler passes.
+To ensure we continue to improve performance and meet user needs, we regularly run benchmarks comparing UCC against the latest versions of leading quantum compiler frameworks across a range of circuits. Here’s the latest:
+![alt text](https://github.com/unitaryfoundation/ucc-bench/blob/main/results/ucc-benchmarks-8-core-U22.04/latest_compiler_benchmarks_by_circuit.png?raw=true)
 
-## Data policy
+And here you can see progress over time, with new package versions labeled for each compiler:
+![alt text](https://github.com/unitaryfoundation/ucc-bench/blob/main/results/ucc-benchmarks-8-core-U22.04/avg_compiler_benchmarks_over_time.png?raw=true)
+where pytket-peep indicates the `FullPeepHoleOptimize` function of PyTKET.
 
-`data/manifest.yaml` is the authority on which datasets may support a number in
-the manuscript. Only entries with role `canonical_source` or
-`canonical_summary` qualify, and all of them live in `data/frozen/`.
+The benchmark code, configurations and raw results from running on specific hardware are maintined in the companion repository of [`ucc-bench`](https://github.com/unitaryfoundation/ucc-bench).
 
-Raw campaign trees are provenance, not canonical data, and are **not** included
-in this repository — with one exception:
-`data/runs/w7-fixed-total-error-20260803-local/` is kept because
-`PaperDraft/appendix/appendix_B.tex` cites that path directly. The other raw
-trees (w3, w4, w5, w8; roughly 550 MB) are archived outside version control.
+To learn more about running these benchmarks, the overall benchmark philosophy, or how to contribute to improving the benchmarking methodology, check out the [benchmarking section](https://ucc.readthedocs.io/en/latest/benchmarking.html) in the docs or the `README.md` in [`ucc-bench`](https://github.com/unitaryfoundation/ucc-bench).
+<!-- end-how-does-ucc-stack-up -->
 
-## Layout
+## Contributing
 
-```
-PaperDraft/       manuscript, supplement, appendices, figures, generated tables
-  research/       preregistrations (E7, E8, E8b), claim-evidence and registries
-  scripts/        per-experiment drivers and table generators
-theory/           theorem environments included by main.tex
-scripts/          campaign runners, analyzers, audit and build entry points
-data/frozen/      canonical datasets
-data/manifest.yaml, data/provenance_map.yaml
-schema/           normalized experiment schema
-reproducibility/  submission rebuild and clean-room entry points
-tests/            certificate, codec, workload, and provenance tests
-research/         exploratory work and the round-3 / round-6 revision campaigns
-ucc/              the compiler package this work builds on
-benchmarks/ certificates/ compiler/ encoding/ instrumentation/ qre/ workloads/
-figures/          figures rendered outside PaperDraft/figures/
-```
+We’re building UCC as a community-driven project.
+Your contributions help improve the tool for everyone!
+There are many ways you can contribute, such as
 
-## Third-party tools
+- 💸 **Create a Custom Compiler Pass**:💸 Learn how in the [User Guide](https://ucc.readthedocs.io/en/latest/user_guide.html).
+ Eligible for compensation through the [Merit Terminal](https://terminal.merit.systems/unitaryfoundation/ucc/)!
+- **Submit a bug report or feature request**: Submit a bug report or feature request [on GitHub](https://github.com/unitaryfoundation/ucc/issues/new/choose).
+- **Contribute Code**: Follow the [Contribution Guide](https://ucc.readthedocs.io/en/latest/contributing.html) to submit new passes and improvements.
 
-The round-6 validation calls two external compilers. They are **not** vendored
-here; rebuild them from these upstream commits to reproduce that campaign:
+If you have questions about contributing please ask on the [Unitary Foundation Discord](http://discord.unitary.foundation).
 
-| Tool | Upstream | Commit |
-|---|---|---|
-| staq | https://github.com/softwareQinc/staq | `a2acd39e60ed0e5f1978fa530df7e1e0c7cedf7a` (v3.5-36) |
-| feynman | https://github.com/meamy/feynman | `d2c382a2ab43a40a87f12f4255645bbb55f704f8` (v0.1.0-221) |
+## License
 
-Place the builds under `research/round6_major_revision/tools/`, which is
-gitignored.
+UCC is distributed under [GNU Affero General Public License version 3.0](https://www.gnu.org/licenses/agpl-3.0.en.html)(AGPLv3).
+Parts of ucc contain code or modified code that is part of [Qiskit](https://github.com/Qiskit/qiskit) or [Qiskit Benchpress](https://github.com/Qiskit/benchpress), which are distributed under the Apache 2.0 license.
 
-## Relationship to UCC
+## Contributors ✨
 
-The `ucc/` package derives from the [Unitary Compiler
-Collection](https://github.com/unitaryfoundation/ucc) and remains under
-AGPL-3.0 (see `LICENSE`). This repository is a research fork: it is not the
-upstream distribution, is not published to PyPI, and carries modifications made
-for the experiments in this manuscript. For the maintained library, use
-upstream.
+Thank you to all of the [wonderful people](https://github.com/unitaryfoundation/ucc/graphs/contributors) that have made this project possible.
+Non-code contributors are also much appreciated, and are listed here.
+Thank you to:
 
-## Status
+- [@francespoblete](https://github.com/francespoblete) for designing the UCC logo.
 
-Under review at PRX Quantum. Numbers, figures, and claims here track the
-submitted version; see `CHANGELOG.md` for the revision history.
+Contributions of any kind are welcome!

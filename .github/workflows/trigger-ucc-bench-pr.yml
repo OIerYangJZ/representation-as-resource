@@ -1,0 +1,73 @@
+# Trigger PR workflow in ucc-bench to test the performance impact of these changes
+# to the current baseline benchmark results, posting a comment back to the ucc PR
+# with a summary.
+# This will only be run if the PR has the label "preview-benchmark-results"
+# and will be skipped if the label is removed.
+
+# To trigger an event in the other repo, we had to install a GitHub app in the
+# ucc-bench repo, and then add the app ID/private key as secrets to this repo
+# so it could trigger the workflow. See
+# https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/automating-projects-using-actions
+# for details.
+#
+# NOTE - This uses the `pull_request_target` event, which runs in the context of the base branch rather than the PR branch.
+# This means we can run on PRs initiated from forks. It's best practice to *not* run or checkout any code from the fork
+# however, as it might contain malicious code. So this job only kicks off the ucc-bench workflow.
+
+# We also use `github.event.pull_request.merge_commit_sha` as the commit to run the benchmarks on. This is a temporary
+# merge commit created by GitHub when the PR is opened, and it represents what the code would look like if the PR were merged.
+
+
+name: Trigger ucc PR workflow in ucc-bench
+on:
+    pull_request_target:
+      branches:
+        - main
+      types:
+        - opened
+        - synchronize
+        - labeled
+        - unlabeled
+jobs:
+  trigger-benchmarks-pr:
+    runs-on: ubuntu-latest
+    # Only run if label is present
+    if: contains(github.event.pull_request.labels.*.name, 'preview-benchmark-results')
+
+    steps:
+      - name: Initial event debug (pre-token)
+        run: |
+          echo "Event merge_commit_sha (raw): ${{ github.event.pull_request.merge_commit_sha }}"
+      - name: Generate token
+        id: generate-token
+        uses: actions/create-github-app-token@v3
+        with:
+          app-id: ${{ secrets.UCC_BENCH_APP_ID }}
+          private-key: ${{ secrets.UCC_BENCH_APP_PRIVATE_KEY }}
+          owner: unitaryfoundation
+          repositories: |
+            ucc-bench
+            ucc
+      - name: Trigger ucc-main-pr event in ucc-bench
+        env:
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+        run: |
+          # Try to get merge_commit_sha from event
+          MERGE_COMMIT_SHA="${{ github.event.pull_request.merge_commit_sha }}"
+          echo "Event merge_commit_sha: $MERGE_COMMIT_SHA"
+          if [ -z "$MERGE_COMMIT_SHA" ] || [ "$MERGE_COMMIT_SHA" = "null" ]; then
+            echo "merge_commit_sha not set in event, fetching via gh api..."
+            MERGE_COMMIT_SHA=$(gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }} --jq .merge_commit_sha)
+            echo "Fetched merge_commit_sha: $MERGE_COMMIT_SHA"
+          fi
+          if [ -z "$MERGE_COMMIT_SHA" ] || [ "$MERGE_COMMIT_SHA" = "null" ]; then
+            echo "Error: merge_commit_sha could not be determined."
+            exit 1
+          fi
+          gh api \
+            --method POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            /repos/unitaryfoundation/ucc-bench/dispatches \
+            -f "event_type=ucc-main-pr" -F "client_payload[commit_hash]=$MERGE_COMMIT_SHA" \
+            -F "client_payload[pr_number]=${{ github.event.pull_request.number }}"

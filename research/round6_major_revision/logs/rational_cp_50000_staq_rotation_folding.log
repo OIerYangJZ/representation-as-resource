@@ -1,0 +1,7 @@
+command: /home/lyy/ucc_paper_round6_20260712/.venv/bin/python /home/lyy/ucc_paper_round6_20260712/research/round6_major_revision/run_round6_experiments.py --worker --family rational_cp --size 50000 --method staq_rotation_folding --timeout-s 600
+returncode: 0
+elapsed_s: 6.725
+--- stdout ---
+{"actual_input_gates": 49998, "angle_specification": "rational Qiskit RZ/CP angles; exact global-phase period T=131040", "block_gate_count": 10, "boundary_gate_count": 8, "cx_count": 59988, "depth": 62496, "equivalence_checked": true, "equivalent_up_to_global_phase": true, "family_key": "rational_cp", "gate_count": 114988, "gate_types": ["cx", "h", "rz"], "instance_name": "rational_cp_n4_r4999", "m": 10, "method_key": "staq_rotation_folding", "n": 4, "notes": "qiskit opt0 to {cx,rx,ry,rz,h} QASM2 -> public staq rotation optimizer -> QASM2 -> qiskit opt0 target-basis cleanup", "operator_atol": 1e-09, "operator_max_abs_error": 2.0996162132485777e-13, "operator_rtol": 1e-09, "paper_method_name": "staq rotation folding", "r": 4999, "requested_gates": 50000, "rotation_count": 54992, "source_command_or_script": "research/round6_major_revision/run_round6_experiments.py --worker --family rational_cp --size 50000 --method staq_rotation_folding --timeout-s 600", "status": "completed", "support_rank_f2": 4, "support_rank_verified": false, "timeout_s": 600, "unbounded_noncollision_by_proposition": false, "wall_time_s": 6.363}
+
+--- stderr ---

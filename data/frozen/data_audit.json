@@ -1,5 +1,5 @@
 {
-  "artifact_commit": "431049e54d3f916ebec2acb3a566360d0ffed893",
+  "artifact_commit": "52aed6601781ed2b8d363bc56d79468a36974b04",
   "canonical_source_rows": 24748,
   "conflicting_numeric_cells": 0,
   "csv_parquet_checks": [
@@ -62,8 +62,8 @@
     "completed_valid": 24700,
     "predicate_error": 48
   },
-  "tex_labels": 178,
-  "unified_sha256": "df1c703041234a0882cc521dba1fcdb42882a84a6106dc2fbd6a967f2f3c4e00",
+  "tex_labels": 187,
+  "unified_sha256": "deb8637a7d35904b27452bd441f53635ddfa0ee0ebdc9b0b1b5930c1a64039f4",
   "unique_primary_keys": 24748,
   "unregistered_frozen_artifacts": []
 }

@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
-# Build a self-contained Overleaf upload bundle for the PRX Quantum submission
+# Build a self-contained Overleaf upload bundle for the Quantum submission
 # (manuscript + cover letter).
 #
 # The working tree keeps the manuscript at PaperDraft/ but pulls \input and
 # \includegraphics targets from ../theory/ and ../figures/.  Overleaf has no
 # parent directory above the project root, so this script flattens those two
 # escapes into theory/ and figures/ inside the bundle and rewrites the paths in
-# main.tex accordingly.  Nothing else in the source is modified.
+# manuscript.tex accordingly.  The archive-root main.tex is the Quantum
+# submission entry point, so the arXiv-only acknowledgement passages remain
+# excluded when the bundle is rebuilt.
 #
 # Usage:  bash PaperDraft/scripts/make_overleaf_bundle.sh
 # Output: PaperDraft/overleaf_bundle/  and  PaperDraft/overleaf_bundle.zip
@@ -26,7 +28,9 @@ mkdir -p "$OUT/research/claim_evidence" "$OUT/research/experiment_registry/gener
 # --- manuscript, with the two parent-relative prefixes flattened -------------
 sed -e 's|\.\./theory/|theory/|g' \
     -e 's|\.\./figures/|figures/|g' \
-    "$PAPER/main.tex" > "$OUT/main.tex"
+    "$PAPER/main.tex" > "$OUT/manuscript.tex"
+sed 's|\\input{main.tex}|\\input{manuscript.tex}|' \
+    "$PAPER/main_quantum.tex" > "$OUT/main.tex"
 
 cp "$PAPER/references.bib" "$OUT/references.bib"
 cp "$PAPER/main.bbl"       "$OUT/main.bbl"        # so the bibliography renders on the first pass

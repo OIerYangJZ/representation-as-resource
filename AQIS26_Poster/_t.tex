@@ -1,0 +1,155 @@
+% !TEX program = xelatex
+%==============================================================================
+%  Representation as a Computational Resource in Quantum Compilation
+%  Group seminar / AQIS 2026 poster-session rehearsal
+%
+%  Built from AQIS26_Poster/BEAMER_SPEC.md.
+%  Section order is Part I -> Part VI  ==  spec  §0 -> §1 -> §2 -> §3 -> §4 -> §5.
+%  Part VII (appendix) follows §5 and is backup only.
+%
+%  Compile:  xelatex main.tex   (twice, for \tableofcontents)
+%==============================================================================
+\documentclass[aspectratio=169,10pt]{beamer}
+
+% ---- Theme: classic blue (Warsaw headline + Madrid-style infolines footer) --
+\usetheme{Warsaw}              % fallback: \usetheme{default} + \usecolortheme{whale}
+\setbeamerfont{section in head/foot}{size=\tiny}
+\setbeamercovered{invisible}
+
+% Madrid's three-part footline: author (institute) | title | date / page.
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.30\paperwidth,ht=2.25ex,dp=1ex,center]%
+                       {author in head/foot}%
+    \usebeamerfont{author in head/foot}\footcellauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.46\paperwidth,ht=2.25ex,dp=1ex,center]%
+                       {title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.24\paperwidth,ht=2.25ex,dp=1ex,right]%
+                       {date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}%
+    \insertframenumber{}\,/\,\inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+% swapped for a BACKUP marker once \appendix starts
+\newcommand{\footcellauthor}{\insertshortauthor~~(\insertshortinstitute)}
+
+% reclaim the vertical space the headline and footline cost
+\setbeamersize{text margin left=5mm,text margin right=5mm}
+\setbeamerfont{frametitle}{size=\normalsize,series=\bfseries}
+\setbeamerfont{block title}{size=\small}
+\addtobeamertemplate{block begin}{\vspace{-0.6mm}}{\vspace{-0.6mm}}
+\addtobeamertemplate{block end}{}{\vspace{-1.2mm}}
+
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,decorations.pathreplacing,patterns}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{xcolor}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+
+% ---- Chinese speaker notes -------------------------------------------------
+\usepackage[UTF8,scheme=plain]{ctex}
+
+% Uncomment ONE of the following to render the Chinese speaker notes:
+% \setbeameroption{show notes}
+% \setbeameroption{show notes on second screen=right}
+
+% ---- Language switch (§0.2) ------------------------------------------------
+% \zhtrue  ==> frame/section titles switch to Chinese.
+\newif\ifzh \zhfalse
+\newcommand{\bl}[2]{\ifzh #2\else #1\fi}
+
+% ---- Theorem environments (§0.3) -------------------------------------------
+\newtheorem{claim}{Claim}
+\newtheorem{lemma2}{Lemma}
+\newtheorem{prop2}{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{remark2}{Remark}
+
+% lightweight proof block (keeps full control inside frames)
+\newenvironment{prf}[1][Proof]%
+  {\par\smallskip\noindent\textit{#1.}\ \ignorespaces}%
+  {\hfill$\blacksquare$\par\smallskip}
+
+% ---- Notation macros (§0.3) ------------------------------------------------
+\newcommand{\dproj}{d_{\mathrm{proj}}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\Fb}{\mathbb{F}_2}
+\newcommand{\ZQ}{\mathbb{Z}_Q}
+\newcommand{\cd}[1]{\langle\!\langle #1 \rangle\!\rangle}
+\newcommand{\Bcut}{B_{\mathrm{cut}}}
+\newcommand{\Ldelta}{L_\delta(m,K)}
+\newcommand{\hbin}{h_2}
+
+% ---- Callout styles (§0.4) -------------------------------------------------
+% calblue is the Warsaw structure blue, so the TikZ figures match the theme
+\definecolor{calblue}{rgb}{0.2,0.2,0.7}
+\definecolor{mustred}{HTML}{A11B1B}
+\definecolor{softgrey}{HTML}{EDEDF5}
+
+% "must answer" callout: visually heaviest object in the deck
+\newenvironment{mustanswer}[1][Must answer]{%
+  \setbeamercolor{block title}{bg=mustred,fg=white}%
+  \setbeamercolor{block body}{bg=mustred!8,fg=black}%
+  \begin{block}{\raisebox{-0.5pt}{$\blacktriangleright$}\; #1}}%
+  {\end{block}}
+
+% ordinary callout
+\newenvironment{callout}[1][]{%
+  \setbeamercolor{block title}{bg=calblue,fg=white}%
+  \setbeamercolor{block body}{bg=calblue!7,fg=black}%
+  \begin{block}{#1}}%
+  {\end{block}}
+
+\newcommand{\hd}[1]{\textbf{\color{calblue}#1}}
+
+% ---- Section outline frames (§0.4) -----------------------------------------
+\AtBeginSection[]{%
+  \begin{frame}[plain]{\bl{Outline}{提纲}}
+    \tableofcontents[currentsection,sectionstyle=show/shaded,
+                     subsectionstyle=hide]
+  \end{frame}}
+
+%==============================================================================
+\title[Representation as a Computational Resource]%
+      {Representation as a Computational Resource in Quantum Compilation}
+\subtitle{Approximate recoverability tradeoffs and model-specific
+          fault-tolerant consequences}
+\author[Yang, Li, Deng]%
+       {Jinze Yang${}^1$ \quad Yangyang Li${}^1$ \quad Xiu-Hao Deng${}^{2,3}$}
+\institute[Xidian]%
+          {\footnotesize ${}^1$ Xidian University \quad
+           ${}^2$ Shenzhen International Quantum Academy \quad
+           ${}^3$ Hefei National Laboratory}
+\date[AQIS 2026]{Group seminar --- AQIS 2026 poster session rehearsal}
+
+% keep the long title/affiliation block inside the title frame
+\setbeamerfont{title}{size=\large,series=\bfseries}
+\setbeamerfont{subtitle}{size=\footnotesize}
+\setbeamerfont{author}{size=\small}
+\setbeamerfont{institute}{size=\scriptsize}
+\setbeamerfont{date}{size=\scriptsize}
+
+\begin{document}
+\section{0. Terminology}
+\begin{frame}{Frame title}Body text.\end{frame}
+\section{1. Packing}
+\begin{frame}{Frame title}Body text.\end{frame}
+\section{2. Calibration}
+\begin{frame}{Frame title}Body text.\end{frame}
+\section{3. Dispersal}
+\begin{frame}{Frame title}Body text.\end{frame}
+\section{4. Lower bounds}
+\begin{frame}{Frame title}Body text.\end{frame}
+\section{5. Upper bounds}
+\begin{frame}{Frame title}Body text.\end{frame}
+\end{document}

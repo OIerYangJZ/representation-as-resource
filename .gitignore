@@ -1,109 +1,81 @@
-# ---------------------------------------------------------------------------
-# Python environments and build output
-# ---------------------------------------------------------------------------
-.venv/
-venv/
-env/
+.DS_Store
+.vscode
 .python-version
+# local overrides for act github action tests
+.act*
+.idea/
+*.dat
+*.hdf5
+*.ipynb_checkpoints
+*.jupyter_cache
+_build
 __pycache__/
-*.py[cod]
-*$py.class
+docs/build/
 *.egg-info/
 dist/
 build/
-_build/
 jupyter_execute/
-docs/build/
+benchmarks/results/test_data
 
-# ---------------------------------------------------------------------------
-# Test, lint, and type-checker caches
-# ---------------------------------------------------------------------------
-.pytest_cache/
-.ruff_cache/
-.mypy_cache/
-.coverage
-.coverage.*
-htmlcov/
-.tox/
-.nox/
-
-# ---------------------------------------------------------------------------
-# LaTeX intermediates.
-# .bbl is tracked on purpose: arXiv requires it at submission.
-# .pdf builds are tracked on purpose: they are the release deliverable.
-# ---------------------------------------------------------------------------
-*.aux
-*.log
-*.blg
-*.fls
-*.fdb_latexmk
-*.out
-*.synctex.gz
-*.toc
-*.lof
-*.lot
-*.nav
-*.snm
-*.vrb
-*.bcf
-*.run.xml
-*Notes.bib
-
-# ---------------------------------------------------------------------------
-# Scratch space and raw campaign trees.
-# Raw run trees are provenance, not canonical data: data/manifest.yaml is the
-# canonical registry and data/frozen/ holds the canonical datasets.
-# w7-fixed-total-error is re-included because PaperDraft/appendix/appendix_B.tex
-# cites that path directly.
-# ---------------------------------------------------------------------------
-tmp/
-out/
-data/runs/*
-!data/runs/w7-fixed-total-error-20260803-local/
-
-# ---------------------------------------------------------------------------
-# Vendored third-party tooling.
-# staq and feynman are external projects used by the round-6 validation; their
-# upstream commits are pinned in the README instead of vendored here.
-# ---------------------------------------------------------------------------
-research/round6_major_revision/tools/
-
-# ---------------------------------------------------------------------------
-# Review, packaging, and submission-round artifacts
-# ---------------------------------------------------------------------------
-*_FABLE_BUNDLE/
-*_FABLE_BUNDLE.zip
-*_UPLOAD/
-overleaf_bundle/
-overleaf_bundle.zip
-review_bundles/
-*.zip.sha256
-
-# ---------------------------------------------------------------------------
-# Editor and OS noise
-# ---------------------------------------------------------------------------
-.DS_Store
-.vscode/
-.idea/
-*.swp
-*~
-
-# ---------------------------------------------------------------------------
-# Notebooks and plotting scratch
-# ---------------------------------------------------------------------------
-*.ipynb_checkpoints
-.jupyter_cache/
-
-# ---------------------------------------------------------------------------
-# Secrets and local overrides.
-# Nothing of this kind is currently in the tree; these are guardrails.
-# ---------------------------------------------------------------------------
-.env
-.env.*
-*.pem
-*.key
-credentials*
-.netrc
-.act*
 .tmp.drivedownload/
 .tmp.driveupload/
+out/
+
+chatgpt_materials.zip
+chatgpt_materials/
+
+
+.tmp.drivedownload/
+.tmp.driveupload/
+out/
+
+
+chatgpt_materials.zip
+chatgpt_materials/
+
+
+ucc-main/
+ucc/
+
+# --- experiment data: 618M / 38k files, kept out of THIS repo ---
+# data/ is its own git repository, backed up to the private
+# github.com/OIerYangJZ/paper1-data (155M packed). It stays checked out here at
+# data/ because the paths in its manifests are relative to this repo root.
+# Frozen slices the paper cites are indexed by data/frozen/*_freeze_manifest.json.
+data/
+
+# vendored third-party compilers checked out for the round-6 baselines
+# (they carry their own .git; re-clone per research/round6_major_revision/README)
+research/round6_major_revision/tools/
+
+# LaTeX build artifacts. Scoped to the top level of the two LaTeX dirs on
+# purpose: a bare *.log would also swallow the ~150 experiment logs under
+# PaperDraft/research/*/logs/ and research/round6_major_revision/logs/, which
+# are provenance for the paper's tables. *.bbl and *.pdf are kept (arXiv).
+PaperDraft/*.aux
+PaperDraft/*.log
+PaperDraft/*.blg
+PaperDraft/*.fls
+PaperDraft/*.fdb_latexmk
+PaperDraft/*.out
+PaperDraft/*.synctex.gz
+PaperDraft/*.toc
+AQIS26_Poster/*.aux
+AQIS26_Poster/*.log
+AQIS26_Poster/*.fls
+AQIS26_Poster/*.fdb_latexmk
+AQIS26_Poster/*.out
+AQIS26_Poster/*.synctex.gz
+AQIS26_Poster/*.toc
+
+# locally compiled staq helpers (2.2M of arm64 Mach-O). The sources next to
+# them and the sha256 records in environment_snapshot.json / *_frozen.json are
+# committed, so provenance survives; drop these lines if you want the exact
+# binaries in the artifact.
+PaperDraft/research/*/tools/staq_grid_synth
+PaperDraft/research/*/tools/staq_rotation_optimizer
+PaperDraft/research/*/tools/staq_rotation_optimizer_macos_arm64
+
+# local virtualenvs
+.venv/
+venv/

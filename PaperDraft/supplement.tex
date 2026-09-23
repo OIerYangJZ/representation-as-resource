@@ -1,6 +1,11 @@
-\documentclass[aps,prx,preprint,floatfix,superscriptaddress]{revtex4-2}
+\documentclass[a4paper,onecolumn,10pt,unpublished]{quantumarticle}
+\pdfoutput=1
+% Supplemental material, Quantum (quantum-journal.org) format.  The PRX
+% Quantum (revtex4-2) version is frozen under prxquantum_format_backup/.
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
 \usepackage{microtype}
 \usepackage{amssymb,mathtools}
 \usepackage{booktabs}
@@ -11,6 +16,8 @@
 \usepackage{hyperref}
 \hypersetup{hidelinks}
 
+% quantumarticle pulls in revtex's ltxgrid/ltxutil; its legacy array patch
+% is incompatible with array 2.6n (TeX Live 2026).
 \makeatletter
 \let\switch@array\relax
 \makeatother
@@ -20,17 +27,15 @@
 
 \begin{document}
 
-\title{Supplemental Material for\\
-``Representation as a Computational Resource in Quantum Compilation:\\
-Approximate Recoverability Tradeoffs and Model-Specific\\
-Fault-Tolerant Consequences''}
+\title{Supplemental Material for ``Representation-Dependent
+Recoverability in Quantum Compilation''}
 \author{Jinze Yang}
 \affiliation{School of Physics, Xidian University, Xi'an 710071, China}
 \author{Yangyang Li}
 \affiliation{School of Artificial Intelligence, Xidian University, Xi'an 710071, China}
 \author{Xiu-Hao Deng}
 \affiliation{Shenzhen International Quantum Academy, Shenzhen 518048, China}
-\date{August 3, 2026}
+\date{}
 \maketitle
 
 \section{Scope and evidence policy}
@@ -45,6 +50,7 @@ are retained for auditability but are not promoted to canonical W3--W9
 evidence unless they appear in
 \path{data/manifest.yaml}.
 
+\begin{sloppypar}
 Only \texttt{completed\_valid} or a campaign-specific \texttt{completed}
 paired with a passing independent certificate is an accepted quality outcome.
 \texttt{timeout}, \texttt{memory\_error}, \texttt{unsupported},
@@ -52,6 +58,7 @@ paired with a passing independent certificate is an accepted quality outcome.
 \texttt{numerical\_inconclusive} remain separate categories.  A failed or
 unsupported cell is never assigned an infinite, zero, or best-available
 metric.
+\end{sloppypar}
 
 \begin{table}[h]
 \caption{Canonical campaign inventory.  Counts are generated from registered
@@ -111,7 +118,7 @@ substituted for the theorem.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.92\textwidth]{../../figures/measured_tradeoff_frontier.pdf}
+\includegraphics[width=0.92\textwidth]{../figures/measured_tradeoff_frontier.pdf}
 \caption{Complete event-traced W3 surface.}
 \label{supp:fig:w3}
 \end{figure}
@@ -132,11 +139,11 @@ reference.  W5 then applies eight frozen configurations: native and unified
 forms of the authors reference, Qiskit level-three local optimization, TKET
 PauliSimp, and PyZX full-reduce.  Native-to-unified bridge deltas are measured
 before certificate comparison.  A semantic-capable external output is grouped
-with the semantic side even when it is more compact than the authors output.
+with the semantic side even when it is more compact than the authors' output.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.92\textwidth]{../../figures/representation_compiler_interaction.pdf}
+\includegraphics[width=0.92\textwidth]{../figures/representation_compiler_interaction.pdf}
 \caption{Full representation--compiler interaction summary; completion
 probability is separated from completed-cell metrics.}
 \label{supp:fig:w4}
@@ -197,15 +204,17 @@ Outputs & rotations, $T$, qubits, factories, cycles, runtime, spacetime\\
 \end{tabular}
 \end{table}
 
-\begin{figure}[h]
+\begin{center}
+\begin{minipage}{\textwidth}
 \centering
-\includegraphics[width=0.48\textwidth]{../../figures/qre_pareto.pdf}\hfill
-\includegraphics[width=0.48\textwidth]{../../figures/qre_sensitivity.pdf}
-\caption{Pareto and sensitivity views generated from the complete W7 parquet
+\includegraphics[width=0.48\textwidth]{../figures/qre_pareto.pdf}\hfill
+\includegraphics[width=0.48\textwidth]{../figures/qre_sensitivity.pdf}
+\captionof{figure}{Pareto and sensitivity views generated from the complete W7 parquet
 file.  Reversal or disappearance regions would remain visible; none is removed
 by filtering.}
 \label{supp:fig:w7}
-\end{figure}
+\end{minipage}
+\end{center}
 
 \section{Natural workloads and complete ablation}
 \label{supp:w8}
@@ -216,8 +225,9 @@ cell records gates, depth, CX, runtime, RSS, input/output IR bytes, description
 bits, dense certificate, and the fixed-error QRE decomposition including data
 and factory physical qubits.
 
-\begin{table}[h]
-\caption{Matched structured-family result retained without cherry-picking.}
+\begin{center}
+\begin{minipage}{\textwidth}
+\captionof{table}{Matched structured-family result retained without cherry-picking.}
 \label{supp:tab:natural}
 \centering
 \begin{tabular}{lcc}
@@ -226,10 +236,12 @@ Family & External-minus-authors gates [95\% interval] & Strict success\\
 \midrule
 \input{generated/natural_families}
 \end{tabular}
-\end{table}
+\end{minipage}
+\end{center}
 
-\begin{table}[h]
-\caption{All six natural-family gate-count main effects.  Off-minus-on is
+\begin{center}
+\begin{minipage}{0.80\textwidth}
+\captionof{table}{All six natural-family gate-count main effects.  Off-minus-on is
 positive when enabling the factor reduces gates.}
 \label{supp:tab:ablation}
 \centering
@@ -239,7 +251,8 @@ Factor & Mean reduction & Bootstrap 95\% interval\\
 \midrule
 \input{generated/ablation_gate_effects}
 \end{tabular}
-\end{table}
+\end{minipage}
+\end{center}
 
 The preset recognizer is the largest isolated gate-count contribution.
 Semantic lift and aggregation also have positive mean effects.  Selector,
@@ -248,22 +261,19 @@ this reference suite, and this null result is retained.  Both negative
 controls have zero all-on-minus-all-off differences for gates, depth, CX,
 logical $T$, and spacetime, with no systematic-regression interval.
 
-The line-topology preflight initially found an invalid final-layout
-permutation in a candidate router.  That preflight failed its dense certificate
-before the frozen campaign.  The router was replaced by an explicit adjacent
-CX-SWAP construction that restores identity layout, and the entire campaign
-was rerun.  The episode is retained because correctness failures take
-precedence over favorable metrics.
+The line-topology preflight caught an invalid final-layout permutation in a
+candidate router, whose dense certificate failed before the frozen campaign.
+We replaced it with an explicit adjacent CX-SWAP construction restoring
+identity layout and reran the entire campaign.  The failed preflight is
+retained because correctness takes precedence over favorable metrics.
 
 \section{Legacy and stress-result registry}
 \label{supp:legacy}
 
 The active submission body is the full-length
-\path{PaperDraft/ucc_v7_2_prxq_repaired/main.tex}.  The unintegrated 38-page
-source is frozen as
-\path{PaperDraft/ucc_v7_2_prxq_repaired/legacy_main_v7_2.tex}, and the
-superseded nine-page reconstruction is frozen as
-\path{PaperDraft/ucc_v7_2_prxq_repaired/short_main_w10.tex}.  Neither frozen
+\path{PaperDraft/main.tex}.  The unintegrated 38-page source is frozen as
+\path{PaperDraft/legacy_main_v7_2.tex}, and the superseded nine-page
+reconstruction is frozen as \path{PaperDraft/short_main_w10.tex}.  Neither frozen
 file is the submission source.  The active manuscript retains useful earlier
 exact-semantics and stress diagnostics, but labels their provenance and does
 not silently mix them with the W3--W9 canonical headline tables.

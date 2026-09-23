@@ -1,0 +1,9 @@
+command: /home/lyy/ucc_paper_round6_20260712/.venv/bin/python /home/lyy/ucc_paper_round6_20260712/research/round6_major_revision/run_round6_experiments.py --worker --family rational_cp --size 50000 --method semantic_ucc --timeout-s 600
+returncode: 0
+elapsed_s: 23.191
+--- stdout ---
+{"actual_input_gates": 49998, "angle_specification": "rational Qiskit RZ/CP angles; exact global-phase period T=131040", "block_gate_count": 10, "boundary_gate_count": 8, "cx_count": 12, "depth": 24, "equivalence_checked": true, "equivalent_up_to_global_phase": true, "family_key": "rational_cp", "gate_count": 42, "gate_types": ["cx", "h", "rz"], "instance_name": "rational_cp_n4_r4999", "m": 10, "method_key": "semantic_ucc", "n": 4, "notes": "ucc.compile; Fourier-layer IR enabled", "operator_atol": 1e-09, "operator_max_abs_error": 4.685840395456669e-11, "operator_rtol": 1e-09, "paper_method_name": "semantic UCC (Fourier-layer IR enabled)", "r": 4999, "requested_gates": 50000, "rotation_count": 22, "source_command_or_script": "research/round6_major_revision/run_round6_experiments.py --worker --family rational_cp --size 50000 --method semantic_ucc --timeout-s 600", "status": "completed", "support_rank_f2": 4, "support_rank_verified": false, "timeout_s": 600, "unbounded_noncollision_by_proposition": false, "wall_time_s": 22.666}
+
+--- stderr ---
+/home/lyy/ucc_paper_round6_20260712/ucc/compile.py:28: UserWarning: Warning: This package is designed for Python 3.12-3.13. You are using Python 3.10.
+  warnings.warn(

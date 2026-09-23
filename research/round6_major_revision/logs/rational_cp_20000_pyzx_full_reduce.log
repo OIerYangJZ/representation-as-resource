@@ -1,0 +1,6 @@
+command: /home/lyy/ucc_paper_round6_20260712/.venv/bin/python /home/lyy/ucc_paper_round6_20260712/research/round6_major_revision/run_round6_experiments.py --worker --family rational_cp --size 20000 --method pyzx_full_reduce --timeout-s 600
+returncode: -9
+elapsed_s: 600.105
+--- stdout ---
+
+--- stderr ---
