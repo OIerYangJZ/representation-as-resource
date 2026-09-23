@@ -1,0 +1,17 @@
+# .github/release.yml
+
+changelog:
+  categories:
+    - title: ✨ Key Features
+      labels:
+        - '*'
+      exclude:
+        labels:
+          - dependencies
+          - documentation
+    - title: 📚 Documentation & Workflow Improvements
+      labels:
+        - documentation
+    - title: 🔄 Dependencies
+      labels:
+        - dependencies

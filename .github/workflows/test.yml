@@ -1,0 +1,54 @@
+# This workflow will install Python dependencies, run tests using uv.
+# It can be tested locally using https://github.com/nektos/act with the command `act push --container-architecture linux/amd64 -j test`
+
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: "Set up Python"
+        uses: actions/setup-python@v6
+        with:
+          python-version-file: "pyproject.toml"
+
+      - name: Install the project
+        run: uv sync --all-extras --all-groups
+
+      - name: Install pre-commit
+        run: uv pip install pre-commit
+
+      - name: Run pre-commit hooks
+        run: uv run pre-commit run --all-files
+
+      - name: Run tests with coverage
+        run: uv run pytest --cov --cov-branch --cov-report=xml
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v6
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Run lint
+        run: uv run ruff check
+
+      - name: Run formatter check
+        run: uv run ruff format --check
+
+      - name: Run doctest
+        # Check that code examples in docs execute as expected, and treat warnings as errors
+        run: cd docs/source && uv run make doctest SPHINXOPTS="-W --keep-going -n"

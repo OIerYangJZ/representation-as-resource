@@ -1,0 +1,21 @@
+command: research/round6_major_revision/tools/staq-venv/bin/pip install ./research/round6_major_revision/tools/staq
+working_directory: repository root
+status: failed before build dependency installation
+
+WARNING: The directory '/Users/yangjinsey/Library/Caches/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled.
+Processing ./research/round6_major_revision/tools/staq
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'error'
+  error: subprocess-exited-with-error
+
+  x installing build dependencies did not run successfully.
+  | exit code: 1
+  `-> WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='pypi.org', port=443): Failed to resolve 'pypi.org' ([Errno 8] nodename nor servname provided, or not known)")': /simple/pybind11/
+      WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after the same NameResolutionError: /simple/pybind11/
+      WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after the same NameResolutionError: /simple/pybind11/
+      WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after the same NameResolutionError: /simple/pybind11/
+      WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after the same NameResolutionError: /simple/pybind11/
+      ERROR: Could not find a version that satisfies the requirement pybind11>=2.10.0 (from versions: none)
+      ERROR: No matching distribution found for pybind11>=2.10.0
+
+Resolution: the public header-only rotation optimizer was compiled directly with the system C++17 compiler, so the Python wrapper and pybind11 were not required. A network-approved retry later reached wheel compilation but did not install a usable pystaq module; the CLI route remained the reproducible path.

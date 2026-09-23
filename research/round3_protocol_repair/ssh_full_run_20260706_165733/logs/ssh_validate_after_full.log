@@ -1,0 +1,56 @@
+## round3_correctness_extension_results.json
+- valid JSON: yes
+- number of rows: 2
+- methods present: phase_poly_reference, semantic_ucc
+- timeout budgets present: 600
+- malformed rows: none
+
+## round3_fourier_ablation_completion_results.json
+- valid JSON: yes
+- number of rows: 25
+- methods present: no_fourier_ucc, phase_poly_reference, qiskit_commutative_inverse, qiskit_opt3, semantic_ucc
+- timeout budgets present: 600
+- malformed rows: none
+
+## round3_main_external_baselines_results.json
+- valid JSON: yes
+- number of rows: 45
+- methods present: phase_poly_reference, pyzx_configured, pyzx_full_reduce, qiskit_commutative_inverse, qiskit_opt3, semantic_ucc, tket_fullpeephole, tket_guided_paulisimp, tket_paulisimp
+- timeout budgets present: 600
+- malformed rows: none
+
+## round3_resource_consequence_check_results.json
+- valid JSON: yes
+- number of rows: 20
+- methods present: no_fourier_ucc, phase_poly_reference, qiskit_opt3, semantic_ucc
+- timeout budgets present: 600
+- malformed rows: none
+
+## smoke_round3_correctness_extension_results.json
+- valid JSON: yes
+- number of rows: 2
+- methods present: phase_poly_reference, semantic_ucc
+- timeout budgets present: 30
+- malformed rows: none
+
+## smoke_round3_fourier_ablation_completion_results.json
+- valid JSON: yes
+- number of rows: 5
+- methods present: no_fourier_ucc, phase_poly_reference, qiskit_commutative_inverse, qiskit_opt3, semantic_ucc
+- timeout budgets present: 30
+- malformed rows: none
+
+## smoke_round3_main_external_baselines_results.json
+- valid JSON: yes
+- number of rows: 9
+- methods present: phase_poly_reference, pyzx_configured, pyzx_full_reduce, qiskit_commutative_inverse, qiskit_opt3, semantic_ucc, tket_fullpeephole, tket_guided_paulisimp, tket_paulisimp
+- timeout budgets present: 30
+- malformed rows: none
+
+## smoke_round3_resource_consequence_check_results.json
+- valid JSON: yes
+- number of rows: 4
+- methods present: no_fourier_ucc, phase_poly_reference, qiskit_opt3, semantic_ucc
+- timeout budgets present: 30
+- malformed rows: none
+

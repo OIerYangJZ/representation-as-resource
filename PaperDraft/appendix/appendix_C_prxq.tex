@@ -231,42 +231,31 @@ instance.}
 
 \subsubsection{\texorpdfstring{Repeated $\mathrm{QFT}+\mathrm{QFT}^{-1}$ ($100$k gates)}{Repeated QFT+inverse-QFT (100k gates)}}
 
-\begin{table}[htbp]
-\centering
-\begin{tabular}{lrr}
-\toprule
-Method & Output Gates & Output Depth \\
-\midrule
-translation only & 400{,}000 & 142{,}500 \\
-baseline UCC & 968{,}784 & 276{,}266 \\
-semantic UCC & 0 & 0 \\
-\bottomrule
-\end{tabular}
-\caption{Controlled fixed-basis results for repeated $\mathrm{QFT}+\mathrm{QFT}^{-1}$.}
-\label{tab:qft-inverse-fixed}
-\end{table}
-
-
 \subsubsection{\texorpdfstring{Repeated $\mathrm{QFT}+\mathrm{QFT}$ control ($100$k gates)}{Repeated QFT+QFT control (100k gates)}}
 
-\begin{table}[htbp]
+\begin{table*}[!t]
 \centering
-\begin{tabular}{lrr}
+\begin{tabular}{lrr rr}
 \toprule
-Method & Output Gates & Output Depth \\
+& \multicolumn{2}{c}{$\mathrm{QFT}+\mathrm{QFT}^{-1}$}
+& \multicolumn{2}{c}{$\mathrm{QFT}+\mathrm{QFT}$} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Method & Output Gates & Output Depth & Output Gates & Output Depth \\
 \midrule
-translation only & 400{,}000 & 140{,}000 \\
-baseline UCC & 1{,}207{,}504 & 317{,}501 \\
-semantic UCC & 347{,}500 & 125{,}000 \\
+translation only & 400{,}000 & 142{,}500 & 400{,}000 & 140{,}000 \\
+baseline UCC & 968{,}784 & 276{,}266 & 1{,}207{,}504 & 317{,}501 \\
+semantic UCC & 0 & 0 & 347{,}500 & 125{,}000 \\
 \bottomrule
 \end{tabular}
-\caption{Controlled fixed-basis results for repeated $\mathrm{QFT}+\mathrm{QFT}$.}
+\caption{Controlled fixed-basis results for the repeated inverse and
+non-inverse QFT controls at 100k input gates.}
+\label{tab:qft-inverse-fixed}
 \label{tab:qft-control-fixed}
-\end{table}
+\end{table*}
 
-These results support a representation-level claim: after controlling for the
-final target basis, there is still a large structural opportunity before basis
-lowering.
+These finite controls show that, for this configured family and the tested
+pipelines, a large structural opportunity remains after controlling for the
+final target basis.  They are not a separate theorem-level witness.
 
 
 \subsubsection{Systematic \texorpdfstring{$\mathrm{QFT}+\mathrm{QFT}^{-1}$}{QFT+inverse-QFT} external scaling}
@@ -373,7 +362,7 @@ Representative results are:
 \end{itemize}
 Thus, on \texttt{MQT Bench}, the semantic artifact repeatedly recovers
 \texttt{qiskit opt3}-level output quality and clearly improves over baseline
-UCC. The added \texttt{qpeinexact}, \texttt{ae}, and
+UCC.  The added \texttt{qpeinexact}, \texttt{ae}, and
 \texttt{draper\_qft\_adder} cases are especially relevant because they extend
 the phase-ladder/Fourier-layer story beyond one exact-QPE benchmark into
 inexact QPE, amplitude estimation, and QFT-based arithmetic. Runtime still
@@ -389,7 +378,7 @@ across scale: \texttt{mqt\_grover\_8} gives $18{,}992 \rightarrow 5{,}170$,
 \texttt{mqt\_grover\_16} gives $2{,}112{,}285 \rightarrow 581{,}098$, where in
 each case the semantic artifact records the same gate count as
 \texttt{qiskit opt3} while clearly
-improving on baseline UCC. The large fixed-basis mirrored Grover benchmark shows
+improving on baseline UCC.  The large fixed-basis mirrored Grover benchmark shows
 the same parity pattern: baseline UCC gives $4{,}122{,}006$ gates, while
 the semantic artifact and \texttt{qiskit opt3} both give $1{,}158{,}011$. These cases make the
 mirrored/conjugation line less dependent on the routed timeout-recovery
@@ -417,7 +406,9 @@ Representative results are:
     \item \texttt{supermarq\_qaoa\_vanilla\_12}: baseline UCC $= 947$ gates, depth $225$; semantic UCC $= 222$ gates, depth $80$; \texttt{qiskit opt3} $= 222$ gates, depth $80$;
     \item \texttt{supermarq\_hamiltonian\_sim\_8}: baseline UCC $= 71$ gates, depth $36$; semantic UCC $= 51$ gates, depth $24$; \texttt{qiskit opt3} $= 51$ gates, depth $24$.
 \end{itemize}
-This second public benchmark source strengthens the paper in two ways. It shows clear anti-regression behavior on additional nontrivial families, and it also exposes a realistic limitation: the semantic artifact is not uniformly better on every benchmark family.
+This second public benchmark source provides additional finite anti-regression
+checks on nontrivial families and also exposes a limitation: the semantic
+artifact is not uniformly better on every benchmark family.
 
 
 \subsection{Hardware-Aware Results}
@@ -425,20 +416,39 @@ This second public benchmark source strengthens the paper in two ways. It shows 
 We added a backend-aware comparison using a fixed $20$-qubit bidirectional line backend with native operations \texttt{u}, \texttt{sx}, \texttt{p}, \texttt{cx}, \texttt{measure}, and \texttt{id}. The benchmark source is \texttt{MQT Bench}.  The reader-facing rows are \texttt{HW24-qpeexact-s12345-c0f32747f}, \texttt{HW24-qaoa-s12345-c0f32747f}, and \texttt{HW24-grover-s12345-c0f32747f}; the full source instance remains part of each registry primary key.
 
 \paragraph{\texttt{HW24-qpeexact-s12345-c0f32747f}.}
-\begin{table}[htbp]
+\begin{table*}[!t]
 \centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\textbf{(a) \texttt{HW24-qpeexact-s12345-c0f32747f}}\\[2pt]
 \resizebox{\linewidth}{!}{%
-\begin{tabular}{lrrrr}
-\toprule
-Method & Output Gates & Output Depth & CX Count & Runtime \\
-\midrule
-\input{research/experiment_registry/generated/hardware_qpe_rows.tex}\\
-\bottomrule
-\end{tabular}
+  \begin{tabular}{lrrrr}
+  \toprule
+  Method & Output Gates & Output Depth & CX Count & Runtime \\
+  \midrule
+  \input{research/experiment_registry/generated/hardware_qpe_rows.tex}\\
+  \bottomrule
+  \end{tabular}%
 }
-\caption{Canonical hardware-aware results for reader label \texttt{HW24-qpeexact-s12345-c0f32747f}, generated from the frozen keyed dataset.}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\textbf{(b) \texttt{HW24-qaoa-s12345-c0f32747f}}\\[2pt]
+\resizebox{\linewidth}{!}{%
+  \begin{tabular}{lrrrr}
+  \toprule
+  Method & Output Gates & Output Depth & CX Count & Runtime \\
+  \midrule
+  \input{research/experiment_registry/generated/hardware_qaoa_rows.tex}\\
+  \bottomrule
+  \end{tabular}%
+}
+\end{minipage}
+\caption{Canonical hardware-aware results for the QPE and QAOA reader labels,
+generated from the frozen keyed dataset.}
 \label{tab:hw-qpe}
-\end{table}
+\label{tab:hw-qaoa}
+\end{table*}
 
 This is a clean fixed-seed parity case: the semantic artifact matches
 \texttt{qiskit opt3} in total gates, depth, and \texttt{cx} count, while still
@@ -446,21 +456,6 @@ remaining much better than baseline UCC on all structural metrics. The tradeoff
 is runtime rather than output quality.
 
 \paragraph{\texttt{HW24-qaoa-s12345-c0f32747f}.}
-\begin{table}[htbp]
-\centering
-\resizebox{\linewidth}{!}{%
-\begin{tabular}{lrrrr}
-\toprule
-Method & Output Gates & Output Depth & CX Count & Runtime \\
-\midrule
-\input{research/experiment_registry/generated/hardware_qaoa_rows.tex}\\
-\bottomrule
-\end{tabular}
-}
-\caption{Canonical hardware-aware results for reader label \texttt{HW24-qaoa-s12345-c0f32747f}, generated from the frozen keyed dataset.}
-\label{tab:hw-qaoa}
-\end{table}
-
 This is the clearest hardware-aware external-baseline improvement in the paper:
 the semantic artifact improves on \texttt{qiskit opt3} in total gates, depth,
 and \texttt{cx} count, while also improving on baseline UCC in total gates,

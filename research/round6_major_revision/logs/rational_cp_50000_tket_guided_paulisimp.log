@@ -1,0 +1,7 @@
+command: /home/lyy/ucc_paper_round6_20260712/.venv/bin/python /home/lyy/ucc_paper_round6_20260712/research/round6_major_revision/run_round6_experiments.py --worker --family rational_cp --size 50000 --method tket_guided_paulisimp --timeout-s 600
+returncode: 0
+elapsed_s: 11.845
+--- stdout ---
+{"actual_input_gates": 49998, "angle_specification": "rational Qiskit RZ/CP angles; exact global-phase period T=131040", "block_gate_count": 10, "boundary_gate_count": 8, "cx_count": 59988, "depth": 79992, "equivalence_checked": true, "equivalent_up_to_global_phase": true, "family_key": "rational_cp", "gate_count": 169974, "gate_types": ["cx", "h", "rz"], "instance_name": "rational_cp_n4_r4999", "m": 10, "method_key": "tket_guided_paulisimp", "n": 4, "notes": "pytket.extensions.qiskit direct bridge -> GuidedPauliSimp", "operator_atol": 1e-09, "operator_max_abs_error": 7.752074889822272e-13, "operator_rtol": 1e-09, "paper_method_name": "TKET GuidedPauliSimp", "r": 4999, "requested_gates": 50000, "rotation_count": 109978, "source_command_or_script": "research/round6_major_revision/run_round6_experiments.py --worker --family rational_cp --size 50000 --method tket_guided_paulisimp --timeout-s 600", "status": "completed", "support_rank_f2": 4, "support_rank_verified": false, "timeout_s": 600, "unbounded_noncollision_by_proposition": false, "wall_time_s": 11.391}
+
+--- stderr ---

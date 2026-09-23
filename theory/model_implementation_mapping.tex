@@ -103,10 +103,12 @@ count.
 
 \begin{remark}[Observable boundary versus restart cut]
 \label{rem:observable-boundary-accounting}
-The masked-share tracer writes the five restart fields after every update,
-destroys the live Python state, and resumes from only those files, the committed
-prefix, and unread input; its maximum is therefore an implementation of
-$B_{\rm cut}$.  External compilers do not expose their private in-process DAGs,
+The masked-share tracer serializes the five declared cut fields after every
+update.  The verifier reopens and decodes every recorded field slice, checks
+its size and digest, and recomputes the cut sum; its maximum is therefore a
+file-backed measurement of the declared $B_{\rm cut}$ coordinate.  The W3
+campaign does not claim that the Python process is destroyed and restarted
+between events.  External compilers do not expose their private in-process DAGs,
 caches, or tapes.  Their matched-matrix and natural-factorial rows consequently
 report a file-backed \emph{API-boundary} snapshot and are diagnostic only; they
 are not promoted to measurements of the maximum private $B_{\rm cut}$.  Peak

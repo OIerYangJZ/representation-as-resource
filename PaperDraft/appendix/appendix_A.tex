@@ -13,9 +13,9 @@ formal theorem hypothesis. Let:
     an experiment.
 \end{itemize}
 
-Define the $(K,w)$-representation gap of $C$ by
+Define the $K$-representation gap of $C$ by
 \[
-\mathrm{Gap}^{K,w}_{\mathrm{rep}}(C)
+\mathrm{Gap}^{K}_{\mathrm{rep}}(C)
 :=
 \inf_{A \in \mathfrak{A}} \kappa(A(L_B(C)))
 -
@@ -23,7 +23,7 @@ Define the $(K,w)$-representation gap of $C$ by
 \]
 Define the operational recoverability gap by
 \[
-\mathrm{Gap}^{K,w}_{\mathrm{rec}}(C)
+\mathrm{Gap}^{K}_{\mathrm{rec}}(C)
 :=
 \kappa(C_{\mathrm{flat}}^\star) - \kappa(C_{\mathrm{term}}^\star),
 \]
@@ -33,8 +33,9 @@ candidate recovered from the bounded semantic term representation.
 
 The meaning is simple: semantics may survive lowering, while cheap
 recoverability of the opportunity may not. This notation is operational and
-experimental; the formal lower bound in the main text is the budget-explicit
-final-output theorem for finite-window transducers.
+experimental; the formal lower bounds in the main text are the
+budget-explicit output and cut-transcript theorems for the declared
+finite-window stream model.
 
 \begin{definition}[Aggregate recovery]
 \label{def:aggregation-equivalent-recovery}

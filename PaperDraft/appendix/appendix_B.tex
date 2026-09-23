@@ -121,13 +121,14 @@ losing recoverable semantic evidence before candidate selection.
 Every frozen numerical row is addressed by the complete primary key
 \begin{equation*}
 \begin{split}
-(&\texttt{experiment},\texttt{instance},\texttt{representation},
-  \texttt{method},\texttt{seed},\\
- &\texttt{backend\_hash},\texttt{tool\_version},\texttt{config\_hash}).
+(&\texttt{experiment},\texttt{instance},\texttt{representation},\\
+ &\texttt{method},\texttt{seed},\texttt{backend\_hash},\\
+ &\texttt{tool\_version},\texttt{artifact\_commit},
+  \texttt{config\_hash}).
 \end{split}
 \end{equation*}
 The backend and configuration hashes are SHA256 digests of canonical JSON
-(sorted keys and no insignificant whitespace).  A row collision on all eight
+(sorted keys and no insignificant whitespace).  A row collision on all nine
 fields is rejected.  In particular, the reorder-probe hardware rows and the
 canonical hardware-aware rows have different experiment and configuration
 keys, and therefore different reader labels even when the underlying MQT
@@ -289,18 +290,21 @@ projective distance.  Only \texttt{completed\_valid} records carrying an
 independent certificate enter numerical means; unsupported, predicate-error,
 and numerical-inconclusive records remain status-only.
 
-The theorem-model reference compiler is
-\path{scripts/trace_cut_budget.py}.  Its event schema records after every input update
-\texttt{committed\_output\_bytes}, the five cut fields from
-\eqref{eq:info-budget}, pass index, RSS, elapsed nanoseconds, artifact paths,
-and digests.  It deletes the explicit live compiler-state object and resumes
-from only the committed prefix, five serialized fields, and unread input
-suffix.  The frozen \path{research/cut_trace/} bundle was produced by the
-earlier serializer and lacks the per-event field files, so its 1,320 events and
-24 summaries are historical only and are not accepted by the version-one
-verifier.  The checked three-cut codec fixture and its manifests are in the
-project-root \path{instrumentation/example_trace/}; a full empirical curve
-requires rerunning this revised tracer.
+The canonical W3 theorem-model reference compilers are under
+\path{compiler/reference_streaming/} and are driven by
+\path{scripts/run_tradeoff_sweep.py}.  After every input update, their
+version-one event schema records \texttt{committed\_output\_bytes}, the five
+cut fields from \eqref{eq:info-budget}, pass index, RSS, elapsed nanoseconds,
+artifact paths, and digests.  The verifier reopens and decodes every field
+slice and checks the committed-prefix hashes.  The complete 592-run campaign
+is stored under \path{data/runs/w3-tradeoff-20260802-local/}; its registered
+summary and freeze manifest are \path{data/frozen/tradeoff_summary.csv} and
+\path{data/frozen/tradeoff_freeze_manifest.json}.  The older
+\path{research/cut_trace/} bundle was produced by an earlier serializer and
+lacks the per-event field files, so its 1,320 events and 24 summaries are
+historical only and are not accepted by the version-one verifier.  The checked
+three-cut codec fixture and its manifests remain in the project-root
+\path{instrumentation/example_trace/}.
 
 The W7 runner and allocator are the project-root
 \path{scripts/run_qre_campaign.py} and

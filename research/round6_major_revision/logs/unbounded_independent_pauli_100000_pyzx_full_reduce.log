@@ -1,0 +1,6 @@
+command: /home/lyy/ucc_paper_round6_20260712/.venv/bin/python /home/lyy/ucc_paper_round6_20260712/research/round6_major_revision/run_round6_experiments.py --worker --family unbounded_independent_pauli --size 100000 --method pyzx_full_reduce --timeout-s 600
+returncode: -9
+elapsed_s: 600.11
+--- stdout ---
+
+--- stderr ---

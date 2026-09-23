@@ -1,0 +1,80 @@
+$ /var/folders/tg/nbn_fl894vb3j41w5zvzfl1c0000gn/T/ucc-clean-room-kodr6yja/.venv/bin/python -m pytest tests/test_qary_packing.py tests/test_update_stream_equivalence.py tests/search_small_compiler_counterexamples.py -q
+.........                                                                [100%]
+9 passed in 0.05s
+
+
+$ /var/folders/tg/nbn_fl894vb3j41w5zvzfl1c0000gn/T/ucc-clean-room-kodr6yja/.venv/bin/python reproducibility/clean_room_smoke.py --receipt /Users/yangjinsey/Desktop/QFT + inverse-QFT circuits #662(issue)/data/frozen/clean_room_receipt.json
+{
+  "authors": {
+    "certificate_sha256": "c1bcf57316bd8275d5279a95d8cba276a7b775cf7577b47407137aad0c67931d",
+    "metrics": {
+      "cx": 24,
+      "depth": 31,
+      "gates": 96,
+      "logical_rotations": 48
+    },
+    "qasm_sha256": "d14b20d89930d0160d7ab7af3a3d1ef8ce60ec5b0fcf566d088697f8cc9c06ba",
+    "qre": {
+      "logical_t_states": 2200,
+      "qre_classical_runtime_s": 0.346022500001709,
+      "qre_code_distance": 25,
+      "qre_cycles": 38725,
+      "qre_data_physical_qubits": 7500,
+      "qre_epsilon_total": 1e-06,
+      "qre_factories": 16,
+      "qre_factory_physical_qubits": 300000,
+      "qre_physical_qubits": 307500,
+      "qre_runtime_seconds": 0.038724999999999996,
+      "qre_status": "completed_valid",
+      "spacetime_qubit_seconds": 11907.937499999998
+    },
+    "selected_candidate": "preset",
+    "status": "completed_valid"
+  },
+  "external": {
+    "certificate_sha256": "647d62af6b406620c9099ce46de1a7e5dfd9fbdb801674653369e03482c98cc4",
+    "metrics": {
+      "cx": 24,
+      "depth": 35,
+      "gates": 120,
+      "logical_rotations": 72
+    },
+    "qasm_sha256": "cc07bb74a668181cc210fd21832869d11509384f7a45a568f4d916eda9845233",
+    "qre": {
+      "logical_t_states": 2200,
+      "qre_classical_runtime_s": 0.10822562500106869,
+      "qre_code_distance": 25,
+      "qre_cycles": 38825,
+      "qre_data_physical_qubits": 7500,
+      "qre_epsilon_total": 1e-06,
+      "qre_factories": 16,
+      "qre_factory_physical_qubits": 300000,
+      "qre_physical_qubits": 307500,
+      "qre_runtime_seconds": 0.038825,
+      "qre_status": "completed_valid",
+      "spacetime_qubit_seconds": 11938.6875
+    },
+    "selected_candidate": "tket_paulisimp",
+    "status": "completed_valid"
+  },
+  "grid_synth_unique_pairs": 17,
+  "instance": {
+    "density": 1.0,
+    "family": "qaoa_ising",
+    "instance_id": "nat-72adf0d5d436582f8a7b",
+    "representation_id": "repr-756d05bcf5ea0c375c1f",
+    "scale": 1,
+    "seed": 20260821,
+    "topology": "all_to_all"
+  },
+  "packages": {
+    "numpy": "2.3.3",
+    "pandas": "2.3.3",
+    "pyarrow": "25.0.0",
+    "pytket": "2.16.0",
+    "qiskit": "2.4.0"
+  },
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "python": "3.13.12",
+  "schema": "ucc.clean-room-smoke.v1"
+}
