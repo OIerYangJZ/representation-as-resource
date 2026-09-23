@@ -3223,7 +3223,7 @@ audit checks CSV/Parquet mirrors, conflicting numeric cells, duplicate TeX
 labels, source hashes, row counts, orphaned frozen files, and historical versus
 canonical campaign disposition.  It finds no duplicate primary keys,
 registered-file omissions, conflicting mirror cells, hash drift, or
-unregistered frozen artifacts in the final registry.
+unregistered frozen artifacts among the committed canonical sources.
 
 All measurement macros, tables, and figures used by the W3--W9 sections are
 generated from registered frozen sources by
@@ -3232,14 +3232,21 @@ generated from registered frozen sources by
 each printed number are recorded in \path{data/provenance_map.yaml} and tested
 by \path{tests/test_paper_number_provenance.py}.  The correctness language,
 symbolic checker, and mutation/dense audit are in \path{certificates/}; the
-QRE schemas and two physical profiles are in \path{qre/}; and raw W3--W8 run
-directories, manifests, logs, certificates, seeds, and package versions remain
-registered rather than collapsed into the summary tables.
+QRE schemas and two physical profiles are in \path{qre/}.  The approximately
+700-MB raw W3--W8 run tree, including manifests, logs, certificates, seeds, and
+package records, is versioned in the separate private
+\path{OIerYangJZ/paper1-data} archive at the revision recorded in
+\path{data/manifest.yaml}; its absence is reported but does not invalidate the
+committed frozen-data rebuild.
 
 The one-command entry point is
-\path{reproducibility/run_submission.sh}.  It reruns data audits, regenerates
-all tables and figures, executes the full test suite, builds this manuscript
-and the supplement, and rejects unresolved references.  The clean-room runner
+\path{reproducibility/run_submission.sh}.  From a fresh clone it creates the
+locked project environment when needed, reruns frozen-data audits, regenerates
+all registered tables and figures, executes the full test suite, builds the
+canonical, arXiv, Quantum-submission, and supplement PDFs, and rejects
+unresolved references.  This procedure reproduces the submitted analysis from
+immutable frozen datasets; it does not rerun the complete measurement
+campaigns.  The clean-room runner
 copies a minimal artifact to an independent temporary directory, creates a
 fresh environment bound to the locked project packages, reruns
 \CleanTheoryTests\ headline-theorem tests, compiles and densely certifies a

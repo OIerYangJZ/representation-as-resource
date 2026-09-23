@@ -1,3 +1,39 @@
+# Representation as a Resource
+
+This repository contains the manuscript, frozen experimental evidence, and
+reproduction code for *Representation as a Resource*. It is built on the
+Unitary Compiler Collection (UCC) codebase.
+
+## Reproduce the submitted artifact
+
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and a TeX
+distribution providing `latexmk`, then run from the repository root:
+
+```bash
+./reproducibility/run_submission.sh
+```
+
+On a fresh clone the command creates `.venv` from the committed `uv.lock`.
+It audits the committed frozen W3--W9 datasets, regenerates registered tables
+and figures, runs the full test suite and clean-room subset, and builds the
+canonical, arXiv, Quantum-submission, and supplement PDFs. The first run can
+require network access to populate uv's package cache; subsequent runs can use
+the locked local environment without network access.
+
+The approximately 700 MB raw run tree is archived separately in the private
+[`OIerYangJZ/paper1-data`](https://github.com/OIerYangJZ/paper1-data)
+repository. It is not required to regenerate the submitted tables and figures
+from the immutable frozen datasets. Authorized users can fetch it with:
+
+```bash
+./reproducibility/fetch_raw_data.sh
+```
+
+See [`reproducibility/README.md`](reproducibility/README.md) for the precise
+scope and limitations of each reproduction level.
+
+## Upstream software
+
 ##  <a href="https://github.com/unitaryfoundation/ucc"><img src="https://raw.githubusercontent.com/unitaryfoundation/ucc/main/docs/source/img/UCC-logo.png" alt="light orange oval with a hissing black cat in the center with UCC written across the bottom" width="150"/></a> Unitary Compiler Collection
 
 [![Repository](https://img.shields.io/badge/GitHub-5C5C5C.svg?logo=github)](https://github.com/unitaryfoundation/ucc)

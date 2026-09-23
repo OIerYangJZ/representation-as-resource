@@ -1,8 +1,15 @@
 schema: ucc.data-manifest.v1
+frozen_artifact_commit: 229eafdb4127ab98b2ad925a9657fa67510a12e7
 policy:
   canonical_rule: Only entries with role canonical_source or canonical_summary may support manuscript numbers.
   status_rule: Failure and unsupported statuses remain separate and never enter completed-quality means.
-  historical_rule: Raw run trees are retained as provenance but are not scanned as independent canonical datasets.
+  historical_rule: Raw run trees are archived separately and are not scanned as independent canonical datasets.
+raw_provenance_archive:
+  repository: ssh://git@github.com/OIerYangJZ/paper1-data.git
+  checkout_path: data/raw-archive
+  revision: 5f90733d7d83d2690f3e0ad5164824879ca95b84
+  required_for_frozen_rebuild: false
+  note: The optional private archive preserves the full raw run tree; committed frozen datasets are canonical for the submission rebuild.
 primary_key:
   - experiment_id
   - instance_id
@@ -89,19 +96,19 @@ datasets:
     generator: PaperDraft/scripts/run_tket_state_scaling.py
     campaign: e7-tket-state-scaling-20260805
 raw_provenance_roots:
-  - data/runs/w3-tradeoff-20260802-local
-  - data/runs/w4-matched-representation-20260802
-  - data/runs/w5-external-baselines-20260803
-  - data/runs/w7-fixed-total-error-20260803-local
-  - data/runs/w8-natural-20260803-local
+  - runs/w3-tradeoff-20260802-local
+  - runs/w4-matched-representation-20260802
+  - runs/w5-external-baselines-20260803
+  - runs/w7-fixed-total-error-20260803-local
+  - runs/w8-natural-20260803-local
 known_historical_or_stale:
-  - path: data/runs/w4-matched-representation-20260802
+  - path: data/raw-archive/runs/w4-matched-representation-20260802
     disposition: historical_raw_provenance
-    reason: Raw representations and logs are retained; the parquet freeze is canonical.
-  - path: data/runs/w5-external-baselines-20260803
+    reason: Raw representations and logs are in the optional archive; the committed parquet freeze is canonical.
+  - path: data/raw-archive/runs/w5-external-baselines-20260803
     disposition: historical_raw_provenance
-    reason: Raw per-cell logs are retained; the parquet freeze is canonical.
-  - path: data/runs/w8-natural-20260803-local/natural_baselines.parquet
+    reason: Raw per-cell logs are in the optional archive; the committed parquet freeze is canonical.
+  - path: data/raw-archive/runs/w8-natural-20260803-local/natural_baselines.parquet
     disposition: intermediate_noncanonical
     reason: The final factorial parquet includes the matched external rows.
 auxiliary_artifacts:

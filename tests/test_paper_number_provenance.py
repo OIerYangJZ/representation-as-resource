@@ -66,6 +66,8 @@ def test_data_audit_is_clean_and_preserves_status_classes() -> None:
     assert audit["conflicting_numeric_cells"] == 0
     assert audit["duplicate_tex_labels"] == []
     assert audit["hash_drift"] == []
+    assert audit["external_raw_archive"]["configured"] is True
+    assert audit["external_raw_archive"]["hash_drift"] == []
     assert audit["unregistered_frozen_artifacts"] == []
     assert audit["status_counts"] == {"completed_valid": 24_700, "predicate_error": 48}
 

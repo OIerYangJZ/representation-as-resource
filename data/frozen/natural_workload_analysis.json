@@ -7,9 +7,11 @@
     "data/frozen/natural_workload_summary.csv": "fc6962393e534148dcc5be511fa5568c3228e7fb5b5d746ab7b9bdccca65326a",
     "data/frozen/natural_workloads.csv": "45ea0d9d9cd6778ddc1b2a436188ef56a6a21a7119560e3119942e9b98cdc2cb",
     "data/frozen/natural_workloads.parquet": "25cf0f8c107b2e17ad2c7a402de6d9ef72c5d9ac0398f79b19fcdb910aa7b563",
-    "data/runs/w8-natural-20260803-local/factorial_cells.jsonl": "c3d7074c4fd4d32980fd368d545d5bdeddf0cec3ea15b9a2991f274349102d62",
     "figures/ablation_effects.pdf": "b14e12d8823254f4778ace0a293965cda9843e0e4c7c65798bbaa8bf8ee51983",
     "figures/natural_workload_summary.pdf": "9eaa1d34efe5a44ed2f4d77585df61a5601448c403cfdf3acd2dff2250e40785"
+  },
+  "external_artifacts_sha256": {
+    "runs/w8-natural-20260803-local/factorial_cells.jsonl": "c3d7074c4fd4d32980fd368d545d5bdeddf0cec3ea15b9a2991f274349102d62"
   },
   "bootstrap_replicates": 4000,
   "bootstrap_seed": 20260830,

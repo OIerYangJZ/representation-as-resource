@@ -10,7 +10,7 @@
     "qasm_sha256": "d14b20d89930d0160d7ab7af3a3d1ef8ce60ec5b0fcf566d088697f8cc9c06ba",
     "qre": {
       "logical_t_states": 2200,
-      "qre_classical_runtime_s": 0.346022500001709,
+      "qre_classical_runtime_s": 0.24129079200793058,
       "qre_code_distance": 25,
       "qre_cycles": 38725,
       "qre_data_physical_qubits": 7500,
@@ -36,7 +36,7 @@
     "qasm_sha256": "cc07bb74a668181cc210fd21832869d11509384f7a45a568f4d916eda9845233",
     "qre": {
       "logical_t_states": 2200,
-      "qre_classical_runtime_s": 0.10822562500106869,
+      "qre_classical_runtime_s": 0.09482199998456053,
       "qre_code_distance": 25,
       "qre_cycles": 38825,
       "qre_data_physical_qubits": 7500,
@@ -68,7 +68,7 @@
     "pytket": "2.16.0",
     "qiskit": "2.4.0"
   },
-  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
   "python": "3.13.12",
   "schema": "ucc.clean-room-smoke.v1",
   "theorem_tests_passed": 9

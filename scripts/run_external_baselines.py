@@ -375,7 +375,27 @@ def _dist_commit(package: str) -> tuple[str | None, str]:
 
 def expand_specs(campaign: Mapping[str, Any], configs: list[dict[str, Any]]) -> list[dict[str, Any]]:
     index_path = ROOT / campaign["input_index"]
-    inputs = [json.loads(line) for line in index_path.read_text(encoding="utf-8").splitlines() if line.strip()]
+    if index_path.exists():
+        inputs = [
+            json.loads(line)
+            for line in index_path.read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        ]
+    else:
+        # The raw W4 tree is an optional external archive.  The frozen W5 table
+        # retains the complete 216-input campaign identity needed to audit the
+        # matrix expansion without materializing roughly 700 MB of raw logs.
+        import pandas as pd
+
+        frozen_path = ROOT / campaign["frozen_input_table"]
+        frame = pd.read_parquet(frozen_path)
+        columns = [
+            "target_id", "representation", "representation_id", "seed",
+            "representation_manifest_path",
+        ]
+        inputs = frame[columns].drop_duplicates().to_dict(orient="records")
+        for row in inputs:
+            row["manifest_path"] = row.pop("representation_manifest_path")
     if len(inputs) != 216:
         raise ValueError("W5 requires the complete 216-input W4 representation index")
     output = []
