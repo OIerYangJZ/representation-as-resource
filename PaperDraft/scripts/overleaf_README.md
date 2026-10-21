@@ -15,18 +15,6 @@ Compiler: **pdfLaTeX** (`quantumarticle`). No custom class or style file is
 needed — `quantumarticle` and its `quantum.bst` bibliography style ship with
 Overleaf's TeX Live.
 
-## Two documents in one project
-
-| Document | File | Pages |
-|---|---|---|
-| Manuscript | `main.tex` | 53 |
-| Cover letter | `cover_letter/cover-letter.tex` | 2 |
-
-Overleaf compiles one document at a time. To build the cover letter, right-click
-`cover_letter/cover-letter.tex` in the file tree and choose **Set as Main File**;
-switch back to `main.tex` for the manuscript. A pre-built `cover-letter.pdf` is
-included, so this is only needed if you edit the letter.
-
 ## Layout
 
 ```
@@ -39,7 +27,6 @@ theory/                   the six \input theory packages
 generated/                pipeline-generated numbers and tables
 research/                 generated table rows cited by the appendices
 figures/                  all figures referenced by main.tex
-cover_letter/             cover letter source + compiled PDF
 ```
 
 ## Difference from the working tree

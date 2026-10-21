@@ -100,6 +100,6 @@ main_external_baselines: size=4000 method=pyzx_full_reduce timeout=600s
 
 ## Operator Notes
 
-- Direct `ssh <redacted-host>` used the default config entry and failed authentication; the configured `school-server` host alias with its dedicated port and key was used successfully.
+- Direct `ssh <redacted-host>` used the default config entry and failed authentication; the configured host alias with its dedicated port and key was used successfully.
 - One attempted environment-report generation command was misquoted by the local shell; it did not modify manuscript/proof/runner files and was retried successfully using SSH heredoc into remote Python.
 - No `--delete` sync, manuscript edit, proof edit, or old-output overwrite command was used.

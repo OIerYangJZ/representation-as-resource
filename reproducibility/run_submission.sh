@@ -6,6 +6,13 @@ cd "$REPO_ROOT"
 
 PAPER_DIR=PaperDraft
 
+# The clean-room QRE subset runs a committed macOS arm64 staq_grid_synth binary.
+if [ "$(uname -s)" != Darwin ] || [ "$(uname -m)" != arm64 ]; then
+  echo "run_submission.sh needs macOS arm64 for the committed staq_grid_synth binary" >&2
+  echo "see 'Platform requirement' in reproducibility/README.md" >&2
+  exit 1
+fi
+
 if [ ! -x .venv/bin/python ]; then
   if ! command -v uv >/dev/null 2>&1; then
     echo "uv is required to create the locked project environment" >&2

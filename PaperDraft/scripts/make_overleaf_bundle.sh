@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Build a self-contained Overleaf upload bundle for the Quantum submission
-# (manuscript + cover letter).
+# manuscript.
 #
 # The working tree keeps the manuscript at PaperDraft/ but pulls \input and
 # \includegraphics targets from ../theory/ and ../figures/.  Overleaf has no
@@ -22,7 +22,7 @@ OUT="$PAPER/overleaf_bundle"
 ZIP="$PAPER/overleaf_bundle.zip"
 
 rm -rf "$OUT" "$ZIP"
-mkdir -p "$OUT"/{figures,theory,appendix,generated,cover_letter}
+mkdir -p "$OUT"/{figures,theory,appendix,generated}
 mkdir -p "$OUT/research/claim_evidence" "$OUT/research/experiment_registry/generated"
 
 # --- manuscript, with the two parent-relative prefixes flattened -------------
@@ -59,10 +59,6 @@ for f in representation_compiler_interaction measured_tradeoff_frontier qre_pare
          natural_workload_summary ablation_effects qre_sensitivity; do
   cp "$ROOT/figures/$f.pdf" "$OUT/figures/$f.pdf"
 done
-
-# --- cover letter ------------------------------------------------------------
-cp "$PAPER/cover_letter/cover-letter.tex" "$OUT/cover_letter/"
-cp "$PAPER/cover_letter/cover-letter.pdf" "$OUT/cover_letter/"
 
 # --- upload instructions -----------------------------------------------------
 cp "$HERE/overleaf_README.md" "$OUT/README_OVERLEAF.md"

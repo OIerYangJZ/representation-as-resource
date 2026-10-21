@@ -49,7 +49,7 @@
 \input{generated/paper_numbers}
 
 % ---- Packing-family scaling values filled by the experiment pipeline;
-% ---- see BUILD_PLAN_claude_code.md for the frozen protocol.
+% ---- see research/packing_scaling/README.md for the frozen protocol.
 \newcommand{\pkResultsSummary}{All five paths completed at $m=4$; semantic
 UCC, \texttt{qiskit opt3}, staq rotation folding, and the phase-polynomial
 reference also completed at $m=8,16,32,64$, while rebased TKET PauliSimp
@@ -108,10 +108,6 @@ at most $\delta$ obeys
 $\overline A_p+(2p-1)S\geq
 (1-\delta)m\log_2K_\epsilon-h_2(\delta)$, where $\overline A_p$ is
 committed output and $S$ is the serialized crossing-state cap.
-% GATE RELEASED [exec-plan V2/T3, 2026-08-05]: supported by
-% prop:frame-cross-cut(ii) in sec:physical-dispersed (tracked mode is
-% literal; folded mode covered by prop:frame-cross-cut(iii)).  V2
-% analysis: research/rc_frame_cross_cut_note.md.
 Within this scheduled family, sign normalization is a bijection of the
 residue alphabet, so the folded (compile-time) presentation of
 randomized compiling inherits the bound; no claim depends on tracking
@@ -124,17 +120,6 @@ corner with logarithmic state.
 We then measure the predicted channels rather than infer them.
 Instrumented reference compilers expose the state, IR, and commitment
 coordinates directly.
-% GATE RESOLVED BY REVERT [exec-plan E7, 2026-08-05]: the preregistered
-% linear point prediction (P1: log-log slope in [0.7,1.5]) was REJECTED
-% under the frozen decision rule -- measured slope 1.70 (superlinear;
-% above the one-sided Omega(m log K) floor, so the bound itself is not
-% threatened).  P2 (compact output: 508 dispersed rotations -> 127) and
-% P3 (semantic control flat: 196 -> 199 bytes over 16x m) both PASSED.
-% Per research/E7_preregistration.md the TKET claim is removed from the
-% abstract; the full result is frozen at
-% generated/e7_tket_state_scaling.json and reported as-is in the
-% validation narrative.  Any future abstract-level TKET claim requires a
-% fresh preregistration (E7b) on new targets.
 The two information channels are not, however, always interchangeable
 at par, and we characterize when they are not.  A compiler whose committed prefix is
 executed at the cut---applied before the suffix is parsed, and so

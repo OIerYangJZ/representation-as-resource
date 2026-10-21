@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """V1 verification gate: fooling-set enumeration for time-varying schedules.
 
-Execution-plan task V1 (Comments on new proposal-Opus-5.md, Section 9.1).
+Execution-plan task V1 (internal planning note, not part of this artifact).
 
 Question.  For the r-round modular phase-accumulation stream with m
 generators and grid Z_Q, does a shared first-round prefix leave the

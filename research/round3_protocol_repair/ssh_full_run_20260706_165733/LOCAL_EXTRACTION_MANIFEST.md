@@ -41,3 +41,10 @@ Generated: `2026-07-06T11:37:40+00:00` UTC
 | `round3_table_provenance_map.md` | 2187 | `b173878e92e474b012bfad585ada54fb5cb47cc61934cffb067d713517d9b0fa` |
 | `ssh_environment_setup.md` | 3009 | `17fb8df77431c9840e70c97b87ba349e16844b5e6e09d1b2dc60300e057d30a7` |
 | `ssh_environment_snapshot.md` | 4080 | `54ddc5b08619c98d860095a9559b836d75cfadefc9ff847e75e06966150028c3` |
+
+## Post-extraction redaction (2026-10-21)
+
+One operator-notes line of `ROUND3_SSH_LAUNCH_REPORT.md` was redacted before public release to remove the
+remote server's address and SSH port. No result, log, or JSON file was changed. The SHA256 in the table
+above is the original extraction hash; the redacted file's SHA256 is
+`fdde10c2814204484bc3432ab6ad9dbf04f91ef239cd2f12dac780434d991de6`.

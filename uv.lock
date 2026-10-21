@@ -2046,13 +2046,19 @@ version = "0.4.12"
 source = { editable = "." }
 dependencies = [
     { name = "cirq-core" },
+    { name = "matplotlib" },
+    { name = "numpy" },
+    { name = "pandas" },
     { name = "ply" },
+    { name = "psutil" },
     { name = "pyarrow" },
     { name = "pytket" },
+    { name = "pyyaml" },
     { name = "qbraid" },
     { name = "qiskit" },
     { name = "qiskit-qasm3-import" },
     { name = "quimb" },
+    { name = "scipy" },
 ]
 
 [package.dev-dependencies]
@@ -2078,13 +2084,19 @@ research = [
 [package.metadata]
 requires-dist = [
     { name = "cirq-core", specifier = ">=1.4.1,<2.0.0" },
+    { name = "matplotlib", specifier = ">=3.10,<4.0" },
+    { name = "numpy", specifier = ">=2.3,<3.0" },
+    { name = "pandas", specifier = ">=2.3,<3.0" },
     { name = "ply", specifier = ">=3.11,<4.0.0" },
+    { name = "psutil", specifier = ">=7.1,<8.0" },
     { name = "pyarrow", specifier = "==25.0.0" },
     { name = "pytket", specifier = ">=1.40.0,<3.0.0" },
+    { name = "pyyaml", specifier = ">=6.0,<7.0" },
     { name = "qbraid", specifier = ">=0.9.3,<1.0.0" },
     { name = "qiskit", specifier = ">=1.4.2,<3.0.0" },
     { name = "qiskit-qasm3-import", specifier = ">=0.5.1,<1.0.0" },
     { name = "quimb", specifier = "==1.12.1" },
+    { name = "scipy", specifier = ">=1.16,<2.0" },
 ]
 
 [package.metadata.requires-dev]

@@ -39,6 +39,11 @@ The data audit reports whether this optional archive is present and verifies
 its registered receipt hashes when available. Archive absence is reported but
 does not invalidate a frozen-data rebuild.
 
+The campaign scripts' built-in defaults still point at the original
+`data/runs/<campaign>/` layout. To rerun an analysis against the archive, pass
+the archived directory explicitly, e.g.
+`--campaign-root data/raw-archive/runs/w4-matched-representation-20260802`.
+
 ## Clean-room subset
 
 To run only the clean-room subset:
@@ -52,3 +57,40 @@ environment explicitly bound to the locked project `.venv` site-packages;
 therefore this proves independence from the working directory, not binary
 independence from the host Python installation.  Exact package versions and
 the deterministic grid-synthesis binary hash are frozen in `environment.lock`.
+
+## Platform requirement
+
+The W7 QRE subset of the clean room (and therefore `run_submission.sh`)
+executes `PaperDraft/research/fixed_budget_qre/tools/staq_grid_synth`, a
+committed macOS arm64 binary whose SHA256 is pinned in `environment.lock`.
+`run_submission.sh` stops early on any other platform. To rebuild the binary
+elsewhere, compile `tools/grid_synth_deterministic.cpp` (C++17, GMP) against
+the public staq headers at the commit recorded in `environment.lock`; see
+`PaperDraft/research/fixed_budget_qre/README.md`. A rebuilt binary will not
+match the pinned hash, so record its hash alongside any results it produces.
+
+## Notes on the freeze manifests
+
+The `files` entries of `data/frozen/*_freeze_manifest.json` were recorded when
+each campaign was frozen. Three kinds of entries no longer match a file in this
+repository's working tree; none of them affects the frozen datasets or any
+reported number.
+
+- **Code edited after the W5 freeze.** `scripts/run_external_baselines.py`
+  and `baselines/configs/campaign.yaml` were changed in commit `a94c8b8`
+  only to let the 216-input W5 matrix expansion fall back to
+  `data/frozen/external_baselines.parquet` when the raw W4 index is absent.
+  The freeze-time versions, which match the recorded hashes, are in commit
+  `11e2ca0` (`git show 11e2ca0:scripts/run_external_baselines.py`).
+- **Regenerated figure.** `figures/representation_compiler_interaction.pdf` is
+  rebuilt from the frozen tables by `scripts/build_all_figures.py`; its current
+  hash is recorded in `data/frozen/figure_build_manifest.json`.
+- **Files outside this repository.** The raw `data/runs/w4-*/…jsonl` and
+  `data/runs/w5-*/…jsonl` files are in the optional raw archive under
+  `data/raw-archive/runs/` and match the recorded hashes. The
+  `MATCHED_REPRESENTATION_REPORT.md` and `EXTERNAL_BASELINE_REPORT.md` reports
+  were written in the original working repository and are not part of this
+  artifact; the W4 and W5 results they summarized are reported in the paper and supplement.
+
+`frozen_artifact_commit` in `environment.lock` and `data/manifest.yaml` refers
+to that original working repository, not to this one.

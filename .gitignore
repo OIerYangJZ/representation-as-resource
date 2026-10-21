@@ -1,8 +1,6 @@
 .DS_Store
 .vscode
 .python-version
-# local overrides for act github action tests
-.act*
 .idea/
 *.dat
 *.hdf5
@@ -10,42 +8,37 @@
 *.jupyter_cache
 _build
 __pycache__/
-docs/build/
 *.egg-info/
 dist/
 build/
 jupyter_execute/
 benchmarks/results/test_data
-
 .tmp.drivedownload/
 .tmp.driveupload/
 out/
-
 chatgpt_materials.zip
 chatgpt_materials/
 
+# matplotlib/fontconfig caches written by scripts/build_all_figures.py
+tmp/
 
-.tmp.drivedownload/
-.tmp.driveupload/
-out/
-
-
-chatgpt_materials.zip
-chatgpt_materials/
-
-
+# Only the frozen ucc snapshot files already committed are part of the
+# artifact; anything new under ucc/ (or an upstream ucc-main/ checkout) is not.
 ucc-main/
 ucc/
 
-# --- experiment data: 618M / 38k files, kept out of THIS repo ---
-# data/ is its own git repository, backed up to the private
-# github.com/OIerYangJZ/paper1-data (155M packed). It stays checked out here at
-# data/ because the paths in its manifests are relative to this repo root.
-# Frozen slices the paper cites are indexed by data/frozen/*_freeze_manifest.json.
+# --- experiment data ---
+# Only data/manifest.yaml, data/provenance_map.yaml, data/frozen/ and
+# data/runs/w7-fixed-total-error-20260803-local/ are committed (force-added).
+# Everything else under data/ -- notably the optional raw archive checked out
+# at data/raw-archive/ by reproducibility/fetch_raw_data.sh -- stays out of
+# this repository. New files under data/frozen/ need `git add -f`.
 data/
 
 # vendored third-party compilers checked out for the round-6 baselines
-# (they carry their own .git; re-clone per research/round6_major_revision/README)
+# (they carry their own .git; versions are recorded in
+# research/round6_major_revision/PUBLIC_PHASE_FOLDING_BASELINE.md and
+# round6_environment_snapshot.md)
 research/round6_major_revision/tools/
 
 # LaTeX build artifacts. Scoped to the top level of the two LaTeX dirs on
@@ -67,11 +60,12 @@ AQIS26_Poster/*.fdb_latexmk
 AQIS26_Poster/*.out
 AQIS26_Poster/*.synctex.gz
 AQIS26_Poster/*.toc
+AQIS26_Poster/*.nav
+AQIS26_Poster/*.snm
 
-# locally compiled staq helpers (2.2M of arm64 Mach-O). The sources next to
-# them and the sha256 records in environment_snapshot.json / *_frozen.json are
-# committed, so provenance survives; drop these lines if you want the exact
-# binaries in the artifact.
+# The staq helpers below are committed macOS arm64 binaries (force-added; their
+# sha256 is pinned in reproducibility/environment.lock and the frozen records).
+# This rule only keeps locally rebuilt copies from being committed by accident.
 PaperDraft/research/*/tools/staq_grid_synth
 PaperDraft/research/*/tools/staq_rotation_optimizer
 PaperDraft/research/*/tools/staq_rotation_optimizer_macos_arm64

@@ -14,7 +14,7 @@ builds so the intended version is explicit.
 | --- | --- | --- | --- |
 | arXiv | `main_arXiv.tex` | Complete current manuscript, including the classical-text provenance note in the acknowledgements. | `latexmk -pdf main_arXiv.tex` → 53 pp. |
 | Quantum submission | `main_quantum.tex` | Same manuscript, except that the two `Yijing`/`Laozi` passages and their framing are omitted from the acknowledgements. | `latexmk -pdf main_quantum.tex` → 53 pp. |
-| Supplement | `supplement.tex` | Shared by both versions. | `latexmk -pdf supplement.tex` → 5 pp. |
+| Supplement | `supplement.tex` | Shared by both versions. | `latexmk -pdf supplement.tex` → 6 pp. |
 
 All three build clean from a wiped auxiliary state: exit 0, no undefined references
 or citations, no BibTeX warnings.
@@ -25,7 +25,7 @@ once the paper is accepted; that switches on Quantum's branding and the
 
 ## What changed relative to the PRXQ source
 
-Formatting only — no text, no numbers, no claims, no figures were touched.
+The conversion itself was formatting only — no text, no numbers, no claims, no figures were touched. Content revisions made after the conversion (including the new title and a rewritten abstract) mean the current `main.tex` no longer matches the PRXQ backup line for line; see the git history for those changes.
 
 - **Class.** `revtex4-2 [aps,prx,reprint,floatfix,superscriptaddress]` →
   `quantumarticle [a4paper,twocolumn,10pt,unpublished]`. Author/affiliation
@@ -97,7 +97,4 @@ switch controls only the classical-text block in the acknowledgements.  Grant
 acknowledgements, the generative-AI disclosure, author contributions, and all
 scientific content remain identical between the two versions.
 
-`cover_letter/cover-letter.tex` is still addressed to *PRX Quantum* and argues
-the paper's fit for that journal (lines 48, 58, 123); it also quotes the old
-title (line 56). It is an `article`-class document, so it needs no format
-change, but it does need an editorial rewrite for Quantum.
+The submission cover letter is maintained outside this repository.
